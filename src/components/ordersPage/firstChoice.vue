@@ -34,8 +34,8 @@
 
 <script setup>
 import { defineEmits } from "vue"
-import computer from "@/assets/monitor.svg"
-import delivery from "@/assets/ordersPage/delivery.svg"
+import computer from "@/assets/svgs/monitor.svg"
+import delivery from "@/assets/svgs/delivery.svg"
 const emit = defineEmits(['firstChoice'])
 function selectFirstChoice(choice) {
   emit('firstChoice',choice)

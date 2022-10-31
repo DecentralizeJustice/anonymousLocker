@@ -2,6 +2,7 @@ const nowKey = process.env.nowPaymentsAPIKey
 const axios = require("axios")
 
 exports.handler = async (event, context) => {
+  console.log(context)
   // Only allow POST
   if (event.httpMethod !== "POST") {
     return { statusCode: 405, body: "Method Not Allowed" }

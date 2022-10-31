@@ -3,7 +3,7 @@
     <q-header elevated class="bg-secondary text-white">
       <q-toolbar>
         <img
-          src="./assets/locker.svg"
+          src="./assets/svgs/locker.svg"
           style="max-width: 30px"
           class="q-my-sm"
         />

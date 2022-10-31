@@ -172,8 +172,8 @@
 // restrictions https://www.amazon.com/gp/help/customer/display.html?nodeId=201910770
 // single item limit 5,000 USD
 import { ref, watch, computed } from "vue"
-import cart from "@/assets/ordersPage/cart.svg"
-import { encrypt } from "@/assets/misc.js"
+import cart from "@/assets/svgs/cart.svg"
+import { encrypt, getRandomInt, numberArrayToWordArray } from "@/assets/misc.js"
 const amazonlink = ref("")
 const amazonItemDescription = ref("")
 const itemAmount = ref("0.00")
@@ -188,6 +188,8 @@ const linkError = ref(false)
 const itemAmountError = ref(false)
 const zipcodeError = ref(false)
 const minAmountError = ref(false)
+const wordArray = ref([])
+const numberArray = ref([])
 function removeItem(index) {
   itemList.value.splice(index, 1)
 }
@@ -229,6 +231,13 @@ watch(lockerZipcode, () => {
 watch(itemAmount, () => {
   minAmountError.value = false
 })
+async function generateRandomArray() {
+  const numberArray = []
+  for (var i=0;i<4; i++) {
+    numberArray.push(await getRandomInt(2048))
+  }
+  return numberArray
+}
 function convertToUSD() {
   const temp = Number(parseFloat(itemAmount.value.replace(/,/g, "")))
   itemAmount.value = temp.toFixed(2)
@@ -265,13 +274,15 @@ function submitOrderChecks() {
   return true
 }
 async function submitOrder() {
-  const result = await encrypt('hytu-hyte', 'dj;lfjsaldjf;asdjk;lfja;sldjf;lajd;fja;ld')
-  console.log(result)
   const checksPassed = submitOrderChecks()
   if (!checksPassed) {
     return
   }
-  console.log("can submit")
+  numberArray.value = await generateRandomArray()
+  wordArray.value = numberArrayToWordArray(numberArray.value)
+  console.log(numberArray.value.toString())
+  const result = await encrypt(numberArray.value.toString())
+  console.log(result)
 }
 </script>
 <style lang="sass" scoped>

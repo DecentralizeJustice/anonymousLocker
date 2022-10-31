@@ -1,5 +1,6 @@
 const _sodium = require("libsodium-wrappers")
-const base64url = require('base64url')
+// const base64url = require('base64url')
+const words = require('./bip39Wordlist.txt')
 var Buffer = require('buffer/').Buffer
 
 const convert = (from, to) => (str) => Buffer.from(str, from).toString(to)
@@ -8,20 +9,36 @@ const utf8ToHex = convert("utf8", "hex")
 async function encrypt(stringMessage) {
   await _sodium.ready
   const sodium = _sodium
-  const keyPair = sodium.crypto_box_keypair()
-  const publicKey = keyPair.publicKey
+  // const keyPair = sodium.crypto_box_keypair()
+  // const publicKey = keyPair.publicKey
+  const publicKeySoduim = sodium.from_base64('ymZFfmZghikHnPJIkFld3AkiTlr0OiWvK6aJXBUUwSM')
   const cipherText = sodium.crypto_box_seal(
-    sodium.from_hex(utf8ToHex(stringMessage)),
-    publicKey
+    sodium.from_string(stringMessage),
+    publicKeySoduim
   )
-  const cipherHex = base64url(Buffer.from(cipherText).toString('base64'))
+  const cipherHex = sodium.to_base64(cipherText)
   return cipherHex
+}
+
+async function getRandomInt (exclusiveMax) {
+  await _sodium.ready
+  const sodium = _sodium
+  // The min is 0 (inclusive) and the max is exclusive
+  return sodium.randombytes_uniform(exclusiveMax)
 }
 function toArrayBuffer(buffer) {
   return buffer.buffer.slice(
     buffer.byteOffset,
     buffer.byteOffset + buffer.byteLength
   )
+}
+function numberArrayToWordArray (numberArray) {
+  const wordList = words.split(/\r?\n|\r|\n/g)
+  const wordArray = []
+  for (var i=0;i<4; i++) {
+    wordArray.push(wordList[numberArray[i]])
+  }
+  return wordArray
 }
 async function decrypt(hexNonceAndCiphertext, stringKey) {
   await _sodium.ready
@@ -42,18 +59,7 @@ async function decrypt(hexNonceAndCiphertext, stringKey) {
   return Buffer.from(resultsUint8).toString("utf-8")
 }
 
-function getWordListArray(text) {
-  const newList = []
-  const totalWordList = text.split("\n")
-  totalWordList.pop()
-  totalWordList.pop()
-  for (let i = 0; i < totalWordList.length; i++) {
-    const tempString = totalWordList[i]
-    newList[i] = tempString.split(" ")[2]
-    newList[i] = newList[i].replace(/\s/g, "")
-  }
-  return newList
-}
 exports.encrypt =  encrypt
-exports.getWordListArray = getWordListArray
 exports.decrypt = decrypt
+exports.getRandomInt = getRandomInt
+exports.numberArrayToWordArray = numberArrayToWordArray

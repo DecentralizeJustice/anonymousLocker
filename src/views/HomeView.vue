@@ -80,7 +80,7 @@
 </template>
 
 <script setup>
-import computer from "@/assets/monitor.svg"
-import monero from "@/assets/rand.svg"
-import lockerBig from "@/assets/end.svg"
+import computer from "@/assets/svgs/monitor.svg"
+import monero from "@/assets/svgs/rand.svg"
+import lockerBig from "@/assets/svgs/end.svg"
 </script>
