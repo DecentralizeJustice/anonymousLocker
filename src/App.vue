@@ -1,30 +1,84 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <q-layout view="hHh lpR fFf">
+    <q-header elevated class="bg-secondary text-white">
+      <q-toolbar>
+        <img
+          src="./assets/locker.svg"
+          style="max-width: 30px"
+          class="q-my-sm"
+        />
+        <q-toolbar-title> Anonymous Locker </q-toolbar-title>
+        <q-space class="desktop-only" />
+        <q-btn color="primary" icon="menu" class="mobile-only">
+          <q-menu>
+            <q-list style="min-width: 100px" separator>
+              <q-item
+                v-for="(item, index) in options"
+                :key="index"
+                clickable
+                class="text-center justify-center align-center items-center"
+              >
+                <router-link
+                  :to="{ name: options[index].value }"
+                  style="text-decoration: none; color: inherit"
+                  class="text-center justify-center align-center items-center"
+                >
+                  <q-item-section
+                    class="text-center justify-center align-center items-center"
+                  >
+                    {{ options[index].label }}
+                  </q-item-section>
+                </router-link>
+              </q-item>
+            </q-list>
+          </q-menu>
+        </q-btn>
+        <router-link
+          v-for="(item, index) in options"
+          :key="index"
+          class="desktop-only"
+          :to="{ name: options[index].value }"
+          style="all: unset"
+        >
+          <q-btn
+            :color="getButtonColor(options[index].value)"
+            text-color="white"
+            :label="options[index].label"
+            class="q-mx-xs"
+            size="md"
+          />
+        </router-link>
+      </q-toolbar>
+    </q-header>
+
+    <q-page-container>
+      <router-view />
+    </q-page-container>
+  </q-layout>
 </template>
-
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<script setup>
+// import { ref } from 'vue'
+/* import { useRouter } from 'vue-router'
+const router = useRouter() */
+// const model = ref(window.location.pathname)
+/* function test (newRoute) {
+  console.log(newRoute)
+  router.push({ name: newRoute })
+} */
+const options = [
+  { label: "Home", value: "home" },
+  { label: "Orders", value: "ordersPage" },
+]
+function getButtonColor(params) {
+  if (params === "ordersPage") {
+    return "primary"
   }
+  return "secondary"
 }
+</script>
+<style lang="sass" scoped>
+.headerCustomStyle
+  background: #4c4c4c !important
+.ntp
+  padding-top: 60px !important
 </style>
