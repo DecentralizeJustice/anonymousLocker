@@ -5,7 +5,7 @@
   >
     <div class="row justify-center col col-11 align-center items-stretch" >
       <firstChoiceComp v-if="firstChoice === ''" @firstChoice="selectFirstChoice"/>
-      <submitNewOrder v-if="firstChoice === 'newOrder'"/>
+      <submitNewOrder v-if="firstChoice === 'newOrder' && !paymentStarted" @paymentSTarted="processPaymentInfo"/>
     </div>
   </q-page>
 </template>
@@ -15,7 +15,12 @@ import { ref } from "vue";
 import firstChoiceComp from "@/components/ordersPage/firstChoice.vue"
 import submitNewOrder from "@/components/ordersPage/submitNewOrder.vue"
 const firstChoice = ref('')
+const paymentStarted = ref(false)
 function selectFirstChoice(choice) {
   firstChoice.value = choice
+}
+function processPaymentInfo( paymentInfo) {
+  paymentStarted.value = true
+  console.log(paymentInfo)
 }
 </script>
