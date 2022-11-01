@@ -174,6 +174,7 @@
 import { ref, watch, computed } from "vue"
 import cart from "@/assets/svgs/cart.svg"
 import { encrypt, getRandomInt, numberArrayToWordArray } from "@/assets/misc.js"
+const axios = require('axios')
 const amazonlink = ref("")
 const amazonItemDescription = ref("")
 const itemAmount = ref("0.00")
@@ -281,8 +282,15 @@ async function submitOrder() {
   numberArray.value = await generateRandomArray()
   wordArray.value = numberArrayToWordArray(numberArray.value)
   console.log(numberArray.value.toString())
-  const result = await encrypt(numberArray.value.toString())
-  console.log(result)
+  const encryptedPassphrase = await encrypt(numberArray.value.toString())
+  console.log(encryptedPassphrase)
+  try {
+  const results = await axios.post('/.netlify/functions/createPayment', { encryptedPassphrase, finalTotalUSD: finalTotalUSD.value })
+  console.log(results.data.payment_id)
+} catch (err) {
+  console.log(err)
+  // basketUndefined.value = err.response.data.includes('Could not get basket')
+}
 }
 </script>
 <style lang="sass" scoped>
