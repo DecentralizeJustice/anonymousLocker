@@ -15,6 +15,7 @@
     "libsodium-wrappers": "^0.7.10",
     "node-polyfill-webpack-plugin": "^2.0.1",
     "path-browserify": "^1.0.1",
+    "qrcode": "^1.5.1",
     "quasar": "^2.0.0",
     "stream-browserify": "^3.0.0",
     "style-loader": "^3.3.1",

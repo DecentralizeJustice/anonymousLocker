@@ -151,7 +151,7 @@
               </div>
               <div class="row col-8 q-mt-md justify-center">
                 <q-btn
-                  :disable="itemList.length === 0"
+                  :disable="itemList.length === 0 || disableSubmit"
                   class="col-12"
                   color="primary"
                   label="Submit Order"
@@ -193,6 +193,7 @@ const itemAmountError = ref(false)
 const zipcodeError = ref(false)
 const minAmountError = ref(false)
 const numberArray = ref([])
+const disableSubmit = ref(false)
 function removeItem(index) {
   itemList.value.splice(index, 1)
 }
@@ -289,9 +290,12 @@ async function submitOrder() {
   const encryptedPassphrase = await encrypt(numberArray.value.toString())
   console.log(encryptedPassphrase)
   try {
+  disableSubmit.value = true
   const results = await axios.post('/.netlify/functions/createPayment', { encryptedPassphrase, finalTotalUSD: finalTotalUSD.value })
+  disableSubmit.value = false
   emit('paymentSTarted', { nowPaymentsInfo: results.data, numberArray: toRaw(numberArray.value), encryptedPassphrase, itemList: toRaw(itemList.value) })
 } catch (err) {
+  disableSubmit.value = false
   console.log(err)
   // basketUndefined.value = err.response.data.includes('Could not get basket')
 }

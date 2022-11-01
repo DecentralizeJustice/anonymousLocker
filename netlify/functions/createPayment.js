@@ -30,7 +30,7 @@ async function get(encryptedPassphrase, finalTotalUSD) {
       pay_currency: "xmr",
       ipn_callback_url: "https://nowpayments.io",
       order_id: encryptedPassphrase,
-      order_description: "Payment Order for payments",
+      order_description: "Test Payments",
     },
     {
       headers: {

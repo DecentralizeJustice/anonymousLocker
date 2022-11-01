@@ -1,0 +1,167 @@
+<template>
+<div class="col-6 col-md-6 col justify-center column">
+  <div class="column justify-center" style="" v-if="!passphraseWrittenDown">
+      <q-card class="col-12 col" style="">
+        <!-- <q-card-section class="bg-secondary text-white">
+          <div class="text-h6">Save Passphrase</div>
+        </q-card-section>
+        <q-separator /> -->
+        <q-card-section>
+          <div class="q-pa-md">
+            <div class="row justify-around" style="">
+              <div class="col-12 text-center row q-mb-md justify-center">
+                <div class="col col-12 text-center text-h3">
+                Save This Secret Passphrase
+            </div>
+              <q-card class="col col-6 text-left q-mt-sm q-mb-md justify-center bg-secondary text-white q-py-md  row">
+                <q-card-section
+                    class="bg-red-5 col-11 text-center"
+                    style="border-radius: 10px;"
+                  >
+                    <div class="text-h6">
+                      Secret Passphrase: Don't Share!!!
+                    </div>
+                  </q-card-section>
+                <div class="text-left q-mt-sm">
+                  <span 
+                  v-for="(item, index) in wordList"
+                    :key="item"
+                    class="col q-ma-sm q-pa-sm text-h4">
+                    {{ (index + 1) }}. {{ wordList[index] }}<br/>
+                  </span>
+                </div>
+              </q-card>
+              <div class="col col-10 text-left text-h6 text-weight-regular">
+                This is the <span class="text-red text-weight-bold">ONLY</span> way to access me about your order.
+                If you loose this, there is no way to complete your order or refund you!
+            </div>
+              <div class="col col-12 q-mt-lg text-center">
+                  <q-btn
+                  no-caps
+                  color="positive"
+                  icon="check"
+                  label="Confirm Passphrase Saved"
+                  @click="confirmPassphrase"
+                />
+              </div>
+              </div>
+            </div>
+          </div>
+        </q-card-section>
+      </q-card>
+    </div>
+    <div class="column justify-center" style="" v-if="passphraseWrittenDown">
+      <q-card class="col-12 col" style="">
+        <q-card-section class="bg-secondary text-white">
+          <div class="text-h6">Order Payment</div>
+        </q-card-section>
+        <q-separator />
+        <q-card-section>
+          <div class="q-pa-md">
+            <div class="row justify-around" style="">
+              <div class="col-12 text-center row q-mb-md justify-center">
+                <div class="col col-12 text-center text-h5">
+                Send <span style="color:#ff6600">{{paymentInfo.nowPaymentsInfo.pay_amount}}</span> Monero (XMR) to The Adress Below:
+            </div>
+              <div class="col col-12 text-center justify-center">
+                <canvas
+                  id="canvas"
+                  class=""
+                  style=""
+                />
+              </div>
+              <div class="col col-12 text-center">
+                  <q-btn
+                  no-caps
+                  color="primary"
+                  icon="file_copy"
+                  label="Copy Address"
+                  @click="copy"
+                />
+              </div>
+              </div>
+            </div>
+            <div class="row justify-around" style="">
+              <div class="col-12 text-center row q-mb-md justify-center">
+                <div class="col col-12 text-center text-h6">
+                Amount Recieved So Far:
+            </div>
+              <div class="col col-12 text-center justify-center text-h5">
+                {{ actuallyPaid }} XMR
+              </div>
+              <div class="col col-12 text-center">
+                  <q-btn
+                  :disable='disablePaymentCheck'
+                  no-caps
+                  color="positive"
+                  icon="check"
+                  label="Check Amount Sent"
+                  @click="checkForPayment(paymentInfo.nowPaymentsInfo.payment_id)"
+                />
+              </div>
+              </div>
+            </div>
+          </div>
+        </q-card-section>
+      </q-card>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { defineProps, toRef, onUpdated, ref, computed } from "vue"
+import { copyToClipboard } from 'quasar'
+import QRCode from 'qrcode'
+import { numberArrayToWordArray } from'@/assets/misc.js'
+const axios = require('axios')
+const passphraseWrittenDown = ref(false)
+const actuallyPaid = ref(0)
+const disablePaymentCheck = ref(false)
+const props = defineProps({
+  paymentInfo: { type: Object, required: true }
+})
+const paymentInfo = toRef(props, 'paymentInfo')
+// console.log(paymentInfo)
+function copy () {
+  copyToClipboard(paymentInfo.value.nowPaymentsInfo.pay_address)
+    .then(() => {
+    // success!
+    })
+    .catch(() => {
+    // fail
+    })
+}
+function createQRCode () {
+  const canvas = document.getElementById('canvas')
+  if (canvas === null) { return }
+  QRCode.toCanvas(canvas, paymentInfo.value.nowPaymentsInfo.pay_address, { errorCorrectionLevel: 'L' }, function (error) {
+    if (error) console.error(error)
+  })
+}
+onUpdated(() => {
+  createQRCode()
+})
+const wordList = computed(() => { 
+  return numberArrayToWordArray(paymentInfo.value.numberArray)
+})
+function confirmPassphrase() {
+  passphraseWrittenDown.value = true
+}
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+async function checkForPayment(paymentID){
+  disablePaymentCheck.value = true
+  const results = await axios.post('/.netlify/functions/checkPaymentStatus', { paymentID })
+  actuallyPaid.value = results.data.actually_paid
+  await sleep(5000)
+  disablePaymentCheck.value = false
+  // console.log(results.data.actually_paid)
+}
+// import computer from "@/assets/svgs/monitor.svg"
+// import delivery from "@/assets/svgs/delivery.svg"
+/* const emit = defineEmits(['firstChoice'])
+function selectFirstChoice(choice) {
+  emit('firstChoice',choice)
+} */
+</script>
