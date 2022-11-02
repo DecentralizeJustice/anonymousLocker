@@ -15,9 +15,8 @@ exports.handler = async (event, context) => {
     return { statusCode: 400, body: "paymentID too long" }
   }
   const apiRequest = await get(parsed.paymentID)
-  await setupBucket(parsed.orderInfo)
   if (Number(apiRequest.pay_amount) <= Number(apiRequest.actually_paid)) {
-    console.log('Payment Done')
+    await setupBucket(parsed.orderInfo)
   }
   return {
     statusCode: 200,
@@ -52,12 +51,12 @@ function processFirstMessage(orderDetails) {
     const quantityString = 'Quantity: ' +`${itemList[index].quantity}` + '<br/>'
     const itemCostString = 'Single Item Cost: ' +`${itemList[index].cost}` + '<br/>'
     const notesString = 'Item Notes: ' +`${itemList[index].description}`
-    firstString = firstString.concat(linkTitle + quantityString + itemCostString + notesString+ '<br/>')
+    firstString = firstString.concat(linkTitle + quantityString + itemCostString + notesString+ '<br/><br/>')
   }
   const nowPaymentsInfo = orderDetails.nowPaymentsInfo
   firstString = firstString.concat('Order USD Total: ', nowPaymentsInfo.price_amount,  '<br/>')
   firstString = firstString.concat('Order XMR Total: ', nowPaymentsInfo.pay_amount, '<br/><br/>')
-  const outro = `I will follow place your order soon and message you the order details. If you need anything or have any questions, just shoot me a message here.`
+  const outro = `I will place your order soon and message you the order details. If you need anything or have any questions, just shoot me a message here.`
   firstString = firstString.concat(outro)
   return firstString
 }
