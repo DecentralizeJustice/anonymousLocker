@@ -90,7 +90,8 @@
                           <span v-if="item.quantity > 1">
                             Single Item Cost: {{ item.cost }} <br
                           /></span>
-                          Item(s) Total: {{ Number(item.cost) }}<br />
+                          Item(s) Total: {{ Number(item.cost)* Number(item.quantity) }}<br />
+                          Item(s) Notes: {{item.description}}<br/>
                           <a :href="item.link" class="linkStyle">Link</a>
                         </div>
                         <div class="col-12 text-center">

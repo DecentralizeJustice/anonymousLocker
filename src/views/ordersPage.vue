@@ -23,8 +23,7 @@ function selectFirstChoice(choice) {
   firstChoice.value = choice
 }
 function processPaymentInfo( paymentInfoFromComp) {
-  paymentStarted.value = true
   paymentInfo.value =  paymentInfoFromComp
-  console.log(paymentInfo.value)
+  paymentStarted.value = true
 }
 </script>

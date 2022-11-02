@@ -59,9 +59,11 @@
         <q-card-section>
           <div class="q-pa-md">
             <div class="row justify-around" style="">
-              <div class="col-12 text-center row q-mb-md justify-center">
+              <div class="col-12 text-center row justify-center">
+                <q-chip icon="warning" color="negative" text-color="white" 
+                label="Don't Close/Refresh Window Till Payment Confirmed" class="q-mb-md" />
                 <div class="col col-12 text-center text-h5">
-                Send <span style="color:#ff6600">{{paymentInfo.nowPaymentsInfo.pay_amount}}</span> Monero (XMR) to The Adress Below:
+                Send <span style="color:#ff6600">{{paymentInfo.nowPaymentsInfo.pay_amount}}</span> Monero (XMR) to The Address Below:
             </div>
               <div class="col col-12 text-center justify-center">
                 <canvas
@@ -82,20 +84,20 @@
               </div>
             </div>
             <div class="row justify-around" style="">
-              <div class="col-12 text-center row q-mb-md justify-center">
+              <div class="col-12 text-center row q-mb-md q-mt-md justify-center">
                 <div class="col col-12 text-center text-h6">
                 Amount Recieved So Far:
             </div>
               <div class="col col-12 text-center justify-center text-h5">
                 {{ actuallyPaid }} XMR
               </div>
-              <div class="col col-12 text-center">
+              <div class="col col-12 text-center q-mt-sm">
                   <q-btn
                   :disable='disablePaymentCheck'
                   no-caps
                   color="positive"
                   icon="check"
-                  label="Check Amount Sent"
+                  label="Confirm Amount Sent"
                   @click="checkForPayment(paymentInfo.nowPaymentsInfo.payment_id)"
                 />
               </div>
@@ -109,7 +111,7 @@
 </template>
 
 <script setup>
-import { defineProps, toRef, onUpdated, ref, computed } from "vue"
+import { defineProps, toRef, onUpdated, ref, computed, toRaw } from "vue"
 import { copyToClipboard } from 'quasar'
 import QRCode from 'qrcode'
 import { numberArrayToWordArray } from'@/assets/misc.js'
@@ -121,7 +123,7 @@ const props = defineProps({
   paymentInfo: { type: Object, required: true }
 })
 const paymentInfo = toRef(props, 'paymentInfo')
-// console.log(paymentInfo)
+console.log(paymentInfo.value)
 function copy () {
   copyToClipboard(paymentInfo.value.nowPaymentsInfo.pay_address)
     .then(() => {
@@ -152,10 +154,11 @@ function sleep(ms) {
 }
 async function checkForPayment(paymentID){
   disablePaymentCheck.value = true
-  const results = await axios.post('/.netlify/functions/checkPaymentStatus', { paymentID })
-  actuallyPaid.value = results.data.actually_paid
   await sleep(5000)
   disablePaymentCheck.value = false
+  const orderInfo = {itemList: toRaw(paymentInfo.value.itemList), nowPaymentsInfo: toRaw(paymentInfo.value.nowPaymentsInfo) }
+  const results = await axios.post('/.netlify/functions/checkPaymentStatus', { paymentID, orderInfo })
+  actuallyPaid.value = results.data.actually_paid
   // console.log(results.data.actually_paid)
 }
 // import computer from "@/assets/svgs/monitor.svg"
