@@ -50,12 +50,16 @@ function processFirstMessage(orderDetails) {
     const linkTitle = 'Item Name: '+ itemList[index].link.split("/")[3].replace(/-/g, " ") + '<br/>'
     const quantityString = 'Quantity: ' +`${itemList[index].quantity}` + '<br/>'
     const itemCostString = 'Single Item Cost: ' +`${itemList[index].cost}` + '<br/>'
-    const notesString = 'Item Notes: ' +`${itemList[index].description}`
-    firstString = firstString.concat(linkTitle + quantityString + itemCostString + notesString+ '<br/><br/>')
+    const notesString = 'Item Notes: ' +`${itemList[index].description}` + '<br/>'
+    const linkString = `<a href="${itemList[index].link}">Item Link:</a>`+ '<br/>'
+    firstString = firstString.concat(linkTitle + quantityString + itemCostString + notesString+ linkString+  '<br/>')
   }
   const nowPaymentsInfo = orderDetails.nowPaymentsInfo
   firstString = firstString.concat('Order USD Total: ', nowPaymentsInfo.price_amount,  '<br/>')
   firstString = firstString.concat('Order XMR Total: ', nowPaymentsInfo.pay_amount, '<br/><br/>')
+  firstString = firstString.concat('Amazon Locker Name: ', orderDetails.lockerName, '<br/>')
+  firstString = firstString.concat('Amazon Locker Zipcode: ', orderDetails.lockerZipcode, '<br/>')
+  firstString = firstString.concat('Extra Order Notes: ', orderDetails.extraNotes, '<br/><br/>')
   const outro = `I will place your order soon and message you the order details. If you need anything or have any questions, just shoot me a message here.`
   firstString = firstString.concat(outro)
   return firstString

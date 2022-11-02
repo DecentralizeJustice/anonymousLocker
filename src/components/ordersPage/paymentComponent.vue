@@ -123,7 +123,6 @@ const props = defineProps({
   paymentInfo: { type: Object, required: true }
 })
 const paymentInfo = toRef(props, 'paymentInfo')
-console.log(paymentInfo.value)
 function copy () {
   copyToClipboard(paymentInfo.value.nowPaymentsInfo.pay_address)
     .then(() => {
@@ -156,7 +155,8 @@ async function checkForPayment(paymentID){
   disablePaymentCheck.value = true
   await sleep(5000)
   disablePaymentCheck.value = false
-  const orderInfo = {itemList: toRaw(paymentInfo.value.itemList), nowPaymentsInfo: toRaw(paymentInfo.value.nowPaymentsInfo) }
+  const orderInfo = {itemList: toRaw(paymentInfo.value.itemList), nowPaymentsInfo: toRaw(paymentInfo.value.nowPaymentsInfo),
+    lockerZipcode: toRaw(paymentInfo.value.lockerZipcode), lockerName: toRaw(paymentInfo.value.lockerName), extraNotes: toRaw(paymentInfo.value.extraNotes)}
   const results = await axios.post('/.netlify/functions/checkPaymentStatus', { paymentID, orderInfo })
   actuallyPaid.value = results.data.actually_paid
   // console.log(results.data.actually_paid)

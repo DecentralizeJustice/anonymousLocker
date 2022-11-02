@@ -18,7 +18,7 @@
               style="line-height: 120%; font-weight: 400"
             >
               The Most Private Way <br />
-              to Shop Online
+              to Spend Monero
             </div>
             <div
               class="text-h5 text-weight-regular q-mt-md"

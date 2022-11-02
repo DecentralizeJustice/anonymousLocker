@@ -135,7 +135,7 @@
                   color="red"
                   text-color="white"
                   icon="dangerous"
-                  label="Order Sub-total Minimum is $25 (USD)"
+                  label="Order Sub-total Minimum is ${{minOrderamount}} (USD)"
                   v-if="minAmountError"
                 />
               </span>
@@ -186,8 +186,8 @@ const itemList = ref([])
 const lockerZipcode = ref(0)
 const lockerName = ref("")
 const extraNotes = ref("")
-const percentageFee = 0.05
-const minOrderamount = 25
+const percentageFee = 0.06
+const minOrderamount = 35
 const taxRate = 0.08
 const linkError = ref(false)
 const itemAmountError = ref(false)
@@ -294,11 +294,11 @@ async function submitOrder() {
   disableSubmit.value = true
   const results = await axios.post('/.netlify/functions/createPayment', { encryptedPassphrase, finalTotalUSD: finalTotalUSD.value })
   disableSubmit.value = false
-  emit('paymentSTarted', { nowPaymentsInfo: results.data, numberArray: toRaw(numberArray.value), encryptedPassphrase, itemList: toRaw(itemList.value) })
+  emit('paymentSTarted', { nowPaymentsInfo: results.data, numberArray: toRaw(numberArray.value), encryptedPassphrase, itemList: toRaw(itemList.value),
+   lockerZipcode: toRaw(lockerZipcode.value), lockerName: toRaw(lockerName.value), extraNotes: toRaw(extraNotes.value)})
 } catch (err) {
   disableSubmit.value = false
   console.log(err)
-  // basketUndefined.value = err.response.data.includes('Could not get basket')
 }
 }
 </script>

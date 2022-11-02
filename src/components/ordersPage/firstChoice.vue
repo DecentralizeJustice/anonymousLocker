@@ -26,6 +26,7 @@
               style="color: white"
               padding="sm"
               no-caps
+              @click="selectFirstChoice('checkOnOrder')"
             />
           </q-card-section>
         </q-card>
