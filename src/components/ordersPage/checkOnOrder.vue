@@ -53,6 +53,7 @@
                 <div class="col col-12 q-mt-md text-center">
                     <q-btn
                     no-caps
+                    :disable="buttonDisabled"
                     color="positive"
                     icon="check"
                     label="View Order"
@@ -76,16 +77,8 @@ const passphraseWords = ref([])
 const passphraseLength = 4
 const validWordWarningArray = ref([false, false, false, false])
 const orderNotFound = ref(false)
-
-// import { numberArrayToWordArray } from'@/assets/misc.js'
-// 
-// const props = defineProps({
-//   paymentInfo: { type: Object, required: true }
-// })
-// const paymentInfo = toRef(props, 'paymentInfo')
-/*     const wordList = computed(() => { 
-  return numberArrayToWordArray(paymentInfo.value.numberArray)
-}) */
+const messageArray = ref([])
+const buttonDisabled = ref(false)
 async function enterPassphrase() {
   const numberArray = []
   for (let index = 0; index < passphraseLength; index++) {
@@ -101,8 +94,11 @@ async function enterPassphrase() {
   if (numberArray.length === passphraseLength) {
     const potentialPassphrase = numberArray.toString()
     try {
+      buttonDisabled.value = true
+      await sleep(3000)
+      buttonDisabled.value = false
       const results = await axios.post('/.netlify/functions/getOrder', { bucketID: potentialPassphrase })
-      console.log(results.data.messageArray)
+      messageArray.value = results.data.messageArray
     } catch (error) {
       if (error.response.data.slice(0, 20) === 'Could not get basket') {
         orderNotFound.value = true
@@ -110,6 +106,9 @@ async function enterPassphrase() {
       }
     }
   }
+}
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 watch(
   () => passphraseWords,
@@ -142,7 +141,4 @@ function wordToNumber(word) {
   }
  return false
 }
-/*     function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-} */
 </script>
