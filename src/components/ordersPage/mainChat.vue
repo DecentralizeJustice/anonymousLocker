@@ -38,8 +38,8 @@
               style="width: 100%;  max-height: 10vh;"
             />
           </div>
-          <q-btn @click="sendMessage">Send Message</q-btn>
-          <q-btn @click="checkForMessages">Check For New Messages</q-btn>
+          <q-btn @click="sendMessage" :disable="disableButtons">Send Message</q-btn>
+          <q-btn @click="checkForMessages" :disable="disableButtons">Check For New Messages</q-btn>
         </q-card-actions>
         </q-card>
       </div>
@@ -52,12 +52,13 @@ import shopperAvatar from "@/assets/detective.svg"
 import sanitizeHtml from 'sanitize-html'
 import { defineProps, toRef, ref, toRaw } from "vue"
 const axios = require('axios')
-const sender = 'shopper'
+const sender = 'dgoon'
 const props = defineProps({
   passphrase: { type: String, required: true },
   messageArray: { type: Object, required: true }
 })
 const text = ref('')
+const disableButtons = ref(false)
 const messageArrayHolder = toRef(props, 'messageArray')
 const messageArray = ref(toRaw(messageArrayHolder.value))
 const passphrase = toRef(props, 'passphrase')
@@ -74,6 +75,9 @@ function sanatizeHTMLString (dirty) {
 });
   return clean
 }
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 function getAvatar(sender) {
   if (sender === 'dgoon') {
     return anaonAvatar
@@ -84,12 +88,18 @@ function getAvatar(sender) {
   
 }
 async function sendMessage() {
+  disableButtons.value = true
+  await sleep(2000)
+  disableButtons.value = false
   const data = { bucket: passphrase.value, message: text.value, sender }
   const results = await axios.post('/.netlify/functions/sendMessage', data)
   messageArray.value = results.data.messageArray
   text.value = ''
 }
 async function checkForMessages() {
+  disableButtons.value = true
+  await sleep(2000)
+  disableButtons.value = false
   const data = { bucketID: passphrase.value }
   const results = await axios.post('/.netlify/functions/getOrder', data)
   messageArray.value = results.data.messageArray
