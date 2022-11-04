@@ -11,7 +11,7 @@
                       style="border-radius: 10px;"
                     >
                     <div class="row justify-center text-left overflow-auto" style="">
-                      <div style="width: 100%; max-width: 50vw; height: 50vh;" class="overflow-auto scroll">
+                      <div style="width: 100%; height: 50vh;" class="overflow-auto scroll">
                         <q-chat-message
                           v-for="(message, index) in messageArray"
                           :key="index"
@@ -21,6 +21,7 @@
                           :stamp="epochToLocalTime(message.sent)"
                           :avatar="getAvatar(message.from)"
                           text-html
+                          :bg-color="getTextColor(message.from)"
                         />
                       </div>
                     </div>
@@ -28,7 +29,7 @@
           <q-separator />
 
         <q-card-actions vertical>
-          Message:
+          <span class="text-subtitle1 text-weight-medium">Type Your Message:</span>
           <div class="q-pa-md overflow-auto" style="">
             <q-input
               v-model="text"
@@ -38,8 +39,14 @@
               style="width: 100%;  max-height: 10vh;"
             />
           </div>
-          <q-btn @click="sendMessage" :disable="disableButtons">Send Message</q-btn>
-          <q-btn @click="checkForMessages" :disable="disableButtons">Check For New Messages</q-btn>
+          <div class="row">
+      <div class="col">
+        <q-btn @click="sendMessage" :disable="disableButtons" color="positive" icon="send">Send Message</q-btn>
+      </div>
+      <div class="col">
+        <q-btn @click="checkForMessages" :disable="disableButtons" color="positive" icon="sync">Check For New Messages</q-btn>
+      </div>
+    </div>
         </q-card-actions>
         </q-card>
       </div>
@@ -85,7 +92,14 @@ function getAvatar(sender) {
   if (sender === 'shopper') {
     return shopperAvatar
   }
-  
+}
+function getTextColor(sender) {
+  if (sender === 'dgoon') {
+    return 'blue-5'
+  }
+  if (sender === 'shopper') {
+    return 'light-blue-11'
+  }
 }
 async function sendMessage() {
   disableButtons.value = true
