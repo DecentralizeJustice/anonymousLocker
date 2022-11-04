@@ -72,7 +72,7 @@
 <script setup>
 import { ref, watch, defineEmits } from "vue"
 import bip39Wordlist from "@/assets/bip39Wordlist.txt"
-const emit = defineEmits(['gotCardData'])
+const emit = defineEmits(['passphraseEnteredSuccess'])
 const axios = require('axios')
 const passphraseWords = ref([])
 const passphraseLength = 4
@@ -100,7 +100,7 @@ async function enterPassphrase() {
       buttonDisabled.value = false
       const results = await axios.post('/.netlify/functions/getOrder', { bucketID: potentialPassphrase })
       // messageArray.value = results.data.messageArray
-      emit('passphraseEnteredSuccess', results.data.messageArray)
+      emit('passphraseEnteredSuccess', results.data.messageArray, potentialPassphrase)
     } catch (error) {
       if (error.response.data.slice(0, 20) === 'Could not get basket') {
         orderNotFound.value = true
