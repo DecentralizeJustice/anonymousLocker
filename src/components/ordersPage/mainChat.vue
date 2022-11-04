@@ -6,38 +6,41 @@
             <div class="text-h6">Chat About Your Order</div>
           </q-card-section>
           <q-separator />
-          <q-card-section>
-            <div class="">
-              <div class="row justify-around" style="">
-                <div class="col-12 text-center row  justify-center col">
                   <q-card-section
-                      class="col-11 text-center"
+                      class="text-center col-12 text-center row  justify-center col"
                       style="border-radius: 10px;"
                     >
-                    <div class="q-pa-md row justify-center text-left">
-                      <div style="width: 100%; max-width: 400px">
+                    <div class="row justify-center text-left overflow-auto" style="">
+                      <div style="width: 100%; max-width: 50vw; height: 50vh;" class="overflow-auto scroll">
                         <q-chat-message
                           v-for="(message, index) in messageArray"
                           :key="index"
-                          :text="[message.message]"
-                          name="dgoon"
+                          :text="[sanatizeHTMLString(message.message)]"
+                          :name="message.from"
+                          :sent="message.from === 'shopper'"
                           :stamp="epochToLocalTime(message.sent)"
-                          :avatar=" anaonAvatar"
+                          :avatar="getAvatar(message.from)"
                           text-html
                         />
-<!--                         <q-chat-message
-                          :text="['doing fine, how r you?']"
-                          sent
-                          name="me"
-                          :avatar="shopperAvatar"
-                        /> -->
                       </div>
                     </div>
-                    </q-card-section>
-                </div>
-              </div>
-            </div>
           </q-card-section>
+          <q-separator />
+
+        <q-card-actions vertical>
+          Message:
+          <div class="q-pa-md overflow-auto" style="">
+            <q-input
+              v-model="text"
+              filled
+              autogrow
+              class="overflow-auto scroll"
+              style="width: 100%;  max-height: 10vh;"
+            />
+          </div>
+          <q-btn @click="sendMessage">Send Message</q-btn>
+          <q-btn @click="checkForMessages">Check For New Messages</q-btn>
+        </q-card-actions>
         </q-card>
       </div>
     </div>
@@ -45,20 +48,52 @@
     
 <script setup>
 import anaonAvatar from "@/assets/chatAvatar.svg"
-// import shopperAvatar from "@/assets/detective.svg"
-import { defineProps, toRef } from "vue"
+import shopperAvatar from "@/assets/detective.svg"
+import sanitizeHtml from 'sanitize-html'
+import { defineProps, toRef, ref, toRaw } from "vue"
+const axios = require('axios')
+const sender = 'shopper'
 const props = defineProps({
   passphrase: { type: String, required: true },
   messageArray: { type: Object, required: true }
 })
-const messageArray = toRef(props, 'messageArray')
+const text = ref('')
+const messageArrayHolder = toRef(props, 'messageArray')
+const messageArray = ref(toRaw(messageArrayHolder.value))
 const passphrase = toRef(props, 'passphrase')
-console.log(messageArray.value, passphrase.value)
 function epochToLocalTime(epochTime){
   const timeString = formatAMPM(new Date(epochTime)) + ' '
   return timeString + new Date(epochTime).toLocaleString('en-us', { weekday:"long", month:"short", day:"numeric"})
 }
-
+function sanatizeHTMLString (dirty) {
+  const clean = sanitizeHtml(dirty, {
+  allowedTags: [ 'br', 'a' ],
+  allowedAttributes: {
+    'a': [ 'href' ]
+  }
+});
+  return clean
+}
+function getAvatar(sender) {
+  if (sender === 'dgoon') {
+    return anaonAvatar
+  }
+  if (sender === 'shopper') {
+    return shopperAvatar
+  }
+  
+}
+async function sendMessage() {
+  const data = { bucket: passphrase.value, message: text.value, sender }
+  const results = await axios.post('/.netlify/functions/sendMessage', data)
+  messageArray.value = results.data.messageArray
+  text.value = ''
+}
+async function checkForMessages() {
+  const data = { bucketID: passphrase.value }
+  const results = await axios.post('/.netlify/functions/getOrder', data)
+  messageArray.value = results.data.messageArray
+}
 function formatAMPM(date) {
   var hours = date.getHours();
   var minutes = date.getMinutes();
