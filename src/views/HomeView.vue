@@ -17,8 +17,7 @@
               class="text-h2 text-weight-regular"
               style="line-height: 120%; font-weight: 400"
             >
-              The Most Private Way <br />
-              to Spend Monero
+              Shop Online Without Revealing Your Shipping Address
             </div>
             <div
               class="text-h5 text-weight-regular q-mt-md"
