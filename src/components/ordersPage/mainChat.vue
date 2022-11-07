@@ -1,5 +1,5 @@
 <template>
-  <div class="col-6 col-md-6 col justify-center column">
+  <div class="col-11 col-md-6 col justify-center column">
     <div class="column justify-center" style="">
         <q-card class="col-12 col" style="">
           <q-card-section class="bg-secondary text-white">
@@ -36,14 +36,14 @@
               filled
               autogrow
               class="overflow-auto scroll"
-              style="width: 100%;  max-height: 10vh;"
+              style="width: 100%;  max-height: 12vh;"
             />
           </div>
-          <div class="row">
-      <div class="col">
+          <div class="row justify-around q-gutter-y-md">
+      <div class="col-12 col-md-6 ">
         <q-btn @click="sendMessage" :disable="disableButtons" color="positive" icon="send">Send Message</q-btn>
       </div>
-      <div class="col">
+      <div class="col-12 col-md-6">
         <q-btn @click="checkForMessages" :disable="disableButtons" color="positive" icon="sync">Check For New Messages</q-btn>
       </div>
     </div>

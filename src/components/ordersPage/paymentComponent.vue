@@ -1,6 +1,6 @@
 <template>
-<div class="col-6 col-md-6 col justify-center column">
-  <div class="column justify-center" style="" v-if="!passphraseWrittenDown">
+<div class="col-12 col-md-6 col justify-center">
+  <div class="row justify-center" style="" v-if="!passphraseWrittenDown">
       <q-card class="col-12 col" style="">
         <!-- <q-card-section class="bg-secondary text-white">
           <div class="text-h6">Save Passphrase</div>
@@ -13,7 +13,7 @@
                 <div class="col col-12 text-center text-h3">
                 Save This Secret Passphrase
             </div>
-              <q-card class="col col-6 text-left q-mt-sm q-mb-md justify-center bg-secondary text-white q-py-md  row">
+              <q-card class="col col-12 col-md-6 text-left q-mt-sm q-mb-md justify-center bg-secondary text-white q-py-md  row">
                 <q-card-section
                     class="bg-red-5 col-11 text-center"
                     style="border-radius: 10px;"
@@ -50,7 +50,7 @@
         </q-card-section>
       </q-card>
     </div>
-    <div class="column justify-center" style="" v-if="passphraseWrittenDown">
+    <div class="row justify-center" style="" v-if="passphraseWrittenDown">
       <q-card class="col-12 col" style="">
         <q-card-section class="bg-secondary text-white">
           <div class="text-h6">Order Payment</div>
@@ -61,7 +61,8 @@
             <div class="row justify-around" style="">
               <div class="col-12 text-center row justify-center">
                 <q-chip icon="warning" color="negative" text-color="white" 
-                label="Don't Close/Refresh Window Till Payment Confirmed" class="q-mb-md" />
+                label="Don't Close/Refresh Window Till Payment Confirmed" class="q-mb-md desktop-only" />
+                <span class="mobile-only text-h5 q-mb-md" style="color:#C10015;"> Don't Close/Refresh Window Till Payment Confirmed</span>
                 <div class="col col-12 text-center text-h5">
                 Send <span style="color:#ff6600">{{paymentInfo.nowPaymentsInfo.pay_amount}}</span> Monero (XMR) to The Address Below:
             </div>
@@ -96,8 +97,8 @@
                   :disable='disablePaymentCheck'
                   no-caps
                   color="positive"
-                  icon="check"
-                  label="Confirm Amount Sent"
+                  icon="autorenew"
+                  label="Refresh Amount Sent"
                   @click="checkForPayment(paymentInfo.nowPaymentsInfo.payment_id)"
                 />
               </div>

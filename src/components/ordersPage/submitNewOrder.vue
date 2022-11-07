@@ -1,5 +1,5 @@
 <template>
-  <div class="col-6 col-md-6 col justify-center column">
+  <div class="col-12 col-md-6 col justify-center column">
     <div class="column justify-center" style="">
       <q-card class="col-12 col" style="">
         <q-card-section>
@@ -9,8 +9,8 @@
         <q-card-section>
           <div class="q-pa-md">
             <div class="row justify-around" style="">
-              <div class="col-12 text-center row q-mb-md justify-center">
-                <div class="col-6 text-center row justify-center">
+              <div class="col-12 text-center row q-mb-md justify-center q-gutter-y-md">
+                <div class="col-12 col-md-6 text-center row justify-center">
                   <q-input
                     class="col-11"
                     v-model="amazonlink"
@@ -47,7 +47,7 @@
                     />
                   </div>
                 </div>
-                <div class="col-6 text-center row justify-center">
+                <div class="col-12 col-md-6 text-center row justify-center">
                   <q-card
                     class="col-12 col-md-10"
                     flat
@@ -107,11 +107,11 @@
                 </div>
               </div>
               <q-input
-                class="col-5"
+                class="col-12 col-md-5"
                 v-model="lockerName"
                 label="Amazon Locker Name"
               />
-              <div class="col-5">
+              <div class="col-12 col-md-5">
                 <q-chip
                   color="red"
                   text-color="white"
@@ -125,7 +125,7 @@
                 />
               </div>
               <q-input
-                class="col-7"
+                class="col-12 col-md-7"
                 v-model="extraNotes"
                 autogrow
                 label="Questions, Concerns, & Notes"
@@ -140,7 +140,7 @@
                 />
               </span>
               <div
-                class="row col-8  q-mt-sm justify-center"
+                class="row col-12 col-md-8 q-mt-sm justify-center"
                 v-if="itemList.length !== 0"
               >
                 Sub-Total (USD): {{ orderUSDSubTotal }} <br />
@@ -150,7 +150,7 @@
                 Final Total (USD):
                 {{ finalTotalUSD }}
               </div>
-              <div class="row col-8 q-mt-md justify-center">
+              <div class="row col-12 col-md-8 q-mt-md justify-center">
                 <q-btn
                   :disable="itemList.length === 0 || disableSubmit"
                   class="col-12"

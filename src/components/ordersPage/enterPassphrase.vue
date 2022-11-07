@@ -1,5 +1,5 @@
 <template>
-  <div class="col-6 col-md-6 col justify-center column">
+  <div class="col-11 col-md-6 col justify-center column">
     <div class="column justify-center" style="">
         <q-card class="col-12 col" style="">
           <q-card-section class="bg-secondary text-white">
@@ -19,7 +19,7 @@
             <div class="">
               <div class="row justify-around" style="">
                 <div class="col-12 text-center row  justify-center">
-                <q-card class="col col-8 text-left justify-center bg-black text-white q-pb-md  row">
+                <q-card class="col-12 col-md-8 text-left justify-center bg-black text-white q-pb-md  row">
                   <q-card-section
                       class="col-11 text-center"
                       style="border-radius: 10px;"
