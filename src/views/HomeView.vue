@@ -1,7 +1,7 @@
 <template>
   <q-page
     style="
-      background-image: url('https://images.unsplash.com/photo-1607950369167-90df34616558?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
+      background-image: url('https://res.cloudinary.com/dylevfpbl/image/upload/v1667928942/photo-1607950369167-90df34616558.jpg');
       width: 100vw;
       background-repeat: no-repeat;
       background-size: cover;

@@ -165,6 +165,8 @@ async function checkForPayment(paymentID){
     lockerZipcode: toRaw(paymentInfo.value.lockerZipcode), lockerName: toRaw(paymentInfo.value.lockerName), extraNotes: toRaw(paymentInfo.value.extraNotes)}
   const results = await axios.post('/.netlify/functions/checkPaymentStatus', { paymentID, orderInfo })
   actuallyPaid.value = results.data.actually_paid
+  console.log(Number(paymentInfo.value.nowPaymentsInfo.pay_amount) <= Number(actuallyPaid.value))
+  console.log(Number(paymentInfo.value.nowPaymentsInfo.pay_amount))
   if (Number(paymentInfo.value.nowPaymentsInfo.pay_amount) <= Number(actuallyPaid.value)) {
     console.log('paid and should reload')
     location.reload()
