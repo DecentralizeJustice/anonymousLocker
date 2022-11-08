@@ -59,7 +59,7 @@ import shopperAvatar from "@/assets/detective.svg"
 import sanitizeHtml from 'sanitize-html'
 import { defineProps, toRef, ref, toRaw } from "vue"
 const axios = require('axios')
-const sender = 'dgoon'
+const sender = 'shopper'
 const props = defineProps({
   passphrase: { type: String, required: true },
   messageArray: { type: Object, required: true }

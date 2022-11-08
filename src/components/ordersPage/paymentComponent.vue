@@ -1,5 +1,5 @@
 <template>
-<div class="col-12 col-md-6 col justify-center">
+<div class="col-12 col-md-6 col justify-center items-center row">
   <div class="row justify-center" style="" v-if="!passphraseWrittenDown">
       <q-card class="col-12 col" style="">
         <!-- <q-card-section class="bg-secondary text-white">
@@ -50,7 +50,7 @@
         </q-card-section>
       </q-card>
     </div>
-    <div class="row justify-center" style="" v-if="passphraseWrittenDown">
+    <div class="row justify-center items-center" style="" v-if="passphraseWrittenDown">
       <q-card class="col-12 col" style="">
         <q-card-section class="bg-secondary text-white">
           <div class="text-h6">Order Payment</div>

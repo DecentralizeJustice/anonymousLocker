@@ -17,7 +17,7 @@
               class="text-h2 text-weight-regular"
               style="line-height: 120%; font-weight: 400"
             >
-              Shop Online Without Revealing Your Shipping Address
+              {{heroText}}
             </div>
             <div
               class="text-h5 text-weight-regular q-mt-md"
@@ -31,7 +31,7 @@
               class="text-h4 text-weight-regular"
               style="line-height: 120%; font-weight: 400"
             >
-              Shop Online Without Revealing Your Shipping Address
+              {{heroText}}
             </div>
             <div
               class="text-body1 text-weight-regular q-mt-md"
@@ -49,7 +49,7 @@
                 <div class="row justify-around">
                   <div class="col-12 col-md-3">
                     <p class="text-h6 text-weight-medium">Step 1.</p>
-                    <img :src="computer" class="q-mb-sm" style="width: 60%" />
+                    <img :src="computer" class="q-mb-sm" :class="{'desktopIcons': $q.screen.gt.sm, 'mobileIcons': $q.screen.lt.md}" style="" />
                     <br />
                     <p class="text-subtitle1 text-weight-medium">
                       Choose Amazon Product and <br />Place Order With Me
@@ -57,14 +57,14 @@
                   </div>
                   <div class="col-12 col-md-3">
                     <p class="text-h6 text-weight-medium">Step 2.</p>
-                    <img :src="monero" class="" style="width: 60%" /><br />
+                    <img :src="monero" class="" :class="{'desktopIcons': $q.screen.gt.sm, 'mobileIcons': $q.screen.lt.md}" /><br />
                     <p class="text-subtitle1 text-weight-medium">
                       Pay For Order With Monero
                     </p>
                   </div>
                   <div class="col-12 col-md-3">
                     <p class="text-h6 text-weight-medium">Step 3.</p>
-                    <img :src="lockerBig" class="" style="width: 60%" />
+                    <img :src="lockerBig" class="" :class="{'desktopIcons': $q.screen.gt.sm, 'mobileIcons': $q.screen.lt.md}" style="" />
                     <br />
                     <p class="text-subtitle1 text-weight-medium">
                       Pick Up Order At Amazon Locker <br />Near You
@@ -96,4 +96,11 @@
 import computer from "@/assets/svgs/monitor.svg"
 import monero from "@/assets/svgs/rand.svg"
 import lockerBig from "@/assets/svgs/end.svg"
+const heroText = 'Shop Without Exposing Your Shipping Address'
 </script>
+<style lang="sass" scoped>
+.desktopIcons
+  width:  60%
+.mobileIcons
+  width:  30%
+</style>
