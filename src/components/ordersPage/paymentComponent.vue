@@ -64,7 +64,11 @@
                 label="Don't Close/Refresh Window Till Payment Confirmed" class="q-mb-md desktop-only" />
                 <span class="mobile-only text-h5 q-mb-md" style="color:#C10015;"> Don't Close/Refresh Window Till Payment Confirmed</span>
                 <div class="col col-12 text-center text-h5">
-                Send <span style="color:#ff6600">{{paymentInfo.nowPaymentsInfo.pay_amount}}</span> Monero (XMR) to The Address Below:
+                Send <span style="color:#ff6600">{{paymentInfo.nowPaymentsInfo.pay_amount}}</span> 
+                Monero (XMR) to The Address Below:
+            </div>
+            <div class="col col-12 text-center text-h5">
+                No Partial Payments. Send Exact Amount.
             </div>
               <div class="col col-12 text-center justify-center">
                 <canvas
