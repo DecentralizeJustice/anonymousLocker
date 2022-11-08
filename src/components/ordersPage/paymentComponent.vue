@@ -165,12 +165,9 @@ async function checkForPayment(paymentID){
     lockerZipcode: toRaw(paymentInfo.value.lockerZipcode), lockerName: toRaw(paymentInfo.value.lockerName), extraNotes: toRaw(paymentInfo.value.extraNotes)}
   const results = await axios.post('/.netlify/functions/checkPaymentStatus', { paymentID, orderInfo })
   actuallyPaid.value = results.data.actually_paid
-  // console.log(results.data.actually_paid)
+  if (Number(paymentInfo.value.nowPaymentsInfo.pay_amount) <= Number(actuallyPaid.value)) {
+    console.log('paid and should reload')
+    location.reload()
+  }
 }
-// import computer from "@/assets/svgs/monitor.svg"
-// import delivery from "@/assets/svgs/delivery.svg"
-/* const emit = defineEmits(['firstChoice'])
-function selectFirstChoice(choice) {
-  emit('firstChoice',choice)
-} */
 </script>
