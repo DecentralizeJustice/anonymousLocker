@@ -67,9 +67,7 @@
                 Send <span style="color:#ff6600">{{paymentInfo.nowPaymentsInfo.pay_amount}}</span> 
                 Monero (XMR) to The Address Below:
             </div>
-            <div class="col col-12 text-center text-h5">
-                No Partial Payments. Send Exact Amount.
-            </div>
+
               <div class="col col-12 text-center justify-center">
                 <canvas
                   id="canvas"
@@ -90,6 +88,9 @@
             </div>
             <div class="row justify-around" style="">
               <div class="col-12 text-center row q-mb-md q-mt-md justify-center">
+                <div class="col col-12 text-center text-h5">
+                No Partial Payments. Send Exact Amount.
+            </div>
                 <div class="col col-12 text-center text-h6">
                 Amount Recieved So Far:
             </div>
