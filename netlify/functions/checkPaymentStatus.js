@@ -15,6 +15,9 @@ exports.handler = async (event, context) => {
     return { statusCode: 400, body: "paymentID too long" }
   }
   const apiRequest = await get(parsed.paymentID)
+  console.log(Number(apiRequest.pay_amount) <= Number(apiRequest.actually_paid))
+  console.log(Number(apiRequest.pay_amount))
+  console.log(Number(apiRequest.apiRequest.actually_paid))
   if (Number(apiRequest.pay_amount) <= Number(apiRequest.actually_paid)) {
     await setupBucket(parsed.orderInfo)
   }
