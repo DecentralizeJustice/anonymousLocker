@@ -68,6 +68,7 @@ const router = useRouter() */
 const options = [
   { label: "Home", value: "home" },
   { label: "Orders", value: "ordersPage" },
+  { label: "F.A.Q.", value: "faq" },
 ]
 function getButtonColor(params) {
   if (params === "ordersPage") {
