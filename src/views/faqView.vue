@@ -1,6 +1,6 @@
 <template>
   <q-page
-    style="width: 100vw; background-image: linear-gradient(to right top, #3d80d1, #576caa, #5a5b84, #514c61, #414042);"
+    style="width: 100%; background-image: linear-gradient(to right top, #3d80d1, #576caa, #5a5b84, #514c61, #414042);"
     class="q-pa-md row items-stretch text-center align-center justify-center"
   >
   <div class="row justify-center col col-12 col-md-11 align-center items-center" >

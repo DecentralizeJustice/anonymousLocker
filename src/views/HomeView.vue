@@ -2,14 +2,14 @@
   <q-page
     style="
       background-image: url('https://res.cloudinary.com/dylevfpbl/image/upload/v1667928942/photo-1607950369167-90df34616558.jpg');
-      width: 100vw;
+      width: 100%;
       background-repeat: no-repeat;
       background-size: cover;
     "
   >
     <!-- page content -->
 
-    <div class="row justify-center no-margin">
+    <div class="row justify-center no-margin no-padding col-12">
       <div class="row col col-10 col-md-6">
         <q-card class="q-mt-xl text-center bg-primary text-white col col-12">
           <q-card-section class="desktop-only">
