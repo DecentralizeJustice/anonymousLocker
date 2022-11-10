@@ -47,8 +47,8 @@
           Question: Hello buddy! I placed an order but couldnt send the xmr in time
           When i put the 4 words nothings comes up, should i just redo the order?</div>
           <div class="text-body1">      
-          Answer: Hi. You should not refresh the page. It will take you to the correct page once you pay. There is a button at the bottom that says "Check for Payment Recieved", you can hit this button to check and once your payment is received the page will automatically take you to the correct page. You should nto refresh the payment page.
-        The app does not store your shopping cart, till you pay for privacy reasons. So you must place the order again. Sorry for the inconvience. If you have any questions, feel free to shoot me another message.</div>
+          Answer: Hi. You should not refresh the page. It will take you to the correct page once you pay. There is a button at the bottom that says something like "Check for Payment Received", you can hit this button to check and once your payment is received the page will automatically take you to the correct page. You should not refresh the payment page.
+        The app does not store your shopping cart, till you pay for privacy reasons. So you must place the order again. Sorry for the inconvenience. If you have any questions, feel free to shoot me another message.</div>
       </q-card-section>
 
       <q-separator />
