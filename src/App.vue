@@ -69,6 +69,8 @@ const options = [
   { label: "Home", value: "home" },
   { label: "Orders", value: "ordersPage" },
   { label: "F.A.Q.", value: "faq" },
+  { label: "Message Me", value: "message" },
+
 ]
 function getButtonColor(params) {
   if (params === "ordersPage") {
