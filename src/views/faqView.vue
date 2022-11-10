@@ -77,10 +77,10 @@ You should not punished for securing your crypto.
 My service helps hide your address to prevent leaks like this.
  This is just one example of why you need to protect your shipping and order information.`
 const whyNotDIY =`People have been ordering to amazon lockers as a way to accomplish some privacy for years. 
-This process can be highly variable due to amazons anti-fraud detection methods. Using a prepaid credit card with a fresh account, could result in triggering amazon's
-anti-fraud detection. I would recomend a prepaid card, residential proxy, burner phone number, burner email and browser emulator like multi-login or incognito if you do this proccess yourself.
-You might still trigger thier anti fraud detection though, so your milage will vary. If you have fiat, it would be much easier and safer to just convert that fiat to cash and buy an item in person.`
-const whyNotPurse =`Purse.io has in the past allowed orders to amazon lockers. Thier current 
+This process can be highly variable due to amazon's anti-fraud detection methods. Using a prepaid credit card with a fresh account, could result in triggering amazon's
+anti-fraud detection. I would recommend a prepaid card, residential proxy, burner phone number, burner email and browser emulator like multi-login or incognito if you do this process yourself.
+You might still trigger their anti-fraud detection though, so your millage will vary. If you have fiat, it would be much easier and safer to just convert that fiat to cash and buy an item in person.`
+const whyNotPurse =`Purse.io has in the past allowed orders to amazon lockers. Their current 
 <a href="https://purse.crisp.help/en/article/common-questions-about-name-your-discount-faq-19vz0j8/">faq</a>
 does not allow for the delivery to amazon lockers.`
 </script>
