@@ -14,7 +14,7 @@
       <q-card-section class="">
         <div class="text-body1">      
           If you have not placed an order, and want to message me about something shoot me a message below. 
-      If you have placed an order and the chat is working, you should communicte wiht me using that chat instead.</div>
+      If you have placed an order and the chat is working, you should communicate with me using that chat instead.</div>
       </q-card-section>
       <q-card-section class="">
         <div class="row justify-around q-gutter-y-md">
