@@ -42,11 +42,12 @@
       <q-card-section class="bg-primary text-white">
         <div class="text-h6">Past Public Messages</div>
       </q-card-section>
-      <q-card-section class="text-left">
-        <div class="text-body1">      
-          Question: Hello buddy! I placed an order but couldnt send the xmr in time
+      <q-separator />
+      <q-card-section class="text-left  q-pa-md">
+        <div class="text-body1 bg-grey-10 q-pa-md text-white">      
+          Question 1: Hello buddy! I placed an order but couldnt send the xmr in time
           When i put the 4 words nothings comes up, should i just redo the order?</div>
-          <div class="text-body1">      
+          <div class="text-body1 q-pa-md">      
           Answer: Hi. You should not refresh the page. It will take you to the correct page once you pay. There is a button at the bottom that says something like "Refresh Amount Sent", you can hit this button to check and once your payment is received the page will automatically take you to the correct page. You should not refresh the payment page.
         The app does not store your shopping cart, till you pay for privacy reasons. So you must place the order again. Sorry for the inconvenience. If you have any questions, feel free to shoot me another message.</div>
       </q-card-section>
