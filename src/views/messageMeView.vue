@@ -45,6 +45,13 @@
       <q-separator />
       <q-card-section class="text-left  q-pa-md">
         <div class="text-body1 bg-grey-10 q-pa-md text-white">      
+          Question 2: Ok so you have your own app for this service? Download from Google store?</div>
+          <div class="text-body1 q-pa-md">      
+          Answer: Hi. I only have a web app for my srvices. If you want to place an order you can place an order in the orders tab. Here is a demo video of how it works:
+          https://www.youtube.com/watch?v=Al7NJsf_fAU </div>
+      </q-card-section>
+      <q-card-section class="text-left  q-pa-md">
+        <div class="text-body1 bg-grey-10 q-pa-md text-white">      
           Question 1: Hello buddy! I placed an order but couldnt send the xmr in time
           When i put the 4 words nothings comes up, should i just redo the order?</div>
           <div class="text-body1 q-pa-md">      
