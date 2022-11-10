@@ -56,6 +56,9 @@ const axios = require('axios')
 const text = ref('')
 const successMessage = ref('')
 async function sendMessage() {
+  if (text.value.length < 1) {
+    return
+  }
   const results = await axios.post('/.netlify/functions/sendMeMessage', { message: text.value })
   console.log(results)
   text.value = ''
