@@ -4,7 +4,10 @@ const faq =
         [
             ['How Does This Work?', `I have a full demo of Anonymous Locker <a href="https://www.youtube.com/watch?v=Al7NJsf_fAU">here</a>.`
             
-        ],
+            ],
+            [
+                'How much does this service Cost?', `My service is 5 Dollars plus 2% on top of amazons subtotal.`
+            ],
         ['Why Should I hide my shippping address?', 
         `Lets say you wanted to buy a hardware wallet. 
                 If you order from a retailer they will have your address and they could possibly leak that information. 
