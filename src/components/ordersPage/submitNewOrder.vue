@@ -109,7 +109,7 @@
               <q-input
                 class="col-12 col-md-5"
                 v-model="lockerName"
-                label="Amazon Locker Name"
+                label="Amazon Locker Name (Optional)"
               />
               <div class="col-12 col-md-5">
                 <q-chip
