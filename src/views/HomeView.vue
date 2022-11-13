@@ -14,13 +14,13 @@
         <q-card class="q-mt-xl text-center bg-primary text-white col col-12">
           <q-card-section class="desktop-only">
             <div
-              class="text-h2 text-weight-regular"
+              class="text-h3 text-weight-regular"
               style="line-height: 120%; font-weight: 400"
             >
               {{heroText}}
             </div>
             <div
-              class="text-h5 text-weight-regular q-mt-md"
+              class="text-h6 text-weight-regular q-mt-md"
               style="line-height: 120%"
             >
               No Address, Identification, or Email needed. Just Monero!
@@ -96,7 +96,7 @@
 import computer from "@/assets/svgs/monitor.svg"
 import monero from "@/assets/svgs/rand.svg"
 import lockerBig from "@/assets/svgs/end.svg"
-const heroText = 'Shop Without Exposing Your Shipping Address'
+const heroText = 'Shop Anonymously With Amazon Lockers'
 </script>
 <style lang="sass" scoped>
 .desktopIcons

@@ -1,11 +1,10 @@
 const faq =
 {
-    'General Qeustions':
-        [
-            ['How Does This Work?', `I have a full demo of Anonymous Locker <a href="https://www.youtube.com/watch?v=Al7NJsf_fAU">here</a>.`
-            
+    'General Questions':
+    [
+        ['How Does This Work?', `I have a full demo of Anonymous Locker <a href="https://www.youtube.com/watch?v=Al7NJsf_fAU">here</a>.`   
         ],
-        ['Why Should I hide my shippping address?', 
+        ['Why Should I hide my shipping address?', 
         `Lets say you wanted to buy a hardware wallet. 
                 If you order from a retailer they will have your address and they could possibly leak that information. 
                 <a href="https://www.w3schools.com">Ledger</a>
@@ -16,9 +15,19 @@ const faq =
                 death threats due to these leaks. 
                 You should not punished for securing your crypto. 
                 My service helps hide your address to prevent leaks like this.
-                This is just one example of why you need to protect your shipping and order information.`]
+                This is just one example of why you need to protect your shipping and order information.`
+        ],
+        [
+            'Terms of Service', 
+            `You will never have to enter any personal informtion to use my service. I do not track ip addresses, but the host of my site does. 
+            You are free to use tor, vpn, or any other ip hiding service. I will never ask for kyc information or any of the sorts.`
+        ],
+        [
+            'Is the Code Open Source?', 'Yes, here is the <a href="https://github.com/DecentralizeJustice/anonymousLocker">github</a> repo for the code.'
+        ]
     ],
-    'Alternative Methods': [
+    'Alternative Methods': 
+    [
         [
             `Couldn't I just ship my orders to a amazon locker myself?`, 
             `People have been ordering to amazon lockers as a way to accomplish some privacy for years. This process can be highly variable due to amazons anti-fraud detection methods. Using a prepaid credit card with a fresh account, could result in triggering amazon's anti-fraud detection. I would recomend a prepaid card, residential proxy, burner phone number, burner email and browser emulator like multi-login or incognito if you do this proccess yourself. You might still trigger thier anti fraud detection though, so your milage will vary. If you have fiat, it would be much easier and safer to just convert that fiat to cash and buy an item in person.`
@@ -27,8 +36,8 @@ const faq =
         [
             `Can't I use purse.io?`,
             `Purse.io has in the past allowed orders to amazon lockers. Thier current 
-<a href="https://purse.crisp.help/en/article/common-questions-about-name-your-discount-faq-19vz0j8/">faq</a>
-does not allow for the delivery to amazon lockers.`
+            <a href="https://purse.crisp.help/en/article/common-questions-about-name-your-discount-faq-19vz0j8/">faq</a>
+            does not allow for the delivery to amazon lockers.`
         ]
 
     ]
