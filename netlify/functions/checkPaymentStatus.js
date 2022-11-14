@@ -1,9 +1,8 @@
 const nowKey = process.env.nowPaymentsAPIKey
 const _sodium = require("libsodium-wrappers")
 const axios = require("axios")
-const pantry = require('pantry-node')
-const pantryID = process.env.pantryID
-const pantryClient = new pantry(pantryID) // eslint-disable-line new-cap
+const Redis = require('ioredis')
+const redisPassword = process.env.redisPassword
 exports.handler = async (event, context) => {
   // Only allow POST
   if (event.httpMethod !== "POST") {
@@ -38,9 +37,14 @@ async function setupBucket(orderInfo){
   const publicKeyBase64 = process.env.initialPublicKeyBase64 
   const privateKeyBase64 = process.env.initialPrivateKeyBase64
   const numberArray = await decrypt(publicKeyBase64, privateKeyBase64, orderInfo.nowPaymentsInfo.order_id)
-  const results = await pantryClient.basket.create(numberArray, { messageArray: [firstMessage]})
-  console.log(results)
-  return results
+  const redis = new Redis({
+    host: 'redis-12641.c278.us-east-1-4.ec2.cloud.redislabs.com',
+    port: 12641,
+    password: redisPassword
+  })
+  const json = await redis.call("JSON.SET", numberArray, "$", JSON.stringify({ messageArray: [firstMessage]}))
+  redis.disconnect()
+  return json
 }
 function processFirstMessage(orderDetails) {
   let firstString = ''

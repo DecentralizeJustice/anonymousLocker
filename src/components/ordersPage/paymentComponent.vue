@@ -75,6 +75,9 @@
                   style=""
                 />
               </div>
+              <div class="col col-8 text-center q-mb-sm" style="overflow-wrap: break-word;">
+                {{address}}
+              </div>
               <div class="col col-12 text-center">
                   <q-btn
                   no-caps
@@ -124,6 +127,7 @@ import { numberArrayToWordArray } from'@/assets/misc.js'
 const axios = require('axios')
 const passphraseWrittenDown = ref(false)
 const actuallyPaid = ref(0)
+const address = ref('')
 const disablePaymentCheck = ref(false)
 const props = defineProps({
   paymentInfo: { type: Object, required: true }
@@ -141,6 +145,7 @@ function copy () {
 function createQRCode () {
   const canvas = document.getElementById('canvas')
   if (canvas === null) { return }
+  address.value = paymentInfo.value.nowPaymentsInfo.pay_address
   QRCode.toCanvas(canvas, paymentInfo.value.nowPaymentsInfo.pay_address, { errorCorrectionLevel: 'L' }, function (error) {
     if (error) console.error(error)
   })

@@ -12,7 +12,7 @@ exports.handler = async (event, context) => {
     host: 'redis-12641.c278.us-east-1-4.ec2.cloud.redislabs.com',
     port: 12641,
     password: redisPassword
-});
+  })
   const json = await redis.call("JSON.GET", bucketID)
   redis.disconnect()
   const parsedResponse = JSON.parse(json)

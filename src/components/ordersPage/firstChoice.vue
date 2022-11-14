@@ -11,7 +11,6 @@
               style="color: white" 
               padding="sm"
               no-caps
-              :disable="true"
               @click="selectFirstChoice('newOrder')"
             />
           </q-card-section>
