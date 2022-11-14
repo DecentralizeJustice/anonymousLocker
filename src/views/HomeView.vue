@@ -1,15 +1,10 @@
 <template>
   <q-page
-    style="
-      background-image: url('https://res.cloudinary.com/dylevfpbl/image/upload/v1667928942/photo-1607950369167-90df34616558.jpg');
-      width: 100%;
-      background-repeat: no-repeat;
-      background-size: cover;
-    "
+  style="width: 100%; background-image: linear-gradient(to right top, #3d80d1, #576caa, #5a5b84, #514c61, #414042);"
   >
     <!-- page content -->
 
-    <div class="row justify-center no-margin no-padding col-12">
+    <div class="row justify-around no-margin no-padding col-12">
       <div class="row col col-10 col-md-6">
         <q-card class="q-mt-xl text-center bg-primary text-white col col-12">
           <q-card-section class="desktop-only">
@@ -87,7 +82,16 @@
           </q-card-section>
         </q-card>
       </div>
-      <div class="col col-4"></div>
+      <div class="col col-10 col-md-3">
+        <!--  1. Create a lottie player with a reference -->
+        <lottie-player
+        autoplay
+        loop
+        mode="normal"
+        speed=".75"
+        src="https://assets5.lottiefiles.com/private_files/lf30_mn61zlcj.json"
+      ></lottie-player>
+      </div>
     </div>
   </q-page>
 </template>
@@ -96,7 +100,11 @@
 import computer from "@/assets/svgs/monitor.svg"
 import monero from "@/assets/svgs/rand.svg"
 import lockerBig from "@/assets/svgs/end.svg"
+import * as LottiePlayer from "@lottiefiles/lottie-player";
+import { onMounted } from "vue"
 const heroText = 'Shop Anonymously With Amazon Lockers'
+onMounted(() => {
+    })
 </script>
 <style lang="sass" scoped>
 .desktopIcons
