@@ -3,7 +3,7 @@ const _sodium = require("libsodium-wrappers")
 const axios = require("axios")
 const Redis = require('ioredis')
 const redisPassword = process.env.redisPassword
-exports.handler = async (event, context) => {
+exports.handler = async (event) => {
   // Only allow POST
   if (event.httpMethod !== "POST") {
     return { statusCode: 405, body: "Method Not Allowed" }

@@ -31,7 +31,7 @@
     </div>
     <div class="row justify-around q-gutter-y-md">
       <div class="col-12 col-md-6 ">
-        <q-btn @click="sendMessage"  color="positive" icon="send"> Send Message</q-btn>
+        <q-btn @click="sendMessage"  color="positive" icon="send" :disable="buttonDisabled"> Send Message</q-btn>
       </div>
     </div>
       </q-card-section>  
@@ -78,10 +78,17 @@ import { ref } from "vue"
 const axios = require('axios')
 const text = ref('')
 const successMessage = ref('')
+const buttonDisabled = ref(false)
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 async function sendMessage() {
   if (text.value.length < 1) {
     return
   }
+  buttonDisabled.value = true
+  await sleep(3000)
+  buttonDisabled.value = false
   const results = await axios.post('/.netlify/functions/sendMeMessage', { message: text.value })
   console.log(results)
   text.value = ''
