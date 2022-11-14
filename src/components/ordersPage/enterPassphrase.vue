@@ -14,6 +14,7 @@
                     <div class="text-h6 text-white col-8 bg-red-5 q-pa-md">
                       Order Does Not Exist!
                     </div>
+                    <span class="q-mt-sm"><router-link to="message">Message Me If Your Having Issues</router-link></span>
                   </q-card-section>
           <q-card-section>
             <div class="">
@@ -102,10 +103,9 @@ async function enterPassphrase() {
       // messageArray.value = results.data.messageArray
       emit('passphraseEnteredSuccess', results.data.messageArray, potentialPassphrase)
     } catch (error) {
-      if (error.response.data.slice(0, 20) === 'Could not get basket') {
+      console.log(error.response)
         orderNotFound.value = true
         console.log('order not found')
-      }
     }
   }
 }
@@ -115,7 +115,6 @@ function sleep(ms) {
 watch(
   () => passphraseWords,
   () => {
-    console.log('ran')
     orderNotFound.value = false
   },
   { deep: true }
