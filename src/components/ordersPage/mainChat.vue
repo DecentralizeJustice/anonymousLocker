@@ -103,16 +103,16 @@ function getTextColor(sender) {
 }
 async function sendMessage() {
   disableButtons.value = true
-  await sleep(2000)
+  await sleep(1000)
   disableButtons.value = false
   const data = { bucket: passphrase.value, message: text.value, sender }
-  const results = await axios.post('/.netlify/functions/sendMessage', data)
-  messageArray.value = results.data.messageArray
+  await axios.post('/.netlify/functions/sendMessage', data)
   text.value = ''
+  await checkForMessages()
 }
 async function checkForMessages() {
   disableButtons.value = true
-  await sleep(2000)
+  await sleep(1000)
   disableButtons.value = false
   const data = { bucketID: passphrase.value }
   const results = await axios.post('/.netlify/functions/getOrder', data)
