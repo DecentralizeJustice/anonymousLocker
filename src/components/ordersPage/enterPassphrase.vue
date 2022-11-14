@@ -115,6 +115,7 @@ function sleep(ms) {
 watch(
   () => passphraseWords,
   () => {
+    console.log('ran')
     orderNotFound.value = false
   },
   { deep: true }
@@ -135,9 +136,10 @@ function getPassphraseInputLabels(i) {
 }
 function wordToNumber(word) {
   const wordArray = bip39Wordlist.split(/\r?\n/)
+  const tempWord = word.toLowerCase().replace(/\s+/g, '')
   for (let index = 0; index < wordArray.length; index++) {
     const element = wordArray[index]
-    if (element === word) {
+    if (element === tempWord) {
       return index
     }
   }
