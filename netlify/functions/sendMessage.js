@@ -1,10 +1,5 @@
 const Redis = require('ioredis')
 const redisPassword = process.env.redisPassword
-const redis = new Redis({
-    host: 'redis-12641.c278.us-east-1-4.ec2.cloud.redislabs.com',
-    port: 12641,
-    password: redisPassword
-});
 exports.handler = async (event, context) => {
   // Only allow POST
   if (event.httpMethod !== "POST") {
@@ -24,6 +19,11 @@ exports.handler = async (event, context) => {
   }
 }
 async function updateBucket(bucket, newMessage){
+  const redis = new Redis({
+    host: 'redis-12641.c278.us-east-1-4.ec2.cloud.redislabs.com',
+    port: 12641,
+    password: redisPassword
+});
   const json = await redis.call("JSON.ARRAPPEND", bucket, 'messageArray', JSON.stringify(newMessage))
   redis.disconnect()
   return json
