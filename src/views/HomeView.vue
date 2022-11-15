@@ -68,12 +68,11 @@
               </div>
             </div>
             <div class="text-center">
-              <router-link :to="{ name: 'ordersPage' }" style="text-decoration:none !important; text-decoration:none;">
+              <router-link :to="{ name: 'ordersPage' }" style="text-decoration:none !important;">
                 <q-btn
                   color="primary"
                   label="Place A Order!"
                   size="lg"
-                  style="color: white"
                   padding="sm"
                 />
               </router-link>
@@ -91,7 +90,55 @@
 ></lottie-player>
       </div>
     </div>
-    <div class="row justify-around items-end no-margin col-12 bg-grey-5 text-left q-pb-xl q-pt-xl" style="width: 100%;">
+    <div class="row justify-around col-12 bg-grey-5 items-center  q-py-xl" style="width: 100%;">
+      <div class="col-12 col-md-6 text-center row justify-center q-px-md items-center">      
+        <div class="col-12 q-my-sm">
+          <img src="https://res.cloudinary.com/dylevfpbl/image/upload/v1668533180/landingPageWalletLeak/Screenshot_2022-11-15_121721_Cropped_2.png" class="walletImage"/>
+        </div>
+        <div class="col-12 q-my-sm">
+          <img src="https://res.cloudinary.com/dylevfpbl/image/upload/v1668534042/landingPageWalletLeak/Screenshot_2022-11-15_121558_Cropped.png" class="walletImage"/>
+        </div>
+      </div>
+      <div class="col-11 col-md-4 text-center row justify-center items-center q-pt-md">      
+        <q-card class=" text-left bg-primary text-white col col-12">
+          <q-card-section>
+            <div
+              class="text-h4 text-weight-regular"
+              style="line-height: 120%; font-weight: 400"
+            >
+              Trezor, Ledger, and Coinkite have all leaked home addresses, phone numbers and/or emails in the past. <br/> 
+              
+              
+            </div>
+            <div
+              class="text-h4 text-weight-regular text-center q-mt-sm"
+              style="line-height: 120%;"
+            >
+            <!-- <span style="text-decoration: underline;">Don't take that risk!</span> -->
+            <div class="text-center q-mt-sm">
+              <img
+                  src="@/assets/svgs/homeLock.svg"
+                  style="max-width: 10%"
+                  class="q-my-sm"
+                /><br/>
+              <router-link :to="{ name: 'ordersPage' }" style="text-decoration:none !important;">
+                <q-btn
+                  color="white"
+                  label="Protect Your Home Address"
+                  size="lg"
+                  style="color: white"
+                  padding="sm"
+                  text-color="primary"
+                ></q-btn>
+              </router-link>
+            </div>
+            </div>
+          </q-card-section>
+        </q-card>
+      </div>
+    
+    </div>
+    <div class="row justify-around items-end no-margin col-12 bg-grey-8 text-left q-pb-xl q-pt-xl" style="width: 100%;">
       <div class="col-12 text-center text-white text-h4 q-pb-lg">      
         Testimonials
       </div>
@@ -149,11 +196,16 @@ require("@lottiefiles/lottie-player")
 const heroText = 'Spend Monero Anonymously With Amazon Lockers'
 const heroSubtext = `Hide Your Home Address from Hackers and Marketers!`
 onMounted(() => {
+
     })
 </script>
 <style lang="sass" scoped>
 .desktopIcons
   width:  60%
+.walletImage
+  border-radius: 25px 
+  width: 100%
+  height: auto
 .mobileIcons
   width:  30%
 </style>
