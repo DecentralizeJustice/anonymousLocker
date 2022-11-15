@@ -144,8 +144,8 @@ import shopperAvatar2 from "@/assets/svgs/incognito.svg"
 import computer from "@/assets/svgs/monitor.svg"
 import monero from "@/assets/svgs/rand.svg"
 import lockerBig from "@/assets/svgs/end.svg"
-import * as LottiePlayer from "@lottiefiles/lottie-player";
 import { onMounted } from "vue"
+require("@lottiefiles/lottie-player")
 const heroText = 'Shop Anonymously With Amazon Lockers'
 onMounted(() => {
     })
