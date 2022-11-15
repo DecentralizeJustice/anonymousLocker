@@ -17,7 +17,7 @@
               class="text-h6 text-weight-regular q-mt-md"
               style="line-height: 120%"
             >
-              No Address, Identification, or Email needed. Just Monero!
+              {{heroSubtext}}
             </div>
           </q-card-section>
           <q-card-section class="mobile-only">
@@ -31,7 +31,7 @@
               class="text-body1 text-weight-regular q-mt-md"
               style="line-height: 120%"
             >
-              No Address, Identification, or Email needed. Just Monero!
+              {{heroSubtext}}
             </div>
           </q-card-section>
         </q-card>
@@ -147,6 +147,7 @@ import lockerBig from "@/assets/svgs/end.svg"
 import { onMounted } from "vue"
 require("@lottiefiles/lottie-player")
 const heroText = 'Shop Anonymously With Amazon Lockers'
+const heroSubtext = `Don't Expose Your Home Address to Hackers and Marketers!`
 onMounted(() => {
     })
 </script>
