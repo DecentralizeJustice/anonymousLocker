@@ -36,7 +36,7 @@
               filled
               autogrow
               class="overflow-auto scroll"
-              style="width: 100%;  max-height: 12vh;"
+              style="width: 100%;"
             />
           </div>
           <div class="row justify-around q-gutter-y-md">
