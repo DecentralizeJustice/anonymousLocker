@@ -1,6 +1,6 @@
 <template>
-  <q-layout view="hHh lpR fFf">
-    <q-header elevated class="bg-secondary text-white">
+  <q-layout view="hhh lpr fff">
+    <q-header class="bg-secondary text-white">
       <q-toolbar>
         <img
           src="./assets/svgs/locker.svg"

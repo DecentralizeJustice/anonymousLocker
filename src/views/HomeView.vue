@@ -146,8 +146,8 @@ import monero from "@/assets/svgs/rand.svg"
 import lockerBig from "@/assets/svgs/end.svg"
 import { onMounted } from "vue"
 require("@lottiefiles/lottie-player")
-const heroText = 'Shop Anonymously With Amazon Lockers'
-const heroSubtext = `Don't Expose Your Home Address to Hackers and Marketers!`
+const heroText = 'Spend Monero Anonymously With Amazon Lockers'
+const heroSubtext = `Hide Your Home Address from Hackers and Marketers!`
 onMounted(() => {
     })
 </script>
