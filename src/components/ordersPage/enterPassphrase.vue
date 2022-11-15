@@ -40,6 +40,7 @@
                       />
                       <q-input
                       dark
+                      mask="aaaaaaaaaaaaaaaaaaaaaaaa"
                       standout="bg-primary text-white"
                       label-color="white"
                       class="col-10"
