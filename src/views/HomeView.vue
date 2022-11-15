@@ -81,7 +81,7 @@
           </q-card-section>
         </q-card>
       </div>
-      <div class="col col-10 col-md-3">
+      <div class="col col-10 col-md-3 desktop-only">
         <lottie-player
         autoplay
         loop
