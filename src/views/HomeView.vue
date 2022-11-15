@@ -3,7 +3,7 @@
   >
     <!-- page content -->
 
-    <div class="row justify-around no-margin no-padding col-12" style="width: 100%; background-image: linear-gradient(to right top, #3d80d1, #576caa, #5a5b84, #514c61, #414042);">
+    <div class="row justify-evenly q-pb-xl col-12 " style="width: 100%; background-image: linear-gradient(to right top, #3d80d1, #576caa, #5a5b84, #514c61, #414042);">
       <div class="row col col-10 col-md-6">
         <q-card class="q-mt-xl text-center bg-primary text-white col col-12">
           <q-card-section class="desktop-only">
@@ -91,8 +91,8 @@
       ></lottie-player>
       </div>
     </div>
-    <div class="row justify-around items-end no-margin col-12 bg-grey-5 text-left q-pb-xl q-pt-md" style="width: 100%;">
-      <div class="col-12 text-center text-white text-h4 q-pb-md">      
+    <div class="row justify-around items-end no-margin col-12 bg-grey-5 text-left q-pb-xl q-pt-xl" style="width: 100%;">
+      <div class="col-12 text-center text-white text-h4 q-pb-lg">      
         Testimonials
       </div>
       <div class="col-11 col-md-3">      
