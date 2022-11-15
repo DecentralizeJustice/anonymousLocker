@@ -117,14 +117,14 @@
             <!-- <span style="text-decoration: underline;">Don't take that risk!</span> -->
             <div class="text-center q-mt-sm">
               <img
-                  src="@/assets/svgs/homeLock.svg"
-                  style="max-width: 10%"
+                  src="@/assets/svgs/privacy.svg"
+                  style="max-width: 7vw;"
                   class="q-my-sm"
                 /><br/>
               <router-link :to="{ name: 'ordersPage' }" style="text-decoration:none !important;">
                 <q-btn
                   color="white"
-                  label="Protect Your Home Address"
+                  label="Protect Your Information"
                   size="lg"
                   style="color: white"
                   padding="sm"
