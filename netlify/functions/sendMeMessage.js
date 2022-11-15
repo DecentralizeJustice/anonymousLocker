@@ -1,8 +1,10 @@
-const mailgun = require("mailgun-js");
+const formData = require('form-data')
+const Mailgun = require('mailgun.js')
+const mailgun = new Mailgun(formData);
 const myEmail = process.env.myEmail
 const MAILGUN_API_KEY = process.env.MAILGUN_API_KEY
 const DOMAIN = process.env.mailGunDomain
-const mg = mailgun({apiKey: MAILGUN_API_KEY, domain: DOMAIN});
+const mg = mailgun.client({username: 'api', key: MAILGUN_API_KEY});
 exports.handler = async (event) => {
   // Only allow POST
   if (event.httpMethod !== "POST") {
@@ -11,13 +13,12 @@ exports.handler = async (event) => {
   const params = event.body
   const parsed = JSON.parse(params)
   const message = parsed.message
-  const data = {
-    from: 'Anon Locker <me@samples.mailgun.org>',
-    to: myEmail,
-    subject: 'New Anon Locker Anonymous Message',
+  const result = await mg.messages.create(DOMAIN, {
+    from: "Anon Server <me@samples.mailgun.org>",
+    to: [myEmail],
+    subject: "New Anon Locker Anonymous Message!",
     text: `${message}`
-  };
-  const result = await mg.messages().send(data)
+  })
   console.log(result)
   return {
     statusCode: 200

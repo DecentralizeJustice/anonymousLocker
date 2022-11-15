@@ -1,10 +1,9 @@
 <template>
   <q-page
-  style="width: 100%; background-image: linear-gradient(to right top, #3d80d1, #576caa, #5a5b84, #514c61, #414042);"
   >
     <!-- page content -->
 
-    <div class="row justify-around no-margin no-padding col-12">
+    <div class="row justify-around no-margin no-padding col-12" style="width: 100%; background-image: linear-gradient(to right top, #3d80d1, #576caa, #5a5b84, #514c61, #414042);">
       <div class="row col col-10 col-md-6">
         <q-card class="q-mt-xl text-center bg-primary text-white col col-12">
           <q-card-section class="desktop-only">
@@ -83,7 +82,6 @@
         </q-card>
       </div>
       <div class="col col-10 col-md-3">
-        <!--  1. Create a lottie player with a reference -->
         <lottie-player
         autoplay
         loop
@@ -93,10 +91,56 @@
       ></lottie-player>
       </div>
     </div>
+    <div class="row justify-around items-end no-margin col-12 bg-grey-5 text-left q-pb-xl q-pt-md" style="width: 100%;">
+      <div class="col-12 text-center text-white text-h4 q-pb-md">      
+        Testimonials
+      </div>
+      <div class="col-11 col-md-3">      
+        <q-chat-message
+        name="<span class='text-subtitle1'>Sapook</span>"
+        text-html
+        name-html
+        bg-color="white"
+        :avatar=shopperAvatar1
+        :text="[``]"
+        ><div class="text-h5 q-pa-md">
+          I really like this idea, not eligible to try but I hope to see some feedbacks soon :) Good luck with your project !
+        </div>
+        
+      </q-chat-message>
+      </div>
+      <div class="col-11 col-md-3">      
+        <q-chat-message
+        text-html
+        bg-color="white"
+        name-html
+        name="<span class='text-subtitle1'>ksilverstein</span>"
+        :avatar=shopperAvatar2
+        :text="[``]"
+        ><div class="text-h5 q-pa-md">
+          Wow, that's very, very good. Wish I could give you more than one upvote. ... Thank you for doing this.
+        </div></q-chat-message>
+      </div>
+      <div class="col-11 col-md-3">      
+        <q-chat-message
+        text-html
+        name-html
+        bg-color="white"
+        name="<span class='text-subtitle1'>First Customer</span>"
+        :avatar=shopperAvatar
+        :text="[`<span class=''></span>`]"
+        ><div class="text-h5 q-pa-md">
+          This is really great man! What a great idea!
+        </div></q-chat-message>
+      </div>
+    </div>
   </q-page>
 </template>
 
 <script setup>
+import shopperAvatar from "@/assets/detective.svg"
+import shopperAvatar1 from "@/assets/svgs/firstPageIcon.svg"
+import shopperAvatar2 from "@/assets/svgs/incognito.svg"
 import computer from "@/assets/svgs/monitor.svg"
 import monero from "@/assets/svgs/rand.svg"
 import lockerBig from "@/assets/svgs/end.svg"
