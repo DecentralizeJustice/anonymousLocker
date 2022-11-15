@@ -1066,13 +1066,6 @@
   resolved "https://registry.yarnpkg.com/@lit/reactive-element/-/reactive-element-1.4.2.tgz#65d659e89d1a7e2f4f2b547182aef0a224f4adb7"
   integrity sha512-VMOxsWh/QDwrxPsgkSQnuZ+8mfNy1OTjzzUdLBvvZtpahwPTHTeVZ51RZRqO4xfKVrR+btIPA8D01IL3xeG66w==
 
-"@lottiefiles/lottie-interactivity@^1.6.1":
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/@lottiefiles/lottie-interactivity/-/lottie-interactivity-1.6.1.tgz#f816333d59ea19ae957b85c681935616047fdb50"
-  integrity sha512-ZQE+1I5nqLPOWgsK0tEeG9RQDfBDBLu2WrWwz2c6+pOvgiYObRR2Z1+16suNStXkGbN5+vKYok8Bw7DZwffVRQ==
-  dependencies:
-    core-js "3"
-
 "@lottiefiles/lottie-player@^1.6.0":
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/@lottiefiles/lottie-player/-/lottie-player-1.6.0.tgz#37cec0fe4f38bc328257542dcda38ab0d251fc85"
@@ -2681,11 +2674,6 @@ core-js-compat@^3.25.1, core-js-compat@^3.8.3:
   integrity sha512-piOX9Go+Z4f9ZiBFLnZ5VrOpBl0h7IGCkiFUN11QTe6LjAvOT3ifL/5TdoizMh99hcGy5SoLyWbapIY/PIb/3A==
   dependencies:
     browserslist "^4.21.4"
-
-core-js@3:
-  version "3.26.1"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.26.1.tgz#7a9816dabd9ee846c1c0fe0e8fcad68f3709134e"
-  integrity sha512-21491RRQVzUn0GGM9Z1Jrpr6PNPxPi+Za8OM9q4tksTSnlbXXGKK1nXNg/QvwFYettXvSX6zWKCtHHfjN4puyA==
 
 core-js@^3.8.3:
   version "3.26.0"

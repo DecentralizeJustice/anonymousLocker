@@ -88,7 +88,7 @@
         mode="normal"
         speed=".75"
         src="https://assets5.lottiefiles.com/private_files/lf30_mn61zlcj.json"
-      ></lottie-player>
+></lottie-player>
       </div>
     </div>
     <div class="row justify-around items-end no-margin col-12 bg-grey-5 text-left q-pb-xl q-pt-xl" style="width: 100%;">
