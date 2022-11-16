@@ -61,7 +61,7 @@
                     <img :src="lockerBig" class="" :class="{'desktopIcons': $q.screen.gt.sm, 'mobileIcons': $q.screen.lt.md}" style="" />
                     <br />
                     <p class="text-subtitle1 text-weight-medium">
-                      Pick Up Order At Amazon Locker <br />Near You
+                      Pick Up Order At Amazon Locker Near You
                     </p>
                   </div>
                 </div>
@@ -71,7 +71,7 @@
               <router-link :to="{ name: 'ordersPage' }" style="text-decoration:none !important;">
                 <q-btn
                   color="primary"
-                  label="Place A Order!"
+                  label="Place An Order!"
                   size="lg"
                   padding="sm"
                 />
@@ -97,11 +97,11 @@
               class="text-h4 text-weight-regular text-left text-white"
               style="line-height: 120%; font-weight: 400; font-style: italic;"
             >
-            "F**k sake! This is my actual home address in the email. I don't even know what to say!"
+            "I just received a phone call threatening kidnapping and murder over my ledger."
             </div>
             <div
-              class="text-h6 text-weight-regular text-center no-padding q-mt-sm text-white"
-            >- Ledger Address & Phone Number Leak Victim
+              class="text-h6 text-weight-regular text-center no-padding text-white q-mt-sm"
+            >- Ledger Leak Victim
             </div>
 
         </div>
@@ -110,11 +110,11 @@
               class="text-h4 text-weight-regular text-left text-white"
               style="line-height: 120%; font-weight: 400; font-style: italic;"
             >
-            "I fell victim to the Trezor phishing scam...Amazing to hear Trezor was using MailChimp."
+            "F**k sake! This is my actual home address in the email. I don't even know what to say!"
             </div>
             <div
-              class="text-h6 text-weight-regular text-center no-padding text-white q-mt-sm"
-            >- Trezor Email Leak Victim
+              class="text-h6 text-weight-regular text-center no-padding q-mt-sm text-white"
+            >- Ledger Leak Victim
             </div>
 
         </div>
@@ -144,7 +144,7 @@
               <router-link :to="{ name: 'ordersPage' }" style="text-decoration:none !important;">
                 <q-btn
                   color="primary"
-                  label="Place An Order"
+                  label="Protect Your Privacy"
                   size="lg"
                   style="color: white"
                   padding="sm"
