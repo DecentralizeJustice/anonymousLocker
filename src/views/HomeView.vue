@@ -101,7 +101,7 @@
             </div>
             <div
               class="text-h6 text-weight-regular text-center no-padding text-white q-mt-sm"
-            >- Ledger Leak Victim
+            >- u/goldcakes, Ledger Leak Victim
             </div>
 
         </div>
@@ -110,11 +110,11 @@
               class="text-h4 text-weight-regular text-left text-white"
               style="line-height: 120%; font-weight: 400; font-style: italic;"
             >
-            "F**k sake! This is my actual home address in the email. I don't even know what to say!"
+            "I was told that worse things would happen if I didn't pay them $50,000 in bitcoin."
             </div>
             <div
               class="text-h6 text-weight-regular text-center no-padding q-mt-sm text-white"
-            >- Ledger Leak Victim
+            >- Jameson Lopp, SWATT Victim
             </div>
 
         </div>
@@ -126,9 +126,7 @@
               class="text-h4 text-weight-regular text-center"
               style="line-height: 120%; font-weight: 400"
             >
-              Trezor, Ledger, and Coinkite have all leaked home addresses, phone numbers and/or emails in the past. <br/> 
-              
-              
+              Protect Your Address From The Next Data Breach.
             </div>
             <div
               class="text-h4 text-weight-regular text-center q-mt-sm"
@@ -144,7 +142,7 @@
               <router-link :to="{ name: 'ordersPage' }" style="text-decoration:none !important;">
                 <q-btn
                   color="primary"
-                  label="Protect Your Privacy"
+                  label="Protect Your Address"
                   size="lg"
                   style="color: white"
                   padding="sm"
