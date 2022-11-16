@@ -1,5 +1,5 @@
 <template>
-  <q-page style="width: 100%; background-image: linear-gradient(to right top, #f5ffdd, #ff7a25, #f5a642, #edc970, #ebe6a6, #f5ffdd);"
+  <q-page style="width: 100%; background-color:grey;"
   >
     <!-- page content -->
 
@@ -93,11 +93,31 @@
     <div class="row justify-around col-12 items-center  q-py-xl bg-blue-grey-10" style="width: 100%;">
       <div class="col-12 col-md-6 text-center row justify-center q-px-md items-center">      
         <div class="col-12 q-my-sm">
-          <img src="https://res.cloudinary.com/dylevfpbl/image/upload/v1668533180/landingPageWalletLeak/Screenshot_2022-11-15_121721_Cropped_2.png" class="walletImage"/>
+            <div
+              class="text-h4 text-weight-regular text-left text-white"
+              style="line-height: 120%; font-weight: 400"
+            >
+            "F**k sake! This is my actual home address in the email. I don't even know what to say!"
+            </div>
+            <div
+              class="text-h6 text-weight-regular text-center no-padding no-margin text-white"
+            > <br/>- A Victim Of Ledger Database Leak
+            </div>
+
         </div>
-        <div class="col-12 q-my-sm">
-          <img src="https://res.cloudinary.com/dylevfpbl/image/upload/v1668534042/landingPageWalletLeak/Screenshot_2022-11-15_121558_Cropped.png" class="walletImage"/>
-        </div>
+<!--         <div class="col-12 q-my-sm">
+          <q-card class=" text-left bg-blue-grey-11 text-black col col-12">
+          <q-card-section>
+            <div
+              class="text-h4 text-weight-regular text-left"
+              style="line-height: 120%; font-weight: 400"
+            >
+            "I received a phone call threatening kidnapping and murder over my ledger."
+
+            </div>
+          </q-card-section>
+        </q-card>
+        </div> -->
       </div>
       <div class="col-11 col-md-4 text-center row justify-center items-center q-pt-md">      
         <q-card class=" text-left bg-blue-grey-11 text-black col col-12">
@@ -138,7 +158,7 @@
       </div>
     
     </div> 
-    <div class="row justify-around items-end no-margin col-12 text-left q-pb-xl q-pt-xl" style="width: 100%; background-image: linear-gradient(to right top, #f5ffdd, #ff7a25, #f5a642, #edc970, #ebe6a6, #f5ffdd);">
+    <div class="row justify-around items-end no-margin col-12 text-left q-pb-xl q-pt-xl" style="width: 100%; background-color:grey;">
       <div class="col-12 text-center text-white text-h4 q-pb-lg">      
         Testimonials
       </div>
