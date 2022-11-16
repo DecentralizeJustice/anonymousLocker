@@ -9,10 +9,24 @@ const faq =
         , My service would cost you 7 dollars. At checkout with me you would pay 107 dollars of monero to me. I also always use the free shipping option. If you
         need a faster method, just message me and we can work it out.`
         ],
+        [
+            `What are the limitations and stipulations of your service?`,
+            `The current limitations of my service are:
+            <ol>
+                <li>We only deliver to amazon lockers in the US.</li>
+                <li>Items must be fulfilled by amazon  since only amazon can ship to amazon lockers.</li>
+                <li>Refunds Incur an additional 1% charge and Service fees are non-refundable.</li>
+                <li>The minimum order is 25 dollars.</li>
+                <li>We do not offer free Prime 2-Day Shipping, but you can pay extra for faster if you so wish.</li>
+                <li>No items that are Federally Illegal in the states.</li>
+                <li> I reserve the right to decline to process an order. In this case a refund will be issue.</li>
+                <li> No orders can contain prepiad credit cards as an item.</li>
+            </ol>`
+        ],
         ['Why Should I hide my shipping address?', 
         `Lets say you wanted to buy a hardware wallet. 
                 If you order from a retailer they will have your address and they could possibly leak that information. 
-                <a href="https://www.w3schools.com">Ledger</a>
+                <a href="https://cointelegraph.com/news/ledger-data-leak-a-simple-mistake-exposed-270k-crypto-wallet-buyers">Ledger</a>
                 and 
                 <a href="https://blog.trezor.io/details-of-the-mailchimp-data-breach-a06872caa1fd">Trezor</a>
                 have both leaked customer information in the past. 
@@ -56,7 +70,7 @@ const faq =
             does not allow for the delivery to amazon lockers.`
         ],
         [
-            `Your service is too expensive, or I don't have monero. How Can I still get a hardware wallet anonymously?`,
+            `Your service is too expensive. How Can I still get a hardware wallet anonymously?`,
             `Ledger has partnered with <a href="https://www.ledger.com/blog/ledger-nano-x-and-nano-s-plus-now-available-in-all-best-buy-stores-nationwide">Best Buy</a> and they offer wallets for sale in store. If a store near you has a wallet in stock,
             you can pay for it with cash in person and still protect your identity. `
 
