@@ -54,6 +54,12 @@ const faq =
             `Purse.io has in the past allowed orders to amazon lockers. Their current 
             <a href="https://purse.crisp.help/en/article/common-questions-about-name-your-discount-faq-19vz0j8/">faq</a>
             does not allow for the delivery to amazon lockers.`
+        ],
+        [
+            `Your service is too expensive, or I don't have monero. How Can I still get a hardware wallet anonymously?`,
+            `Ledger has partnered with <a href="https://www.ledger.com/blog/ledger-nano-x-and-nano-s-plus-now-available-in-all-best-buy-stores-nationwide">Best Buy</a> and they offer wallets for sale in store. If a store near you has a wallet in stock,
+            you can pay for it with cash in person and still protect your identity. `
+
         ]
 
     ]

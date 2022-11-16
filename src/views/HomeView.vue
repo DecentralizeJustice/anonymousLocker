@@ -1,9 +1,9 @@
 <template>
-  <q-page
+  <q-page style="width: 100%; background-image: linear-gradient(to right top, #f5ffdd, #ff7a25, #f5a642, #edc970, #ebe6a6, #f5ffdd);"
   >
     <!-- page content -->
 
-    <div class="row justify-evenly q-pb-xl col-12 " style="width: 100%; background-image: linear-gradient(to right top, #3d80d1, #576caa, #5a5b84, #514c61, #414042);">
+    <div class="row justify-evenly q-pb-xl col-12 " >
       <div class="row col col-10 col-md-6">
         <q-card class="q-mt-xl text-center bg-primary text-white col col-12">
           <q-card-section class="desktop-only">
@@ -86,11 +86,11 @@
         loop
         mode="normal"
         speed=".75"
-        src="https://assets5.lottiefiles.com/private_files/lf30_mn61zlcj.json"
+        src="https://res.cloudinary.com/dylevfpbl/raw/upload/v1668561142/lf30_editor_a2wu4b2s.json"
 ></lottie-player>
       </div>
     </div>
-    <div class="row justify-around col-12 bg-grey-5 items-center  q-py-xl" style="width: 100%;">
+    <div class="row justify-around col-12 items-center  q-py-xl bg-blue-grey-10" style="width: 100%;">
       <div class="col-12 col-md-6 text-center row justify-center q-px-md items-center">      
         <div class="col-12 q-my-sm">
           <img src="https://res.cloudinary.com/dylevfpbl/image/upload/v1668533180/landingPageWalletLeak/Screenshot_2022-11-15_121721_Cropped_2.png" class="walletImage"/>
@@ -100,10 +100,10 @@
         </div>
       </div>
       <div class="col-11 col-md-4 text-center row justify-center items-center q-pt-md">      
-        <q-card class=" text-left bg-primary text-white col col-12">
+        <q-card class=" text-left bg-blue-grey-11 text-black col col-12">
           <q-card-section>
             <div
-              class="text-h4 text-weight-regular"
+              class="text-h4 text-weight-regular text-center"
               style="line-height: 120%; font-weight: 400"
             >
               Trezor, Ledger, and Coinkite have all leaked home addresses, phone numbers and/or emails in the past. <br/> 
@@ -123,12 +123,12 @@
                 /><br/>
               <router-link :to="{ name: 'ordersPage' }" style="text-decoration:none !important;">
                 <q-btn
-                  color="white"
-                  label="Protect Your Information"
+                  color="primary"
+                  label="Place An Order"
                   size="lg"
                   style="color: white"
                   padding="sm"
-                  text-color="primary"
+                  text-color="white"
                 ></q-btn>
               </router-link>
             </div>
@@ -137,8 +137,8 @@
         </q-card>
       </div>
     
-    </div>
-    <div class="row justify-around items-end no-margin col-12 bg-grey-8 text-left q-pb-xl q-pt-xl" style="width: 100%;">
+    </div> 
+    <div class="row justify-around items-end no-margin col-12 text-left q-pb-xl q-pt-xl" style="width: 100%; background-image: linear-gradient(to right top, #f5ffdd, #ff7a25, #f5a642, #edc970, #ebe6a6, #f5ffdd);">
       <div class="col-12 text-center text-white text-h4 q-pb-lg">      
         Testimonials
       </div>
