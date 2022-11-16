@@ -110,7 +110,7 @@
               class="text-h4 text-weight-regular text-left text-white"
               style="line-height: 120%; font-weight: 400; font-style: italic;"
             >
-            "I was told that worse things would happen if I didn't pay them $50,000 in bitcoin."
+            "They had my home address. I was told bad things would happen if I didn't pay them $50,000 in bitcoin."
             </div>
             <div
               class="text-h6 text-weight-regular text-center no-padding q-mt-sm text-white"
@@ -124,9 +124,9 @@
           <q-card-section>
             <div
               class="text-h4 text-weight-regular text-center"
-              style="line-height: 120%; font-weight: 400"
+              style="line-height: 120%; font-weight: 300"
             >
-              Protect Your Address From The Next Data Breach.
+              Protect Your Address From The Next Data Breach
             </div>
             <div
               class="text-h4 text-weight-regular text-center q-mt-sm"
@@ -135,7 +135,7 @@
             <!-- <span style="text-decoration: underline;">Don't take that risk!</span> -->
             <div class="text-center q-mt-sm">
               <img
-                  src="@/assets/svgs/privacy.svg"
+                  src="@/assets/svgs/homeLock.svg"
                   style="max-width: 7vw;"
                   class="q-my-sm"
                 /><br/>
