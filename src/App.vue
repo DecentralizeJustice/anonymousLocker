@@ -74,7 +74,7 @@ const options = [
 ]
 function getButtonColor(params) {
   if (params === "ordersPage") {
-    return "primary"
+    return "blue-grey-10"
   }
   return "secondary"
 }

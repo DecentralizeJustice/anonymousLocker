@@ -92,32 +92,32 @@
     </div>
     <div class="row justify-around col-12 items-center  q-py-xl bg-blue-grey-10" style="width: 100%;">
       <div class="col-12 col-md-6 text-center row justify-center q-px-md items-center">      
-        <div class="col-12 q-my-sm">
+        <div class="col-12 q-my-lg">
             <div
               class="text-h4 text-weight-regular text-left text-white"
-              style="line-height: 120%; font-weight: 400"
+              style="line-height: 120%; font-weight: 400; font-style: italic;"
             >
             "F**k sake! This is my actual home address in the email. I don't even know what to say!"
             </div>
             <div
-              class="text-h6 text-weight-regular text-center no-padding no-margin text-white"
-            > <br/>- A Victim Of Ledger Database Leak
+              class="text-h6 text-weight-regular text-center no-padding q-mt-sm text-white"
+            >- Ledger Address & Phone Number Leak Victim
             </div>
 
         </div>
-<!--         <div class="col-12 q-my-sm">
-          <q-card class=" text-left bg-blue-grey-11 text-black col col-12">
-          <q-card-section>
+        <div class="col-12 q-my-lg">
             <div
-              class="text-h4 text-weight-regular text-left"
-              style="line-height: 120%; font-weight: 400"
+              class="text-h4 text-weight-regular text-left text-white"
+              style="line-height: 120%; font-weight: 400; font-style: italic;"
             >
-            "I received a phone call threatening kidnapping and murder over my ledger."
-
+            "I fell victim to the Trezor phishing scam...Amazing to hear Trezor was using MailChimp."
             </div>
-          </q-card-section>
-        </q-card>
-        </div> -->
+            <div
+              class="text-h6 text-weight-regular text-center no-padding text-white q-mt-sm"
+            >- Trezor Email Leak Victim
+            </div>
+
+        </div>
       </div>
       <div class="col-11 col-md-4 text-center row justify-center items-center q-pt-md">      
         <q-card class=" text-left bg-blue-grey-11 text-black col col-12">
