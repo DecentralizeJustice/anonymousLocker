@@ -2,12 +2,22 @@ const faq =
 {
     'General Questions':
     [
-        ['How Does This Work?', `I have a full demo of Anonymous Locker <a href="https://www.youtube.com/watch?v=Al7NJsf_fAU">here</a>.`   
+        ['How Does This Work?', 
+        `Here is a basic outline of how ordering with anonymous locker works:
+        <ol>
+            <li>You find products from Amazon that you would like to purchase.</li>
+            <li>You place an order at my website.</li>
+            <li>I place an  order for the items that you chose to an amazon locker near you.</li>
+            <li>I use the my websites built in chat funtion to message you about your order. </li>
+            <li>I then message you the locker code when your order is deliverd to the amazon locker.</li>
+            <li>You pick up your order from the amazon locker using the code you received via my site.</li>
+            <li>Enjoy your item, without anyone else knowing what you bought, your home address, or any other private information.</li>
+        </ol>
+        I also have a full demo of Anonymous Locker <a href="https://www.youtube.com/watch?v=Al7NJsf_fAU">here</a>.`   
         ],
         ['How Much is This Service?',
-        `My service is 5 Dollars and 2% on top of the amazon order subtotal. For example, if you were to buy a 100 dollar (after amazon's taxes) hardware wallet from amazon.
-        , My service would cost you 7 dollars. At checkout with me you would pay 107 dollars of monero to me. I also always use the free shipping option. If you
-        need a faster method, just message me and we can work it out.`
+        `My service is 5 Dollars and 2% on top of the amazon order subtotal. For example, if you were to buy a 100 dollar hardware wallet from amazon.
+        , my service would cost you 7 dollars. At checkout with me you would pay 107 dollars of monero to me.`
         ],
         [
             `What are the limitations and stipulations of your service?`,
