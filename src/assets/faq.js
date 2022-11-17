@@ -16,22 +16,8 @@ const faq =
         I also have a full demo of Anonymous Locker <a href="https://www.youtube.com/watch?v=Al7NJsf_fAU">here</a>.`   
         ],
         ['How Much is This Service?',
-        `My service is 5 Dollars and 2% on top of the amazon order subtotal. For example, if you were to buy a 100 dollar hardware wallet from amazon.
-        , my service would cost you 7 dollars. At checkout with me you would pay 107 dollars of monero to me.`
-        ],
-        [
-            `What are the limitations and stipulations of your service?`,
-            `The current limitations of my service are:
-            <ol>
-                <li>We only deliver to amazon lockers in the US.</li>
-                <li>Items must be fulfilled by amazon  since only amazon can ship to amazon lockers.</li>
-                <li>Refunds Incur an additional 1% charge and Service fees are non-refundable.</li>
-                <li>The minimum order is 25 dollars.</li>
-                <li>We do not offer free Prime 2-Day Shipping, but you can pay extra for faster if you so wish.</li>
-                <li>No items that are Federally Illegal in the states.</li>
-                <li> I reserve the right to decline to process an order. In this case a refund will be issue.</li>
-                <li> No orders can contain prepiad credit cards as an item.</li>
-            </ol>`
+        `My service is 5 Dollars and 2% on top of the amazon order subtotal. For example, if you were to buy a 100 dollar hardware wallet from amazon
+        my service would cost you 7 dollars. At checkout with me you would pay 107 USD worth of monero.`
         ],
         ['Why Should I hide my shipping address?', 
         `Lets say you wanted to buy a hardware wallet. 
@@ -45,6 +31,20 @@ const faq =
                 You should not punished for securing your crypto. 
                 My service helps hide your address to prevent leaks like this.
                 This is just one example of why you need to protect your shipping and order information.`
+        ],
+        [
+            `What are the limitations and stipulations of your service?`,
+            `The current limitations of my service are:
+            <ol>
+                <li>We only deliver to amazon lockers in the US.</li>
+                <li>Items must be fulfilled by amazon  since only amazon can ship to amazon lockers.</li>
+                <li>Refunds Incur an additional 2% charge and Service fees are non-refundable.</li>
+                <li>The minimum order is 25 dollars.</li>
+                <li>We do not offer free Prime 2-Day Shipping, but you can pay extra for faster if you so wish.</li>
+                <li>No items that are Federally Illegal in the states.</li>
+                <li> I reserve the right to decline to process an order. In this case a refund will be issue.</li>
+                <li> No orders can contain prepiad credit cards as an item.</li>
+            </ol>`
         ],
         [
             'Terms of Service', 
@@ -62,6 +62,12 @@ const faq =
         [
             `Do you offer refunds/returns?`, `Yes. I offer refunds if you have not been given the locker code yet.These refunds come with a 1% surcharge. If you have been given the locker code,
              or have received the product you will receive a amazon gift card when you process the return. I can trade this amazon gift card for monero for you, for 2% fee.`
+        ],
+        [
+            `How do refunds work?`,
+            `Refunds that preserve your privacy take time and require more work on my end. This is why they come with a 2% surecharge.
+            If you wish to return an item, we will arrange for you to return an item to the locker. 
+            Once amazon successfuly refunds to the item, I will refund you the same usd worth of monero that you paid me minus the 1% service charge.`
         ]
     ],
     'Alternative Methods': 

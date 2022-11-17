@@ -97,11 +97,16 @@
               class="text-h4 text-weight-regular text-left text-white"
               style="line-height: 120%; font-weight: 400; font-style: italic;"
             >
-            "I just received a phone call threatening kidnapping and murder over my ledger."
+            "
+              F**k sake! 
+
+              This is my actual home address in the email.
+
+              I don't even know what to say."
             </div>
             <div
               class="text-h6 text-weight-regular text-center no-padding text-white q-mt-sm"
-            >- u/goldcakes, Ledger Leak Victim
+            >- @SalehAhmedd_, Ledger Leak Victim
             </div>
 
         </div>
@@ -126,7 +131,7 @@
               class="text-h4 text-weight-regular text-center"
               style="line-height: 120%; font-weight: 300"
             >
-              Protect Your Address From The Next Data Breach
+            <span style="text-decoration: underline;">All</span> other methods fail at protecting your privacy and safety when you shop online.
             </div>
             <div
               class="text-h4 text-weight-regular text-center q-mt-sm"
@@ -142,7 +147,7 @@
               <router-link :to="{ name: 'ordersPage' }" style="text-decoration:none !important;">
                 <q-btn
                   color="primary"
-                  label="Protect Your Address"
+                  label="Protect Your Home Address"
                   size="lg"
                   style="color: white"
                   padding="sm"
@@ -211,7 +216,7 @@ import monero from "@/assets/svgs/rand.svg"
 import lockerBig from "@/assets/svgs/end.svg"
 import { onMounted } from "vue"
 require("@lottiefiles/lottie-player")
-const heroText = 'Spend Monero Anonymously With Amazon Lockers'
+const heroText = 'Anonymous Deliveries With Amazon Lockers'
 const heroSubtext = `Extended Your Digital Privacy To The Physical World`
 onMounted(() => {
 
