@@ -106,7 +106,7 @@
             </div>
             <div
               class="text-h6 text-weight-regular text-center no-padding text-white q-mt-sm"
-            >- @SalehAhmedd_, Ledger Leak Victim
+            >- @SalehAhmedd_, Ledger Databse Leak Victim
             </div>
 
         </div>
@@ -119,7 +119,7 @@
             </div>
             <div
               class="text-h6 text-weight-regular text-center no-padding q-mt-sm text-white"
-            >- Jameson Lopp, SWATT Victim
+            >- Jameson Lopp, Extortion Victim
             </div>
 
         </div>
