@@ -162,7 +162,7 @@
     
     </div> 
     <div class="row justify-around items-end no-margin col-12 text-left q-pb-xl q-pt-xl" style="width: 100%; background-color:grey;">
-      <div class="col-8 text-center text-white text-h4 q-pb-lg">      
+      <div class="col-12 col-md-8 text-center text-white text-h4 q-pb-lg">      
         <div class="q-pa-md">
     <q-video
       :ratio="16/9"
