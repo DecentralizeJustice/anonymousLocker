@@ -8,8 +8,8 @@
         <q-card class="q-mt-xl text-center bg-primary text-white col col-12">
           <q-card-section class="desktop-only">
             <div
-              class="text-h3 text-weight-regular"
-              style="line-height: 120%; font-weight: 400"
+              class="text-h3  my-font "
+              style=""
             >
               {{heroText}}
             </div>
@@ -37,7 +37,7 @@
         </q-card>
         <q-card class="text-center col col-12 q-my-xl text-black" style="">
           <q-card-section>
-            <div class="text-h4">How It Works:</div>
+            <div class="text-h4 my-font">How It Works:</div>
             <div class="q-mt-md">
               <div class="">
                 <div class="row justify-around">
@@ -172,7 +172,7 @@
       </div>
     </div>
     <div class="row justify-around items-end no-margin col-12 text-left q-pb-xl q-pt-xl bg-primary" style="width: 100%;">
-      <div class="col-12 text-center text-white text-h4 q-pb-lg">      
+      <div class="col-12 text-center text-white text-h4 q-pb-lg my-font">      
         Testimonials
       </div>
       <div class="col-11 col-md-3">      
@@ -233,6 +233,12 @@ onMounted(() => {
     })
 </script>
 <style lang="sass" scoped>
+@font-face
+  font-family: customfont
+  src: url(../styles/ArchivoBlack-Regular.ttf)
+.my-font 
+  font-family: 'customfont'
+
 .desktopIcons
   width:  60%
 .walletImage
