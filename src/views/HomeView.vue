@@ -161,17 +161,17 @@
       </div>
     
     </div> 
-    <div class="row justify-around items-end no-margin col-12 text-left q-pb-xl q-pt-xl" style="width: 100%; background-color:grey;">
+    <div class="row justify-around items-end no-margin col-12 text-left q-pb-xl q-pt-xl" style="width: 100%; background-color:#D4CCC4;">
       <div class="col-12 col-md-8 text-center text-white text-h4 q-pb-lg">      
         <div class="q-pa-md">
     <q-video
       :ratio="16/9"
-      src="https://www.youtube.com/embed/Al7NJsf_fAU"
+      src="https://www.youtube.com/embed/ivf5EfCAGgo"
     />
   </div>
       </div>
     </div>
-    <div class="row justify-around items-end no-margin col-12 text-left q-pb-xl q-pt-xl bg-primary" style="width: 100%; background-color:grey;">
+    <div class="row justify-around items-end no-margin col-12 text-left q-pb-xl q-pt-xl bg-primary" style="width: 100%;">
       <div class="col-12 text-center text-white text-h4 q-pb-lg">      
         Testimonials
       </div>
