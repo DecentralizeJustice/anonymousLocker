@@ -1,5 +1,5 @@
 <template>
-  <q-page style="width: 100%; background-color:grey;"
+  <q-page style="width: 100%; background-color:#D4CCC4;"
   >
     <!-- page content -->
 
@@ -90,7 +90,7 @@
 ></lottie-player>
       </div>
     </div>
-    <div class="row justify-around col-12 items-center  q-py-xl bg-blue-grey-10" style="width: 100%;">
+    <div class="row justify-around col-12 items-center  q-py-xl bg-primary" style="width: 100%;">
       <div class="col-12 col-md-6 text-center row justify-center q-px-md items-center">      
         <div class="col-12 q-my-lg">
             <div
