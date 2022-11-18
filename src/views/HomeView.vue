@@ -162,12 +162,22 @@
     
     </div> 
     <div class="row justify-around items-end no-margin col-12 text-left q-pb-xl q-pt-xl" style="width: 100%; background-color:grey;">
+      <div class="col-8 text-center text-white text-h4 q-pb-lg">      
+        <div class="q-pa-md">
+    <q-video
+      :ratio="16/9"
+      src="https://www.youtube.com/embed/Al7NJsf_fAU"
+    />
+  </div>
+      </div>
+    </div>
+    <div class="row justify-around items-end no-margin col-12 text-left q-pb-xl q-pt-xl bg-primary" style="width: 100%; background-color:grey;">
       <div class="col-12 text-center text-white text-h4 q-pb-lg">      
         Testimonials
       </div>
       <div class="col-11 col-md-3">      
         <q-chat-message
-        name="<span class='text-subtitle1'>Sapook</span>"
+        name="<span class='text-subtitle1 text-white'>Sapook</span>"
         text-html
         name-html
         bg-color="white"
@@ -184,7 +194,7 @@
         text-html
         bg-color="white"
         name-html
-        name="<span class='text-subtitle1'>ksilverstein</span>"
+        name="<span class='text-subtitle1 text-white'>ksilverstein</span>"
         :avatar=shopperAvatar2
         :text="[``]"
         ><div class="text-h5 q-pa-md">
@@ -196,7 +206,7 @@
         text-html
         name-html
         bg-color="white"
-        name="<span class='text-subtitle1'>First Customer</span>"
+        name="<span class='text-subtitle1 text-white'>First Customer</span>"
         :avatar=shopperAvatar
         :text="[`<span class=''></span>`]"
         ><div class="text-h5 q-pa-md">
