@@ -227,7 +227,7 @@ import lockerBig from "@/assets/svgs/end.svg"
 import { onMounted } from "vue"
 require("@lottiefiles/lottie-player")
 const heroText = 'Anonymous Deliveries With Amazon Lockers'
-const heroSubtext = `Extended Your Digital Privacy To The Physical World`
+const heroSubtext = `The Most Private Way To shop Online`
 onMounted(() => {
 
     })

@@ -43,8 +43,12 @@ const faq =
                 <li>We do not offer free Prime 2-Day Shipping, but you can pay extra for faster if you so wish.</li>
                 <li>No items that are Federally Illegal in the states.</li>
                 <li> I reserve the right to decline to process an order. In this case a refund will be issue.</li>
-                <li> No orders can contain prepiad credit cards as an item.</li>
+                <li> No orders can contain prepiad credit cards as an item, but they can contain other kinds of giftcards.</li>
             </ol>`
+        ],
+        [
+            `Can I buyg giftcards from you?`,
+            `Yes, you can buy closed loop giftcards with my service.That means that you can buy giftcards to specific stores. You can not buy prepiad visa giftcards, or other open loop cards. `
         ],
         [
             'Terms of Service', 
