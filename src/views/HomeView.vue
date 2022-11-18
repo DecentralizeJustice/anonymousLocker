@@ -177,7 +177,7 @@
       </div>
       <div class="col-11 col-md-3">      
         <q-chat-message
-        name="<span class='text-subtitle1 text-white'>Sapook</span>"
+        name="<span class='text-subtitle1 text-white'>u/Sapook</span>"
         text-html
         name-html
         bg-color="white"
@@ -194,7 +194,7 @@
         text-html
         bg-color="white"
         name-html
-        name="<span class='text-subtitle1 text-white'>ksilverstein</span>"
+        name="<span class='text-subtitle1 text-white'>u/ksilverstein</span>"
         :avatar=shopperAvatar2
         :text="[``]"
         ><div class="text-h5 q-pa-md">
