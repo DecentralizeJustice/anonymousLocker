@@ -16,8 +16,8 @@ const faq =
         I also have a full demo of Anonymous Locker <a href="https://www.youtube.com/watch?v=Al7NJsf_fAU">here</a>.`   
         ],
         ['How Much is This Service?',
-        `My service is 10 Dollars and 2% on top of the amazon order subtotal. For example, if you were to buy a 100 dollar hardware wallet from amazon
-        my service would cost you 112 dollars. At checkout with me you would pay 112 USD worth of monero.`
+        `My service is 15 Dollars and 2% on top of the amazon order subtotal. For example, if you were to buy a 100 dollar hardware wallet from amazon
+        my service would cost you 118 dollars. At checkout with me you would pay 118 USD worth of monero.`
         ],
         ['Why Should I hide my shipping address?', 
         `Lets say you wanted to buy a hardware wallet. 

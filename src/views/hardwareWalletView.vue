@@ -43,7 +43,7 @@
                 <div class="row justify-around">
                   <div class="col-12 col-md-3">
                     <p class="text-h6 text-weight-medium">Step 1.</p>
-                    <img :src="computer" class="q-mb-sm" :class="{'desktopIcons': $q.screen.gt.sm, 'mobileIcons': $q.screen.lt.md}" style="" />
+                    <img :src="computer" class="q-mb-sm" :class="{'desktopIconsWallet': $q.screen.gt.sm, 'mobileIcons': $q.screen.lt.md}" style="" />
                     <br />
                     <p class="text-subtitle1 text-weight-medium">
                       Choose Your Hardware Wallet and Place Order With Me
@@ -131,7 +131,7 @@
               class="text-h4 text-weight-regular text-center"
               style="line-height: 120%; font-weight: 300"
             >
-            <span style="text-decoration: underline;">All</span> Monero hardware wallet manufactures have leaked sensitive customer info. Don't Risk It.
+            Ledger, Trezor and Coinkite have  leaked <span style="text-decoration: underline;">sensitive</span> customer info. Don't Risk It.
             </div>
             <div
               class="text-h4 text-weight-regular text-center q-mt-sm"
@@ -140,9 +140,14 @@
             <!-- <span style="text-decoration: underline;">Don't take that risk!</span> -->
             <div class="text-center q-mt-sm">
               <img
-                  src="@/assets/svgs/homeLock.svg"
-                  style="max-width: 7vw;"
-                  class="q-my-sm"
+                  src="@/assets/svgs/trezor.svg"
+                  style="max-width: 5vw;"
+                  class="q-ma-sm"
+                />
+                <img
+                  src="@/assets/svgs/wallet.svg"
+                  style="max-width: 5vw;"
+                  class="q-ma-sm"
                 /><br/>
               <router-link :to="{ name: 'ordersPage' }" style="text-decoration:none !important;">
                 <q-btn
@@ -221,9 +226,9 @@
 import shopperAvatar from "@/assets/detective.svg"
 import shopperAvatar1 from "@/assets/svgs/firstPageIcon.svg"
 import shopperAvatar2 from "@/assets/svgs/incognito.svg"
-import computer from "@/assets/svgs/monitor.svg"
+import computer from "@/assets/svgs/wallet.svg"
 import monero from "@/assets/svgs/rand.svg"
-import lockerBig from "@/assets/svgs/end.svg"
+import lockerBig from "@/assets/svgs/amazonLocker.svg"
 import { onMounted } from "vue"
 require("@lottiefiles/lottie-player")
 const heroText = 'Safe Hardware Wallet Deliveries Via Amazon Lockers'
@@ -241,6 +246,8 @@ onMounted(() => {
 
 .desktopIcons
   width:  60%
+.desktopIconsWallet
+  width:  56%
 .walletImage
   border-radius: 25px 
   width: 100%
