@@ -3,6 +3,8 @@ import HomeView from "../views/HomeView.vue"
 import ordersPage from "../views/ordersPageView.vue"
 import faq from "../views/faqView.vue"
 import message from "../views/messageMeView.vue"
+import hw from "../views/hardwareWalletView.vue"
+
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
@@ -26,6 +28,11 @@ const router = createRouter({
       path: "/message",
       name: "message",
       component: message,
+    },
+    {
+      path: "/hw",
+      name: "hw",
+      component: hw,
     }
   ],
 })
