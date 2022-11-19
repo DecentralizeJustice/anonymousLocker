@@ -226,7 +226,7 @@ import monero from "@/assets/svgs/rand.svg"
 import lockerBig from "@/assets/svgs/end.svg"
 import { onMounted } from "vue"
 require("@lottiefiles/lottie-player")
-const heroText = 'Anonymous Hardware Wallet Deliveries Via Amazon Lockers'
+const heroText = 'Safe Hardware Wallet Deliveries Via Amazon Lockers'
 const heroSubtext = `The Safest Way To Get an Hardware Wallet`
 onMounted(() => {
 
