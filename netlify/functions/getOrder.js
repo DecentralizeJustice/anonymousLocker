@@ -15,6 +15,7 @@ exports.handler = async (event, context) => {
   })
   const json = await redis.call("JSON.GET", bucketID)
   redis.disconnect()
+  console.log('databse requested')
   const parsedResponse = JSON.parse(json)
   return {
     statusCode: 200,
