@@ -19,16 +19,13 @@ const faq =
         `My service is 15 Dollars and 2% on top of the amazon order subtotal. For example, if you were to buy a 100 dollar hardware wallet from amazon
         my service would cost you 118 dollars. At checkout with me you would pay 118 USD worth of monero.`
         ],
-        ['Why Should I hide my shipping address?', 
-    'General Qeustions':
-        [
             ['How Does This Work?', `I have a full demo of Anonymous Locker <a href="https://www.youtube.com/watch?v=Al7NJsf_fAU">here</a>.`
             
             ],
             [
                 'How much does this service Cost?', `My service is 5 Dollars plus 2% on top of amazons subtotal.`
             ],
-        ['Why Should I hide my shippping address?', 
+        ['Why Should I hide my shipping address?', 
         `Lets say you wanted to buy a hardware wallet. 
                 If you order from a retailer they will have your address and they could possibly leak that information. 
                 <a href="https://cointelegraph.com/news/ledger-data-leak-a-simple-mistake-exposed-270k-crypto-wallet-buyers">Ledger</a>
@@ -56,8 +53,9 @@ const faq =
             </ol>`
         ],
         [
-            `Can I buyg giftcards from you?`,
-            `Yes, you can buy closed loop giftcards with my service.That means that you can buy giftcards to specific stores. You can not buy prepiad visa giftcards, or other open loop cards. `
+            `Can I buy giftcards from you?`,
+            `Yes, you can buy closed loop giftcards with my service. That means that you can buy giftcards to specific stores. 
+            You can not buy prepiad visa giftcards, or other open loop cards. `
         ],
         [
             'Terms of Service', 
@@ -73,14 +71,14 @@ const faq =
             `Do you use prime shipping?`, 'No, I only use the free shipping option offered by amazon, unless you pay for the faster method.'
         ],
         [
-            `Do you offer refunds/returns?`, `Yes. I offer refunds if you have not been given the locker code yet.These refunds come with a 1% surcharge. If you have been given the locker code,
+            `Do you offer refunds/returns?`, `Yes. I offer refunds if you have not been given the locker code yet. These refunds come with a 1% surcharge. If you have been given the locker code,
              or have received the product you will receive a amazon gift card when you process the return. I can trade this amazon gift card for monero for you, for 2% fee.`
         ],
         [
             `How do refunds work?`,
             `Refunds that preserve your privacy take time and require more work on my end. This is why they come with a 2% surecharge.
             If you wish to return an item, we will arrange for you to return an item to the locker. 
-            Once amazon successfuly refunds to the item, I will refund you the same usd worth of monero that you paid me minus the 1% service charge.`
+            Once amazon successfully refunds to the item, I will refund you the same usd worth of monero that you paid me minus the 2% service charge.`
         ]
     ],
     'Alternative Methods': 
