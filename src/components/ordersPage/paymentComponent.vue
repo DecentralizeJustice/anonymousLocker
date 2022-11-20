@@ -32,8 +32,8 @@
                 </div>
               </q-card>
               <div class="col col-10 text-left text-h6 text-weight-regular">
-                This is the <span class="text-red text-weight-bold">ONLY</span> way to access me about your order.
-                If you loose this, there is no way to complete your order or refund you! It is not saved locally, so you must save it yourself!
+                This is the <span class="text-red text-weight-bold">ONLY</span> way to access your order information.
+                If you lose this, there is no way to complete your order or refund you! It is not saved locally, so you must save it yourself!
             </div>
               <div class="col col-12 q-mt-lg text-center">
                   <q-btn
