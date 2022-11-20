@@ -1,7 +1,7 @@
 <template>
   <q-page
-    style="width: 100%; background-image: linear-gradient(to right top, #d4ccc4, #a9ab9a, #748d7d, #3c6f6e, #004e64);"
-    class="q-pa-md row items-stretch text-center align-center justify-center"
+    style="width: 100%;"
+    class="q-pa-md row items-stretch text-center align-center justify-center bg-primary"
   >
     <div class="row justify-center col col-11 align-center items-stretch" >
       <firstChoiceComp v-if="firstChoice === '' && !paymentStarted" @firstChoice="selectFirstChoice"/>

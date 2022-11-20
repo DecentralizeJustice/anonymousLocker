@@ -51,9 +51,12 @@
                   </div>
                   <div class="col-12 col-md-3">
                     <p class="text-h6 text-weight-medium">Step 2.</p>
-                    <img :src="monero" class="" :class="{'desktopIcons': $q.screen.gt.sm, 'mobileIcons': $q.screen.lt.md}" /><br />
+                    <img :src="monero" class="" :class="{'desktopIconsPayment': $q.screen.gt.sm, 'mobileIconsPayment': $q.screen.lt.md}" />
+                    <img :src="bitcoin" class="" :class="{'desktopIconsPayment': $q.screen.gt.sm, 'mobileIconsPayment': $q.screen.lt.md}" /><br/>
+                    <img :src="ethereum" class="" :class="{'desktopIconsPayment': $q.screen.gt.sm, 'mobileIconsPayment': $q.screen.lt.md}" />
+                    <img :src="litecoin" class="" :class="{'desktopIconsPayment': $q.screen.gt.sm, 'mobileIconsPayment': $q.screen.lt.md}" /><br />
                     <p class="text-subtitle1 text-weight-medium">
-                      Pay For Order With Monero
+                      Pay For Order With XMR, BTC, ETH, or LTC
                     </p>
                   </div>
                   <div class="col-12 col-md-3">
@@ -141,7 +144,7 @@
             <div class="text-center q-mt-sm">
               <img
                   src="@/assets/svgs/homeLock.svg"
-                  style="max-width: 7vw;"
+                  :class="{'desktopIconsHouse': $q.screen.gt.sm, 'mobileIconsHouse': $q.screen.lt.md}"
                   class="q-my-sm"
                 /><br/>
               <router-link :to="{ name: 'ordersPage' }" style="text-decoration:none !important;">
@@ -223,7 +226,10 @@ import shopperAvatar1 from "@/assets/svgs/firstPageIcon.svg"
 import shopperAvatar2 from "@/assets/svgs/incognito.svg"
 import computer from "@/assets/svgs/monitor.svg"
 import monero from "@/assets/svgs/rand.svg"
-import lockerBig from "@/assets/svgs/end.svg"
+import bitcoin from "@/assets/svgs/bitcoin.svg"
+import ethereum from "@/assets/svgs/ethereum.svg"
+import litecoin from "@/assets/svgs/litecoin.svg"
+import lockerBig from "@/assets/svgs/amazonLocker.svg"
 import { onMounted } from "vue"
 require("@lottiefiles/lottie-player")
 const heroText = 'Anonymous Deliveries With Amazon Lockers'
@@ -241,10 +247,15 @@ onMounted(() => {
 
 .desktopIcons
   width:  60%
-.walletImage
-  border-radius: 25px 
-  width: 100%
-  height: auto
 .mobileIcons
   width:  30%
+.desktopIconsHouse
+  width: 25%
+.mobileIconsHouse
+  width: 40%
+.desktopIconsPayment
+  width: 27%
+  margin: 1% 1% 1% 1%
+.mobileIconsPayment
+  width: 24%
 </style>

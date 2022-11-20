@@ -1,12 +1,12 @@
 <template>
   <q-page
-    style="width: 100%; background-image: linear-gradient(to right top, #d4ccc4, #a9ab9a, #748d7d, #3c6f6e, #004e64);"
-    class="q-pa-md row items-stretch text-center align-center justify-center"
+    style=""
+    class="q-pa-md q-py-xl row items-stretch text-center align-center justify-center bg-primary"
   >
   <div class="row justify-center col col-12 col-md-11 align-center items-center" >
     <div class="row items-center justify-center col-12 q-gutter-y-xl" >
       <q-card class="col-12 col-md-7">
-      <q-card-section class="bg-primary text-white">
+      <q-card-section class="text-white bg-grey-7">
         <div class="text-h6">Message Me</div>
       </q-card-section>
 
@@ -39,7 +39,7 @@
 
     </q-card>
     <q-card class="col-12 col-md-7">
-      <q-card-section class="bg-primary text-white">
+      <q-card-section class="text-white bg-grey-7">
         <div class="text-h6">Past Public Messages</div>
       </q-card-section>
       <q-separator />

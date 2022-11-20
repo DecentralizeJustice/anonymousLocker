@@ -2,7 +2,7 @@
   <div class="col-11 col-md-6 col justify-center column">
     <div class="column justify-center" style="">
         <q-card class="col-12 col" style="">
-          <q-card-section class="bg-secondary text-white">
+          <q-card-section class="bg-grey-7 text-white">
             <div class="text-h6">Check On Order</div>
           </q-card-section>
           <q-separator />
