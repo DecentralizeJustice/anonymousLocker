@@ -141,13 +141,15 @@
             <div class="text-center q-mt-sm">
               <img
                   src="@/assets/svgs/trezor.svg"
-                  style="max-width: 5vw;"
+                  style=""
                   class="q-ma-sm"
+                  :class="{'desktopIconsWallets': $q.screen.gt.sm, 'mobileIconsWallets': $q.screen.lt.md}"
                 />
                 <img
                   src="@/assets/svgs/wallet.svg"
-                  style="max-width: 5vw;"
+                  style=""
                   class="q-ma-sm"
+                  :class="{'desktopIconsWallets': $q.screen.gt.sm, 'mobileIconsWallets': $q.screen.lt.md}"
                 /><br/>
               <router-link :to="{ name: 'ordersPage' }" style="text-decoration:none !important;">
                 <q-btn
@@ -252,6 +254,11 @@ onMounted(() => {
   border-radius: 25px 
   width: 100%
   height: auto
+.desktopIconsWallets
+  width:  30%
+  max-width: 7vw
 .mobileIcons
   width:  30%
+.mobileIconsWallets
+  width: 25%
 </style>

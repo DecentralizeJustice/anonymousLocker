@@ -65,7 +65,7 @@
                 <span class="mobile-only text-h5 q-mb-md" style="color:#C10015;"> Don't Close/Refresh Window Till Payment Confirmed</span>
                 <div class="col col-12 text-center text-h5">
                 Send <span style="color:#ff6600">{{paymentInfo.nowPaymentsInfo.pay_amount}}</span> 
-                Monero (XMR) to The Address Below:
+                {{ paymentCoinFullName }} ({{paymentInfo.paymentCoin.toUpperCase()}}) to The Address Below:
             </div>
 
               <div class="col col-12 text-center justify-center">
@@ -98,7 +98,7 @@
                 Amount Recieved So Far:
             </div>
               <div class="col col-12 text-center justify-center text-h5">
-                {{ actuallyPaid }} XMR
+                {{ actuallyPaid }} {{paymentInfo.paymentCoin.toUpperCase()}}
               </div>
               <div class="col col-12 text-center q-mt-sm">
                   <q-btn
@@ -133,6 +133,7 @@ const props = defineProps({
   paymentInfo: { type: Object, required: true }
 })
 const paymentInfo = toRef(props, 'paymentInfo')
+console.log(paymentInfo.value.paymentCoin)
 function copy () {
   copyToClipboard(paymentInfo.value.nowPaymentsInfo.pay_address)
     .then(() => {
@@ -156,6 +157,11 @@ onUpdated(() => {
 const wordList = computed(() => { 
   return numberArrayToWordArray(paymentInfo.value.numberArray)
 })
+const paymentCoinFullName = computed(() => { 
+  const coinDict = {'xmr': 'Monero', 'ltc':'Litecoin', 'btc': 'Bitcoin', 'eth': 'Ethereum'}
+  const selected = paymentInfo.value.paymentCoin
+  return coinDict[selected]
+})
 function confirmPassphrase() {
   passphraseWrittenDown.value = true
 }
@@ -166,7 +172,7 @@ async function checkForPayment(paymentID){
   disablePaymentCheck.value = true
   await sleep(5000)
   disablePaymentCheck.value = false
-  const orderInfo = {itemList: toRaw(paymentInfo.value.itemList), nowPaymentsInfo: toRaw(paymentInfo.value.nowPaymentsInfo),
+  const orderInfo = {itemList: toRaw(paymentInfo.value.itemList), nowPaymentsInfo: toRaw(paymentInfo.value.nowPaymentsInfo), paymentCoin: paymentInfo.value.paymentCoin,
     lockerZipcode: toRaw(paymentInfo.value.lockerZipcode), lockerName: toRaw(paymentInfo.value.lockerName), extraNotes: toRaw(paymentInfo.value.extraNotes)}
   const results = await axios.post('/.netlify/functions/checkPaymentStatus', { paymentID, orderInfo })
   actuallyPaid.value = results.data.actually_paid

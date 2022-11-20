@@ -61,7 +61,7 @@ function processFirstMessage(orderDetails) {
   }
   const nowPaymentsInfo = orderDetails.nowPaymentsInfo
   firstString = firstString.concat('Order USD Total: ', nowPaymentsInfo.price_amount,  '<br/>')
-  firstString = firstString.concat('Order XMR Total: ', nowPaymentsInfo.pay_amount, '<br/><br/>')
+  firstString = firstString.concat(`Order ${orderDetails.paymentCoin.toUpperCase()} Total: `, nowPaymentsInfo.pay_amount, '<br/><br/>')
   firstString = firstString.concat('Amazon Locker Name: ', orderDetails.lockerName, '<br/>')
   firstString = firstString.concat('Amazon Locker Zipcode: ', orderDetails.lockerZipcode, '<br/>')
   firstString = firstString.concat('Extra Order Notes: ', orderDetails.extraNotes, '<br/><br/>')
