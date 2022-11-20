@@ -11,10 +11,12 @@
                     style="border-radius: 10px;"
                     v-if="orderNotFound"
                   >
-                    <div class="text-h6 text-white col-8 bg-red-5 q-pa-md">
+                    <div class="text-h6 text-white col-8 bg-red-5 q-pa-sm">
                       Order Does Not Exist!
                     </div>
-                    <span class="q-mt-sm"><router-link to="message">Message Me If Your Having Issues</router-link></span>
+                    <div class="text-h6 text-white col-8 q-mt-sm">
+                      <router-link to="message">Message Me If Your Having Issues</router-link>
+                    </div>
                   </q-card-section>
           <q-card-section>
             <div class="">
