@@ -43,10 +43,12 @@
                 <div class="row justify-around">
                   <div class="col-12 col-md-3">
                     <p class="text-h6 text-weight-medium">Step 1.</p>
-                    <img :src="computer" class="q-mb-sm" :class="{'desktopIcons': $q.screen.gt.sm, 'mobileIcons': $q.screen.lt.md}" style="" />
+                    <img :src="computer" class="" :class="{'desktopIconsFirst': $q.screen.gt.sm, 'mobileIcons': $q.screen.lt.md}" style="" />
+                    <img :src="trezor" class="" :class="{'desktopIconsFirst': $q.screen.gt.sm, 'mobileIcons': $q.screen.lt.md}" style="" />
+                    <br />
                     <br />
                     <p class="text-subtitle1 text-weight-medium">
-                      Choose Amazon Product and <br />Place Order With Me
+                      Choose Your Hardware Wallet and Place Order With Me
                     </p>
                   </div>
                   <div class="col-12 col-md-3">
@@ -64,7 +66,7 @@
                     <img :src="lockerBig" class="" :class="{'desktopIcons': $q.screen.gt.sm, 'mobileIcons': $q.screen.lt.md}" style="" />
                     <br />
                     <p class="text-subtitle1 text-weight-medium">
-                      Pick Up Order At Amazon Locker Near You
+                      Pick Up Hardware Wallet At Amazon Locker Near You
                     </p>
                   </div>
                 </div>
@@ -93,8 +95,35 @@
 ></lottie-player>
       </div>
     </div>
-    <div class="row justify-around col-12 items-center  q-py-xl bg-primary" style="width: 100%;">
-      <div class="col-12 col-md-6 text-center row justify-center q-px-md items-center">      
+    <div class="row justify-around col-12 items-center  q-py-xl bg-primary" style="width: 100%;s">
+        <div class="col-12 col-md-6 text-center row justify-center items-center q-py-md">  
+          <div class="col-12 text-center text-white text-h4 q-pb-lg my-font">      
+          Why Do I Need This?
+        </div>     
+        <q-card class=" text-center bg-blue-grey-11 text-black col col-12">
+          <q-card-section>
+            <div
+              class="text-h5  center"
+              style=""
+            >
+            Ledger and Trezor can <span style="text-decoration: underline;font-weight: bold;">not</span> properly protect your 
+            <span style="font-weight: bold;">phone number, name, or address </span>
+            from leaks when your wallet is shipped to your house. 
+            If this information is leaked your life, peace, and funds will be at risk.
+            The only way to protect your sensitive information is to not give it in the first place. 
+            Anonymous Locker enables easy anonymous hardware wallet deliveries to most places in the U.S.A..
+            </div>
+            <div class="text-center col-12">            <img
+                  :src="lockerBig"
+                  style=""
+                  class="q-ma-sm"
+                  :class="{'desktopIconsWallets': $q.screen.gt.sm, 'mobileIconsWallets': $q.screen.lt.md}"
+                /></div>
+
+          </q-card-section>
+        </q-card>
+      </div>
+      <div class="col-12 col-md-5 text-center row justify-center q-px-md items-center">      
         <div class="col-12 q-my-lg">
             <div
               class="text-h4 text-weight-regular text-left text-white"
@@ -109,7 +138,7 @@
             </div>
             <div
               class="text-h6 text-weight-regular text-center no-padding text-white q-mt-sm"
-            >- @SalehAhmedd_, Ledger Databse Leak Victim
+            >- @SalehAhmedd_, Ledger Leak Victim
             </div>
 
         </div>
@@ -118,23 +147,27 @@
               class="text-h4 text-weight-regular text-left text-white"
               style="line-height: 120%; font-weight: 400; font-style: italic;"
             >
-            "They had my home address. I was told bad things would happen if I didn't pay them $50,000 in bitcoin."
+            "I just received a phone call threatening kidnapping and murder over my ledger."
             </div>
             <div
               class="text-h6 text-weight-regular text-center no-padding q-mt-sm text-white"
-            >- Jameson Lopp, Extortion Victim
+            >- u/goldcakes , Ledger Leak Victim
             </div>
 
         </div>
       </div>
-      <div class="col-11 col-md-4 text-center row justify-center items-center q-pt-md">      
-        <q-card class=" text-left bg-blue-grey-11 text-black col col-12">
+
+    
+    </div> 
+    <div class="row justify-around col-12 items-center  q-py-xl" style="background-color:#D4CCC4;">
+        <div class="col-12 col-md-4 text-center row justify-center items-center">      
+        <q-card class=" text-left bg-white text-black col col-12 q-my-md q-pa-sm">
           <q-card-section>
             <div
               class="text-h4 text-weight-regular text-center"
               style="line-height: 120%; font-weight: 300"
             >
-            <span style="text-decoration: underline;">All</span> other methods fail at protecting your privacy and safety when you shop online.
+            The US mail system isn't designed to be <span style="text-decoration: underline;">private</span>. Don't Risk It.
             </div>
             <div
               class="text-h4 text-weight-regular text-center q-mt-sm"
@@ -143,14 +176,15 @@
             <!-- <span style="text-decoration: underline;">Don't take that risk!</span> -->
             <div class="text-center q-mt-sm">
               <img
-                  src="@/assets/svgs/homeLock.svg"
-                  :class="{'desktopIconsHouse': $q.screen.gt.sm, 'mobileIconsHouse': $q.screen.lt.md}"
-                  class="q-my-sm"
+                  src="@/assets/svgs/protected.svg"
+                  style=""
+                  class="q-ma-sm"
+                  :class="{'desktopIconsWallets': $q.screen.gt.sm, 'mobileIconsWallets': $q.screen.lt.md}"
                 /><br/>
               <router-link :to="{ name: 'ordersPage' }" style="text-decoration:none !important;">
                 <q-btn
                   color="primary"
-                  label="Protect Your Home Address"
+                  label="Safely Get A Hardware Wallet"
                   size="lg"
                   style="color: white"
                   padding="sm"
@@ -164,7 +198,10 @@
       </div>
     
     </div> 
-    <div class="row justify-around items-end no-margin col-12 text-left q-pb-xl q-pt-xl" style="width: 100%; background-color:#D4CCC4;">
+    <div class="row justify-around items-end no-margin col-12 text-left q-pb-xl q-pt-xl bg-primary" style="">
+      <div class="col-12 text-center text-white text-h4 q-pb-lg my-font">      
+          How It Works
+        </div> 
       <div class="col-12 col-md-8 text-center text-white text-h4 q-pb-lg">      
         <div class="q-pa-md">
     <q-video
@@ -174,13 +211,13 @@
   </div>
       </div>
     </div>
-    <div class="row justify-around items-end no-margin col-12 text-left q-pb-xl q-pt-xl bg-primary" style="width: 100%;">
-      <div class="col-12 text-center text-white text-h4 q-pb-lg my-font">      
+    <div class="row justify-around items-end no-margin col-12 text-left q-pb-xl q-pt-xl" style="background-color:#D4CCC4;">
+      <div class="col-12 text-center text-black text-h4 q-pb-lg my-font">      
         Testimonials
       </div>
       <div class="col-11 col-md-3">      
         <q-chat-message
-        name="<span class='text-subtitle1 text-white'>u/Sapook</span>"
+        name="<span class='text-subtitle1 text-black'>u/Sapook</span>"
         text-html
         name-html
         bg-color="white"
@@ -197,7 +234,7 @@
         text-html
         bg-color="white"
         name-html
-        name="<span class='text-subtitle1 text-white'>u/ksilverstein</span>"
+        name="<span class='text-subtitle1 text-black'>u/ksilverstein</span>"
         :avatar=shopperAvatar2
         :text="[``]"
         ><div class="text-h5 q-pa-md">
@@ -209,7 +246,7 @@
         text-html
         name-html
         bg-color="white"
-        name="<span class='text-subtitle1 text-white'>First Customer</span>"
+        name="<span class='text-subtitle1 text-black'>First Customer</span>"
         :avatar=shopperAvatar
         :text="[`<span class=''></span>`]"
         ><div class="text-h5 q-pa-md">
@@ -224,16 +261,17 @@
 import shopperAvatar from "@/assets/detective.svg"
 import shopperAvatar1 from "@/assets/svgs/firstPageIcon.svg"
 import shopperAvatar2 from "@/assets/svgs/incognito.svg"
-import computer from "@/assets/svgs/monitor.svg"
+import computer from "@/assets/svgs/wallet.svg"
 import monero from "@/assets/svgs/rand.svg"
 import bitcoin from "@/assets/svgs/bitcoin.svg"
 import ethereum from "@/assets/svgs/ethereum.svg"
 import litecoin from "@/assets/svgs/litecoin.svg"
+import trezor from "@/assets/svgs/trezor.svg"
 import lockerBig from "@/assets/svgs/amazonLocker.svg"
 import { onMounted } from "vue"
 require("@lottiefiles/lottie-player")
-const heroText = 'Anonymous Deliveries With Amazon Lockers'
-const heroSubtext = `The Most Private Way To shop Online`
+const heroText = 'Safe Hardware Wallet Deliveries Via Amazon Lockers'
+const heroSubtext = `The Safest Way To Get an Hardware Wallet`
 onMounted(() => {
 
     })
@@ -247,15 +285,25 @@ onMounted(() => {
 
 .desktopIcons
   width:  60%
+.desktopIconsWallet
+  width:  56%
+.walletImage
+  border-radius: 25px 
+  width: 100%
+  height: auto
+.desktopIconsWallets
+  width:  25%
+  max-width: 6vw
 .mobileIcons
   width:  30%
-.desktopIconsHouse
+.mobileIconsWallets
   width: 25%
-.mobileIconsHouse
-  width: 40%
 .desktopIconsPayment
   width: 27%
   margin: 1% 1% 1% 1%
 .mobileIconsPayment
   width: 24%
+.desktopIconsFirst
+  width:  49%
+  max-width: 8vw
 </style>

@@ -2,7 +2,7 @@
   <div class="col-11 col-md-6 col justify-center column">
     <div class="column justify-center" style="">
         <q-card class="col-12 col" style="">
-          <q-card-section class="bg-secondary text-white">
+          <q-card-section class="bg-grey-7 text-white">
             <div class="text-h6">Chat About Your Order</div>
           </q-card-section>
           <q-separator />
@@ -36,7 +36,7 @@
               filled
               autogrow
               class="overflow-auto scroll"
-              style="width: 100%;  max-height: 12vh;"
+              style="width: 100%;"
             />
           </div>
           <div class="row justify-around q-gutter-y-md">
@@ -103,16 +103,16 @@ function getTextColor(sender) {
 }
 async function sendMessage() {
   disableButtons.value = true
-  await sleep(2000)
+  await sleep(1000)
   disableButtons.value = false
   const data = { bucket: passphrase.value, message: text.value, sender }
-  const results = await axios.post('/.netlify/functions/sendMessage', data)
-  messageArray.value = results.data.messageArray
+  await axios.post('/.netlify/functions/sendMessage', data)
   text.value = ''
+  await checkForMessages()
 }
 async function checkForMessages() {
   disableButtons.value = true
-  await sleep(2000)
+  await sleep(1000)
   disableButtons.value = false
   const data = { bucketID: passphrase.value }
   const results = await axios.post('/.netlify/functions/getOrder', data)

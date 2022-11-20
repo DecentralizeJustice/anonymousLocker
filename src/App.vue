@@ -1,6 +1,6 @@
 <template>
-  <q-layout view="hHh lpR fFf">
-    <q-header elevated class="bg-secondary text-white">
+  <q-layout view="hhh lpr fff">
+    <q-header class="bg-grey-9 text-white">
       <q-toolbar>
         <img
           src="./assets/svgs/locker.svg"
@@ -76,7 +76,7 @@ function getButtonColor(params) {
   if (params === "ordersPage") {
     return "primary"
   }
-  return "secondary"
+  return "grey-7"
 }
 </script>
 <style lang="sass" scoped>

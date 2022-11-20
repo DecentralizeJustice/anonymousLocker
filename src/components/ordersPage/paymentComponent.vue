@@ -32,8 +32,8 @@
                 </div>
               </q-card>
               <div class="col col-10 text-left text-h6 text-weight-regular">
-                This is the <span class="text-red text-weight-bold">ONLY</span> way to access me about your order.
-                If you loose this, there is no way to complete your order or refund you! It is not saved locally, so you must save it yourself!
+                This is the <span class="text-red text-weight-bold">ONLY</span> way to access your order information.
+                If you lose this, there is no way to complete your order or refund you! It is not saved locally, so you must save it yourself!
             </div>
               <div class="col col-12 q-mt-lg text-center">
                   <q-btn
@@ -65,7 +65,7 @@
                 <span class="mobile-only text-h5 q-mb-md" style="color:#C10015;"> Don't Close/Refresh Window Till Payment Confirmed</span>
                 <div class="col col-12 text-center text-h5">
                 Send <span style="color:#ff6600">{{paymentInfo.nowPaymentsInfo.pay_amount}}</span> 
-                Monero (XMR) to The Address Below:
+                {{ paymentCoinFullName }} ({{paymentInfo.paymentCoin.toUpperCase()}}) to The Address Below:
             </div>
 
               <div class="col col-12 text-center justify-center">
@@ -74,6 +74,9 @@
                   class=""
                   style=""
                 />
+              </div>
+              <div class="col col-8 text-center q-mb-sm" style="overflow-wrap: break-word;">
+                {{address}}
               </div>
               <div class="col col-12 text-center">
                   <q-btn
@@ -95,7 +98,7 @@
                 Amount Recieved So Far:
             </div>
               <div class="col col-12 text-center justify-center text-h5">
-                {{ actuallyPaid }} XMR
+                {{ actuallyPaid }} {{paymentInfo.paymentCoin.toUpperCase()}}
               </div>
               <div class="col col-12 text-center q-mt-sm">
                   <q-btn
@@ -124,11 +127,13 @@ import { numberArrayToWordArray } from'@/assets/misc.js'
 const axios = require('axios')
 const passphraseWrittenDown = ref(false)
 const actuallyPaid = ref(0)
+const address = ref('')
 const disablePaymentCheck = ref(false)
 const props = defineProps({
   paymentInfo: { type: Object, required: true }
 })
 const paymentInfo = toRef(props, 'paymentInfo')
+console.log(paymentInfo.value.paymentCoin)
 function copy () {
   copyToClipboard(paymentInfo.value.nowPaymentsInfo.pay_address)
     .then(() => {
@@ -141,6 +146,7 @@ function copy () {
 function createQRCode () {
   const canvas = document.getElementById('canvas')
   if (canvas === null) { return }
+  address.value = paymentInfo.value.nowPaymentsInfo.pay_address
   QRCode.toCanvas(canvas, paymentInfo.value.nowPaymentsInfo.pay_address, { errorCorrectionLevel: 'L' }, function (error) {
     if (error) console.error(error)
   })
@@ -150,6 +156,11 @@ onUpdated(() => {
 })
 const wordList = computed(() => { 
   return numberArrayToWordArray(paymentInfo.value.numberArray)
+})
+const paymentCoinFullName = computed(() => { 
+  const coinDict = {'xmr': 'Monero', 'ltc':'Litecoin', 'btc': 'Bitcoin', 'eth': 'Ethereum'}
+  const selected = paymentInfo.value.paymentCoin
+  return coinDict[selected]
 })
 function confirmPassphrase() {
   passphraseWrittenDown.value = true
@@ -161,7 +172,7 @@ async function checkForPayment(paymentID){
   disablePaymentCheck.value = true
   await sleep(5000)
   disablePaymentCheck.value = false
-  const orderInfo = {itemList: toRaw(paymentInfo.value.itemList), nowPaymentsInfo: toRaw(paymentInfo.value.nowPaymentsInfo),
+  const orderInfo = {itemList: toRaw(paymentInfo.value.itemList), nowPaymentsInfo: toRaw(paymentInfo.value.nowPaymentsInfo), paymentCoin: paymentInfo.value.paymentCoin,
     lockerZipcode: toRaw(paymentInfo.value.lockerZipcode), lockerName: toRaw(paymentInfo.value.lockerName), extraNotes: toRaw(paymentInfo.value.extraNotes)}
   const results = await axios.post('/.netlify/functions/checkPaymentStatus', { paymentID, orderInfo })
   actuallyPaid.value = results.data.actually_paid

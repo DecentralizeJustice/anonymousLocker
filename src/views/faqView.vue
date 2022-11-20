@@ -1,12 +1,11 @@
 <template>
   <q-page
-    style="width: 100%; background-image: linear-gradient(to right top, #3d80d1, #576caa, #5a5b84, #514c61, #414042);"
-    class="q-pa-md row items-stretch text-center align-center justify-center"
+    class="q-pa-md q-py-xl row items-stretch text-center align-center justify-center bg-primary"
   >
   <div class="row justify-center col col-12 col-md-11 align-center items-center" >
     <div class="row items-center justify-center col-12 q-gutter-y-xl" >
-      <q-card class="col-12 col-md-7" v-for="(catagory, key) in correctFaq" :key="key">
-      <q-card-section class="bg-primary text-white">
+      <q-card class="col-12 col-md-7" v-for="(catagory, key) in correctFaq" :key="key" >
+      <q-card-section class=" text-white bg-grey-7 ">
         <div class="text-h6">{{ key }}</div>
       </q-card-section>
 

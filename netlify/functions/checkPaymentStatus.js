@@ -1,10 +1,9 @@
 const nowKey = process.env.nowPaymentsAPIKey
 const _sodium = require("libsodium-wrappers")
 const axios = require("axios")
-const pantry = require('pantry-node')
-const pantryID = process.env.pantryID
-const pantryClient = new pantry(pantryID) // eslint-disable-line new-cap
-exports.handler = async (event, context) => {
+const Redis = require('ioredis')
+const redisPassword = process.env.redisPassword
+exports.handler = async (event) => {
   // Only allow POST
   if (event.httpMethod !== "POST") {
     return { statusCode: 405, body: "Method Not Allowed" }
@@ -38,9 +37,14 @@ async function setupBucket(orderInfo){
   const publicKeyBase64 = process.env.initialPublicKeyBase64 
   const privateKeyBase64 = process.env.initialPrivateKeyBase64
   const numberArray = await decrypt(publicKeyBase64, privateKeyBase64, orderInfo.nowPaymentsInfo.order_id)
-  const results = await pantryClient.basket.create(numberArray, { messageArray: [firstMessage]})
-  console.log(results)
-  return results
+  const redis = new Redis({
+    host: 'redis-12641.c278.us-east-1-4.ec2.cloud.redislabs.com',
+    port: 12641,
+    password: redisPassword
+  })
+  const json = await redis.call("JSON.SET", numberArray, "$", JSON.stringify({ messageArray: [firstMessage]}))
+  redis.disconnect()
+  return json
 }
 function processFirstMessage(orderDetails) {
   let firstString = ''
@@ -57,7 +61,7 @@ function processFirstMessage(orderDetails) {
   }
   const nowPaymentsInfo = orderDetails.nowPaymentsInfo
   firstString = firstString.concat('Order USD Total: ', nowPaymentsInfo.price_amount,  '<br/>')
-  firstString = firstString.concat('Order XMR Total: ', nowPaymentsInfo.pay_amount, '<br/><br/>')
+  firstString = firstString.concat(`Order ${orderDetails.paymentCoin.toUpperCase()} Total: `, nowPaymentsInfo.pay_amount, '<br/><br/>')
   firstString = firstString.concat('Amazon Locker Name: ', orderDetails.lockerName, '<br/>')
   firstString = firstString.concat('Amazon Locker Zipcode: ', orderDetails.lockerZipcode, '<br/>')
   firstString = firstString.concat('Extra Order Notes: ', orderDetails.extraNotes, '<br/><br/>')

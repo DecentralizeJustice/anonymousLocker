@@ -14,20 +14,20 @@ exports.handler = async (event, context) => {
   if (parsed.finalTotalUSD.length > 100) {
     return { statusCode: 400, body: "finalTotalUSD is too long" }
   }
-  const apiRequest = await get(parsed.encryptedPassphrase, parsed.finalTotalUSD)
+  const apiRequest = await get(parsed.encryptedPassphrase, parsed.finalTotalUSD, parsed.paymentCoin)
   return {
     statusCode: 200,
     body: JSON.stringify(apiRequest),
   }
 }
-async function get(encryptedPassphrase, finalTotalUSD) {
+async function get(encryptedPassphrase, finalTotalUSD, paymentCoin) {
   const response = await axios.post(
     "https://api.nowpayments.io/v1/payment",
     // '{\n  "price_amount": 3999.5,\n  "price_currency": "usd",\n  "pay_currency": "btc",\n  "ipn_callback_url": "https://nowpayments.io",\n  "order_id": "RGDBP-21314",\n  "order_description": "Apple Macbook Pro 2019 x 1"\n}',
     {
       price_amount: finalTotalUSD,
       price_currency: "usd",
-      pay_currency: "xmr",
+      pay_currency: paymentCoin,
       ipn_callback_url: "https://nowpayments.io",
       order_id: encryptedPassphrase,
       order_description: "Test Payments",

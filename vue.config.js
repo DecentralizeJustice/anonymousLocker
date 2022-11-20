@@ -39,5 +39,17 @@ module.exports = defineConfig({
       importStrategy: 'kebab',
       rtlSupport: false
     }
+  },
+  chainWebpack: config => {
+    config.module
+      .rule('vue')
+      .use('vue-loader')
+      .tap(options => {
+        options.compilerOptions = {
+          ...options.compilerOptions,
+          isCustomElement: tag => tag === 'lottie-player'
+        }
+        return options
+      })
   }
 })

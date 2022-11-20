@@ -129,7 +129,8 @@
                 v-model="extraNotes"
                 autogrow
                 label="Questions, Concerns, & Notes"
-              />
+              /> 
+              <q-select  class="col-12 col-md-6 q-mt-md" v-model="selectedCoin" :options="options" label="Payment Crypto" />
               <span class="col-12 q-mt-md">
                 <q-chip
                   color="red"
@@ -144,8 +145,8 @@
                 v-if="itemList.length !== 0"
               >
                 Sub-Total (USD): {{ orderUSDSubTotal }} <br />
-                Taxes Collected by Amazon (~{{ taxRate*100 }}%): {{ taxAmount }} <br/>
-                Service Fee ({{ percentageFee * 100 }}%): {{ serviceFeeUSD }}
+                Estimated Taxes Collected by Amazon (~{{ taxRate*100 }}%): {{ taxAmount }} <br/>
+                Service Fee ({{ percentageFee * 100 }}% + ${{baseFee}}): {{ serviceFeeUSD }}
                 <br />
                 Final Total (USD):
                 {{ finalTotalUSD }}
@@ -169,14 +170,12 @@
 </template>
 
 <script setup>
-// https://www.amazon.com/ulp/view
-// https://www.amazon.com/
-// restrictions https://www.amazon.com/gp/help/customer/display.html?nodeId=201910770
-// single item limit 5,000 USD
 import { ref, watch, computed, defineEmits, toRaw } from "vue"
 import cart from "@/assets/svgs/cart.svg"
 import { encrypt, getRandomInt } from "@/assets/misc.js"
 const emit = defineEmits(['paymentSTarted'])
+const selectedCoin = ref('Monero')
+const options = ['Monero', 'Bitcoin', 'Litecoin', 'Ethereum']
 const axios = require('axios')
 const amazonlink = ref("")
 const amazonItemDescription = ref("")
@@ -186,9 +185,10 @@ const itemList = ref([])
 const lockerZipcode = ref(0)
 const lockerName = ref("")
 const extraNotes = ref("")
-const percentageFee = 0.04
+const percentageFee = 0.02
 const minOrderamount = 25
 const taxRate = 0.08
+const baseFee = 15
 const linkError = ref(false)
 const itemAmountError = ref(false)
 const zipcodeError = ref(false)
@@ -260,7 +260,9 @@ const orderUSDSubTotal = computed(() => {
   return Number(total).toFixed(2)
 })
 const serviceFeeUSD = computed(() => {
-  return Number((Number(orderUSDSubTotal.value) + Number(taxAmount.value)) * percentageFee).toFixed(2)
+  const amazonSubtotalPlusTaxes = Number(orderUSDSubTotal.value) + Number(taxAmount.value)
+  const percentageTotal = amazonSubtotalPlusTaxes*Number(percentageFee)
+  return (Number(baseFee) + Number(percentageTotal)).toFixed(2)
 })
 const taxAmount = computed(() => {
   return Number(Number(orderUSDSubTotal.value) * taxRate).toFixed(2)
@@ -269,6 +271,11 @@ const finalTotalUSD = computed(() => {
   const longNumber =
     Number(orderUSDSubTotal.value) + Number(serviceFeeUSD.value) + Number(taxAmount.value)
   return Number(longNumber).toFixed(2)
+})
+const paymentTicker = computed(() => {
+  const tickerDict = {'Monero': 'xmr', 'Litecoin':'ltc', 'Bitcoin': 'btc', 'Ethereum': 'eth'}
+  const selected = selectedCoin.value
+  return tickerDict[selected]
 })
 function submitOrderChecks() {
   if (orderUSDSubTotal.value < minOrderamount) {
@@ -292,10 +299,10 @@ async function submitOrder() {
   console.log(encryptedPassphrase)
   try {
   disableSubmit.value = true
-  const results = await axios.post('/.netlify/functions/createPayment', { encryptedPassphrase, finalTotalUSD: finalTotalUSD.value })
+  const results = await axios.post('/.netlify/functions/createPayment', { encryptedPassphrase, finalTotalUSD: finalTotalUSD.value, paymentCoin: paymentTicker.value })
   disableSubmit.value = false
   emit('paymentSTarted', { nowPaymentsInfo: results.data, numberArray: toRaw(numberArray.value), encryptedPassphrase, itemList: toRaw(itemList.value),
-   lockerZipcode: toRaw(lockerZipcode.value), lockerName: toRaw(lockerName.value), extraNotes: toRaw(extraNotes.value)})
+   lockerZipcode: toRaw(lockerZipcode.value), lockerName: toRaw(lockerName.value), extraNotes: toRaw(extraNotes.value), paymentCoin: paymentTicker.value})
 } catch (err) {
   disableSubmit.value = false
   console.log(err)

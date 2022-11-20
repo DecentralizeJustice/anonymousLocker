@@ -2,7 +2,7 @@
   <div class="col-11 col-md-6 col justify-center column">
     <div class="column justify-center" style="">
         <q-card class="col-12 col" style="">
-          <q-card-section class="bg-secondary text-white">
+          <q-card-section class="bg-grey-7 text-white">
             <div class="text-h6">Check On Order</div>
           </q-card-section>
           <q-separator />
@@ -11,8 +11,11 @@
                     style="border-radius: 10px;"
                     v-if="orderNotFound"
                   >
-                    <div class="text-h6 text-white col-8 bg-red-5 q-pa-md">
+                    <div class="text-h6 text-white col-8 bg-red-5 q-pa-sm">
                       Order Does Not Exist!
+                    </div>
+                    <div class="text-h6 text-white col-8 q-mt-sm">
+                      <router-link to="message">Message Me If Your Having Issues</router-link>
                     </div>
                   </q-card-section>
           <q-card-section>
@@ -39,6 +42,7 @@
                       />
                       <q-input
                       dark
+                      mask="aaaaaaaaaaaaaaaaaaaaaaaa"
                       standout="bg-primary text-white"
                       label-color="white"
                       class="col-10"
@@ -102,10 +106,9 @@ async function enterPassphrase() {
       // messageArray.value = results.data.messageArray
       emit('passphraseEnteredSuccess', results.data.messageArray, potentialPassphrase)
     } catch (error) {
-      if (error.response.data.slice(0, 20) === 'Could not get basket') {
+      console.log(error.response)
         orderNotFound.value = true
         console.log('order not found')
-      }
     }
   }
 }
@@ -135,9 +138,10 @@ function getPassphraseInputLabels(i) {
 }
 function wordToNumber(word) {
   const wordArray = bip39Wordlist.split(/\r?\n/)
+  const tempWord = word.toLowerCase().replace(/\s+/g, '')
   for (let index = 0; index < wordArray.length; index++) {
     const element = wordArray[index]
-    if (element === word) {
+    if (element === tempWord) {
       return index
     }
   }

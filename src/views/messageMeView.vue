@@ -1,12 +1,12 @@
 <template>
   <q-page
-    style="width: 100%; background-image: linear-gradient(to right top, #3d80d1, #576caa, #5a5b84, #514c61, #414042);"
-    class="q-pa-md row items-stretch text-center align-center justify-center"
+    style=""
+    class="q-pa-md q-py-xl row items-stretch text-center align-center justify-center bg-primary"
   >
   <div class="row justify-center col col-12 col-md-11 align-center items-center" >
     <div class="row items-center justify-center col-12 q-gutter-y-xl" >
       <q-card class="col-12 col-md-7">
-      <q-card-section class="bg-primary text-white">
+      <q-card-section class="text-white bg-grey-7">
         <div class="text-h6">Message Me</div>
       </q-card-section>
 
@@ -31,7 +31,7 @@
     </div>
     <div class="row justify-around q-gutter-y-md">
       <div class="col-12 col-md-6 ">
-        <q-btn @click="sendMessage"  color="positive" icon="send"> Send Message</q-btn>
+        <q-btn @click="sendMessage"  color="positive" icon="send" :disable="buttonDisabled"> Send Message</q-btn>
       </div>
     </div>
       </q-card-section>  
@@ -39,7 +39,7 @@
 
     </q-card>
     <q-card class="col-12 col-md-7">
-      <q-card-section class="bg-primary text-white">
+      <q-card-section class="text-white bg-grey-7">
         <div class="text-h6">Past Public Messages</div>
       </q-card-section>
       <q-separator />
@@ -78,10 +78,17 @@ import { ref } from "vue"
 const axios = require('axios')
 const text = ref('')
 const successMessage = ref('')
+const buttonDisabled = ref(false)
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 async function sendMessage() {
   if (text.value.length < 1) {
     return
   }
+  buttonDisabled.value = true
+  await sleep(3000)
+  buttonDisabled.value = false
   const results = await axios.post('/.netlify/functions/sendMeMessage', { message: text.value })
   console.log(results)
   text.value = ''
