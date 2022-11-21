@@ -206,7 +206,7 @@
         <div class="q-pa-md">
     <q-video
       :ratio="16/9"
-      src="https://www.youtube.com/embed/ivf5EfCAGgo"
+      src="https://res.cloudinary.com/dylevfpbl/video/upload/v1669001384/Untitled.mp4"
     />
   </div>
       </div>
