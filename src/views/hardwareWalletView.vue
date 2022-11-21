@@ -167,7 +167,7 @@
               class="text-h4 text-weight-regular text-center"
               style="line-height: 120%; font-weight: 300"
             >
-            Large companies Like Trezor or Ledger are not design to protect your <span style="text-decoration: underline;">privacy</span>. Don't Risk It.
+            Neither Trezor nor Ledger properly protect your <span style="text-decoration: underline;">privacy</span>. Don't Risk It.
             </div>
             <div
               class="text-h4 text-weight-regular text-center q-mt-sm"
@@ -206,7 +206,7 @@
         <div class="q-pa-md">
     <q-video
       :ratio="16/9"
-      src="https://res.cloudinary.com/dylevfpbl/video/upload/v1669001384/Untitled.mp4"
+      src="https://yewtu.be/embed/Al7NJsf_fAU"
     />
   </div>
       </div>
