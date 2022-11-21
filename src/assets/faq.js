@@ -13,17 +13,18 @@ const faq =
             <li>You pick up your order from the amazon locker using the code you received via my site.</li>
             <li>Enjoy your item, without anyone else knowing what you bought, your home address, or any other private information.</li>
         </ol>
-        I also have a full demo of Anonymous Locker <a href="https://www.youtube.com/watch?v=Al7NJsf_fAU">here</a>.`   
+        I also have a full demo of Anonymous Locker <a href="https://res.cloudinary.com/dylevfpbl/video/upload/v1669001384/Untitled.mp4">here</a>.`   
         ],
         ['How Much is This Service?',
-        `My service is 15 Dollars and 2% on top of the amazon order subtotal. For example, if you were to buy a 100 dollar hardware wallet from amazon
-        my service would cost you 118 dollars. At checkout with me you would pay 118 USD worth of monero.`
+        `My service is 15 Dollars and 2% on top of the amazon order subtotal. 
+        For example, if you were to buy a 100 dollar hardware wallet from amazon
+        my service would cost you 118 dollars. At checkout with me you would pay 118 USD worth of monero. My service assumes that the sales tax
+        charged by amazon is 8%. This is higher than most purchases will experience, 
+        so I will gladly refund you any extra taxes you pay once I actually place your order
+        and get the exact amount.`
         ],
-            ['How Does This Work?', `I have a full demo of Anonymous Locker <a href="https://www.youtube.com/watch?v=Al7NJsf_fAU">here</a>.`
+            ['How Does This Work?', `I have a full demo of Anonymous Locker <a href="https://res.cloudinary.com/dylevfpbl/video/upload/v1669001384/Untitled.mp4">here</a>.`
             
-            ],
-            [
-                'How much does this service Cost?', `My service is 5 Dollars plus 2% on top of amazons subtotal.`
             ],
         ['Why Should I hide my shipping address?', 
         `Lets say you wanted to buy a hardware wallet. 
@@ -59,7 +60,8 @@ const faq =
         [
             'Terms of Service', 
             `You will never have to enter any personal information to use my service. I do not track ip addresses, but the host of my site does. 
-            You are free to use tor, vpn, or any other ip hiding service. I will never ask for kyc information or any of the sorts.`
+            You are free to use tor, vpn, or any other ip hiding service. I will never ask for kyc information or any of the sorts.
+            I do server side page view tracking in order to see how effective my marketing is. I have also ran reddit ads in the past`
         ],
         [
             'Is the Code Open Source?', 'Yes, here is the <a href="https://github.com/DecentralizeJustice/anonymousLocker">github</a> repo for the code.'
