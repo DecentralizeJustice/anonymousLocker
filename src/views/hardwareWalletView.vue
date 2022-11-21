@@ -108,7 +108,7 @@
             >
             Ledger and Trezor can <span style="text-decoration: underline;font-weight: bold;">not</span> properly protect your 
             <span style="font-weight: bold;">phone number, name, or address </span>
-            from leaks when your wallet is shipped to your house. 
+            from hackers, employees, advertisers, or "third party partners". 
             If this information is leaked your life, peace, and funds will be at risk.
             The only way to protect your sensitive information is to not give it in the first place. 
             Anonymous Locker enables easy anonymous hardware wallet deliveries to most places in the U.S.A..
@@ -167,7 +167,7 @@
               class="text-h4 text-weight-regular text-center"
               style="line-height: 120%; font-weight: 300"
             >
-            The US mail system isn't designed to be <span style="text-decoration: underline;">private</span>. Don't Risk It.
+            Large companies Like Trezor or Ledger are not design to protect your <span style="text-decoration: underline;">privacy</span>. Don't Risk It.
             </div>
             <div
               class="text-h4 text-weight-regular text-center q-mt-sm"

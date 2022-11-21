@@ -47,7 +47,7 @@ const faq =
             </ol>`
         ],
         [
-            `Can I buyg giftcards from you?`,
+            `Can I buy giftcards from you?`,
             `Yes, you can buy closed loop giftcards with my service.That means that you can buy giftcards to specific stores. You can not buy prepiad visa giftcards, or other open loop cards. `
         ],
         [
