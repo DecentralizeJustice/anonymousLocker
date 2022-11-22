@@ -69,6 +69,9 @@ const faq =
     ],
     'Order Questions': [
         [
+            `Which payment methods do you accept?`, 'I accept btc, ltc, xmr, and eth currently.'
+        ],
+        [
             `Do you use prime shipping?`, 'No, I only use the free shipping option offered by amazon, unless you pay for the faster method.'
         ],
         [
