@@ -75,19 +75,16 @@ const faq =
             `Do you use prime shipping?`, 'No, I only use the free shipping option offered by amazon, unless you pay for the faster method.'
         ],
         [
-            `Do you offer refunds/returns?`, `Yes. I offer refunds if you have not been given the locker code yet. These refunds come with a 1% surcharge. If you have been given the locker code,
-             or have received the product you will receive a amazon gift card when you process the return. I can trade this amazon gift card for monero for you, for 2% fee.`
+            `Do you offer refunds/returns?`, `Yes. Evertyhing but the base and percentage service fee is refudnable.`
         ],
         [
             `How do refunds work?`,
-            `Refunds that preserve your privacy take time and require more work on my end. This is why they come with a 2% surecharge.
-            If you wish to return an item, we will arrange for you to return an item to the locker. 
-            Once amazon successfully refunds to the item, I will refund you the same usd worth of monero that you paid me minus the 2% service charge.`
+            `You and I will cordinate for you to place the item back in the locker  , just like a normal amazon return. Once amazon processes said return and approves it, I will refund you.`
         ],
         [
             `Why is my cart not saved if I refresh?`,
-            `I have not implimented cookies yet , since I want to have a clear and simple terms of service without caveats. I am researching this option
-            currenlty though. `
+            `I have not implemented cookies yet , since I want to have a clear and simple terms of service without caveats. I am researching this option
+            currently though. `
         ]
     ],
     'Alternative Methods': 
