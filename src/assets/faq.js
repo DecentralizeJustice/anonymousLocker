@@ -83,6 +83,11 @@ const faq =
             `Refunds that preserve your privacy take time and require more work on my end. This is why they come with a 2% surecharge.
             If you wish to return an item, we will arrange for you to return an item to the locker. 
             Once amazon successfully refunds to the item, I will refund you the same usd worth of monero that you paid me minus the 2% service charge.`
+        ],
+        [
+            `Why is my cart not saved if I refresh?`,
+            `I have not implimented cookies yet , since I want to have a clear and simple terms of service without caveats. I am researching this option
+            currenlty though. `
         ]
     ],
     'Alternative Methods': 
