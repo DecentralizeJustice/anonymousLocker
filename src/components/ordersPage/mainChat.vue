@@ -102,6 +102,9 @@ function getTextColor(sender) {
   }
 }
 async function sendMessage() {
+  if (text.value.length < 1) {
+    return
+  }
   disableButtons.value = true
   await sleep(1000)
   disableButtons.value = false
