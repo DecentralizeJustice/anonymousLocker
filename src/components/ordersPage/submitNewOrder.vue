@@ -92,7 +92,7 @@
                           /></span>
                           Item(s) Total: {{ Number(item.cost)* Number(item.quantity) }}<br />
                           Item(s) Notes: {{item.description}}<br/>
-                          <a :href="item.link" class="linkStyle">Link</a>
+                          <a :href="item.link" target="_blank" rel="noopener noreferrer" class="linkStyle">Link</a>
                         </div>
                         <div class="col-12 text-center">
                           <q-btn
