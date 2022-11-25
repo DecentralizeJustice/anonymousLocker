@@ -314,5 +314,5 @@ async function submitOrder() {
   background: $secondary
   color: white
 .linkStyle
-  color: $primary
+  color: #00FFFF
 </style>
