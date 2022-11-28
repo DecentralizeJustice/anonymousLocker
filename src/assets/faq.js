@@ -45,8 +45,9 @@ const faq =
             <ol>
                 <li>We only deliver to amazon lockers in the US.</li>
                 <li>Items must be fulfilled by amazon  since only amazon can ship to amazon lockers.</li>
-                <li>Refunds Incur an additional 2% charge and Service fees are non-refundable.</li>
+                <li>Base and percentage service fees are non-refundable.</li>
                 <li>The minimum order is 25 dollars.</li>
+                <li>I can not purchase prime only items. This includes things like Prime Exclusive Deals.</li>
                 <li>We do not offer free Prime 2-Day Shipping, but you can pay extra for faster if you so wish.</li>
                 <li>No items that are Federally Illegal in the states.</li>
                 <li> I reserve the right to decline to process an order. In this case a refund will be issue.</li>
