@@ -94,63 +94,55 @@
       </div>
     </div>
     <div class="row justify-around col-12 items-center  q-py-xl bg-primary" style="width: 100%;">
-      <div class="col-12 col-md-6 text-center row justify-center q-px-md items-center">      
-        <div class="col-12 q-my-lg">
-            <div
-              class="text-h4 text-weight-regular text-left text-white"
-              style="line-height: 120%; font-weight: 400; font-style: italic;"
-            >
-            "
-              F**k sake! 
+      <div class="col-12 col-md-6 text-center row justify-center q-px-md items-center desktop-only">
+        <div class="col-12 text-center text-white text-h5 q-pb-lg my-font">      
+        Recently Purchased Items
+      </div>  
+        <div class="row justify-around">   
+        <div class="col-md-3 col-6" v-for="item in recentlyBought" :key="item.id">
+          <q-card class="" style="width: 100%;">
+            <q-card-section>
+              <img class='q-pa-md' :src=item.img style="height: 20vh;">
+            </q-card-section>
 
-              This is my actual home address in the email.
+            <q-card-section>
+              <div class="text-h6">{{item.name}}</div>
+            </q-card-section>
 
-              I don't even know what to say."
-            </div>
-            <div
-              class="text-h6 text-weight-regular text-center no-padding text-white q-mt-sm"
-            >- @SalehAhmedd_, Ledger Databse Leak Victim
-            </div>
-
-        </div>
-        <div class="col-12 q-my-lg">
-            <div
-              class="text-h4 text-weight-regular text-left text-white"
-              style="line-height: 120%; font-weight: 400; font-style: italic;"
-            >
-            "They had my home address. I was told bad things would happen if I didn't pay them $50,000 in bitcoin."
-            </div>
-            <div
-              class="text-h6 text-weight-regular text-center no-padding q-mt-sm text-white"
-            >- Jameson Lopp, Extortion Victim
-            </div>
+            <q-card-section class="q-pt-none">
+              <div class="text-subtitle2">${{item.price}}</div>
+            </q-card-section>
+          </q-card>
 
         </div>
+      </div> 
       </div>
-      <div class="col-11 col-md-4 text-center row justify-center items-center q-pt-md">      
-        <q-card class=" text-left bg-blue-grey-11 text-black col col-12">
-          <q-card-section>
+      <div class="col-11 col-md-4 text-center row justify-center items-center">      
+        <q-card class=" text-left bg-white text-black col-12">
+<!--           <q-card-section>
             <div
               class="text-h4 text-weight-regular text-center"
               style="line-height: 120%; font-weight: 300"
             >
-            <span style="text-decoration: underline;">All</span> other methods fail at protecting your privacy and safety when you shop online.
+            <span>Personal Information Collected:</span> <br/>None
             </div>
+          </q-card-section> -->
+          <q-card-section>
+            <div class="text-center text-h5  text-weight-regular"><span class="text-h4">Service Cost:</span> <br/>$10 USD + 5% of Total Order</div>
             <div
-              class="text-h4 text-weight-regular text-center q-mt-sm"
-              style="line-height: 120%;"
+              class="text-h4 text-weight-regular text-center"
+              style=""
             >
             <!-- <span style="text-decoration: underline;">Don't take that risk!</span> -->
-            <div class="text-center q-mt-sm">
               <img
-                  src="@/assets/svgs/homeLock.svg"
+                  src="@/assets/svgs/amazonLocker.svg"
                   :class="{'desktopIconsHouse': $q.screen.gt.sm, 'mobileIconsHouse': $q.screen.lt.md}"
-                  class="q-my-sm"
+                  class=""
                 /><br/>
               <router-link :to="{ name: 'ordersPage' }" style="text-decoration:none !important;">
                 <q-btn
                   color="primary"
-                  label="Protect Your Home Address"
+                  label="Place An Order"
                   size="lg"
                   style="color: white"
                   padding="sm"
@@ -158,13 +150,15 @@
                 ></q-btn>
               </router-link>
             </div>
-            </div>
           </q-card-section>
         </q-card>
       </div>
     
     </div> 
     <div class="row justify-around items-end no-margin col-12 text-left q-pb-xl q-pt-xl" style="width: 100%; background-color:#D4CCC4;">
+      <div class="col-12 text-center text-black text-h4 q-pb-lg my-font">      
+        Demonstration Video
+      </div>
       <div class="col-12 col-md-8 text-center text-white text-h4 q-pb-lg">      
         <div class="q-pa-md">
     <q-video
@@ -234,6 +228,23 @@ import { onMounted } from "vue"
 require("@lottiefiles/lottie-player")
 const heroText = 'Anonymous Deliveries With Amazon Lockers'
 const heroSubtext = `The Most Private Way To shop Online`
+const recentlyBought =[
+  { 
+    img: `https://res.cloudinary.com/dylevfpbl/image/upload/v1669749679/recentlyBought/615zM9zW5iL._AC_SL1000_.jpg`,
+    name: 'Rock Pi 4C RK3399 Single Board Computer',
+    price: '149.98'
+  },
+  {
+    img: `https://res.cloudinary.com/dylevfpbl/image/upload/v1669750092/recentlyBought/41vjOH-hRIL._AC_SL1000_.jpg`,
+    name: `Ledger Nano S Plus Crypto Hardware Wallet`,
+    price: '79.00'
+  },
+  {
+    img: `https://res.cloudinary.com/dylevfpbl/image/upload/v1669750805/recentlyBought/81_zeeqZmbL._AC_SL1500_.jpg`,
+    name: `SAMSUNG 980 SSD 500GB PCle 3.0x4, NVMe M.2`,
+    price: '56.99'
+  }
+]
 onMounted(() => {
 
     })
