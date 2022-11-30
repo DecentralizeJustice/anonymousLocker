@@ -98,7 +98,7 @@
         <div class="col-12 text-center text-white text-h5 q-pb-lg my-font">      
         Recently Purchased Items
       </div>  
-        <div class="row justify-around">   
+        <div class="row justify-around q-gutter-lg">   
         <div class="col-md-3 col-6" v-for="item in recentlyBought" :key="item.id">
           <q-card class="" style="width: 100%;">
             <q-card-section>
@@ -107,10 +107,7 @@
 
             <q-card-section>
               <div class="text-h6">{{item.name}}</div>
-            </q-card-section>
-
-            <q-card-section class="q-pt-none">
-              <div class="text-subtitle2">${{item.price}}</div>
+              <div class="text-subtitle1">${{item.price}}</div>
             </q-card-section>
           </q-card>
 
@@ -156,7 +153,7 @@
     
     </div> 
     <div class="row justify-around items-end no-margin col-12 text-left q-pb-xl q-pt-xl" style="width: 100%; background-color:#D4CCC4;">
-      <div class="col-12 text-center text-black text-h4 q-pb-lg my-font">      
+      <div class="col-12 text-center text-grey-1 text-h4 q-pb-lg my-font">      
         Demonstration Video
       </div>
       <div class="col-12 col-md-8 text-center text-white text-h4 q-pb-lg">      
