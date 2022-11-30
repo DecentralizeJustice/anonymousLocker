@@ -10,6 +10,9 @@
       </div>
     </div>
     </div>
+    <div class="row col-12 text-primary justify-center q-pt-lg q-mb-md text-weight-bold" style="">
+      Copyright 2022, Anonymous Locker LLC
+    </div>
 </div>
 </template>
 <script setup>
@@ -17,18 +20,21 @@ const info = [
   {
     title: 'Business Info',
     items: [
-      {
+/*       {
         text: 'About Me', link: '/'
-      },
+      }, */
       {
         text: 'Github', link: 'https://github.com/DecentralizeJustice/anonymousLocker'
       },
       {
+        text: 'Business Registration', link: 'https://corp.sos.ms.gov/corpconv/portal/c/ExecuteWorkflow.aspx?workflowid=g12dbd558-fa5d-49a1-a869-ad8b9db198db&FilingId=d53d5a4a-17be-4363-b9d2-e2cba4eb77f5'
+      },
+/*       {
         text: 'Terms Of Service', link: '/'
       },
       {
         text: 'Privacy Policy', link: '/'
-      }
+      } */
     ]
   },
   {
@@ -79,5 +85,5 @@ a:hover
   text-decoration: underline
 a:active
   color:$link-color
-  text-decoration: underline
+  text-decoration: none
 </style>
