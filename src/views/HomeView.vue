@@ -52,11 +52,9 @@
                   <div class="col-12 col-md-3">
                     <p class="text-h6 text-weight-medium">Step 2.</p>
                     <img :src="monero" class="" :class="{'desktopIconsPayment': $q.screen.gt.sm, 'mobileIconsPayment': $q.screen.lt.md}" />
-                    <img :src="bitcoin" class="" :class="{'desktopIconsPayment': $q.screen.gt.sm, 'mobileIconsPayment': $q.screen.lt.md}" /><br/>
-                    <img :src="ethereum" class="" :class="{'desktopIconsPayment': $q.screen.gt.sm, 'mobileIconsPayment': $q.screen.lt.md}" />
-                    <img :src="litecoin" class="" :class="{'desktopIconsPayment': $q.screen.gt.sm, 'mobileIconsPayment': $q.screen.lt.md}" /><br />
+
                     <p class="text-subtitle1 text-weight-medium">
-                      Pay For Order With XMR, BTC, ETH, or LTC
+                      Pay For Order With Monero
                     </p>
                   </div>
                   <div class="col-12 col-md-3">
@@ -153,7 +151,7 @@
     
     </div> 
     <div class="row justify-around items-end no-margin col-12 text-left q-pb-xl q-pt-xl" style="width: 100%; background-color:#D4CCC4;">
-      <div class="col-12 text-center text-grey-1 text-h4 q-pb-lg my-font">      
+      <div class="col-12 text-center text-primary text-h4 q-pb-lg my-font">      
         Demonstration Video
       </div>
       <div class="col-12 col-md-8 text-center text-white text-h4 q-pb-lg">      
@@ -208,6 +206,7 @@
         </div></q-chat-message>
       </div>
     </div>
+    <footerGlobal/>
   </q-page>
 </template>
 
@@ -217,10 +216,11 @@ import shopperAvatar1 from "@/assets/svgs/firstPageIcon.svg"
 import shopperAvatar2 from "@/assets/svgs/incognito.svg"
 import computer from "@/assets/svgs/monitor.svg"
 import monero from "@/assets/svgs/rand.svg"
-import bitcoin from "@/assets/svgs/bitcoin.svg"
+/* import bitcoin from "@/assets/svgs/bitcoin.svg"
 import ethereum from "@/assets/svgs/ethereum.svg"
-import litecoin from "@/assets/svgs/litecoin.svg"
+import litecoin from "@/assets/svgs/litecoin.svg" */
 import lockerBig from "@/assets/svgs/amazonLocker.svg"
+import footerGlobal from "@/components/footerGlobal.vue"
 import { onMounted } from "vue"
 require("@lottiefiles/lottie-player")
 const heroText = 'Anonymous Deliveries With Amazon Lockers'
@@ -262,8 +262,8 @@ onMounted(() => {
 .mobileIconsHouse
   width: 40%
 .desktopIconsPayment
-  width: 27%
+  width: 62%
   margin: 1% 1% 1% 1%
 .mobileIconsPayment
-  width: 24%
+  width: 30%
 </style>

@@ -21,8 +21,8 @@
                           :stamp="epochToLocalTime(message.sent)"
                           :avatar="getAvatar(message.from)"
                           text-html
-                          text-color="white"
-                          :bg-color="getTextColor(message.from)"
+                          :text-color="getTextColor(message.from)"
+                          :bg-color="getBackgroundColor(message.from)"
                         />
                       </div>
                     </div>
@@ -95,6 +95,14 @@ function getAvatar(sender) {
   }
 }
 function getTextColor(sender) {
+  if (sender === 'dgoon') {
+    return 'black'
+  }
+  if (sender === 'shopper') {
+    return 'white'
+  }
+}
+function getBackgroundColor(sender) {
   if (sender === 'dgoon') {
     return 'info'
   }

@@ -1,9 +1,9 @@
 <template>
   <q-page
     style=""
-    class="q-pa-md q-py-xl row items-stretch text-center align-center justify-center bg-primary"
+    class="row items-stretch text-center align-center justify-center bg-primary"
   >
-  <div class="row justify-center col col-12 col-md-11 align-center items-center" >
+  <div class="row justify-center col col-12 col-md-11 align-center items-center q-py-xl" >
     <div class="row items-center justify-center col-12 q-gutter-y-xl" >
       <q-card class="col-12 col-md-7">
       <q-card-section class="text-white bg-grey-7">
@@ -70,11 +70,13 @@
     </q-card>
     </div>
   </div>
+  <footerGlobal/>
   </q-page>
 </template>
 
 <script setup>
 import { ref } from "vue"
+import footerGlobal from "@/components/footerGlobal.vue"
 const axios = require('axios')
 const text = ref('')
 const successMessage = ref('')
