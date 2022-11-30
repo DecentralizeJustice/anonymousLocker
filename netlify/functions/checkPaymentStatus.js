@@ -56,7 +56,7 @@ function processFirstMessage(orderDetails) {
     const quantityString = 'Quantity: ' +`${itemList[index].quantity}` + '<br/>'
     const itemCostString = 'Single Item Cost: ' +`${itemList[index].cost}` + '<br/>'
     const notesString = 'Item Notes: ' +`${itemList[index].description}` + '<br/>'
-    const linkString = `<a href="${itemList[index].link}">Item Link</a>`+ '<br/>'
+    const linkString = `<a href="${itemList[index].link}" target="_blank" rel="noopener noreferrer">Item Link</a>`+ '<br/>'
     firstString = firstString.concat(linkTitle + quantityString + itemCostString + notesString+ linkString+  '<br/>')
   }
   const nowPaymentsInfo = orderDetails.nowPaymentsInfo
