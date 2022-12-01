@@ -15,7 +15,7 @@
             </div>
             <div
               class="text-h5 text-weight-regular q-mt-md q-pa-sm"
-              style="line-height: 120%"
+              style="line-height: 130%;"
             ><span v-html="heroSubtext"></span>
 
             </div>
@@ -44,7 +44,7 @@
             </div>
             <div
               class="text-h5 text-weight-regular q-mt-md q-pa-sm"
-              style="line-height: 120%"
+              style="line-height: 130%"
             ><span v-html="heroSubtext1"></span>
 
             </div>
@@ -71,17 +71,23 @@ import { onMounted } from "vue"
 require("@lottiefiles/lottie-player")
 const heroText = `Who Created Anonymous Locker?`
 const heroSubtext = 
-`I have been making projects in the crypto space since 2016. Since my first project,
-Incognito Deals, I have been obsessed with the potential for cryptocurrencies to make a better and more private e-commerce experience. 
-In the past I have built an educational multisig bitcoin wallet, an anonymous crypto trivia show, and 
-contributed to several open source projects in the space.
+`I have been making projects in the crypto space since 2016. Since my first crypto business,
+<a href="https://www.reddit.com/r/IncognitoDeals/" style='color: inherit; text-decoration: underline;'>Incognito Deals</a>
+, I have been obsessed with the potential for cryptocurrencies to make a better and more private e-commerce experience. 
+In the past I have built a 
+<a href="https://guidingwallet.app/" style='color: inherit; text-decoration: underline;'>educational multisig bitcoin wallet</a>, 
+a <a href="https://guidingwallet.app/triviashow" style='color: inherit; text-decoration: underline;'>anonymous crypto trivia show</a>, and
+contributed to several 
+<a href="https://github.com/spesmilo/electrum/issues/6157" style='color: inherit; text-decoration: underline;'>open source projects</a> 
+in the space.
 These past experiences have set me up perfectly to create Anonymous Locker.<br/>
 - Donely Gunn 😎`
 const heroText1 = `Why Does Anonymous Locker Exist?`
 const heroSubtext1 = 
-`The only way to protect information is to never give it in the first place so I decided to build a service that required the 
-least information needed legally from customers. I did some research and I made a amazon locker specific version of one of my earliest projects, 
-Incognito Deals. Once I combined
+`I believe that the only way to protect information is to never give it in the first place.  Based on this motto I decided to build a service that required the 
+least information needed ,legally, from customers. I did some research and I made a amazon locker specific version of one of my earliest projects, 
+<a href="https://www.reddit.com/r/IncognitoDeals/" style='color: inherit; text-decoration: underline;'>Incognito Deals</a>
+. Once I combined
 the anonymity of Incognito deals with the accessibility of thousands of amazon lockers, I knew I was on to something. The monero community loved the idea, 
 and a week later Anonymous Locker was born. I hope to add things like anonymous loyalty programs and maybe expand to other retailers in the future.`
 onMounted(() => {
@@ -89,6 +95,7 @@ onMounted(() => {
     })
 </script>
 <style lang="sass" scoped>
+$link-color: #FFFFFF
 @font-face
   font-family: customfont
   src: url(../styles/ArchivoBlack-Regular.ttf)
@@ -96,11 +103,15 @@ onMounted(() => {
   font-family: 'customfont'
 
 .frame 
-
   border: 3px solid #ccc
+a:visited
+  color:$link-color
+  text-decoration: none
+a:hover
+  color:#004E64
+  text-decoration: underline
+a:active
+  color:$link-color
+  text-decoration: none
 
-.desktopIconsHouse
-  width: 25%
-.mobileIconsHouse
-  width: 40%
 </style>
