@@ -7,14 +7,15 @@
     <div class="row items-center justify-center col-12 q-gutter-y-xl" >
       <q-card class="col-12 col-md-7">
       <q-card-section class="text-white bg-grey-7">
-        <div class="text-h6">Message Me</div>
+        <div class="text-h6">Ask Me A Question</div>
       </q-card-section>
 
       <q-separator />
       <q-card-section class="">
-        <div class="text-body1">      
-          If you have not placed an order, and want to message me about something shoot me a message below. 
-      If you have placed an order and the chat is working, you should communicate with me using that chat instead.</div>
+        <div class="text-body1 text-left">      
+          If you have not placed an order and have a question for me, shoot me a message here. 
+      If you have placed an order and the chat is working, you should communicate with me using that chat instead. 
+      I will answer your question publicy below, so don't mention any private information.</div>
       </q-card-section>
       <q-card-section class="">
         <div class="row justify-around q-gutter-y-md">

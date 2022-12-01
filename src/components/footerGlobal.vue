@@ -20,14 +20,14 @@ const info = [
   {
     title: 'Business Info',
     items: [
-/*       {
-        text: 'About Me', link: '/'
-      }, */
+      {
+        text: 'About Me', link: '/about'
+      },
       {
         text: 'Github', link: 'https://github.com/DecentralizeJustice/anonymousLocker'
       },
       {
-        text: 'Business Registration', link: 'https://corp.sos.ms.gov/corpconv/portal/c/ExecuteWorkflow.aspx?workflowid=g12dbd558-fa5d-49a1-a869-ad8b9db198db&FilingId=d53d5a4a-17be-4363-b9d2-e2cba4eb77f5'
+        text: 'Business Registration', link: 'https://res.cloudinary.com/dylevfpbl/image/upload/v1669904250/ExecuteWorkflow.jpg'
       },
 /*       {
         text: 'Terms Of Service', link: '/'

@@ -3,12 +3,14 @@ import HomeView from "../views/HomeView.vue"
 import ordersPage from "../views/ordersPageView.vue"
 import faq from "../views/faqView.vue"
 import message from "../views/messageMeView.vue"
-import hw from "../views/hardwareWalletView.vue"
+// import hw from "../views/hardwareWalletView.vue"
+import about from "../views/aboutMeView.vue"
 
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes: [
+    { path: "/:catchAll(.*)", component: HomeView },
     {
       path: "/",
       name: "home",
@@ -32,7 +34,12 @@ const router = createRouter({
     {
       path: "/hw",
       name: "hw",
-      component: hw,
+      component: HomeView,
+    },
+    {
+      path: "/about",
+      name: "about",
+      component: about,
     }
   ],
 })
