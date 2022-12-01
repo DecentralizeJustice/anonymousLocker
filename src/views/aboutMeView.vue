@@ -33,6 +33,15 @@
       </div>
     </div>
     <div class="row justify-evenly q-py-xl col-12 bg-primary">
+      <div class="col col-10 col-md-3 desktop-only row">
+        <div class="col-12 justify-center items-center align-center row " style="min-height:40vh;">
+          <q-img
+            class=""
+            src="https://res.cloudinary.com/dylevfpbl/image/upload/v1669906133/david-pisnoy-0nZwyizy7I4-unsplash.jpg"
+            style="max-width: 100%;"
+          />
+              </div>
+      </div>
       <div class="row col col-10 col-md-6 items-center align-center row">
         <div class=" col col-12 items-center align-center row">
           <div class="text-left text-center text-primary q-pa-lg" style="border-radius: 10px;background-color:#D4CCC4;">
@@ -50,15 +59,6 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="col col-10 col-md-3 desktop-only row">
-        <div class="col-12 justify-center items-center align-center row " style="min-height:40vh;">
-          <q-img
-            class=""
-            src="https://res.cloudinary.com/dylevfpbl/image/upload/v1669906133/david-pisnoy-0nZwyizy7I4-unsplash.jpg"
-            style="max-width: 100%;"
-          />
-              </div>
       </div>
     </div>
     <footerGlobal/>
