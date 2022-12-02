@@ -21,4 +21,5 @@ I do not share this data with anyone unless I am required to by law. This might 
 This policy might change in the future. If it does it will update on this site.
 
 If you have any questions about this privacy policy, please feel free to shoot me a message using this site's "Ask A Question" functionality below in the footer. <br/>
+
 Last Updated: 12/1/2022
