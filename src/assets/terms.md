@@ -1,5 +1,21 @@
-#### Refund Policy
-The only personal data that I collect about you is your IP address. I do not personally collect your IP address but our website service provider,
-Netlify does record and have access to your IP address. My file host, currently Cloudinary, also collects your IP address when you use our website. It is recommended to use a VPN to reduce the amount of information collected on you. Netlify also collects information like what website referred you.
+#### Current Service Stipulations
+<ol>
+    <li>We only deliver to amazon lockers in the US.</li>
+    <li>Items must be fulfilled by amazon since only amazon can ship to amazon lockers.</li>
+    <li>Base and percentage service fees are non-refundable.</li>
+    <li>The minimum order is 25 dollars.</li>
+    <li>I can not purchase prime-only items. This includes things like Prime Exclusive Deals.</li>
+    <li>We do not offer free Prime 2-Day Shipping, but you can pay extra for faster if you so wish.</li>
+    <li>No items that are Federally Illegal in the states.</li>
+    <li>I reserve the right to decline to process an order. In this case, a refund will be issued.</li>
+    <li>No orders can contain prepaid credit cards as an item, but they can contain other kinds of gift cards.</li>
+    <li> You should check your order every other day so that you do not miss important information about your order.</li>
+</ol>
 
-Last Updated: 12/1/2022
+We reserve the right to refuse and refund any order for any reason.
+
+
+#### Refund Policy
+If you wish to return an order that is possible. I will refund you whatever Amazon refunds me. The service fees, base fee and percentage fee, are not refundable.
+
+Last Updated: 12/2/2022
