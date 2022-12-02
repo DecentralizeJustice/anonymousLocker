@@ -112,28 +112,33 @@
         </div>
       </div> 
       </div>
-      <div class="col-11 col-md-4 text-center row justify-center items-center">      
-        <q-card class=" text-left bg-white text-black col-12">
-<!--           <q-card-section>
-            <div
-              class="text-h4 text-weight-regular text-center"
-              style="line-height: 120%; font-weight: 300"
-            >
-            <span>Personal Information Collected:</span> <br/>None
-            </div>
-          </q-card-section> -->
-          <q-card-section>
-            <div class="text-center text-h5  text-weight-regular"><span class="text-h4">Service Cost:</span> <br/>$10 USD + 5% of Total Order</div>
-            <div
-              class="text-h4 text-weight-regular text-center"
-              style=""
-            >
-            <!-- <span style="text-decoration: underline;">Don't take that risk!</span> -->
-              <img
-                  src="@/assets/svgs/amazonLocker.svg"
-                  :class="{'desktopIconsHouse': $q.screen.gt.sm, 'mobileIconsHouse': $q.screen.lt.md}"
-                  class=""
-                /><br/>
+      <div class="col-11 col-md-4 text-center row justify-center items-center row">      
+        <q-card class=" text-center bg-white text-black col-12">
+          <q-card-section class="text-center text-h4  text-weight-regular text-primary " style="background-color:#D4CCC4;">
+            Service Fee:
+          </q-card-section>
+          <q-card-section class="text-center text-h4  text-weight-regular">
+            $10 USD + 5% of Amazon Total
+          </q-card-section>
+        </q-card>
+        <q-card class=" text-left bg-white text-black col-12 q-mt-md row justify-around">
+          <q-card-section class="text-center text-h4 text-primary col-12" style="background-color:#D4CCC4;">
+            Example Order
+          </q-card-section>
+          <q-card-section class="text-center text-h4 col-6 row justify-center">
+            <div class="col-12">Item Cost</div>
+            <div class="col-10 col-md-6 text-h2 text-center q-mb-md"><q-input v-model="exampleItemCost"  filled  style="" /></div>
+          </q-card-section>
+          <q-card-section class="text-center text-h4 col-6">
+            <div>Amazon Total</div>
+            <div class="text-subtitle1">(Includes Sale Tax)</div>
+            <div class="q-mt-sm">${{amazonTotalCost.toFixed(2)}}</div>
+          </q-card-section>
+          <q-card-section class="text-center text-h4 col-12" style="">
+            <div>Total You Pay For Delivery</div> 
+            <div class="q-mt-sm">${{(baseServiceFee+amazonTotalCost+(percentageServiceFee*amazonTotalCost)).toFixed(2)}}</div>
+          </q-card-section>
+          <q-card-section class="text-h4 text-weight-regular text-center col-12">
               <router-link :to="{ name: 'ordersPage' }" style="text-decoration:none !important;">
                 <q-btn
                   color="primary"
@@ -144,7 +149,6 @@
                   text-color="white"
                 ></q-btn>
               </router-link>
-            </div>
           </q-card-section>
         </q-card>
       </div>
@@ -221,8 +225,12 @@ import ethereum from "@/assets/svgs/ethereum.svg"
 import litecoin from "@/assets/svgs/litecoin.svg" */
 import lockerBig from "@/assets/svgs/amazonLocker.svg"
 import footerGlobal from "@/components/footerGlobal.vue"
-import { onMounted } from "vue"
+import { onMounted, ref, computed } from "vue"
 require("@lottiefiles/lottie-player")
+const exampleItemCost = ref(80)
+const estimatedTax = Number(.08)
+const baseServiceFee = Number(10)
+const percentageServiceFee = Number(.05)
 const heroText = 'Anonymous Deliveries With Amazon Lockers'
 const heroSubtext = `The Most Private Way To shop Online`
 const recentlyBought =[
@@ -242,6 +250,9 @@ const recentlyBought =[
     price: '56.99'
   }
 ]
+const amazonTotalCost = computed(() => {
+  return ((Number(estimatedTax)*Number(exampleItemCost.value))+Number(exampleItemCost.value))
+})
 onMounted(() => {
 
     })
@@ -257,10 +268,6 @@ onMounted(() => {
   width:  60%
 .mobileIcons
   width:  30%
-.desktopIconsHouse
-  width: 25%
-.mobileIconsHouse
-  width: 40%
 .desktopIconsPayment
   width: 62%
   margin: 1% 1% 1% 1%
