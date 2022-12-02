@@ -1,20 +1,21 @@
 <template>
   <q-page
     style=""
-    class="q-pa-md q-py-xl row items-stretch text-center align-center justify-center bg-primary"
+    class="row items-stretch text-center align-center justify-center bg-primary"
   >
-  <div class="row justify-center col col-12 col-md-11 align-center items-center" >
+  <div class="row justify-center col col-12 col-md-11 align-center items-center q-py-xl" >
     <div class="row items-center justify-center col-12 q-gutter-y-xl" >
       <q-card class="col-12 col-md-7">
       <q-card-section class="text-white bg-grey-7">
-        <div class="text-h6">Message Me</div>
+        <div class="text-h6">Ask Me A Question</div>
       </q-card-section>
 
       <q-separator />
       <q-card-section class="">
-        <div class="text-body1">      
-          If you have not placed an order, and want to message me about something shoot me a message below. 
-      If you have placed an order and the chat is working, you should communicate with me using that chat instead.</div>
+        <div class="text-body1 text-left">      
+          If you have not placed an order and have a question for me, shoot me a message here. 
+      If you have placed an order and the chat is working, you should communicate with me using that chat instead. 
+      I will answer your question publicy below, so don't mention any private information.</div>
       </q-card-section>
       <q-card-section class="">
         <div class="row justify-around q-gutter-y-md">
@@ -70,11 +71,13 @@
     </q-card>
     </div>
   </div>
+  <footerGlobal/>
   </q-page>
 </template>
 
 <script setup>
 import { ref } from "vue"
+import footerGlobal from "@/components/footerGlobal.vue"
 const axios = require('axios')
 const text = ref('')
 const successMessage = ref('')

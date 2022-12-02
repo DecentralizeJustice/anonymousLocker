@@ -2,7 +2,7 @@
   <div class="col-11 col-md-6 col justify-center column">
     <div class="column justify-center" style="">
         <q-card class="col-12 col" style="">
-          <q-card-section class="bg-grey-7 text-white">
+          <q-card-section class="bg-grey-9 text-white">
             <div class="text-h6">Chat About Your Order</div>
           </q-card-section>
           <q-separator />
@@ -21,7 +21,8 @@
                           :stamp="epochToLocalTime(message.sent)"
                           :avatar="getAvatar(message.from)"
                           text-html
-                          :bg-color="getTextColor(message.from)"
+                          :text-color="getTextColor(message.from)"
+                          :bg-color="getBackgroundColor(message.from)"
                         />
                       </div>
                     </div>
@@ -95,10 +96,18 @@ function getAvatar(sender) {
 }
 function getTextColor(sender) {
   if (sender === 'dgoon') {
-    return 'blue-5'
+    return 'black'
   }
   if (sender === 'shopper') {
-    return 'light-blue-11'
+    return 'white'
+  }
+}
+function getBackgroundColor(sender) {
+  if (sender === 'dgoon') {
+    return 'info'
+  }
+  if (sender === 'shopper') {
+    return 'grey-7'
   }
 }
 async function sendMessage() {

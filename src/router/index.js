@@ -3,12 +3,16 @@ import HomeView from "../views/HomeView.vue"
 import ordersPage from "../views/ordersPageView.vue"
 import faq from "../views/faqView.vue"
 import message from "../views/messageMeView.vue"
-import hw from "../views/hardwareWalletView.vue"
+// import hw from "../views/hardwareWalletView.vue"
+import about from "../views/aboutMeView.vue"
+import privacyPolicy from "../views/privacyPolicy.vue"
+import termsOfService from "../views/termsOfService.vue"
 
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes: [
+    { path: "/:catchAll(.*)", component: HomeView },
     {
       path: "/",
       name: "home",
@@ -30,9 +34,19 @@ const router = createRouter({
       component: message,
     },
     {
-      path: "/hw",
-      name: "hw",
-      component: hw,
+      path: "/about",
+      name: "about",
+      component: about,
+    },
+    {
+      path: "/privacypolicy",
+      name: "privacypolicy",
+      component: privacyPolicy,
+    },
+    {
+      path: "/termsofservice",
+      name: "termsofservice",
+      component: termsOfService,
     }
   ],
 })
