@@ -80,7 +80,7 @@ an <a href="https://www.giftmonero.app/" style='color: inherit; text-decoration:
 a <a href="https://guidingwallet.app/triviashow" style='color: inherit; text-decoration: underline;'>anonymous crypto trivia show</a>, and
 contributed to several 
 <a href="https://github.com/spesmilo/electrum/issues/6157" style='color: inherit; text-decoration: underline;'>open source projects</a> 
-in the space.
+in the cryptocurrency space.
 These past experiences have set me up perfectly to create Anonymous Locker.<br/>
 - Donely Gunn 😎`
 const heroText1 = `Why Does Anonymous Locker Exist?`
