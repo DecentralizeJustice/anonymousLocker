@@ -5,6 +5,7 @@ import faq from "../views/faqView.vue"
 import message from "../views/messageMeView.vue"
 // import hw from "../views/hardwareWalletView.vue"
 import about from "../views/aboutMeView.vue"
+import privacyPolicy from "../views/privacyPolicy.vue"
 
 
 const router = createRouter({
@@ -32,14 +33,14 @@ const router = createRouter({
       component: message,
     },
     {
-      path: "/hw",
-      name: "hw",
-      component: HomeView,
-    },
-    {
       path: "/about",
       name: "about",
       component: about,
+    },
+    {
+      path: "/privacypolicy",
+      name: "privacypolicy",
+      component: privacyPolicy,
     }
   ],
 })

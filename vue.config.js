@@ -12,6 +12,10 @@ module.exports = defineConfig({
         {
           test: /\.txt/,
           type: 'asset/source'
+        },
+        {
+          test: /\.md$/,
+          loader: 'raw-loader',
         }
       ]
     },

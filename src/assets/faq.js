@@ -23,9 +23,6 @@ const faq =
         so I will gladly refund you any extra taxes you pay once I actually place your order
         and get the exact amount.`
         ],
-            ['How Does This Work?', `I have a full demo of Anonymous Locker <a href="https://res.cloudinary.com/dylevfpbl/video/upload/v1669001384/Untitled.mp4">here</a>.`
-            
-            ],
         ['Why Should I hide my shipping address?', 
         `Lets say you wanted to buy a hardware wallet. 
                 If you order from a retailer they will have your address and they could possibly leak that information. 

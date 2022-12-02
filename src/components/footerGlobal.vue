@@ -6,7 +6,7 @@
         {{item.title}}
       </div>
       <div class="text-h6" v-for="info in item.items" :key="info.link">
-        <a :href="info.link" target="_blank" rel="noopener noreferrer">{{info.text}}</a>
+        <a :href="info.link" >{{info.text}}</a>
       </div>
     </div>
     </div>
@@ -25,6 +25,9 @@ const info = [
       },
       {
         text: 'Github', link: 'https://github.com/DecentralizeJustice/anonymousLocker'
+      },
+      {
+        text: 'Privacy Policy', link: '/privacypolicy'
       },
       {
         text: 'Business Registration', link: 'https://res.cloudinary.com/dylevfpbl/image/upload/v1669904250/ExecuteWorkflow.jpg'
