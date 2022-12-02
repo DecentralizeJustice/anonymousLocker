@@ -6,6 +6,7 @@ import message from "../views/messageMeView.vue"
 // import hw from "../views/hardwareWalletView.vue"
 import about from "../views/aboutMeView.vue"
 import privacyPolicy from "../views/privacyPolicy.vue"
+import termsOfService from "../views/termsOfService.vue"
 
 
 const router = createRouter({
@@ -41,6 +42,11 @@ const router = createRouter({
       path: "/privacypolicy",
       name: "privacypolicy",
       component: privacyPolicy,
+    },
+    {
+      path: "/termsofservice",
+      name: "termsofservice",
+      component: termsOfService,
     }
   ],
 })

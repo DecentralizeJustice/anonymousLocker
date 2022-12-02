@@ -32,12 +32,9 @@ const info = [
       {
         text: 'Business Registration', link: 'https://res.cloudinary.com/dylevfpbl/image/upload/v1669904250/ExecuteWorkflow.jpg'
       },
-/*       {
-        text: 'Terms Of Service', link: '/'
-      },
       {
-        text: 'Privacy Policy', link: '/'
-      } */
+        text: 'Terms Of Service', link: '/termsofservice'
+      }
     ]
   },
   {
