@@ -270,8 +270,8 @@ import trezor from "@/assets/svgs/trezor.svg"
 import lockerBig from "@/assets/svgs/amazonLocker.svg"
 import { onMounted } from "vue"
 require("@lottiefiles/lottie-player")
-const heroText = 'Safe Hardware Wallet Deliveries Via Amazon Lockers'
-const heroSubtext = `The Safest Way To Get an Hardware Wallet`
+const heroText = 'Anonymous Hardware Wallet Deliveries'
+const heroSubtext = `Protect Your Crypto and Your Privacy`
 onMounted(() => {
 
     })

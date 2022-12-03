@@ -227,7 +227,7 @@ import lockerBig from "@/assets/svgs/amazonLocker.svg"
 import footerGlobal from "@/components/footerGlobal.vue"
 import { onMounted, ref, computed } from "vue"
 require("@lottiefiles/lottie-player")
-const exampleItemCost = ref(80)
+const exampleItemCost = ref('80')
 const estimatedTax = Number(.08)
 const baseServiceFee = Number(10)
 const percentageServiceFee = Number(.05)
@@ -251,7 +251,8 @@ const recentlyBought =[
   }
 ]
 const amazonTotalCost = computed(() => {
-  return ((Number(estimatedTax)*Number(exampleItemCost.value))+Number(exampleItemCost.value))
+  const itemCost = exampleItemCost.value.replaceAll(',', '')
+  return ((Number(estimatedTax)*Number(itemCost))+Number(itemCost))
 })
 onMounted(() => {
 

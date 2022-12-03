@@ -1,7 +1,7 @@
 <template>
 <div class="row justify-center col-12" style="min-height: 20vh;width: 100%; background-color:#D4CCC4;">
-  <div class="row justify-around col-6 items-start justify-around" style="">
-    <div class="col-10 col-md-2 text-black text-left q-mt-lg" v-for="item in info" :key="item.title">      
+  <div class="row justify-around col-6 items-start justify-center" style="">
+    <div class="col-10 col-md-3 text-black text-left q-mt-lg" v-for="item in info" :key="item.title">      
       <div class="text-h5 text-primary">
         {{item.title}}
       </div>
@@ -17,6 +17,23 @@
 </template>
 <script setup>
 const info = [
+  {
+    title: 'Social',
+    items: [
+      {
+        text: 'Youtube', link: 'https://www.youtube.com/channel/UCJhUULkUHVZKDMkhJlmGOGQ'
+      },
+      {
+        text: 'Reddit', link: 'https://www.reddit.com/r/Monero/comments/yrgc1m/seeking_5_people_to_try_anonymous_amazon_shipping/'
+      },
+      {
+        text: 'Twitter', link: 'https://twitter.com/anonlockerUSA'
+      },
+      {
+        text: 'Bitcoin Talk', link: 'https://bitcointalk.org/index.php?topic=5422392.msg61324168#msg61324168'
+      }
+    ]
+  },
   {
     title: 'Business Info',
     items: [
@@ -38,23 +55,6 @@ const info = [
     ]
   },
   {
-    title: 'Social',
-    items: [
-      {
-        text: 'Youtube', link: 'https://www.youtube.com/channel/UCJhUULkUHVZKDMkhJlmGOGQ'
-      },
-      {
-        text: 'Reddit', link: 'https://www.reddit.com/r/Monero/comments/yrgc1m/seeking_5_people_to_try_anonymous_amazon_shipping/'
-      },
-      {
-        text: 'Twitter', link: 'https://twitter.com/anonlockerUSA'
-      },
-      {
-        text: 'Bitcoin Talk', link: 'https://bitcointalk.org/index.php?topic=5422392.msg61324168#msg61324168'
-      }
-    ]
-  },
-  {
     title: 'Support',
     items: [
       {
@@ -62,6 +62,9 @@ const info = [
       },
       {
         text: 'F.A.Q.', link: '/faq'
+      },
+      {
+        text: 'Check Order', link: '/orders'
       }
     ]
   }
