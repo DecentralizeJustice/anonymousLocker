@@ -2,7 +2,7 @@
   <div class="col-12 col-md-6 col justify-center column">
     <div class="column justify-center" style="">
       <q-card class="col-12 col" style="">
-        <q-card-section>
+        <q-card-section class="bg-grey-9 text-white">
           <div class="text-h6">Fill In Your New Order Details Below:</div>
         </q-card-section>
         <q-separator />
@@ -55,7 +55,7 @@
                   >
                     <q-card-section>
                       <q-card
-                        class="pageCard q-pa-md text-center justify-center"
+                        class="text-white bg-grey-9 q-pa-md text-center justify-center"
                       >
                         <p class="text-h5 text-weight-medium">Cart Empty</p>
                         <img
@@ -82,7 +82,7 @@
                       <q-card
                         v-for="(item, index) in itemList"
                         :key="item.link"
-                        class="q-pa-sm q-mt-sm pageCard row"
+                        class="q-pa-sm q-mt-sm text-white bg-grey-9 row"
                       >
                         <div class="col-12 text-left" style="line-height: 150%">
                           {{ sliceString(item.link) }} <br />
@@ -310,9 +310,6 @@ async function submitOrder() {
 }
 </script>
 <style lang="sass" scoped>
-.pageCard
-  background: $secondary
-  color: white
 .linkStyle
   color: #00FFFF
 </style>

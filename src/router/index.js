@@ -7,7 +7,7 @@ import message from "../views/messageMeView.vue"
 import about from "../views/aboutMeView.vue"
 import privacyPolicy from "../views/privacyPolicy.vue"
 import termsOfService from "../views/termsOfService.vue"
-
+import blog from "../views/blogView.vue"
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
@@ -16,22 +16,22 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: HomeView,
+      component: HomeView
     },
     {
       path: "/orders",
       name: "ordersPage",
-      component: ordersPage,
+      component: ordersPage
     },
     {
       path: "/faq",
       name: "faq",
-      component: faq,
+      component: faq
     },
     {
       path: "/message",
       name: "message",
-      component: message,
+      component: message
     },
     {
       path: "/about",
@@ -41,12 +41,17 @@ const router = createRouter({
     {
       path: "/privacypolicy",
       name: "privacypolicy",
-      component: privacyPolicy,
+      component: privacyPolicy
     },
     {
       path: "/termsofservice",
       name: "termsofservice",
-      component: termsOfService,
+      component: termsOfService
+    },
+    {
+      path: "/blog",
+      name: "blog",
+      component: blog
     }
   ],
 })
