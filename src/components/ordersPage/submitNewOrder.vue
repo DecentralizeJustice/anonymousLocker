@@ -238,7 +238,7 @@ watch(itemAmount, () => {
 })
 async function generateRandomArray() {
   const numberArray = []
-  for (var i=0;i<4; i++) {
+  for (var i=0;i<6; i++) {
     numberArray.push(await getRandomInt(2048))
   }
   return numberArray

@@ -35,7 +35,7 @@ function toArrayBuffer(buffer) {
 function numberArrayToWordArray (numberArray) {
   const wordList = words.split(/\r?\n|\r|\n/g)
   const wordArray = []
-  for (var i=0;i<4; i++) {
+  for (var i=0;i<6; i++) {
     wordArray.push(wordList[numberArray[i]])
   }
   return wordArray
