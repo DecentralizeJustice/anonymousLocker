@@ -72,12 +72,12 @@ const questions = [
 {
     q: `Hello, I live in Australia. AFAIK ProxyStore <https://dys2p.com/en/index.html> only forwards parcels to German addresses, your service only delivers to amazon lockers in the US and <https://purse.io/> does not support amazon lockers. 
     Do you have any recommendations on similar services or privacy-respecting parcel forwarders that ship to Australia?`,
-    a: `Answer: I focused just on the United States at launch to start small, but I will consider expanding to Australia if you would like to be my first
+    a: `I focused just on the United States at launch to start small, but I will consider expanding to Australia if you would like to be my first
     international customer. If you wish to try out my services just submit an order. If I can't provide you with a good service, I will simply refund you. If you have a problem filling out the form, just place in fake info, and that we can have a private chat where we can work on your order. `
   },
   {
     q: `I found you through the Monero subreddit on Reddit. It is interesting that you can pay for Amazon products with Monero and receive them in your Amazon locker. Do you have plans to support Amazon.co.jp for that? I would like to use this service in Japan!`,
-    a: `Answer: Thanks for the support! I would love to expand globally eventually but now I only support US Amazon. Given that I am based in the usa, I would have to do more research into ordering amazon lockers in other countries. My app has chat built in once you pay for an item, I do not support sessions at this time.`
+    a: `Thanks for the support! I would love to expand globally eventually but now I only support US Amazon. Given that I am based in the usa, I would have to do more research into ordering amazon lockers in other countries. My app has chat built in once you pay for an item, I do not support sessions at this time.`
   },
   {
     q: `Ok so you have your own app for this service? Download from Google store?`,
