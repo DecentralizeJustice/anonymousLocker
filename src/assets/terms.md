@@ -1,6 +1,5 @@
 #### Current Service Stipulations
 <ol>
-    <li>We only deliver to amazon lockers in the US.</li>
     <li>Items must be fulfilled by amazon since only amazon can ship to amazon lockers.</li>
     <li>Base and percentage service fees are non-refundable.</li>
     <li>The minimum order is 25 dollars.</li>
