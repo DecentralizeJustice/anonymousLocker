@@ -96,7 +96,7 @@ function getAvatar(sender) {
 }
 function getTextColor(sender) {
   if (sender === 'dgoon') {
-    return 'black'
+    return 'white'
   }
   if (sender === 'shopper') {
     return 'white'
