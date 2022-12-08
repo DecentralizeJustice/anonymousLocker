@@ -15,7 +15,7 @@
         <div class="text-body1 text-left">      
           If you have not placed an order and have a question for me, shoot me a message here. 
       If you have placed an order and the chat is working, you should communicate with me using that chat instead. 
-      I will answer your question publicy below, so don't mention any private information.</div>
+      I will answer your question publicly below, so don't mention any private information. I always respond within 12 hours, so check back soon!</div>
       </q-card-section>
       <q-card-section class="">
         <div class="row justify-around q-gutter-y-md">
@@ -69,6 +69,12 @@ const text = ref('')
 const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
+
+{
+    q: `Definitely interested for you service in europe, and particularly France.
+I  hope that your service will at least survive in the US, cheers.`,
+    a: `Thanks for the support. I can deliver to amazon lockers in France. Just place an order and I will work it out for you!`
+  },
 {
     q: `Hello, I live in Australia. AFAIK ProxyStore <https://dys2p.com/en/index.html> only forwards parcels to German addresses, your service only delivers to amazon lockers in the US and <https://purse.io/> does not support amazon lockers. 
     Do you have any recommendations on similar services or privacy-respecting parcel forwarders that ship to Australia?`,
