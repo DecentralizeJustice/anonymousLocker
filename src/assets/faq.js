@@ -1,7 +1,9 @@
 const faq =
 {
     'General Questions':
-    [
+    [   ['Where is this service avaible?',
+    `I will deliver anywhere in the world where there are amazon lockers. If there are any problems with your order related to international issues, I will issue you a full refund.`
+    ],
         ['How Does This Work?', 
         `Here is a basic outline of how ordering with anonymous locker works:
         <ol>
