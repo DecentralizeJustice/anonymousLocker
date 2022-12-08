@@ -1,7 +1,7 @@
 const faq =
 {
     'General Questions':
-    [   ['Where is this service avaible?',
+    [   [`Where is this service available?`,
     `I will deliver anywhere in the world where there are amazon lockers. If there are any problems with your order related to international issues, I will issue you a full refund.`
     ],
         ['How Does This Work?', 
@@ -47,7 +47,6 @@ const faq =
                 <li>The minimum order is 25 dollars.</li>
                 <li>I can not purchase prime-only items. This includes things like Prime Exclusive Deals.</li>
                 <li>We do not offer free Prime 2-Day Shipping, but you can pay extra for faster if you so wish.</li>
-                <li>No items that are Federally Illegal in the states.</li>
                 <li> I reserve the right to decline to process an order. In this case, a refund will be issued.</li>
                 <li> No orders can contain prepaid credit cards as an item, but they can contain other kinds of gift cards.</li>
                 <li> You should check your order every other day so that you do not miss important information about your order.</li>

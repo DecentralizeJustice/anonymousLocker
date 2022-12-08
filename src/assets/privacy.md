@@ -3,6 +3,7 @@ The only personal data that I collect about you is your IP address. I do not per
 Netlify does record and have access to your IP address. My file host, currently Cloudinary, also collects your IP address when you use our website. It is recommended to use a VPN to reduce the amount of information collected on you. Netlify also collects information like what website referred you.
 #### Personal Data That Might Be Collected
 When you use amazon in conjunction with my service they will collect information about you. I do not have access to this information. Amazon deploys a lot of tracking, and it is recommended to use a tor browser to avoid this tracking. I have a demonstration video on how to do this on my landing page.All amazon lockers have cameras built in and they will probably record you picking up your package. I do not have access to any of this recorded video.
+If you wisht to avoid the camera's you can wear a face mask, glasses or another disguise that fits your taste.
 #### General Data That Is Collected
 By the function of my service when you use my service, I will have access to the following data about you.  
     <ol>
