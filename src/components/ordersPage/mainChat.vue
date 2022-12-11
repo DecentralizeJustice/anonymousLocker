@@ -60,7 +60,7 @@ import shopperAvatar from "@/assets/detective.svg"
 import sanitizeHtml from 'sanitize-html'
 import { defineProps, toRef, ref, toRaw } from "vue"
 const axios = require('axios')
-const sender = 'shopper'
+const sender = 'dgoon'
 const props = defineProps({
   passphrase: { type: String, required: true },
   messageArray: { type: Object, required: true }
@@ -96,7 +96,7 @@ function getAvatar(sender) {
 }
 function getTextColor(sender) {
   if (sender === 'dgoon') {
-    return 'white'
+    return 'black'
   }
   if (sender === 'shopper') {
     return 'white'

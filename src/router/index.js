@@ -8,6 +8,7 @@ import about from "../views/aboutMeView.vue"
 import privacyPolicy from "../views/privacyPolicy.vue"
 import termsOfService from "../views/termsOfService.vue"
 import blog from "../views/blogView.vue"
+import loyalty from "../views/loyaltyView.vue"
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
@@ -52,6 +53,11 @@ const router = createRouter({
       path: "/blog",
       name: "blog",
       component: blog
+    },
+        {
+      path: "/loyalty",
+      name: "loyalty",
+      component: loyalty
     }
   ],
 })
