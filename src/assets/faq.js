@@ -43,8 +43,8 @@ const faq =
                 This is just one example of why you need to protect your shipping and order information.`
         ],
         [
-            `What are the limitations and stipulations of your service?`,
-            `The current limitations of my service are:
+            `What are some of the limitations and stipulations of your service?`,
+            `Some current limitations of my service are:
             <ol>
                 <li>Items must be fulfilled by amazon since only amazon can ship to amazon lockers.</li>
                 <li>Base and percentage service fees are non-refundable.</li>
@@ -52,7 +52,6 @@ const faq =
                 <li>I can not purchase prime-only items. This includes things like Prime Exclusive Deals.</li>
                 <li>We do not offer free Prime 2-Day Shipping, but you can pay extra for faster if you so wish.</li>
                 <li> I reserve the right to decline to process an order. In this case, a refund will be issued.</li>
-                <li> No orders can contain prepaid credit cards as an item, but they can contain other kinds of gift cards.</li>
                 <li> You should check your order every other day so that you do not miss important information about your order.</li>
             </ol>`
         ],

@@ -9,7 +9,7 @@
     <li>I reserve the right to decline to process an order. In this case, a refund will be issued.</li>
     <li>We do not offer refunds for giftcards. We reserve the right to cancel giftcard order, and we will fully refund you in this case.</li>
     <li> You should check your order every other day so that you do not miss important information about your order.</li>
-    <li> You must be 21 years and older to use this service. By using this service, you are ensuring that you are atleast 21 years of age.
+    <li> You must be 21 years and older to use this service. By using this service, you are ensuring that you are at least 21 years of age.
     </li>
 </ol>
 
@@ -17,6 +17,6 @@ We reserve the right to refuse and refund any order for any reason.
 
 #### Refund Policy
 
-If you wish to return an order that is possible. I will refund you whatever Amazon refunds me. The service fees, base fee and percentage fee, are not refundable. This refund polcy excludes giftcards and prepaid access cards.
+If you wish to return an order that is possible. I will refund you whatever Amazon refunds me. The service fees, base fee and percentage fee, are not refundable. This refund policy excludes gift cards and prepaid access cards.
 
 Last Updated: 12/2/2022
