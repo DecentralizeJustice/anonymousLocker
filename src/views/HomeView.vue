@@ -162,7 +162,7 @@
         <div class="q-pa-md">
     <q-video
       :ratio="16/9"
-      src="https://res.cloudinary.com/dylevfpbl/video/upload/v1669001384/Untitled.mp4"
+      src="https://res.cloudinary.com/dylevfpbl/video/upload/q_auto/v1669001384/Untitled.mp4"
     />
   </div>
       </div>
