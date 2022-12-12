@@ -1,8 +1,12 @@
 const faq =
 {
     'General Questions':
-    [   [`Where is this service available?`,
-    `I will deliver anywhere in the world where there are amazon lockers. If there are any problems with your order related to international issues, I will issue you a full refund.`
+        [           [
+            `Can I buy gift cards from you?`,
+            `Yes, you can buy gift cards with my service. We do not offer any refunds on giftcards and reserve the right to cancel any order as we see fit. If we cancel your order you will recieve a full refund.`
+        ],
+            [`Where is this service available?`,
+    `I will deliver anywhere in the world where there are amazon lockers. If there are any problems with your order related to international issues, I will issue you a full refund. We only offer giftcards to us locations though.`
     ],
         ['How Does This Work?', 
         `Here is a basic outline of how ordering with anonymous locker works:
@@ -51,11 +55,6 @@ const faq =
                 <li> No orders can contain prepaid credit cards as an item, but they can contain other kinds of gift cards.</li>
                 <li> You should check your order every other day so that you do not miss important information about your order.</li>
             </ol>`
-        ],
-        [
-            `Can I buy gift cards from you?`,
-            `Yes, you can buy closed-loop gift cards with my service. That means that you can buy gift cards for specific stores. 
-            You can not buy prepaid visa gift cards or other open-loop cards. `
         ],
         [
             'Is the Code Open Source?', 'Yes, here is the <a href="https://github.com/DecentralizeJustice/anonymousLocker">github</a> repo for the code.'
