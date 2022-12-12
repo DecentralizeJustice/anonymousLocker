@@ -55,12 +55,13 @@
   </template>
     
 <script setup>
+import { useRouter } from 'vue-router'
 import anaonAvatar from "@/assets/chatAvatar.svg"
 import shopperAvatar from "@/assets/detective.svg"
 import sanitizeHtml from 'sanitize-html'
-import { defineProps, toRef, ref, toRaw } from "vue"
+import { defineProps, toRef, ref, toRaw, computed } from "vue"
+const router = useRouter()
 const axios = require('axios')
-const sender = 'shopper'
 const props = defineProps({
   passphrase: { type: String, required: true },
   messageArray: { type: Object, required: true }
@@ -117,7 +118,7 @@ async function sendMessage() {
   disableButtons.value = true
   await sleep(1000)
   disableButtons.value = false
-  const data = { bucket: passphrase.value, message: text.value, sender }
+  const data = { bucket: passphrase.value, message: text.value, sender: sender.value }
   await axios.post('/.netlify/functions/sendMessage', data)
   text.value = ''
   await checkForMessages()
@@ -140,4 +141,12 @@ function formatAMPM(date) {
   var strTime = hours + ':' + minutes + ' ' + ampm;
   return strTime;
 }
+const sender = computed(() => {
+  const routeInfo = router.currentRoute.value
+  if (routeInfo.name === 'admin') {
+    return 'dgoon'
+  } else {
+    return 'shopper'
+  }
+})
 </script>
