@@ -229,8 +229,8 @@ import { onMounted, ref, computed } from "vue"
 require("@lottiefiles/lottie-player")
 const exampleItemCost = ref('80')
 const estimatedTax = Number(.08)
-const baseServiceFee = Number(10)
-const percentageServiceFee = Number(.05)
+const baseServiceFee = Number(5)
+const percentageServiceFee = Number(.02)
 const heroText = 'Anonymous Deliveries With Amazon Lockers'
 const heroSubtext = `The Most Private Way To shop Online`
 const recentlyBought =[

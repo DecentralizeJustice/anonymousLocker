@@ -22,9 +22,9 @@ const faq =
         I also have a full demo of Anonymous Locker <a href="https://res.cloudinary.com/dylevfpbl/video/upload/v1669001384/Untitled.mp4">here</a>.`   
         ],
         ['How Much is This Service?',
-        `My service is 10 Dollars and 5% on top of the amazon order subtotal. 
+        `My service is 5 Dollars and 2% on top of the amazon order subtotal. 
         For example, if you were to buy a 100-dollar hardware wallet from amazon
-        my service would cost you 115 dollars. At checkout, with me, you would pay 115 USD worth of Monero. My service assumes that the sales tax
+        my service would cost you 107 dollars. At checkout, with me, you would pay 107 USD worth of Monero. My service assumes that the sales tax
         charged by amazon is 8%. This is higher than most purchases will experience, 
         so I will gladly refund you any extra taxes you pay once I place your order
         and get the exact amount.`
