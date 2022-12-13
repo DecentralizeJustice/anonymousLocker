@@ -118,7 +118,7 @@
             Service Fee:
           </q-card-section>
           <q-card-section class="text-center text-h4  text-weight-regular">
-            $10 USD + 5% of Amazon Total
+            ${{baseServiceFee}} USD + {{100*percentageServiceFee}}% of Amazon Total
           </q-card-section>
         </q-card>
         <q-card class=" text-left bg-white text-black col-12 q-mt-md row justify-around">
