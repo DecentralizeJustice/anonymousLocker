@@ -235,9 +235,9 @@ const heroText = 'Anonymous Deliveries With Amazon Lockers'
 const heroSubtext = `The Most Private Way To shop Online`
 const recentlyBought =[
   { 
-    img: `https://res.cloudinary.com/dylevfpbl/image/upload/v1670862334/recentlyBought/51PBGo9pQvL.jpg`,
-    name: '$25 Mastercard Gift Card (plus $3.95 Purchase Fee)',
-    price: '28.95'
+    img: `https://res.cloudinary.com/dylevfpbl/image/upload/v1670952782/recentlyBought/81lJyLrRVeL._AC_SL1500_.jpg`,
+    name: 'Crucial MX500 4TB 3D NAND SATA 2.5 Inch Internal SSD',
+    price: '237.99'
   },
   {
     img: `https://res.cloudinary.com/dylevfpbl/image/upload/v1669750092/recentlyBought/41vjOH-hRIL._AC_SL1000_.jpg`,

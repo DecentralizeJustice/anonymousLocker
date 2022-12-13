@@ -103,6 +103,8 @@
 import bip39Wordlist from "@/assets/bip39Wordlist.txt"
 import { ref, watch } from 'vue'
 import { getRandomInt, numberArrayToWordArray } from "@/assets/misc.js"
+const passphraseLength = 10
+const validWordWarningArray = ref([false, false, false, false, false, false, false, false, false, false])
 const tab = ref('mails')
 const splitterModel = ref(20)
 const wordArray = ref([])
@@ -112,16 +114,13 @@ async function genRewardsPassphrase() {
 }
 async function generateRandomArray() {
   const numberArray = []
-  for (var i = 0; i < 5; i++) {
+  for (var i = 0; i < passphraseLength; i++) {
     numberArray.push(await getRandomInt(2048))
   }
   return numberArray
 }
 const passphraseWords = ref([])
-const passphraseLength = 5
-const validWordWarningArray = ref([false, false, false, false, false])
 const orderNotFound = ref(false)
-// const messageArray = ref([])
 const buttonDisabled = ref(false)
 async function enterPassphrase() {
   const numberArray = []
