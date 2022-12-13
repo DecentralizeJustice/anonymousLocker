@@ -3,11 +3,10 @@ const faq =
     'General Questions':
         [           [
             `Can I buy gift cards from you?`,
-            `Yes, you can buy gift cards with my service. We do not offer any refunds on giftcards and reserve the right to cancel any order as we see fit. If we cancel your order you will recieve a full refund. Amazon, Visa, Mastercard Gift Cards or similar are not supported. 
-            We also only offer physical giftcards, not digital ones.`
+            `Not at this time.`
         ],
             [`Where is this service available?`,
-    `I will deliver anywhere in the world where there are amazon lockers. If there are any problems with your order related to international issues, I will issue you a full refund. We only offer giftcards to us locations though.`
+    `I will deliver anywhere in the world where there are amazon lockers. If there are any problems with your order related to international issues, I will issue you a full refund.`
     ],
         ['How Does This Work?', 
         `Here is a basic outline of how ordering with anonymous locker works:
