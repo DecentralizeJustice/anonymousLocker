@@ -154,7 +154,7 @@
       </div>
     
     </div> 
-    <div class="row justify-around items-end no-margin col-12 text-left q-pb-xl q-pt-xl" style="width: 100%; background-color:#D4CCC4;">
+<!--     <div class="row justify-around items-end no-margin col-12 text-left q-pb-xl q-pt-xl" style="width: 100%; background-color:#D4CCC4;">
       <div class="col-12 text-center text-primary text-h4 q-pb-lg my-font">      
         Demonstration Video
       </div>
@@ -166,7 +166,7 @@
     />
   </div>
       </div>
-    </div>
+    </div> -->
     <div class="row justify-around items-end no-margin col-12 text-left q-pb-xl q-pt-xl bg-primary" style="width: 100%;">
       <div class="col-12 text-center text-white text-h4 q-pb-lg my-font">      
         Testimonials
