@@ -2,7 +2,7 @@
 
 <ol>
     <li>Items must be fulfilled by amazon since only amazon can ship to amazon lockers.</li>
-    <li>Base and percentage service fees are non-refundable.</li>
+    <li>At this time we do not offer refunds on any purchases unless I can not fulfill your order.</li>
     <li>The minimum order is 25 dollars.</li>
     <li>I can not purchase prime-only items. This includes things like Prime Exclusive Deals.</li>
     <li>We do not offer free Prime 2-Day Shipping, but you can pay extra for faster if you so wish.</li>

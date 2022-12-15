@@ -146,7 +146,8 @@
               >
                 Sub-Total (USD): {{ orderUSDSubTotal }} <br />
                 Estimated Taxes Collected by Amazon (~{{ taxRate*100 }}%): {{ taxAmount }} <br/>
-                Service Fee ({{ percentageFee * 100 }}% + ${{baseFee}}): {{ serviceFeeUSD }}
+                Service Fee ({{ percentageFee * 100 }}%): {{ serviceFeeUSD }}
+                <!-- + ${{baseFee}}) -->
                 <br />
                 Final Total (USD):
                 {{ finalTotalUSD }}
@@ -185,10 +186,10 @@ const itemList = ref([])
 const lockerZipcode = ref(0)
 const lockerName = ref("")
 const extraNotes = ref("")
-const percentageFee = 0.02
+const percentageFee = 0.01
 const minOrderamount = 25
 const taxRate = 0.08
-const baseFee = 5
+const baseFee = 0
 const linkError = ref(false)
 const itemAmountError = ref(false)
 const zipcodeError = ref(false)
