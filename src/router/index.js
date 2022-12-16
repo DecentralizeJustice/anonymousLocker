@@ -6,14 +6,23 @@ import message from "../views/messageMeView.vue"
 import about from "../views/aboutMeView.vue"
 import privacyPolicy from "../views/privacyPolicy.vue"
 import termsOfService from "../views/termsOfService.vue"
-import blog from "../views/blogView.vue"
+//import blog from "../views/blogView.vue"
 import loyalty from "../views/loyaltyView.vue"
 import orderAdmin from "../views/orderAdmin.vue"
-
+//import novReview2022 from "../components/blogPost/monthInReview/nov2022Blog.vue"
+// import empty from "../views/emptyRoute.vue"
+/* const User = {
+  template: `
+    <div class="user">
+      <h2>User {{ $route.params.id }}</h2>
+      <router-view></router-view>
+    </div>
+  `
+} */
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes: [
-    { path: "/:catchAll(.*)", component: HomeView },
+    // { path: "/:catchAll(.*)", component: HomeView },
     {
       path: "/",
       name: "home",
@@ -50,9 +59,9 @@ const router = createRouter({
       component: termsOfService
     },
     {
-      path: "/blog",
+      path: "/blog/h",
       name: "blog",
-      component: blog
+      component: loyalty,
     },
     {
       path: "/loyalty",

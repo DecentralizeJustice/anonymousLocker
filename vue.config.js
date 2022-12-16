@@ -2,7 +2,7 @@ const { defineConfig } = require('@vue/cli-service')
 const webpack = require('webpack')
 const NodePolyfillPlugin = require('node-polyfill-webpack-plugin')
 module.exports = defineConfig({
-  publicPath: '',
+  publicPath: '/',
   configureWebpack: {
     devServer: {
       historyApiFallback: true
