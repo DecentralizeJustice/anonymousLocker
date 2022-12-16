@@ -6,11 +6,11 @@ import message from "../views/messageMeView.vue"
 import about from "../views/aboutMeView.vue"
 import privacyPolicy from "../views/privacyPolicy.vue"
 import termsOfService from "../views/termsOfService.vue"
-//import blog from "../views/blogView.vue"
+import blog from "../views/blogView.vue"
 import loyalty from "../views/loyaltyView.vue"
 import orderAdmin from "../views/orderAdmin.vue"
-//import novReview2022 from "../components/blogPost/monthInReview/nov2022Blog.vue"
-// import empty from "../views/emptyRoute.vue"
+import novReview2022 from "../components/blogPost/monthInReview/nov2022Blog.vue"
+import empty from "../views/emptyRoute.vue"
 /* const User = {
   template: `
     <div class="user">
@@ -59,9 +59,20 @@ const router = createRouter({
       component: termsOfService
     },
     {
-      path: "/blog/h",
-      name: "blog",
-      component: loyalty,
+      path: "/blog",
+      component: empty,
+      children: [
+        { 
+          path: '', 
+          name: 'blog',
+          component: blog
+        },
+        {
+          path:'nov',
+          name: 'nov',
+          component: novReview2022
+        }
+      ],
     },
     {
       path: "/loyalty",
