@@ -231,7 +231,7 @@ require("@lottiefiles/lottie-player")
 const exampleItemCost = ref('80')
 const estimatedTax = Number(.08)
 const baseServiceFee = Number(0)
-const percentageServiceFee = Number(.01)
+const percentageServiceFee = Number(.02)
 const heroText = 'Anonymous Deliveries With Amazon Lockers'
 const heroSubtext = `The Most Private Way To shop Online`
 const recentlyBought =[
