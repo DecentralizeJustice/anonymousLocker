@@ -26,7 +26,7 @@
         <div class="col-12 justify-center items-center align-center row " style="min-height:40vh;">
           <q-img
             class="frame"
-            src="https://res.cloudinary.com/dylevfpbl/image/upload/v1607632279/test.jpg"
+            src="https://res.cloudinary.com/dylevfpbl/image/upload/v1671338330/recentlyBought/test_2_-min.jpg"
             style="max-width: 100%;"
           />
               </div>
