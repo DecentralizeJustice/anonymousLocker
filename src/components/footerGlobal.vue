@@ -2,7 +2,7 @@
 <div class="row justify-center col-12" style="min-height: 20vh;width: 100%; background-color:#D4CCC4;">
   <div class="row justify-around col-6 items-start justify-center" style="">
     <div class="col-10 col-md-3 text-black text-left q-mt-lg" v-for="item in info" :key="item.title">      
-      <div class="text-h5 text-primary">
+      <div class="text-h4 text-blue-grey-9">
         {{item.title}}
       </div>
       <div class="text-h6" v-for="info in item.items" :key="info.link">
@@ -35,7 +35,7 @@ const info = [
     ]
   },
   {
-    title: 'Business Info',
+    title: 'General',
     items: [
       {
         text: 'About Me', link: '/about'
@@ -71,7 +71,7 @@ const info = [
 ]
 </script>
 <style lang="sass" scoped>
-$link-color: #FAF9F6
+$link-color: #004E64
 @font-face
   font-family: customfont
   src: url(../styles/ArchivoBlack-Regular.ttf)

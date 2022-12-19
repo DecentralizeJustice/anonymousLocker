@@ -155,33 +155,86 @@
       </div>
     
     </div> 
-<!--     <div class="row justify-around items-end no-margin col-12 text-left q-pb-xl q-pt-xl" style="width: 100%; background-color:#D4CCC4;">
-      <div class="col-12 text-center text-primary text-h4 q-pb-lg my-font">      
-        Demonstration Video
+<div class="row justify-evenly q-pt-xl col-12 ">
+        <div class="col-12 text-center text-primary text-h3 q-pb-lg my-font">
+          How It Works
+        </div>
+    <div class="row justify-evenly q-py-xl col-12">
+      <div class="row col col-10 col-md-4 items-center align-center row">
+        <div class=" col col-12 items-center align-center row">
+          <div class="text-left text-center text-white q-pa-lg bg-primary" style="border-radius: 10px;">
+            <div class="text-h4 my-font text-center" style="">
+              Step 1
+            </div>
+            <div class="text-h5 text-weight-regular q-mt-md q-pa-sm" style="line-height: 130%"><span v-html="step1"></span>
+    
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-12 col-md-8 text-center text-white text-h4 q-pb-lg">      
-        <div class="q-pa-md">
-    <q-video
-      :ratio="16/9"
-      src="https://res.cloudinary.com/dylevfpbl/video/upload/q_auto/v1669001384/Untitled.mp4"
-    />
+        <div class="col col-10 col-md-7 desktop-only row">
+          <q-img class="" loading="lazy"
+          src="https://res.cloudinary.com/dbdfbvzyl/image/upload/v1671337165/2022-12-17_22-44-25_online-video-cutter.com_bsmg4d.gif" />
+        </div>
+    </div>
+
+</div>
+    <div class="row justify-evenly q-py-xl col-12 bg-primary">
+        <div class="col col-10 col-md-8 desktop-only row">
+          <q-img class="" loading="lazy"
+          src="https://res.cloudinary.com/dbdfbvzyl/image/upload/v1671418694/firstTry_tvtyz0.gif" />
+        </div>
+      <div class="row col col-10 col-md-3 items-center align-center row">
+        <div class=" col col-12 items-center align-center row">
+          <div class="text-left text-center text-primary q-pa-sm" style="border-radius: 10px;background-color:#D4CCC4;">
+            <div class="text-h4 my-font text-center" style="">
+              Step 2
+            </div>
+            <div class="text-h5 text-weight-regular q-mt-md q-pa-sm" style="line-height: 130%"><span
+                v-html="step2"></span>
+    
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-evenly q-py-xl col-12 ">
+  <div class="row col col-10 col-md-5 items-center align-center row">
+    <div class=" col col-12 items-center align-center row">
+      <div class="text-left text-center bg-primary text-white q-pa-lg" style="border-radius: 10px;">
+        <div class="text-h4 my-font text-center" style="">
+          Step 3
+        </div>
+        <div class="text-h5 text-weight-regular q-mt-md q-pa-sm" style="line-height: 130%;"><span
+            v-html="step3"></span>
+
+        </div>
+      </div>
+    </div>
   </div>
-      </div>
-    </div> -->
+  <div class="col col-10 col-md-5 desktop-only row">
+      <q-img class=""
+      loading="lazy"
+      src="https://res.cloudinary.com/dbdfbvzyl/image/upload/v1671332163/smallLocker_c03a46.gif" />
+  </div>
+  <div class="col-12 text-center text-white text-h3 q-pt-lg my-font">
+    <a  style="color:  #FFFFFF" href="https://youtu.be/ivf5EfCAGgo" target="_blank" rel="noopener noreferrer">Youtube Tutorial</a>
+        </div>
+</div>
     <div class="row justify-around items-end no-margin col-12 text-left q-pb-xl q-pt-xl bg-primary" style="width: 100%;">
       <div class="col-12 text-center text-white text-h4 q-pb-lg my-font">      
         Testimonials
       </div>
       <div class="col-11 col-md-3">      
         <q-chat-message
-        name="<span class='text-subtitle1 text-white'>u/Sapook</span>"
+        name="<span class='text-subtitle1 text-white'>u/Customer</span>"
         text-html
         name-html
         bg-color="white"
         :avatar=shopperAvatar1
         :text="[``]"
         ><div class="text-h5 q-pa-md">
-          I really like this idea, not eligible to try but I hope to see some feedbacks soon :) Good luck with your project !
+          Wow this is a great project... This process was great.
         </div>
         
       </q-chat-message>
@@ -231,13 +284,19 @@ require("@lottiefiles/lottie-player")
 const exampleItemCost = ref('80')
 const estimatedTax = Number(.08)
 const baseServiceFee = Number(0)
-const percentageServiceFee = Number(.02)
+const percentageServiceFee = Number(.03)
 const heroText = 'Anonymous Deliveries With Amazon Lockers'
 const heroSubtext = `The Most Private Way To shop Online`
+const step1 = `You place an order with me anonymously. The only information I need is a link to your item
+ and the zipcode that you want the order delivered to.`
+const step2 = `I place your order and update you throughout the process. If you have any questions of concerns you can
+message me using the platform.`
+const step3 = `I message you the code to the locker when your order arrives. You then pick up your order. You have 3 days to 
+to pick up your order.`
 const recentlyBought =[
   { 
-    img: `https://res.cloudinary.com/dylevfpbl/image/upload/v1670952782/recentlyBought/81lJyLrRVeL._AC_SL1500_.jpg`,
-    name: 'Crucial MX500 4TB 3D NAND SATA 2.5 Inch Internal SSD',
+    img: `https://res.cloudinary.com/dylevfpbl/image/upload/v1671338257/recentlyBought/81lJyLrRVeL._AC_SL1500__1_-min.jpg`,
+    name: 'Crucial MX500 4TB 3D NAND Internal SSD',
     price: '237.99'
   },
   {
@@ -246,7 +305,7 @@ const recentlyBought =[
     price: '79.00'
   },
   {
-    img: `https://res.cloudinary.com/dylevfpbl/image/upload/v1669750805/recentlyBought/81_zeeqZmbL._AC_SL1500_.jpg`,
+    img: `https://res.cloudinary.com/dylevfpbl/image/upload/v1671338148/recentlyBought/drilldown-min.jpg`,
     name: `SAMSUNG 980 SSD 500GB PCle 3.0x4, NVMe M.2`,
     price: '56.99'
   }

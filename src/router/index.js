@@ -22,7 +22,7 @@ import empty from "../views/emptyRoute.vue"
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes: [
-    // { path: "/:catchAll(.*)", component: HomeView },
+    { path: "/:catchAll(.*)", component: HomeView },
     {
       path: "/",
       name: "home",
