@@ -180,13 +180,13 @@
 
 </div>
     <div class="row justify-evenly q-py-xl col-12 bg-primary">
-        <div class="col col-10 col-md-5 desktop-only row">
+        <div class="col col-10 col-md-8 desktop-only row">
           <q-img class="" loading="lazy"
-          src="https://res.cloudinary.com/dylevfpbl/image/upload/v1607632279/test.jpg" />
+          src="https://res.cloudinary.com/dbdfbvzyl/image/upload/v1671418694/firstTry_tvtyz0.gif" />
         </div>
-      <div class="row col col-10 col-md-5 items-center align-center row">
+      <div class="row col col-10 col-md-3 items-center align-center row">
         <div class=" col col-12 items-center align-center row">
-          <div class="text-left text-center text-primary q-pa-lg" style="border-radius: 10px;background-color:#D4CCC4;">
+          <div class="text-left text-center text-primary q-pa-sm" style="border-radius: 10px;background-color:#D4CCC4;">
             <div class="text-h4 my-font text-center" style="">
               Step 2
             </div>
@@ -224,14 +224,14 @@
       </div>
       <div class="col-11 col-md-3">      
         <q-chat-message
-        name="<span class='text-subtitle1 text-white'>u/Sapook</span>"
+        name="<span class='text-subtitle1 text-white'>u/Customer</span>"
         text-html
         name-html
         bg-color="white"
         :avatar=shopperAvatar1
         :text="[``]"
         ><div class="text-h5 q-pa-md">
-          I really like this idea, not eligible to try but I hope to see some feedbacks soon :) Good luck with your project !
+          Wow this is a great project... This process was great.
         </div>
         
       </q-chat-message>
