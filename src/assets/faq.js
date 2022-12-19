@@ -6,7 +6,7 @@ const faq =
             `Not at this time.`
         ],
             [`Where is this service available?`,
-    `I will deliver anywhere in the world where there are amazon lockers. If there are any problems with your order related to international issues, I will issue you a full refund.`
+    `I will deliver anywhere in the world where there are amazon lockers. If there are any problems with your order related to international issues, I will issue you a full refund. There is an additional 2% base fee for orders outside of the USA.`
     ],
         ['How Does This Work?', 
         `Here is a basic outline of how ordering with anonymous locker works:
