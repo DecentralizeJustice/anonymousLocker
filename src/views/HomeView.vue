@@ -289,7 +289,7 @@ const heroText = 'Anonymous Deliveries With Amazon Lockers'
 const heroSubtext = `The Most Private Way To shop Online`
 const step1 = `You place an order with me anonymously. The only information I need is a link to your item
  and the zipcode that you want the order delivered to.`
-const step2 = `I place your order and update you throughout the process. If you have any questions of concerns you can
+const step2 = `I place your order and update you throughout the process. If you have any questions or concerns you can
 message me using the platform.`
 const step3 = `I message you the code to the locker when your order arrives. You then pick up your order. You have 3 days to 
 to pick up your order.`
