@@ -182,7 +182,7 @@
     <div class="row justify-evenly q-py-xl col-12 bg-primary">
         <div class="col col-10 col-md-8 desktop-only row">
           <q-img class="" loading="lazy"
-          src="https://res.cloudinary.com/dbdfbvzyl/image/upload/v1671418694/firstTry_tvtyz0.gif" />
+          src="https://res.cloudinary.com/dbdfbvzyl/image/upload/v1671420916/trimmedFinal_bgi9gu.gif" />
         </div>
       <div class="row col col-10 col-md-3 items-center align-center row">
         <div class=" col col-12 items-center align-center row">
