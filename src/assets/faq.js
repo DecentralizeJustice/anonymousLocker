@@ -1,7 +1,16 @@
 const faq =
 {
     'General Questions':
-        [           [
+        [           
+            [
+                `How long does it take to process an order?`,
+                `I guarantee that I will process all orders within 12 hours, but all orders so far have been processed in under 4 hours.`
+            ],
+            [
+                `How long does shipping take?`,
+                `Shipping usually takes 3 to 5 days from when you place your order. I will keep you updated throughout the entire process and give you a tracking number also.`
+            ],
+            [
             `Can I buy gift cards from you?`,
             `Not at this time.`
         ],
