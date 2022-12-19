@@ -217,6 +217,9 @@
       loading="lazy"
       src="https://res.cloudinary.com/dbdfbvzyl/image/upload/v1671332163/smallLocker_c03a46.gif" />
   </div>
+  <div class="col-12 text-center text-white text-h3 q-pt-lg my-font">
+    <a  style="color:  #FFFFFF" href="https://youtu.be/ivf5EfCAGgo" target="_blank" rel="noopener noreferrer">Youtube Tutorial</a>
+        </div>
 </div>
     <div class="row justify-around items-end no-margin col-12 text-left q-pb-xl q-pt-xl bg-primary" style="width: 100%;">
       <div class="col-12 text-center text-white text-h4 q-pb-lg my-font">      
