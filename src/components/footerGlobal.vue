@@ -37,21 +37,16 @@ const info = [
   {
     title: 'General',
     items: [
+    {
+        text: 'Blog', link: '/blog'
+      },
       {
         text: 'About Me', link: '/about'
       },
       {
         text: 'Github', link: 'https://github.com/DecentralizeJustice/anonymousLocker'
       },
-      {
-        text: 'Privacy Policy', link: '/privacypolicy'
-      },
-      {
-        text: 'Terms Of Service', link: '/termsofservice'
-      },
-      {
-        text: 'Business Registration', link: 'https://res.cloudinary.com/dylevfpbl/image/upload/v1669904250/ExecuteWorkflow.jpg'
-      }
+
     ]
   },
   {
@@ -65,6 +60,20 @@ const info = [
       },
       {
         text: 'Check Order', link: '/orders'
+      }
+    ]
+  },
+  {
+    title: 'Legal',
+    items: [
+    {
+        text: 'Privacy Policy', link: '/privacypolicy'
+      },
+      {
+        text: 'Terms Of Service', link: '/termsofservice'
+      },
+      {
+        text: 'Business Registration', link: 'https://res.cloudinary.com/dylevfpbl/image/upload/v1669904250/ExecuteWorkflow.jpg'
       }
     ]
   }
