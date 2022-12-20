@@ -4,7 +4,7 @@
       <!-- page content -->
   
       <div class="row justify-evenly q-py-xl col-12 bg-primary" >
-        <div class="col-12 text-center text-white text-h4 q-pb-lg my-font">      
+        <div class="col-12 text-center text-white text-h3 q-pb-lg my-font">      
         Blog
       </div>
       <div class="col-md-2 col-6" v-for="item in recentlyBought" :key="item.id">
@@ -17,7 +17,7 @@
             </q-card-section>
 
             <q-card-section>
-              <div class="text-h6 text-white">{{item.name}}</div>
+              <div class="text-h6 text-center">{{item.name}}</div>
             </q-card-section>
           </q-card>
         </router-link>
@@ -40,20 +40,22 @@
 $link-color: #FFFFFF
 @font-face
     font-family: customfont
-    src: url(../styles/ArchivoBlack-Regular.ttf)
+    src: url(@/styles/ArchivoBlack-Regular.ttf)
 .my-font 
     font-family: 'customfont'
-
 .frame 
     border: 3px solid #ccc
+a:link 
+  color:$link-color
+  text-decoration: none 
 a:visited
-    color:$link-color
-    text-decoration: none
+  color:$link-color
+  text-decoration: none
 a:hover
-    color:#004E64
-    text-decoration: underline
+  color:#004E64
+  text-decoration: underline
 a:active
-    color:$link-color
-    text-decoration: none
+  color:$link-color
+  text-decoration: none
 
 </style>
