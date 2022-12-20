@@ -27,7 +27,7 @@ const info = [
         text: 'Reddit', link: 'https://www.reddit.com/r/Monero/comments/yrgc1m/seeking_5_people_to_try_anonymous_amazon_shipping/'
       },
       {
-        text: 'Twitter', link: 'https://twitter.com/anonlockerUSA'
+        text: 'Twitter', link: 'https://twitter.com/anonlockerXMR'
       },
       {
         text: 'Bitcoin Talk', link: 'https://bitcointalk.org/index.php?topic=5422392.msg61324168#msg61324168'
