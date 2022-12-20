@@ -68,8 +68,7 @@ const router = createRouter({
           component: blog
         },
         {
-          path:'nov',
-          name: 'nov',
+          path:'nov22',
           component: novReview2022
         }
       ],
