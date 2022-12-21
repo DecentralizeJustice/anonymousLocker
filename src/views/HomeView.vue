@@ -119,7 +119,7 @@
           </q-card-section>
           <q-card-section class="text-center text-h4  text-weight-regular">
             <!-- ${{baseServiceFee}} USD +  -->
-           {{100*percentageServiceFee}}% of Amazon Total
+            ${{baseServiceFee}} USD + {{100*percentageServiceFee}}% of Amazon Total
           </q-card-section>
         </q-card>
         <q-card class=" text-left bg-white text-black col-12 q-mt-md row justify-around">
@@ -283,7 +283,7 @@ import { onMounted, ref, computed } from "vue"
 require("@lottiefiles/lottie-player")
 const exampleItemCost = ref('80')
 const estimatedTax = Number(.08)
-const baseServiceFee = Number(0)
+const baseServiceFee = Number(5)
 const percentageServiceFee = Number(.03)
 const heroText = 'Anonymous Deliveries With Amazon Lockers'
 const heroSubtext = `The Most Private Way To shop Online`
