@@ -3,7 +3,7 @@
     class="row items-stretch text-center align-center justify-center bg-primary "
     style='width: 100%;'
   >
-  <div class="row justify-center col col-12 col-md-11 align-center items-center q-my-xl" >
+  <div class="row justify-center col col-11 col-md-11 align-center items-center q-my-xl" >
     <div class="row items-center justify-center col-12 q-gutter-y-xl" >
       <q-card class="col-12 col-md-7" v-for="(catagory, key) in correctFaq" :key="key" >
       <q-card-section class=" text-white bg-grey-7 ">
