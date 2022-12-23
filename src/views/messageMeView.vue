@@ -5,7 +5,7 @@
   >
   <div class="row justify-center col col-12 col-md-11 align-center items-center q-py-xl" >
     <div class="row items-center justify-center col-12 q-gutter-y-xl" >
-      <q-card class="col-12 col-md-7">
+      <q-card class="col-11 col-md-7">
       <q-card-section class="text-white bg-grey-7">
         <div class="text-h6">Ask Me A Question</div>
       </q-card-section>
@@ -19,7 +19,7 @@
       </q-card-section>
       <q-card-section class="">
         <div class="row justify-around q-gutter-y-md">
-      <div class="col-12 col-md-6 ">
+      <div class="col-11 col-md-6 ">
         <span class="text-h6">{{successMessage}}</span>
         <div class="q-pa-md" style="">
     <q-input
