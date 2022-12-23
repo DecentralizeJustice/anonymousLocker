@@ -69,7 +69,10 @@ const text = ref('')
 const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
-
+  {
+    q: `Hi, I'm in Japan but I want to order from Amazon.com USA, is it possible to deliver to Japan amazon locker?`,
+    a: `Shoot me another message here with the item you want and I will look into it for you!`
+  },
 {
     q: `Definitely interested for you service in europe, and particularly France.
 I  hope that your service will at least survive in the US, cheers.`,
