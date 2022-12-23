@@ -156,10 +156,10 @@
                 <q-btn
                   :disable="itemList.length === 0 || disableSubmit"
                   class="col-12"
-                  color="primary"
+                  color="green"
                   label="Submit Order"
                   @click="submitOrder"
-                  text-color="dark"
+                  text-color="white"
                 />
               </div>
             </div>
