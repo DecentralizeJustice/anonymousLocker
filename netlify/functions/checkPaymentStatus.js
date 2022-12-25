@@ -48,7 +48,7 @@ async function setupBucket(orderInfo){
 }
 function processFirstMessage(orderDetails) {
   let firstString = ''
-  const welcomeMessage = 'Hi, <br/> Thank you for using Anonymous Locker!<br/> Your order Summary is:<br/><br/>'
+  const welcomeMessage = 'Hi, <br/> Thank you for using Anon Shop!<br/> Your order Summary is:<br/><br/>'
   firstString = firstString.concat(welcomeMessage)
   const itemList = orderDetails.itemList
   for (let index = 0; index < itemList.length; index++) {
