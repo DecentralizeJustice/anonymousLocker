@@ -5,7 +5,7 @@
   >
   <div class="row justify-center col col-12 col-md-11 align-center items-center q-py-xl" >
     <div class="row items-center justify-center col-12 q-gutter-y-xl" >
-      <q-card class="col-12 col-md-7">
+      <q-card class="col-11 col-md-7">
       <q-card-section class="text-white bg-grey-7">
         <div class="text-h6">Ask Me A Question</div>
       </q-card-section>
@@ -19,7 +19,7 @@
       </q-card-section>
       <q-card-section class="">
         <div class="row justify-around q-gutter-y-md">
-      <div class="col-12 col-md-6 ">
+      <div class="col-11 col-md-6 ">
         <span class="text-h6">{{successMessage}}</span>
         <div class="q-pa-md" style="">
     <q-input
@@ -69,7 +69,10 @@ const text = ref('')
 const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
-
+  {
+    q: `Hi, I'm in Japan but I want to order from Amazon.com USA, is it possible to deliver to Japan amazon locker?`,
+    a: `Shoot me another message here with the item you want and I will look into it for you!`
+  },
 {
     q: `Definitely interested for you service in europe, and particularly France.
 I  hope that your service will at least survive in the US, cheers.`,
