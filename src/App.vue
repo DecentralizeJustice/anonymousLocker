@@ -2,12 +2,12 @@
   <q-layout view="hhh lpr fff">
     <q-header class="bg-grey-9 text-white">
       <q-toolbar>
-        <img
+<!--         <img
           src="./assets/svgs/locker.svg"
           style="max-width: 30px"
           class="q-my-sm"
-        />
-        <q-toolbar-title> Anonymous Locker </q-toolbar-title>
+        /> -->
+        <q-toolbar-title> Anonymous Shop </q-toolbar-title>
         <q-space class="desktop-only" />
         <q-btn color="primary" icon="menu" class="mobile-only">
           <q-menu>
