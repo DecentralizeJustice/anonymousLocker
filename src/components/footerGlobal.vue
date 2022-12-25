@@ -24,7 +24,7 @@ const info = [
         text: 'Youtube', link: 'https://www.youtube.com/channel/UCJhUULkUHVZKDMkhJlmGOGQ'
       },
       {
-        text: 'Reddit', link: 'https://www.reddit.com/r/Monero/comments/yrgc1m/seeking_5_people_to_try_anonymous_amazon_shipping/'
+        text: 'Reddit', link: 'https://www.reddit.com/r/Monero/comments/zprhwr/anonymous_shopping_using_amazon_lockers_and_monero/'
       },
       {
         text: 'Twitter', link: 'https://twitter.com/AnonShopApp'
