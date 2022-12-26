@@ -7,7 +7,7 @@
           style="max-width: 30px"
           class="q-my-sm"
         />
-        <q-toolbar-title> Anonymous Shop </q-toolbar-title>
+        <q-toolbar-title> Anon Shop </q-toolbar-title>
         <q-space class="desktop-only" />
         <q-btn color="primary" icon="menu" class="mobile-only">
           <q-menu>
