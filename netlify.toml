@@ -1,5 +1,5 @@
 [[redirects]]
-  from = "https://http://anonymouslocker.app/*"
+  from = "http://anonymouslocker.app/*"
   to = " https://www.anonshop.app/:splat"
   status = 301
   force = true # COMMENT: ensure that we always redirect
