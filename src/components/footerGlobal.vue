@@ -74,7 +74,10 @@ const info = [
       },
       {
         text: 'Business Registration', link: 'https://res.cloudinary.com/dylevfpbl/image/upload/v1669904250/ExecuteWorkflow.jpg'
-      }
+      },
+      {
+        text: 'Giveaway Terms & Conditions', link: '/twitterGiveAwayTerms'
+      },
     ]
   }
 ]

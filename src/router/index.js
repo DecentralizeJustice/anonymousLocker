@@ -11,6 +11,7 @@ import loyalty from "../views/loyaltyView.vue"
 import orderAdmin from "../views/orderAdmin.vue"
 import novReview2022 from "../components/blogPost/monthInReview/nov2022Blog.vue"
 import empty from "../views/emptyRoute.vue"
+import twitterGiveAway from "../views/giveAwayTerms.vue"
 /* const User = {
   template: `
     <div class="user">
@@ -27,6 +28,11 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: HomeView
+    },
+    {
+      path: "/twitterGiveAwayTerms",
+      name: "twitterGiveAway",
+      component: twitterGiveAway
     },
     {
       path: "/orders",
