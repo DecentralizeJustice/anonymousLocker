@@ -4,7 +4,7 @@
     <!-- page content -->
 
     <div class="row justify-evenly q-py-xl col-12 " >
-      <div class="row col col-11 col-md-9 items-center align-center row">
+      <div class="row col col-11 col-md-6 items-center align-center row">
         <div class=" col col-12 items-center align-center row">
           <div class="text-left text-center bg-primary text-white q-pa-lg" style="">
             <div
