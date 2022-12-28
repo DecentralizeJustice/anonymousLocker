@@ -46,6 +46,9 @@ const info = [
       {
         text: 'Github', link: 'https://github.com/DecentralizeJustice/anonymousLocker'
       },
+      {
+        text: 'Giveaway Tool', link: '/verifyTwitterGiveaway'
+      },
 
     ]
   },
