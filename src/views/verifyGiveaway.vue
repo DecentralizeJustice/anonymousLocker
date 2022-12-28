@@ -25,7 +25,7 @@ import footerGlobal from "@/components/footerGlobal.vue"
 import { ref } from 'vue'
 const moneroBlock = ref('580597aa464c813fb210325ecf62ea7d8354e6fc24337210b42622ba2c584486')
 const _sodium = require("libsodium-wrappers")
-const participants = ref(21)
+const participants = ref(21) // increase if no one wins
 const winnerArray = ref([])
 const numberOfRandomBytes = 1 // add the minuim to this to  get a number bigger than participant 1=255, 2=65535
 async function generate() {
@@ -33,7 +33,7 @@ async function generate() {
   let index = 0
   while (winnerArray.value.length < participants.value ) {
     const randomNumber = await getRandomNumber(index)
-    if (randomNumber < participants.value) {
+    if (randomNumber < participants.value && !winnerArray.value.includes(randomNumber + 1)) {
       winnerArray.value.push( randomNumber + 1)
     }
     index += 1
