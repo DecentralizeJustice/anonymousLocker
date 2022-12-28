@@ -1,7 +1,7 @@
 NO PURCHASE IS NECESSARY TO ENTER. YOUR CHANCES OF WINNING DO NOT INCREASE WITH A PURCHASE. This contest is Void where prohibited by law.
 #### Eligibility
   <ol>
-    <li>You Must be able to receive your items in the US near an Amazon Locker.</li>
+    <li>You must be able to receive your items in the US near an Amazon Locker.</li>
     <li>The same restrictions apply to this giveaway that apply to anon shop in general.</li>
   </ol>
 
@@ -15,10 +15,12 @@ By entering this giveaway you agree to follow the rules below:
   </ol>
 
 The payment processor that I use can also have access to the payment address that you used to pay with, depending on the cryptocurrency that you used to pay with. 
+#### Giveaway
+The giveaway will last 48 hours from the announcement post. 
 #### Prizes
-One person will win 50 Dollars of store credit to anon shop that will expire within a week of the announcement dm.
+One person will win a Ledger Nano S Plus delivered via Anon Shop.
 #### Selection and Notification of the Winner
-We will use a random number generator until we find a contestant that followed all the rules and is eligible to enter. We will announce the winner when the giveaway ends and dm the winner. 
+We will use a random number generator until we find a contestant that followed all the rules and is eligible to enter. We will announce the winner when the giveaway ends and dm the winner. We also post publicly announcing the winner. 
 #### Odds
 The odds for this giveaway depend on the number of entrants
 ### Rights Granted by the Entrant
