@@ -1,7 +1,13 @@
 const faq =
 {
     'General Questions':
-        [           
+        [    
+            [
+                `Should I use tor with this service?`,
+                `If you want the best anonymity possible then you should use tor. 
+                You should also be sure to copy the item link when you are not signed in to your account. 
+                If you copy a link when you are signed in to your account you might leak information such as your wishlist and account name.`
+            ],       
             [
                 `How long does it take to process an order?`,
                 `I guarantee that I will process all orders within 12 hours, but all orders so far have been processed in under 4 hours.`

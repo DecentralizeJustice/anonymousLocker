@@ -16,11 +16,11 @@ By entering this giveaway you agree to follow the rules below:
 
 The payment processor that I use can also have access to the payment address that you used to pay with, depending on the cryptocurrency that you used to pay with. 
 #### Giveaway
-The giveaway will last 48 hours from the announcement post. 
+The giveaway will last 48 hours from the announcement post. The post will be made at 10 AM EST Time. 
 #### Prizes
 One person will win a Ledger Nano S Plus delivered via Anon Shop.
 #### Selection and Notification of the Winner
-We will use a random number generator until we find a contestant that followed all the rules and is eligible to enter. We will announce the winner when the giveaway ends and dm the winner. We also post publicly announcing the winner. 
+We will announce the winner when the giveaway ends and dm the winner. We also post publicly announcing the winner. The random block number will come from the first block on the Monero network mined after the contest ended. This will be determined by the published block time on the monero blocktime. In the case that the blocks are not ordered correctly, we will go with the first block that says it was mined after the contest ended.
 #### Odds
 The odds for this giveaway depend on the number of entrants
 ### Rights Granted by the Entrant

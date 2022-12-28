@@ -12,6 +12,7 @@ import orderAdmin from "../views/orderAdmin.vue"
 import novReview2022 from "../components/blogPost/monthInReview/nov2022Blog.vue"
 import empty from "../views/emptyRoute.vue"
 import twitterGiveAway from "../views/giveAwayTerms.vue"
+import verifyTwitterGiveaway from "../views/verifyGiveaway.vue"
 /* const User = {
   template: `
     <div class="user">
@@ -33,6 +34,11 @@ const router = createRouter({
       path: "/twitterGiveAwayTerms",
       name: "twitterGiveAway",
       component: twitterGiveAway
+    },
+    {
+      path: "/verifyTwitterGiveaway",
+      name: "verifyTwitterGiveaway",
+      component: verifyTwitterGiveaway
     },
     {
       path: "/orders",
