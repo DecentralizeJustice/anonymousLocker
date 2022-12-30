@@ -10,7 +10,7 @@ const faq =
             ],       
             [
                 `How long does it take to process an order?`,
-                `I guarantee that I will process all orders within 12 hours, but all orders so far have been processed in under 4 hours.`
+                `I aim to process all orders within 10 hours.`
             ],
             [
                 `How long does shipping take?`,
