@@ -10,7 +10,7 @@ const faq =
             ],       
             [
                 `How long does it take to process an order?`,
-                `I aim to process all orders within 10 hours.`
+                `I aim to process all orders within 12 hours.`
             ],
             [
                 `How long does shipping take?`,
@@ -20,8 +20,7 @@ const faq =
             `Can I buy gift cards from you?`,
             `Not at this time.`
         ],
-            [`Where is this service available?`,
-    `We only deliver to US amazon lockers.`
+            [`Where is this service available?`, `We only deliver to US amazon lockers.`
     ],
         ['How Does This Work?', 
         `Here is a basic outline of how ordering with anonymous locker works:
@@ -67,6 +66,12 @@ const faq =
                 <li> I reserve the right to decline to process an order. In this case, a refund will be issued.</li>
                 <li> You should check your order every other day so that you do not miss important information about your order.</li>
             </ol>`
+        ],
+        [
+            `Is this service Anonymous?`, `No, no service can be truly anonymous. There will always be metadata leaks. 
+            Amazon lockers and the business they are in have cameras. This service is as slightly more anonymous than going to a store and spending cash. 
+            If you want the best anonymity when picking up your order you should wear a face mask, hat and glasses 😎. 
+            Or any other clothing to protect your identity.`
         ],
         [
             'Is the Code Open Source?', 'Yes, here is the <a href="https://github.com/DecentralizeJustice/anonymousLocker">github</a> repo for the code.'
