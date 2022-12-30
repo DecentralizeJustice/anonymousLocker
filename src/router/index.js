@@ -13,6 +13,7 @@ import novReview2022 from "../components/blogPost/monthInReview/nov2022Blog.vue"
 import empty from "../views/emptyRoute.vue"
 import twitterGiveAway from "../views/giveAwayTerms.vue"
 import verifyTwitterGiveaway from "../views/verifyGiveaway.vue"
+import checkOnOrder from "../views/checkOnOrder.vue"
 /* const User = {
   template: `
     <div class="user">
@@ -25,6 +26,11 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes: [
     { path: "/:catchAll(.*)", component: HomeView },
+    {
+      path: "/checkOnOrder",
+      name: "checkOnOrder",
+      component: checkOnOrder
+    },
     {
       path: "/",
       name: "home",

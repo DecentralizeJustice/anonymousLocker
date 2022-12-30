@@ -74,11 +74,13 @@
   </template>
     
 <script setup>
-import { ref, watch, defineEmits } from "vue"
+import { ref, watch, defineEmits, onMounted } from "vue"
 import bip39Wordlist from "@/assets/bip39Wordlist.txt"
+import { useRouter } from 'vue-router'
+const router = useRouter()
 const emit = defineEmits(['passphraseEnteredSuccess'])
 const axios = require('axios')
-const passphraseWords = ref([])
+const passphraseWords = ref(["","","","","",""])
 const passphraseLength = 6
 const validWordWarningArray = ref([false, false, false, false, false, false])
 const orderNotFound = ref(false)
@@ -147,4 +149,14 @@ function wordToNumber(word) {
   }
  return false
 }
+onMounted(() => {
+  const routeInfo = router.currentRoute.value
+  const routeName = routeInfo.name
+  const routeHash = routeInfo.hash
+  if (routeName === 'checkOnOrder') {
+    const rawFrag = routeHash.substring(1)
+    const fragWordArray = rawFrag.split(',')
+    passphraseWords.value = fragWordArray
+  }
+})
 </script>
