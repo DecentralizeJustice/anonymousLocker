@@ -70,6 +70,10 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
   {
+    q: `Hello, are you sending in Europe? A friend of mine is trying to check if he can send to another Country but locker search only gives location of lockers within a mile of his area.`,
+    a: `Unfortunately I currently only deliver to United States.`
+  },
+  {
     q: `Hi, I'm in Japan but I want to order from Amazon.com USA, is it possible to deliver to Japan amazon locker?`,
     a: `Shoot me another message here with the item you want and I will look into it for you!`
   },
