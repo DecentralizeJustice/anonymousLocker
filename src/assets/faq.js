@@ -60,6 +60,7 @@ const faq =
             <ol>
                 <li>Items must be fulfilled by amazon since only amazon can ship to amazon lockers.</li>
                 <li>We do not offer refunds unless there is an error on our end.</li>
+                <li>We offer returns for delivered items at our discretion.</li>
                 <li>The minimum order is 25 dollars.</li>
                 <li>I can not purchase prime-only items. This includes things like Prime Exclusive Deals.</li>
                 <li>We do not offer free Prime 2-Day Shipping, but you can pay extra for faster if you so wish.</li>
@@ -85,11 +86,12 @@ const faq =
             `Do you use prime shipping?`, 'No, I only use the free shipping option offered by amazon, unless you pay for the faster method.'
         ],
         [
-            `Do you offer refunds/returns?`, `Yes. Everything but the base and percentage service fee is refundable.`
+            `Do you offer refunds/returns?`, `Due to Amazon return scam, we offer returns for delivered items based on our discretion.
+            If you have any concerns about this policy, please reach out before you receive your item.`
         ],
         [
             `How do refunds work?`,
-            `You and I will coordinate for you to place the item back in the locker, just like a normal amazon return. Once amazon processes and approves the return I will refund you.`
+            `If we approve your return,  We will coordinate a return with you. Once amazon processes and approves the return I will refund you.`
         ],
         [
             `Why is my cart not saved if I refresh?`,

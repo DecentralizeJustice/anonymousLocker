@@ -18,5 +18,5 @@ We reserve the right to refuse and refund any order for any reason.
 
 #### Refund Policy
 
-If you wish to return an order that is possible. I will refund you whatever Amazon refunds me. The service fees, base fee and percentage fee, are not refundable. This refund policy excludes gift cards and prepaid access cards.
+We offer returns at our discretion. If we approve your order we will refund you whatever Amazon refunds us. The service fees, base fee and percentage fee, are not refundable.
 
