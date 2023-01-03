@@ -18,7 +18,7 @@ The giveaway will last 24 hours from the announcement post. The post will be mad
 #### Prizes
 One person will win a Ledger Nano S Plus delivered via Anon Shop.
 #### Selection and Notification of the Winner
-We will announce the winner when the giveaway ends and dm the winner. We also post publicly announcing the winner. The random block number will come from the first block on the Monero network mined after 3pm the day the contest ended. This will be determined by the published block time on the monero blocktime. In the case that the blocks are not ordered correctly, we will go with the first block that says it was mined after the contest ended.
+We will announce the winner within 12 hours of the giveaway ending. 
 #### Odds
 The odds for this giveaway depend on the number of entrants.
 ### Rights Granted by the Entrant
