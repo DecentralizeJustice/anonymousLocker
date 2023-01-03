@@ -4,18 +4,23 @@
     class="row items-stretch text-center align-center justify-center bg-primary"
   >
     <div class="row justify-center col col-11 align-center items-stretch" >
-      <div class="q-mt-xl">
+      <div class="q-my-xl">
         <q-card class="q-pa-xl" >
+          <div class="text-h4 q-my-md">Enter HTML Code:</div>
+          <q-input v-model="twitterHTML" label="Twitter HTML" />
+        <p><q-btn color="primary" label="Parse HTML" class='q-mt-md' @click="parseHTML()" :disable="disableHTMLParse"/></p>
+        <div class="text-h5">Number of Participants:</div>
+        {{ participantList.length }}
+        <div class="text-h5 q-mt-md">Participants:</div>
+        {{ participantList }}
         <div class="text-h4 q-my-md">Enter Monero Block Hash:</div>
         <q-input v-model="moneroBlock" label="Block String" />
-        <div class="text-h4 q-my-md">Enter Number of Participants:</div>
-        <q-input v-model="participants" label="Number of Participants" />
-        <p><q-btn color="primary" label="Pick Winners" class='q-mt-md' @click="generate()"/></p>
-        <div class="text-h4 q-my-md">Winner Array</div>
-        <div>{{ winnerArray }}</div>
-<!--         <q-input v-model="twitterHTML" label="Twitter HTML" />
-        <p><q-btn color="primary" label="Parse HTML" class='q-mt-md' @click="parseHTML()"/></p>
-        {{ participantList }} -->
+        <p><q-btn color="primary" label="Pick Winners" class='q-mt-md' @click="generate()" :disable="disableWinnerPicker"/></p>
+        <div class="text-h4 q-my-md">Winner List</div>
+          <span v-for="(item, index) in winnerHandleArray" :key="index">
+            {{ index + 1 }}. {{ winnerHandleArray[index] }} <br/>
+          </span>
+        
         </q-card>
       </div>
     </div>
@@ -25,31 +30,36 @@
 
 <script setup>
 import footerGlobal from "@/components/footerGlobal.vue"
-import { ref } from 'vue'
-// const cheerio = require('cheerio')
+import { ref, computed } from 'vue'
+const cheerio = require('cheerio')
 const moneroBlock = ref('580597aa464c813fb210325ecf62ea7d8354e6fc24337210b42622ba2c584486')
 const _sodium = require("libsodium-wrappers")
-const participants = ref(255) // very slow if we get over 255 participants
 const winnerArray = ref([])
-const numberOfRandomBytes = 2 // add the minuim to this to  get a number bigger than participant 1=255, 2=65535
-// const twitterHTML = ref('<div class="css-1dbjc4n r-1pp923h r-1moyyf3 r-16y2uox r-1wbh5a2 r-1dqxon3"><div class="css-1dbjc4n r-gtdqiz r-ipm5af r-136ojw6"><div class="css-1dbjc4n"><div class="css-1dbjc4n r-1h3ijdo r-136ojw6"><div class="css-1dbjc4n"><div class="css-1dbjc4n r-1e5uvyk r-5zmot r-kicko2 r-notknq r-1h3ijdo"><div class="css-1dbjc4n r-1awozwy r-18u37iz r-1h3ijdo r-1777fci r-1jgb5lz r-1ye8kvj r-ymttw5 r-13qz1uu"><div class="css-1dbjc4n r-1habvwh r-1pz39u2 r-1777fci r-15ysp7h r-s8bhmr"><div aria-label="Close" role="button" tabindex="0" class="css-18t94o4 css-1dbjc4n r-1niwhzg r-42olwf r-sdzlij r-1phboty r-rs99b7 r-2yi16 r-1qi8awa r-1ny4l3l r-o7ynqc r-6416eg r-lrvibr" data-testid="app-bar-close" style="margin-left: calc(-8px);"><div dir="ltr" class="css-901oao r-1awozwy r-6koalj r-18u37iz r-16y2uox r-37j5jr r-a023e6 r-b88u0q r-1777fci r-rjixqe r-bcqeeo r-q4m81j r-qvutc0" style="color: rgb(239, 243, 244);"><svg viewBox="0 0 24 24" aria-hidden="true" class="r-4qtqp9 r-yyyyoo r-z80fyv r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-19wmn03" style="color: rgb(239, 243, 244);"><g><path d="M10.59 12L4.54 5.96l1.42-1.42L12 10.59l6.04-6.05 1.42 1.42L13.41 12l6.05 6.04-1.42 1.42L12 13.41l-6.04 6.05-1.42-1.42L10.59 12z"></path></g></svg><span class="css-901oao css-16my406 css-1hf3ou5 r-poiln3 r-a023e6 r-rjixqe r-bcqeeo r-qvutc0" style="border-bottom: 2px solid rgb(239, 243, 244);"></span></div></div></div><div class="css-1dbjc4n r-16y2uox r-1wbh5a2 r-1pi2tsx r-1777fci"><div class="css-1dbjc4n r-1habvwh"><h2 dir="ltr" aria-level="2" role="heading" class="css-4rbku5 css-901oao css-1hf3ou5 r-1nao33i r-37j5jr r-adyw6z r-b88u0q r-135wba7 r-bcqeeo r-1vvnge1 r-qvutc0" id="modal-header"><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">Retweeted by</span></h2></div></div></div></div></div></div></div></div><section aria-labelledby="accessible-list-4" role="region" class="css-1dbjc4n"><h1 dir="auto" aria-level="1" role="heading" class="css-4rbku5 css-901oao r-4iw3lz r-1xk2f4g r-109y4c4 r-1udh08x r-wwvuq4 r-u8s1d r-92ng3h" id="accessible-list-4">Retweeted by</h1><div aria-label="Timeline: Retweeted by" class="css-1dbjc4n"><div style="position: relative; min-height: 830px;"><div data-testid="cellInnerDiv" style="transform: translateY(0px); position: absolute; width: 100%; transition: opacity 0.3s ease-out 0s;"><div class="css-1dbjc4n r-1adg3ll r-1ny4l3l"><div class="css-1dbjc4n"><div role="button" tabindex="0" class="css-18t94o4 css-1dbjc4n r-1ny4l3l r-ymttw5 r-1f1sjgu r-o7ynqc r-6416eg" data-testid="UserCell"><div class="css-1dbjc4n r-18u37iz"><div class="css-1dbjc4n r-1hwvwag r-18kxxzh r-1h0z5md r-1b7u577"><div class="css-1dbjc4n r-1wbh5a2 r-dnmrzs"><div class="css-1dbjc4n r-1adg3ll r-h3s6tt r-bztko3 r-13qz1uu" data-testid="UserAvatar-Container-0xForbidden403"><div class="r-1adg3ll r-13qz1uu" style="padding-bottom: 100%;"></div><div class="r-1p0dtai r-1pi2tsx r-1d2f490 r-u8s1d r-ipm5af r-13qz1uu"><div class="css-1dbjc4n r-1adg3ll r-1pi2tsx r-1wyvozj r-bztko3 r-u8s1d r-1v2oles r-desppf r-13qz1uu"><div class="r-1adg3ll r-13qz1uu" style="padding-bottom: 100%;"></div><div class="r-1p0dtai r-1pi2tsx r-1d2f490 r-u8s1d r-ipm5af r-13qz1uu"><div class="css-1dbjc4n r-sdzlij r-ggadg3 r-1udh08x r-u8s1d r-8jfcpp" style="height: calc(100% - -4px); width: calc(100% - -4px);"><a href="/0xForbidden403" aria-hidden="true" role="link" tabindex="-1" class="css-4rbku5 css-18t94o4 css-1dbjc4n r-1niwhzg r-1loqt21 r-1pi2tsx r-1ny4l3l r-o7ynqc r-6416eg r-13qz1uu"><div class="css-1dbjc4n r-sdzlij r-1wyvozj r-1udh08x r-633pao r-u8s1d r-1v2oles r-desppf" style="height: calc(100% - 4px); width: calc(100% - 4px);"><div class="css-1dbjc4n r-1niwhzg r-1pi2tsx r-13qz1uu"></div></div><div class="css-1dbjc4n r-sdzlij r-1wyvozj r-1udh08x r-633pao r-u8s1d r-1v2oles r-desppf" style="height: calc(100% - 4px); width: calc(100% - 4px);"><div class="css-1dbjc4n r-kemksi r-1pi2tsx r-13qz1uu"></div></div><div class="css-1dbjc4n r-kemksi r-sdzlij r-1wyvozj r-1udh08x r-633pao r-u8s1d r-1v2oles r-desppf" style="height: calc(100% - 4px); width: calc(100% - 4px);"><div class="css-1dbjc4n r-1adg3ll r-1udh08x" style=""><div class="r-1adg3ll r-13qz1uu" style="padding-bottom: 100%;"></div><div class="r-1p0dtai r-1pi2tsx r-1d2f490 r-u8s1d r-ipm5af r-13qz1uu"><div aria-label="" class="css-1dbjc4n r-1p0dtai r-1mlwlqe r-1d2f490 r-1udh08x r-u8s1d r-zchlnj r-ipm5af r-417010"><div class="css-1dbjc4n r-1niwhzg r-vvn4in r-u6sd8q r-4gszlv r-1p0dtai r-1pi2tsx r-1d2f490 r-u8s1d r-zchlnj r-ipm5af r-13qz1uu r-1wyyakw" style="background-image: url(&quot;https://pbs.twimg.com/profile_images/1583052943070269440/CAZvYnEy_normal.jpg&quot;);"></div><img alt="" draggable="true" src="https://pbs.twimg.com/profile_images/1583052943070269440/CAZvYnEy_normal.jpg" class="css-9pa8cd"></div></div></div></div><div class="css-1dbjc4n r-sdzlij r-1wyvozj r-1udh08x r-u8s1d r-1v2oles r-desppf" style="height: calc(100% - 4px); width: calc(100% - 4px);"><div class="css-1dbjc4n r-172uzmj r-1pi2tsx r-1ny4l3l r-o7ynqc r-6416eg r-13qz1uu"></div></div></a></div></div></div></div></div></div></div><div class="css-1dbjc4n r-1iusvr4 r-16y2uox"><div class="css-1dbjc4n r-1awozwy r-18u37iz r-1wtj0ep"><div class="css-1dbjc4n r-1wbh5a2 r-dnmrzs r-1ny4l3l"><div class="css-1dbjc4n r-1wbh5a2 r-dnmrzs r-1ny4l3l"><div class="css-1dbjc4n r-1wbh5a2 r-dnmrzs"><a href="/0xForbidden403" role="link" class="css-4rbku5 css-18t94o4 css-1dbjc4n r-1loqt21 r-1wbh5a2 r-dnmrzs r-1ny4l3l"><div class="css-1dbjc4n r-1awozwy r-18u37iz r-dnmrzs"><div dir="ltr" class="css-901oao r-1awozwy r-1nao33i r-6koalj r-37j5jr r-a023e6 r-b88u0q r-rjixqe r-bcqeeo r-1udh08x r-3s2u2q r-qvutc0"><span class="css-901oao css-16my406 css-1hf3ou5 r-poiln3 r-bcqeeo r-qvutc0"><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">forbidden403</span></span></div><div dir="ltr" class="css-901oao r-1nao33i r-xoduu5 r-18u37iz r-1q142lx r-37j5jr r-a023e6 r-16dba41 r-rjixqe r-bcqeeo r-qvutc0"></div></div></a></div><div class="css-1dbjc4n r-1awozwy r-18u37iz r-1wbh5a2"><div class="css-1dbjc4n r-1wbh5a2 r-dnmrzs"><a href="/0xForbidden403" role="link" tabindex="-1" class="css-4rbku5 css-18t94o4 css-1dbjc4n r-1loqt21 r-1wbh5a2 r-dnmrzs r-1ny4l3l"><div class="css-1dbjc4n"><div dir="ltr" class="css-901oao css-1hf3ou5 r-1bwzh9t r-18u37iz r-37j5jr r-a023e6 r-16dba41 r-rjixqe r-bcqeeo r-qvutc0"><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">@0xForbidden403</span></div></div></a></div></div></div></div><div class="css-1dbjc4n r-19u6a5r r-bcqeeo"><div aria-describedby="id__sehzd4r5rdr" aria-label="Follow @0xForbidden403" role="button" tabindex="0" class="css-18t94o4 css-1dbjc4n r-42olwf r-sdzlij r-1phboty r-rs99b7 r-15ysp7h r-4wgw6l r-1ny4l3l r-ymttw5 r-o7ynqc r-6416eg r-lrvibr" data-testid="1462507192154787849-follow" style="background-color: rgb(239, 243, 244);"><div dir="ltr" class="css-901oao r-1awozwy r-6koalj r-18u37iz r-16y2uox r-37j5jr r-a023e6 r-b88u0q r-1777fci r-rjixqe r-bcqeeo r-q4m81j r-qvutc0" style="color: rgb(15, 20, 25);"><span class="css-901oao css-16my406 css-1hf3ou5 r-poiln3 r-1b43r93 r-1cwl3u0 r-bcqeeo r-qvutc0"><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">Follow</span></span></div></div></div><div dir="auto" class="css-901oao r-hvic4v" id="id__sehzd4r5rdr">Click to Follow 0xForbidden403</div></div></div></div></div></div></div></div><div data-testid="cellInnerDiv" style="transform: translateY(72px); position: absolute; width: 100%; transition: transform 0.15s linear 0s;"><div class="css-1dbjc4n r-1adg3ll r-1ny4l3l"><div class="css-1dbjc4n"><div role="button" tabindex="0" class="css-18t94o4 css-1dbjc4n r-1ny4l3l r-ymttw5 r-1f1sjgu r-o7ynqc r-6416eg" data-testid="UserCell"><div class="css-1dbjc4n r-18u37iz"><div class="css-1dbjc4n r-1hwvwag r-18kxxzh r-1h0z5md r-1b7u577"><div class="css-1dbjc4n r-1wbh5a2 r-dnmrzs"><div class="css-1dbjc4n r-1adg3ll r-h3s6tt r-bztko3 r-13qz1uu" data-testid="UserAvatar-Container-badzachtakes"><div class="r-1adg3ll r-13qz1uu" style="padding-bottom: 100%;"></div><div class="r-1p0dtai r-1pi2tsx r-1d2f490 r-u8s1d r-ipm5af r-13qz1uu"><div class="css-1dbjc4n r-1adg3ll r-1pi2tsx r-1wyvozj r-bztko3 r-u8s1d r-1v2oles r-desppf r-13qz1uu"><div class="r-1adg3ll r-13qz1uu" style="padding-bottom: 100%;"></div><div class="r-1p0dtai r-1pi2tsx r-1d2f490 r-u8s1d r-ipm5af r-13qz1uu"><div class="css-1dbjc4n r-sdzlij r-ggadg3 r-1udh08x r-u8s1d r-8jfcpp" style="height: calc(100% - -4px); width: calc(100% - -4px);"><a href="/badzachtakes" aria-hidden="true" role="link" tabindex="-1" class="css-4rbku5 css-18t94o4 css-1dbjc4n r-1niwhzg r-1loqt21 r-1pi2tsx r-1ny4l3l r-o7ynqc r-6416eg r-13qz1uu"><div class="css-1dbjc4n r-sdzlij r-1wyvozj r-1udh08x r-633pao r-u8s1d r-1v2oles r-desppf" style="height: calc(100% - 4px); width: calc(100% - 4px);"><div class="css-1dbjc4n r-1niwhzg r-1pi2tsx r-13qz1uu"></div></div><div class="css-1dbjc4n r-sdzlij r-1wyvozj r-1udh08x r-633pao r-u8s1d r-1v2oles r-desppf" style="height: calc(100% - 4px); width: calc(100% - 4px);"><div class="css-1dbjc4n r-kemksi r-1pi2tsx r-13qz1uu"></div></div><div class="css-1dbjc4n r-kemksi r-sdzlij r-1wyvozj r-1udh08x r-633pao r-u8s1d r-1v2oles r-desppf" style="height: calc(100% - 4px); width: calc(100% - 4px);"><div class="css-1dbjc4n r-1adg3ll r-1udh08x" style=""><div class="r-1adg3ll r-13qz1uu" style="padding-bottom: 100%;"></div><div class="r-1p0dtai r-1pi2tsx r-1d2f490 r-u8s1d r-ipm5af r-13qz1uu"><div aria-label="" class="css-1dbjc4n r-1p0dtai r-1mlwlqe r-1d2f490 r-1udh08x r-u8s1d r-zchlnj r-ipm5af r-417010"><div class="css-1dbjc4n r-1niwhzg r-vvn4in r-u6sd8q r-4gszlv r-1p0dtai r-1pi2tsx r-1d2f490 r-u8s1d r-zchlnj r-ipm5af r-13qz1uu r-1wyyakw" style="background-image: url(&quot;https://pbs.twimg.com/profile_images/1227392519413141504/NoV9cQQS_normal.jpg&quot;);"></div><img alt="" draggable="true" src="https://pbs.twimg.com/profile_images/1227392519413141504/NoV9cQQS_normal.jpg" class="css-9pa8cd"></div></div></div></div><div class="css-1dbjc4n r-sdzlij r-1wyvozj r-1udh08x r-u8s1d r-1v2oles r-desppf" style="height: calc(100% - 4px); width: calc(100% - 4px);"><div class="css-1dbjc4n r-172uzmj r-1pi2tsx r-1ny4l3l r-o7ynqc r-6416eg r-13qz1uu"></div></div></a></div></div></div></div></div></div></div><div class="css-1dbjc4n r-1iusvr4 r-16y2uox"><div class="css-1dbjc4n r-1awozwy r-18u37iz r-1wtj0ep"><div class="css-1dbjc4n r-1wbh5a2 r-dnmrzs r-1ny4l3l"><div class="css-1dbjc4n r-1wbh5a2 r-dnmrzs r-1ny4l3l"><div class="css-1dbjc4n r-1wbh5a2 r-dnmrzs"><a href="/badzachtakes" role="link" class="css-4rbku5 css-18t94o4 css-1dbjc4n r-1loqt21 r-1wbh5a2 r-dnmrzs r-1ny4l3l"><div class="css-1dbjc4n r-1awozwy r-18u37iz r-dnmrzs"><div dir="ltr" class="css-901oao r-1awozwy r-1nao33i r-6koalj r-37j5jr r-a023e6 r-b88u0q r-rjixqe r-bcqeeo r-1udh08x r-3s2u2q r-qvutc0"><span class="css-901oao css-16my406 css-1hf3ou5 r-poiln3 r-bcqeeo r-qvutc0"><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">Zach</span></span></div><div dir="ltr" class="css-901oao r-1nao33i r-xoduu5 r-18u37iz r-1q142lx r-37j5jr r-a023e6 r-16dba41 r-rjixqe r-bcqeeo r-qvutc0"></div></div></a></div><div class="css-1dbjc4n r-1awozwy r-18u37iz r-1wbh5a2"><div class="css-1dbjc4n r-1wbh5a2 r-dnmrzs"><a href="/badzachtakes" role="link" tabindex="-1" class="css-4rbku5 css-18t94o4 css-1dbjc4n r-1loqt21 r-1wbh5a2 r-dnmrzs r-1ny4l3l"><div class="css-1dbjc4n"><div dir="ltr" class="css-901oao css-1hf3ou5 r-1bwzh9t r-18u37iz r-37j5jr r-a023e6 r-16dba41 r-rjixqe r-bcqeeo r-qvutc0"><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">@badzachtakes</span></div></div></a></div></div></div></div><div class="css-1dbjc4n r-19u6a5r r-bcqeeo"><div aria-describedby="id__pli3n6g5f5m" aria-label="Follow @badzachtakes" role="button" tabindex="0" class="css-18t94o4 css-1dbjc4n r-42olwf r-sdzlij r-1phboty r-rs99b7 r-15ysp7h r-4wgw6l r-1ny4l3l r-ymttw5 r-o7ynqc r-6416eg r-lrvibr" data-testid="1227392396826116098-follow" style="background-color: rgb(239, 243, 244);"><div dir="ltr" class="css-901oao r-1awozwy r-6koalj r-18u37iz r-16y2uox r-37j5jr r-a023e6 r-b88u0q r-1777fci r-rjixqe r-bcqeeo r-q4m81j r-qvutc0" style="color: rgb(15, 20, 25);"><span class="css-901oao css-16my406 css-1hf3ou5 r-poiln3 r-1b43r93 r-1cwl3u0 r-bcqeeo r-qvutc0"><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">Follow</span></span></div></div></div><div dir="auto" class="css-901oao r-hvic4v" id="id__pli3n6g5f5m">Click to Follow badzachtakes</div></div><div dir="auto" class="css-901oao r-1nao33i r-37j5jr r-a023e6 r-16dba41 r-rjixqe r-bcqeeo r-1h8ys4a r-1jeg54m r-qvutc0"><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">Saltine Settler. Ineffective Dissident. Welcome to my stream of consciousness.</span></div></div></div></div></div></div></div><div data-testid="cellInnerDiv" style="transform: translateY(180px); position: absolute; width: 100%; transition: transform 0.15s linear 0s;"><div class="css-1dbjc4n r-1adg3ll r-1ny4l3l"><div class="css-1dbjc4n"><div role="button" tabindex="0" class="css-18t94o4 css-1dbjc4n r-1ny4l3l r-ymttw5 r-1f1sjgu r-o7ynqc r-6416eg" data-testid="UserCell"><div class="css-1dbjc4n r-18u37iz"><div class="css-1dbjc4n r-1hwvwag r-18kxxzh r-1h0z5md r-1b7u577"><div class="css-1dbjc4n r-1wbh5a2 r-dnmrzs"><div class="css-1dbjc4n r-1adg3ll r-h3s6tt r-bztko3 r-13qz1uu" data-testid="UserAvatar-Container-HBarca5"><div class="r-1adg3ll r-13qz1uu" style="padding-bottom: 100%;"></div><div class="r-1p0dtai r-1pi2tsx r-1d2f490 r-u8s1d r-ipm5af r-13qz1uu"><div class="css-1dbjc4n r-1adg3ll r-1pi2tsx r-1wyvozj r-bztko3 r-u8s1d r-1v2oles r-desppf r-13qz1uu"><div class="r-1adg3ll r-13qz1uu" style="padding-bottom: 100%;"></div><div class="r-1p0dtai r-1pi2tsx r-1d2f490 r-u8s1d r-ipm5af r-13qz1uu"><div class="css-1dbjc4n r-sdzlij r-ggadg3 r-1udh08x r-u8s1d r-8jfcpp" style="height: calc(100% - -4px); width: calc(100% - -4px);"><a href="/HBarca5" aria-hidden="true" role="link" tabindex="-1" class="css-4rbku5 css-18t94o4 css-1dbjc4n r-1niwhzg r-1loqt21 r-1pi2tsx r-1ny4l3l r-o7ynqc r-6416eg r-13qz1uu"><div class="css-1dbjc4n r-sdzlij r-1wyvozj r-1udh08x r-633pao r-u8s1d r-1v2oles r-desppf" style="height: calc(100% - 4px); width: calc(100% - 4px);"><div class="css-1dbjc4n r-1niwhzg r-1pi2tsx r-13qz1uu"></div></div><div class="css-1dbjc4n r-sdzlij r-1wyvozj r-1udh08x r-633pao r-u8s1d r-1v2oles r-desppf" style="height: calc(100% - 4px); width: calc(100% - 4px);"><div class="css-1dbjc4n r-kemksi r-1pi2tsx r-13qz1uu"></div></div><div class="css-1dbjc4n r-kemksi r-sdzlij r-1wyvozj r-1udh08x r-633pao r-u8s1d r-1v2oles r-desppf" style="height: calc(100% - 4px); width: calc(100% - 4px);"><div class="css-1dbjc4n r-1adg3ll r-1udh08x" style=""><div class="r-1adg3ll r-13qz1uu" style="padding-bottom: 100%;"></div><div class="r-1p0dtai r-1pi2tsx r-1d2f490 r-u8s1d r-ipm5af r-13qz1uu"><div aria-label="" class="css-1dbjc4n r-1p0dtai r-1mlwlqe r-1d2f490 r-1udh08x r-u8s1d r-zchlnj r-ipm5af r-417010"><div class="css-1dbjc4n r-1niwhzg r-vvn4in r-u6sd8q r-4gszlv r-1p0dtai r-1pi2tsx r-1d2f490 r-u8s1d r-zchlnj r-ipm5af r-13qz1uu r-1wyyakw" style="background-image: url(&quot;https://pbs.twimg.com/profile_images/1597994086660718597/lZoX-wFe_normal.jpg&quot;);"></div><img alt="" draggable="true" src="https://pbs.twimg.com/profile_images/1597994086660718597/lZoX-wFe_normal.jpg" class="css-9pa8cd"></div></div></div></div><div class="css-1dbjc4n r-sdzlij r-1wyvozj r-1udh08x r-u8s1d r-1v2oles r-desppf" style="height: calc(100% - 4px); width: calc(100% - 4px);"><div class="css-1dbjc4n r-172uzmj r-1pi2tsx r-1ny4l3l r-o7ynqc r-6416eg r-13qz1uu"></div></div></a></div></div></div></div></div></div></div><div class="css-1dbjc4n r-1iusvr4 r-16y2uox"><div class="css-1dbjc4n r-1awozwy r-18u37iz r-1wtj0ep"><div class="css-1dbjc4n r-1wbh5a2 r-dnmrzs r-1ny4l3l"><div class="css-1dbjc4n r-1wbh5a2 r-dnmrzs r-1ny4l3l"><div class="css-1dbjc4n r-1wbh5a2 r-dnmrzs"><a href="/HBarca5" role="link" class="css-4rbku5 css-18t94o4 css-1dbjc4n r-1loqt21 r-1wbh5a2 r-dnmrzs r-1ny4l3l"><div class="css-1dbjc4n r-1awozwy r-18u37iz r-dnmrzs"><div dir="ltr" class="css-901oao r-1awozwy r-1nao33i r-6koalj r-37j5jr r-a023e6 r-b88u0q r-rjixqe r-bcqeeo r-1udh08x r-3s2u2q r-qvutc0"><span class="css-901oao css-16my406 css-1hf3ou5 r-poiln3 r-bcqeeo r-qvutc0"><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">H. Barca </span><img alt="🇺🇸" draggable="false" src="https://abs-0.twimg.com/emoji/v2/svg/1f1fa-1f1f8.svg" title="Flag of United States" class="r-4qtqp9 r-dflpy8 r-sjv1od r-zw8f10 r-10akycc r-h9hxbl"></span></div><div dir="ltr" class="css-901oao r-1nao33i r-xoduu5 r-18u37iz r-1q142lx r-37j5jr r-a023e6 r-16dba41 r-rjixqe r-bcqeeo r-qvutc0"></div></div></a></div><div class="css-1dbjc4n r-1awozwy r-18u37iz r-1wbh5a2"><div class="css-1dbjc4n r-1wbh5a2 r-dnmrzs"><a href="/HBarca5" role="link" tabindex="-1" class="css-4rbku5 css-18t94o4 css-1dbjc4n r-1loqt21 r-1wbh5a2 r-dnmrzs r-1ny4l3l"><div class="css-1dbjc4n"><div dir="ltr" class="css-901oao css-1hf3ou5 r-1bwzh9t r-18u37iz r-37j5jr r-a023e6 r-16dba41 r-rjixqe r-bcqeeo r-qvutc0"><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">@HBarca5</span></div></div></a></div></div></div></div><div class="css-1dbjc4n r-19u6a5r r-bcqeeo"><div aria-describedby="id__faep5ulz3w" aria-label="Follow @HBarca5" role="button" tabindex="0" class="css-18t94o4 css-1dbjc4n r-42olwf r-sdzlij r-1phboty r-rs99b7 r-15ysp7h r-4wgw6l r-1ny4l3l r-ymttw5 r-o7ynqc r-6416eg r-lrvibr" data-testid="1262412529944481792-follow" style="background-color: rgb(239, 243, 244);"><div dir="ltr" class="css-901oao r-1awozwy r-6koalj r-18u37iz r-16y2uox r-37j5jr r-a023e6 r-b88u0q r-1777fci r-rjixqe r-bcqeeo r-q4m81j r-qvutc0" style="color: rgb(15, 20, 25);"><span class="css-901oao css-16my406 css-1hf3ou5 r-poiln3 r-1b43r93 r-1cwl3u0 r-bcqeeo r-qvutc0"><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">Follow</span></span></div></div></div><div dir="auto" class="css-901oao r-hvic4v" id="id__faep5ulz3w">Click to Follow HBarca5</div></div><div dir="auto" class="css-901oao r-1nao33i r-37j5jr r-a023e6 r-16dba41 r-rjixqe r-bcqeeo r-1h8ys4a r-1jeg54m r-qvutc0"><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">"The hardness of God is kinder than the softness of men, and His compulsion is our liberation.” - C.S. Lewis</span></div></div></div></div></div></div></div><div data-testid="cellInnerDiv" style="transform: translateY(288px); position: absolute; width: 100%; transition: opacity 0.3s ease-out 0s;"><div class="css-1dbjc4n r-o52ifk"><div class="css-1dbjc4n r-o52ifk"></div></div></div></div></div></section></div>')
-// const participantList = ref([])
+const participantList = ref([])
+const twitterHTML = ref('')
+const winnerHandleArray = ref([])
 async function generate() {
   winnerArray.value = []
+  winnerHandleArray.value = []
   let index = 0
-  while (winnerArray.value.length < participants.value ) {
+  while (winnerArray.value.length < participantList.value.length ) {
     const randomNumber = await getRandomNumber(index)
-    if (randomNumber < participants.value && !winnerArray.value.includes(randomNumber + 1)) {
-      winnerArray.value.push( randomNumber + 1)
+    if (randomNumber < participantList.value.length && !winnerArray.value.includes(randomNumber)) {
+      winnerArray.value.push( randomNumber)
       console.log('working on winner: ' + winnerArray.value.length)
     }
     index += 1
+  }
+  for (let index = 0; index < winnerArray.value.length; index++) {
+    const winnerHandle = participantList.value[winnerArray.value[index]]
+    winnerHandleArray.value.push(winnerHandle)
   }
 }
 const convert = (from, to) => (str) => Buffer.from(str, from).toString(to)
 const utf8ToHex = convert("utf8", "hex")
 
 async function getRandomNumber(salt){
+  const numberOfRandomBytes = getNumberofRandomBytes()
   const block = moneroBlock.value + salt
   await _sodium.ready
   const sodium = _sodium
@@ -59,15 +69,40 @@ async function getRandomNumber(salt){
   const rawOutput = parseInt(sodium.to_hex(randomBytes), 16)
   return rawOutput
 }
-/* function parseHTML() {
+function getNumberofRandomBytes() {
+   // add the minuim to this to  get a number bigger than participant 1=256, 2=65536
+  if(participantList.value.length < 257){ return 1 }
+  else{ return 2}
+}
+function parseHTML() {
   const $ = cheerio.load(twitterHTML.value)
-  const userBlock = $('div[data-testid="UserCell"]')
   const participants = $('span:contains("@")')
-  participantList.value = []
+  let tempList = []
   for (let index = 0; index < participants.length; index++) {
-    participantList.value.push(participants[index].children[0].data)    
+     if (participants[index].children[0] !== null) {
+      tempList.push(participants[index].children[0].data) 
+    } 
   }
+  tempList.reverse()
+  tempList=tempList.filter(e => e !== undefined)
+  if (participantList.value.length === 0) {
+    participantList.value = participantList.value.concat(tempList)
+  } else {
+    if (!participantList.value.includes(tempList[0])) {console.log('no overlap'); return;}
+    console.log('overlap found')
+    participantList.value = participantList.value.concat(tempList)
+    participantList.value = removeDuplicates(participantList.value)
+  }
+  
   console.log('Number of retweets: ' + participantList.value.length)
-  c */
-//}
+}
+function removeDuplicates(arr) {
+  return arr.filter((item, index) => arr.indexOf(item) === index);
+}
+const disableHTMLParse = computed(() => {
+  return twitterHTML.value.length === 0
+})
+const disableWinnerPicker = computed(() => {
+  return participantList.value.length === 0
+})
 </script>
