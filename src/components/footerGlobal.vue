@@ -11,7 +11,7 @@
     </div>
     </div>
     <div class="row col-12 text-primary justify-center q-pt-lg q-mb-md text-weight-bold" style="">
-      Copyright 2022, Anonymous Locker LLC
+      Copyright 2023, Anonymous Locker LLC
     </div>
 </div>
 </template>
