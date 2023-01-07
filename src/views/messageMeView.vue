@@ -70,6 +70,10 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+    q: `Hi. There was an error in creating your order. Go to the "Orders" page in the upper right. Then click "Check on Order" and enter your 6-word passphrase.`,
+    a: `Hi. There was an error in creating your order. Go to the "Orders" page in the upper right. Then click "Check on Order" and enter your 6-word passphrase.`
+  },
+{
     q: `Hi. If you placed an order today (January 6th) I received your funds, but not your order. Please send me a message.`,
     a: `Hi. If you placed an order today(January 6th) I received your funds, but not your order. Please send me a message.`
   },
