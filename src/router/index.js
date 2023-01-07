@@ -13,6 +13,7 @@ import novReview2022 from "../components/blogPost/monthInReview/nov2022Blog.vue"
 import empty from "../views/emptyRoute.vue"
 import twitterGiveAway from "../views/giveAwayTerms.vue"
 import verifyTwitterGiveaway from "../views/verifyGiveaway.vue"
+import quiz from "../views/quizPage.vue"
 import checkOnOrder from "../views/checkOnOrder.vue"
 /* const User = {
   template: `
@@ -35,6 +36,11 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: HomeView
+    },
+    {
+      path: "/quiz",
+      name: "quiz",
+      component: quiz
     },
     {
       path: "/twitterGiveAwayTerms",

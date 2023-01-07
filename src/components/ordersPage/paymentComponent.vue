@@ -106,7 +106,7 @@
                   no-caps
                   color="positive"
                   icon="autorenew"
-                  label="Refresh Amount Sent"
+                  label="Check For Payment"
                   @click="checkForPayment(paymentInfo.nowPaymentsInfo.payment_id)"
                 />
               </div>
