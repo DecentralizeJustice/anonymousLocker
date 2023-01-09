@@ -1,7 +1,11 @@
 const faq =
 {
     'General Questions':
-        [    
+        [    [
+            `Can you do International Orders?`,
+                `Yes. We can not deliver outside of your country's Amazon Site though. For example, we can not deliver from US Amazon to Japan Amazon.
+                We can deliver to lockers within the same country.`
+        ],
             [
                 `Should I use tor with this service?`,
                 `If you want the best anonymity possible then you should use tor. 
@@ -20,7 +24,7 @@ const faq =
             `Can I buy gift cards from you?`,
             `Not at this time.`
         ],
-            [`Where is this service available?`, `We only deliver to US amazon lockers.`
+            [`Where is this service available?`, `Anwhere that has Amazon Lockers.`
     ],
         ['How Does This Work?', 
         `Here is a basic outline of how ordering with anonymous locker works:

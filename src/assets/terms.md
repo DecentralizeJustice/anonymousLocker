@@ -1,7 +1,6 @@
 #### Current Service Stipulations
 
 <ol>
-    <li>We only serve US amazon locker locations.</li>
     <li>Items must be fulfilled by amazon since only amazon can ship to amazon lockers.</li>
     <li>At this time we do not offer refunds on any purchases unless I can not fulfill your order.</li>
     <li>The minimum order is 25 dollars.</li>
