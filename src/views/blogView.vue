@@ -7,17 +7,14 @@
         <div class="col-12 text-center text-white text-h3 q-pb-lg my-font">      
         Blog
       </div>
-      <div class="col-md-2 col-6" v-for="item in recentlyBought" :key="item.id">
+      <div class="col-md-3 col-6" v-for="item in recentlyBought" :key="item.id">
         <router-link to="/blog/nov22">
         <q-card class="" style="width: 100%; background-color:#D4CCC4;">
             <q-card-section>
-                <div class="col col-11 col-md-7 row" >
+                <div class="col col-11 col-md-7" >
                     <q-img class=""  :src=item.img  />
                 </div>
-            </q-card-section>
-
-            <q-card-section>
-              <div class="text-h6 text-center">{{item.name}}</div>
+                <div class="text-h4 text-center q-my-md">{{item.name}}</div>
             </q-card-section>
           </q-card>
         </router-link>
@@ -31,7 +28,7 @@
   import footerGlobal from "@/components/footerGlobal.vue"
   const recentlyBought =[
   { 
-    img: `https://res.cloudinary.com/dylevfpbl/image/upload/v1671571229/blog/pexels-the-cactusena-14397979.jpg`,
+    img: `https://res.cloudinary.com/dylevfpbl/image/upload/v1673328539/blog/dgoon21_computer_fall_leaves_autumn_4ba165b9-ede2-4380-bb91-6397a594021d.png`,
     name: 'Review of November 2022'
   }
 ]
