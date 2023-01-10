@@ -7,11 +7,11 @@
         <div class="col-12 text-center text-white text-h3 q-pb-lg my-font">      
         Blog
       </div>
-      <div class="col-md-3 col-6" v-for="item in recentlyBought" :key="item.id">
+      <div class="col-md-3 col-9" v-for="item in recentlyBought" :key="item.id">
         <router-link to="/blog/nov22">
         <q-card class="" style="width: 100%; background-color:#D4CCC4;">
             <q-card-section>
-                <div class="col col-11 col-md-7" >
+                <div class="col col-12 col-md-7" >
                     <q-img class=""  :src=item.img  />
                 </div>
                 <div class="text-h4 text-center q-my-md">{{item.name}}</div>
