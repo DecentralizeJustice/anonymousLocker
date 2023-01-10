@@ -286,7 +286,7 @@ const estimatedTax = Number(.08)
 const baseServiceFee = Number(5)
 const percentageServiceFee = Number(.03)
 const heroText = 'Anonymous Deliveries With Amazon Lockers'
-const heroSubtext = `The Most Private Way To shop Online`
+const heroSubtext = `The Most Private Way To Shop Online`
 const step1 = `You place an order with me anonymously. The only information I need is a link to your item
  and the zipcode that you want the order delivered to.`
 const step2 = `I place your order and update you throughout the process. If you have any questions or concerns you can

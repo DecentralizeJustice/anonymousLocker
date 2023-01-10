@@ -84,6 +84,12 @@ const faq =
     ],
     'Order Questions': [
         [
+            `Are there size restrictions?`, 
+            `Yes. Large items such as printers or a bulk order of a product might not fit in the locker.
+            If the order does not fit, we will issue a full refund.
+            `
+        ],
+        [
             `Which payment methods do you accept?`, 'I accept BTC, LTC, XMR, and ETH currently.'
         ],
         [
