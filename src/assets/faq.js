@@ -84,6 +84,12 @@ const faq =
     ],
     'Order Questions': [
         [
+            `What happens If I don't pick my order up from the locker?`, 
+            `If you don't pick up your order and Amazon returns the order we charge a 30% restocking fee on items returned.
+            You should communicate if you can not pick up your item in time. I can arrange delivery around your schedule, just let me know
+            `
+        ],
+        [
             `Are there size restrictions?`, 
             `Yes. Large items such as printers or a bulk order of a product might not fit in the locker.
             If the order does not fit, we will issue a full refund.

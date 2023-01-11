@@ -1,6 +1,7 @@
 #### Current Service Stipulations
 
 <ol>
+    <li>If an item you order is returned to Amazon because you did not pick the item up, we charge a 30% restocking of every item returned.</li>
     <li>Items must be fulfilled by amazon since only amazon can ship to amazon lockers.</li>
     <li>At this time we do not offer refunds on any purchases unless I can not fulfill your order.</li>
     <li>The minimum order is 25 dollars.</li>
