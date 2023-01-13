@@ -6,7 +6,7 @@ const faq = {
                 We can deliver to lockers within the same country.`,
     ],
     [`Can I buy gift cards from you?`, `Yes, here is an example of the debit gift cards that we offer,
-    <a href="https://amazon.com/Visa-Gift-Card-plus-Purchase/dp/B07HJD9FVV">prepaid gift cards.</a> .`],
+    <a href="https://amazon.com/Visa-Gift-Card-plus-Purchase/dp/B07HJD9FVV">prepaid gift cards.</a> . You can also buy gift cards to stores such as Walmart and Target, all anonymously.`],
     [`Where is this service available?`, `Anywhere that has Amazon Lockers.`],
     [
       `Should I use tor with this service?`,
