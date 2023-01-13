@@ -132,12 +132,20 @@
           </q-card-section>
           <q-card-section class="text-center text-h4 col-6">
             <div>Amazon Total</div>
-            <div class="text-subtitle1">(Includes Estimated 8% Sale Tax)</div>
+            <div class="text-subtitle1" v-if="!giftcardOnlyOrder">(Includes Estimated 8% Sale Tax)</div>
+            <div class="text-subtitle1" v-if="giftcardOnlyOrder">(No Sales Tax on Giftcards)</div>
             <div class="q-mt-sm">${{amazonTotalCost.toFixed(2)}}</div>
           </q-card-section>
           <q-card-section class="text-center text-h4 col-12" style="">
             <div>Total You Pay For Delivery</div> 
             <div class="q-mt-sm">${{(baseServiceFee+amazonTotalCost+(percentageServiceFee*amazonTotalCost)).toFixed(2)}}</div>
+          </q-card-section>
+          <q-card-section class="text-center text-h5 col-12" style="">
+            <q-toggle
+              v-model="giftcardOnlyOrder"
+              color="green"
+              label="Order Only Has Giftcards"
+            />
           </q-card-section>
           <q-card-section class="text-h4 text-weight-regular text-center col-12">
               <router-link :to="{ name: 'ordersPage' }" style="text-decoration:none !important;">
@@ -282,9 +290,10 @@ import footerGlobal from "@/components/footerGlobal.vue"
 import { onMounted, ref, computed } from "vue"
 require("@lottiefiles/lottie-player")
 const exampleItemCost = ref('80')
-const estimatedTax = Number(.08)
+const estimatedTaxRateOnPhysicalItems = Number(.08)
 const baseServiceFee = Number(5)
 const percentageServiceFee = Number(.03)
+const giftcardOnlyOrder = ref(false)
 const heroText = 'Anonymous Deliveries With Amazon Lockers'
 const heroSubtext = `The Most Private Way To Shop Online`
 const step1 = `You place an order with me anonymously. The only information I need is a link to your item
@@ -312,7 +321,13 @@ const recentlyBought =[
 ]
 const amazonTotalCost = computed(() => {
   const itemCost = exampleItemCost.value.replaceAll(',', '')
-  return ((Number(estimatedTax)*Number(itemCost))+Number(itemCost))
+  return ((estimatedTax.value*Number(itemCost))+Number(itemCost))
+})
+const estimatedTax = computed(() => {
+  if (giftcardOnlyOrder.value) {
+    return Number(0)
+  }
+  return estimatedTaxRateOnPhysicalItems
 })
 onMounted(() => {
 

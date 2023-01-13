@@ -125,11 +125,18 @@
                 />
               </div>
               <q-input
-                class="col-12 col-md-7"
+                class="col-12 col-md-6"
                 v-model="extraNotes"
                 autogrow
-                label="Questions, Concerns, & Notes"
+                label="Order Notes"
               /> 
+              <span class="text-center col-5 q-my-md text-h5" style="">
+            <q-toggle
+              v-model="giftcardOnlyOrder"
+              color="green"
+              label="Giftcard Only Order"
+            />
+              </span>
               <q-select  class="col-12 col-md-6 q-mt-md" v-model="selectedCoin" :options="options" label="Payment Crypto" />
               <span class="col-12 q-mt-md">
                 <q-chip
@@ -178,6 +185,7 @@ const emit = defineEmits(['paymentSTarted'])
 const selectedCoin = ref('Monero')
 const options = ['Monero', 'Bitcoin', 'Litecoin', 'Ethereum']
 const axios = require('axios')
+const giftcardOnlyOrder = ref(false)
 const amazonlink = ref("")
 const amazonItemDescription = ref("")
 const itemAmount = ref("0.00")
@@ -188,7 +196,6 @@ const lockerName = ref("")
 const extraNotes = ref("")
 const percentageFee = 0.03
 const minOrderamount = 25
-const taxRate = 0.08
 const baseFee = 5
 const linkError = ref(false)
 const itemAmountError = ref(false)
@@ -266,7 +273,7 @@ const serviceFeeUSD = computed(() => {
   return (Number(baseFee) + Number(percentageTotal)).toFixed(2)
 })
 const taxAmount = computed(() => {
-  return Number(Number(orderUSDSubTotal.value) * taxRate).toFixed(2)
+  return Number(Number(orderUSDSubTotal.value) * taxRate.value).toFixed(2)
 })
 const finalTotalUSD = computed(() => {
   const longNumber =
@@ -309,6 +316,12 @@ async function submitOrder() {
   console.log(err)
 }
 }
+const taxRate = computed(() => {
+  if (giftcardOnlyOrder.value) {
+    return 0
+  }
+  return 0.08
+})
 </script>
 <style lang="sass" scoped>
 .linkStyle

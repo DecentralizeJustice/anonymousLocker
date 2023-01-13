@@ -5,6 +5,9 @@ const faq = {
       `Yes. We can not deliver outside of your country's Amazon Site though. For example, we can not deliver from US Amazon to Japan Amazon.
                 We can deliver to lockers within the same country.`,
     ],
+    [`Can I buy gift cards from you?`, `Yes, here is an example of the debit gift cards that we offer,
+    <a href="https://amazon.com/Visa-Gift-Card-plus-Purchase/dp/B07HJD9FVV">prepaid gift cards.</a> .`],
+    [`Where is this service available?`, `Anywhere that has Amazon Lockers.`],
     [
       `Should I use tor with this service?`,
       `If you want the best anonymity possible then you should use tor. 
@@ -19,8 +22,6 @@ const faq = {
       `How long does shipping take?`,
       `Shipping usually takes 3 to 5 days from when you place your order. I will keep you updated throughout the entire process and give you a tracking number also.`,
     ],
-    [`Can I buy gift cards from you?`, `Yes, we don't offer refunds though.`],
-    [`Where is this service available?`, `Anywhere that has Amazon Lockers.`],
     [
       "How Does This Work?",
       `Here is a basic outline of how ordering with Anon Shop works:
