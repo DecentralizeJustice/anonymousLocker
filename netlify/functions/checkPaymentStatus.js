@@ -7,6 +7,9 @@ const fs = require('fs')
 const path = require("path")
 console.log(path.resolve(__dirname + "/bip39Wordlist.txt"))
 const pathWordlist = path.resolve(__dirname + "/bip39Wordlist.txt")
+fs.readdirSync('./').forEach(file => {
+  console.log(file);
+});
 console.log(fs.existsSync(pathWordlist))
 const words = fs.readFileSync(pathWordlist, 'utf8').toString().split("\n")
 exports.handler = async (event) => {
