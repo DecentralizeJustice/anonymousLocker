@@ -7,3 +7,5 @@
   from = "/*"
   to = "/"
   status = 200
+[functions]
+  included_files = ["./netlify/functions/bip39Wordlist.txt", "/netlify/functions/bip39Wordlist.txt" ]
