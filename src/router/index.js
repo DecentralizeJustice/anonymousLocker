@@ -15,6 +15,7 @@ import twitterGiveAway from "../views/giveAwayTerms.vue"
 import verifyTwitterGiveaway from "../views/verifyGiveaway.vue"
 import quiz from "../views/quizPage.vue"
 import checkOnOrder from "../views/checkOnOrder.vue"
+import concierge from "../views/conciergeLandingpage.vue"
 /* const User = {
   template: `
     <div class="user">
@@ -27,6 +28,11 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes: [
     { path: "/:catchAll(.*)", component: HomeView },
+    {
+      path: "/service",
+      name: "concierge",
+      component: concierge
+    },
     {
       path: "/checkOnOrder",
       name: "checkOnOrder",
