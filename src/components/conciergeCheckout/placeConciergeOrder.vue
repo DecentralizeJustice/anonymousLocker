@@ -178,11 +178,11 @@ import cart from "@/assets/svgs/cart.svg"
 import { encrypt, getRandomInt } from "@/assets/misc.js"
 const emit = defineEmits(['paymentSTarted'])
 const salesTax = ref(8)
+const serviceFee = (1)
 const extra = ref(0)
 const selectedCoin = ref('Monero')
 const options = ['Monero', 'Bitcoin', 'Litecoin', 'Ethereum']
 const axios = require('axios')
-const giftcardOnlyOrder = ref(false)
 const link = ref("")
 const itemDescription = ref("")
 const itemAmount = ref("0.00")
@@ -272,7 +272,8 @@ const taxAmount = computed(() => {
 })
 const finalTotalUSD = computed(() => {
   const longNumber =
-    Number(orderUSDSubTotal.value) + Number(serviceFeeUSD.value) + Number(taxAmount.value)
+    Number(orderUSDSubTotal.value) + Number(taxAmount.value)
+    // console.log(Number(orderUSDSubTotal.value) , Number(taxAmount.value))
   return Number(longNumber).toFixed(2)
 })
 const paymentTicker = computed(() => {
@@ -304,18 +305,20 @@ async function submitOrder() {
   disableSubmit.value = true
   const results = await axios.post('/.netlify/functions/createPayment', { encryptedPassphrase, finalTotalUSD: finalTotalUSD.value, paymentCoin: paymentTicker.value })
   disableSubmit.value = false
-  emit('paymentSTarted', { nowPaymentsInfo: results.data, numberArray: toRaw(numberArray.value), encryptedPassphrase, itemList: toRaw(itemList.value),
-   zipcode: toRaw(lockerZipcode.value), extra: toRaw(extra.value), salesTax: toRaw(salesTax.value), extraNotes: toRaw(extraNotes.value), paymentCoin: paymentTicker.value})
+  emit('paymentSTarted', 
+  { 
+    nowPaymentsInfo: results.data, numberArray: toRaw(numberArray.value), encryptedPassphrase, 
+    itemList: toRaw(itemList.value),serviceFee: toRaw(serviceFee),
+    zipcode: toRaw(lockerZipcode.value), extra: toRaw(extra.value), salesTax: toRaw(salesTax.value), 
+   extraNotes: toRaw(extraNotes.value), paymentCoin: paymentTicker.value
+  })
 } catch (err) {
   disableSubmit.value = false
   console.log(err)
 }
 }
 const taxRate = computed(() => {
-  if (giftcardOnlyOrder.value) {
-    return 0
-  }
-  return 0.08
+  return Number(salesTax.value)/100
 })
 </script>
 <style lang="sass" scoped>

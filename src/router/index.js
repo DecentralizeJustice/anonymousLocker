@@ -15,7 +15,7 @@ import twitterGiveAway from "../views/giveAwayTerms.vue"
 import verifyTwitterGiveaway from "../views/verifyGiveaway.vue"
 import checkOnOrder from "../views/checkOnOrder.vue"
 import concierge from "../views/conciergeLandingpage.vue"
-import placeConciergeOrder from "../views/placeConciergeOrder.vue"
+import placeConciergeOrder from "../views/conciergeOrdersPageView.vue"
 /* const User = {
   template: `
     <div class="user">
