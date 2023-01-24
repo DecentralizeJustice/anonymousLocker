@@ -69,7 +69,7 @@
               </div>
             </div>
             <div class="text-center">
-              <router-link :to="{ name: 'ordersPage' }" style="text-decoration:none !important;">
+              <router-link :to="{ name: 'placeConciergeOrder' }" style="text-decoration:none !important;">
                 <q-btn
                   color="primary"
                   label="Place An Order!"
@@ -135,7 +135,7 @@
             <div class="col-10 col-md-6 text-h2 text-center q-mb-md"><q-input v-model="salesTax"  filled  style="" /></div>
           </q-card-section>
           <q-card-section class="text-center text-h4 col-6 row justify-center">
-            <div class="col-12">Tip (USD)</div>
+            <div class="col-12">Extra (USD)</div>
             <div class="col-10 col-md-6 text-h2 text-center q-mb-md"><q-input v-model="tip"  filled  style="" /></div>
           </q-card-section>
           <q-card-section class="text-center text-h4 col-6">
@@ -302,7 +302,7 @@ const tip = ref(0)
 /* const baseServiceFee = Number(0)
 const percentageServiceFee = Number(.00) */
 const giftcardOnlyOrder = ref(false)
-const heroText = 'Free & Easy Monero Shopping Service'
+const heroText = 'Free Monero Concierge Service'
 const heroSubtext = `Spend Monero At Any Online Retailer!`
 const step1 = `You place an order at our website. You can choose any online retailer. We encrypt all of your sensitive information.`
 const step2 = `We place your order and update you throughout the process. If you have any questions or concerns you can

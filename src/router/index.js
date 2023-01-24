@@ -13,9 +13,9 @@ import novReview2022 from "../components/blogPost/monthInReview/nov2022Blog.vue"
 import empty from "../views/emptyRoute.vue"
 import twitterGiveAway from "../views/giveAwayTerms.vue"
 import verifyTwitterGiveaway from "../views/verifyGiveaway.vue"
-import quiz from "../views/quizPage.vue"
 import checkOnOrder from "../views/checkOnOrder.vue"
 import concierge from "../views/conciergeLandingpage.vue"
+import placeConciergeOrder from "../views/placeConciergeOrder.vue"
 /* const User = {
   template: `
     <div class="user">
@@ -34,6 +34,11 @@ const router = createRouter({
       component: concierge
     },
     {
+      path: "/placeConciergeOrder",
+      name: "placeConciergeOrder",
+      component: placeConciergeOrder
+    },
+    {
       path: "/checkOnOrder",
       name: "checkOnOrder",
       component: checkOnOrder
@@ -42,11 +47,6 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: HomeView
-    },
-    {
-      path: "/quiz",
-      name: "quiz",
-      component: quiz
     },
     {
       path: "/twitterGiveAwayTerms",

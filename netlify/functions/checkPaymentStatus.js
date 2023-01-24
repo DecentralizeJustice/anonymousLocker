@@ -74,7 +74,7 @@ function processFirstMessage(orderDetails, numberArray) {
   firstString = firstString.concat('Amazon Locker Name: ', orderDetails.lockerName, '<br/>')
   firstString = firstString.concat('Amazon Locker Zipcode: ', orderDetails.lockerZipcode, '<br/>')
   firstString = firstString.concat('Extra Order Notes: ', orderDetails.extraNotes, '<br/><br/>')
-  const outro = `I will place your order within 12 hours. I'll message you here with your order details. If you need anything or have any questions, just shoot me a message here.`
+  const outro = `I will place your order within 12 hours. I'll message you here with your order details. If you need anything or have any questions, just shoot me a message here.<br/><br/>`
   firstString = firstString.concat(outro)
   const orderLink = `You can use this link to check on your order: ` + getCheckOrderLink(numberArray)
   firstString = firstString.concat(orderLink)
