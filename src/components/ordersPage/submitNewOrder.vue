@@ -3,7 +3,7 @@
     <div class="column justify-center" style="">
       <q-card class="col-12 col" style="">
         <q-card-section class="bg-grey-9 text-white">
-          <div class="text-h6">Fill In Your New Order Details Below:</div>
+          <div class="text-h6">Fill In Locker Order Details Below:</div>
         </q-card-section>
         <q-separator />
         <q-card-section>
