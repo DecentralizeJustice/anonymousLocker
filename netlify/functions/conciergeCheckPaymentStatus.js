@@ -24,7 +24,7 @@ exports.handler = async (event) => {
     console.log('ran')
     await setupBucket(parsed.orderInfo.paymentInfo)
   }
-  await setupBucket(parsed.orderInfo.paymentInfo)
+  // await setupBucket(parsed.orderInfo.paymentInfo)
   // await setupBucket(parsed.orderInfo)
 /*   const publicKeyBase64 = process.env.initialPublicKeyBase64 
   const privateKeyBase64 = process.env.initialPrivateKeyBase64

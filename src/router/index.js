@@ -16,6 +16,7 @@ import verifyTwitterGiveaway from "../views/verifyGiveaway.vue"
 import checkOnOrder from "../views/checkOnOrder.vue"
 import concierge from "../views/conciergeLandingpage.vue"
 import placeConciergeOrder from "../views/conciergeOrdersPageView.vue"
+import placeLockerOrder from "../views/placeLockerOrder.vue"
 /* const User = {
   template: `
     <div class="user">
@@ -32,6 +33,11 @@ const router = createRouter({
       path: "/service",
       name: "concierge",
       component: concierge
+    },
+    {
+      path: "/placeLockerOrder",
+      name: "placeLockerOrder",
+      component: placeLockerOrder
     },
     {
       path: "/placeConciergeOrder",
