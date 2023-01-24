@@ -68,7 +68,11 @@ const axios = require('axios')
 const text = ref('')
 const successMessage = ref('')
 const buttonDisabled = ref(false)
-const questions = [
+const questions = [ 
+{
+    q: `Do you allow multiple items in one order? The FAQ uses singular "item" so it's not clear. The $5 fee is a lot for cheap items and some of mine don't meet the purchase minimum.`,
+    a: `Hi Friend, we allow multiple items to be bought and delivered to the same locker. Most of our orders involve multiple items. I will make the faq more clear about that!`
+  },
 {
     q: `Hi. There was an error in creating your order. Go to the "Orders" page in the upper right. Then click "Check on Order" and enter your 6-word passphrase.`,
     a: `Hi. There was an error in creating your order. Go to the "Orders" page in the upper right. Then click "Check on Order" and enter your 6-word passphrase.`
