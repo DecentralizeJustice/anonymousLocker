@@ -121,10 +121,11 @@
 
 <script setup>
 import { defineProps, toRef, onUpdated, ref, computed } from "vue"
-import router from "vue-router"
+import { useRouter } from 'vue-router'
 import { copyToClipboard } from 'quasar'
 import QRCode from 'qrcode'
 import { numberArrayToWordArray } from'@/assets/misc.js'
+const router = useRouter()
 const axios = require('axios')
 const passphraseWrittenDown = ref(false)
 const actuallyPaid = ref(0)

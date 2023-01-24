@@ -121,9 +121,11 @@
 
 <script setup>
 import { defineProps, toRef, onUpdated, ref, computed, toRaw } from "vue"
+import { useRouter } from 'vue-router'
 import { copyToClipboard } from 'quasar'
 import QRCode from 'qrcode'
 import { numberArrayToWordArray } from'@/assets/misc.js'
+const router = useRouter()
 const axios = require('axios')
 const passphraseWrittenDown = ref(false)
 const actuallyPaid = ref(0)
@@ -180,7 +182,7 @@ async function checkForPayment(paymentID){
   console.log(Number(paymentInfo.value.nowPaymentsInfo.pay_amount))
   if (Number(paymentInfo.value.nowPaymentsInfo.pay_amount) <= Number(actuallyPaid.value)) {
     console.log('paid and should reload')
-    location.reload()
+    router.push('/checkOnOrder')
   }
 }
 </script>

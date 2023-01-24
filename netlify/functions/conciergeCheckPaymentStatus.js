@@ -14,14 +14,17 @@ exports.handler = async (event) => {
   }
   const params = event.body
   const parsed = JSON.parse(params)
+  console.log(parsed)
+  console.log(parsed.paymentID)
   if (parsed.paymentID.length > 150) {
     return { statusCode: 400, body: "paymentID too long" }
   }
   const apiRequest = await get(parsed.paymentID)
   if (Number(apiRequest.pay_amount) <= Number(apiRequest.actually_paid)) {
     console.log('ran')
-    await setupBucket(parsed.orderInfo)
+    await setupBucket(parsed.orderInfo.paymentInfo)
   }
+  await setupBucket(parsed.orderInfo.paymentInfo)
   // await setupBucket(parsed.orderInfo)
 /*   const publicKeyBase64 = process.env.initialPublicKeyBase64 
   const privateKeyBase64 = process.env.initialPrivateKeyBase64
@@ -57,26 +60,27 @@ async function setupBucket(orderInfo){
 }
 function processFirstMessage(orderDetails, numberArray) {
   let firstString = ''
-  const welcomeMessage = 'Hi, <br/> Thank you for using Anon Shop!<br/> Your order Summary is:<br/><br/>'
+  const welcomeMessage = 'Hi, <br/> Thank you for using Anon Shop 😎<br/> Your order Summary is:<br/><br/>'
   firstString = firstString.concat(welcomeMessage)
   const itemList = orderDetails.itemList
   for (let index = 0; index < itemList.length; index++) {
-    const linkTitle = 'Item Name: '+ itemList[index].link.split("/")[3].replace(/-/g, " ") + '<br/>'
+    // const linkTitle = 'Item Name: '+ itemList[index].link.split("/")[3].replace(/-/g, " ") + '<br/>'
     const quantityString = 'Quantity: ' +`${itemList[index].quantity}` + '<br/>'
     const itemCostString = 'Single Item Cost: ' +`${itemList[index].cost}` + '<br/>'
     const notesString = 'Item Notes: ' +`${itemList[index].description}` + '<br/>'
     const linkString = `<a href="${itemList[index].link}" target="_blank" rel="noopener noreferrer">Item Link</a>`+ '<br/>'
-    firstString = firstString.concat(linkTitle + quantityString + itemCostString + notesString+ linkString+  '<br/>')
+    firstString = firstString.concat(linkString+ quantityString + itemCostString + notesString+   '<br/>')
   }
   const nowPaymentsInfo = orderDetails.nowPaymentsInfo
   firstString = firstString.concat('Order USD Total: ', nowPaymentsInfo.price_amount,  '<br/>')
   firstString = firstString.concat(`Order ${orderDetails.paymentCoin.toUpperCase()} Total: `, nowPaymentsInfo.pay_amount, '<br/><br/>')
-  firstString = firstString.concat('Amazon Locker Name: ', orderDetails.lockerName, '<br/>')
-  firstString = firstString.concat('Amazon Locker Zipcode: ', orderDetails.lockerZipcode, '<br/>')
+  firstString = firstString.concat('Your Zipcode: ', orderDetails.zipcode, '<br/>')
+  firstString = firstString.concat('Your Estimated Sales Tax: ', orderDetails.salesTax, '%<br/>')
+  firstString = firstString.concat('Your Service Fee: ', orderDetails.serviceFee, '%<br/>')
   firstString = firstString.concat('Extra Order Notes: ', orderDetails.extraNotes, '<br/><br/>')
-  const outro = `I will place your order within 12 hours. I'll message you here with your order details. If you need anything or have any questions, just shoot me a message here.<br/><br/>`
+  const outro = `I will get back to you within 12 hours. I will message you to get your address once I check your order info. If you need anything or have any questions, just shoot me a message here.<br/><br/>`
   firstString = firstString.concat(outro)
-  const orderLink = `You can use this link to check on your order: ` + getCheckOrderLink(numberArray)
+  const orderLink = `<br/>You can use this link to check on your order: ` + getCheckOrderLink(numberArray)
   firstString = firstString.concat(orderLink)
   return firstString
 }
