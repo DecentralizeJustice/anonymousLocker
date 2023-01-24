@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router"
 import HomeView from "../views/HomeView.vue"
+import lockerlanding from "../views/lockerLandingPage.vue"
 import ordersPage from "../views/ordersPageView.vue"
 import faq from "../views/faqView.vue"
 import message from "../views/messageMeView.vue"
@@ -33,6 +34,11 @@ const router = createRouter({
       path: "/service",
       name: "concierge",
       component: concierge
+    },
+    {
+      path: "/lockerlanding",
+      name: "lockerlanding",
+      component: lockerlanding
     },
     {
       path: "/placeLockerOrder",

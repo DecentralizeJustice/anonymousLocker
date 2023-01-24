@@ -46,7 +46,7 @@
                     <img :src="computer" class="q-mb-sm" :class="{'desktopIcons': $q.screen.gt.sm, 'mobileIcons': $q.screen.lt.md}" style="" />
                     <br />
                     <p class="text-subtitle1 text-weight-medium">
-                      Create Your Shopping List and <br />Place Order With Us
+                      Choose Amazon Product and <br />Place Order With Me
                     </p>
                   </div>
                   <div class="col-12 col-md-3">
@@ -54,7 +54,7 @@
                     <img :src="monero" class="" :class="{'desktopIconsPayment': $q.screen.gt.sm, 'mobileIconsPayment': $q.screen.lt.md}" />
 
                     <p class="text-subtitle1 text-weight-medium">
-                      Pay For Your Order With Monero
+                      Pay For Order With Monero
                     </p>
                   </div>
                   <div class="col-12 col-md-3">
@@ -62,14 +62,14 @@
                     <img :src="lockerBig" class="" :class="{'desktopIcons': $q.screen.gt.sm, 'mobileIcons': $q.screen.lt.md}" style="" />
                     <br />
                     <p class="text-subtitle1 text-weight-medium">
-                      We Process and Send Your Order to You
+                      Pick Up Order At Amazon Locker Near You
                     </p>
                   </div>
                 </div>
               </div>
             </div>
             <div class="text-center">
-              <router-link :to="{ name: 'placeConciergeOrder' }" style="text-decoration:none !important;">
+              <router-link :to="{ name: 'placeLockerOrder' }" style="text-decoration:none !important;">
                 <q-btn
                   color="primary"
                   label="Place An Order!"
@@ -81,18 +81,19 @@
           </q-card-section>
         </q-card>
       </div>
-      <div class="col col-10 col-md-3 desktop-only justify-center items-center align-center row">
-        <div class="col-10 justify-center items-center align-center row q-my-xl" style="">
-          <q-img
-          class="rounded-borders"
-            src="https://res.cloudinary.com/dylevfpbl/image/upload/v1673999438/landingpage/dgoon21_smiling_delivery_person_holding_package_in_front_of_gre_2a5a55b1-7fd4-4bf0-9cc6-a8df34c6ad4a.png"
-          />
-              </div>
+      <div class="col col-10 col-md-3 desktop-only">
+        <lottie-player
+        autoplay
+        loop
+        mode="normal"
+        speed=".75"
+        src="https://res.cloudinary.com/dylevfpbl/raw/upload/v1668561142/lf30_editor_a2wu4b2s.json"
+></lottie-player>
       </div>
     </div>
     <div class="row justify-around col-12 items-center  q-py-xl bg-primary" style="width: 100%;">
       <div class="col-12 col-md-6 text-center row justify-center q-px-md items-center desktop-only">
-        <div class="col-12 text-center text-white text-h4 q-pb-lg my-font">      
+        <div class="col-12 text-center text-white text-h5 q-pb-lg my-font">      
         Recently Purchased Items
       </div>  
         <div class="row justify-around q-gutter-lg">   
@@ -105,7 +106,6 @@
             <q-card-section>
               <div class="text-h6">{{item.name}}</div>
               <div class="text-subtitle1">${{item.price}}</div>
-              <div class="text-subtitle1">From: ${{item.from}}</div>
             </q-card-section>
           </q-card>
 
@@ -113,49 +113,42 @@
       </div> 
       </div>
       <div class="col-11 col-md-4 text-center row justify-center items-center row">      
-        <!-- <q-card class=" text-center bg-white text-black col-12">
+        <q-card class=" text-center bg-white text-black col-12">
           <q-card-section class="text-center text-h4  text-weight-regular text-primary " style="background-color:#D4CCC4;">
             Service Fee:
           </q-card-section>
           <q-card-section class="text-center text-h4  text-weight-regular">
-             ${{baseServiceFee}} USD +
+            <!-- ${{baseServiceFee}} USD +  -->
             ${{baseServiceFee}} USD + {{100*percentageServiceFee}}% of Amazon Total
           </q-card-section>
-        </q-card> -->
+        </q-card>
         <q-card class=" text-left bg-white text-black col-12 q-mt-md row justify-around">
           <q-card-section class="text-center text-h4 text-primary col-12" style="background-color:#D4CCC4;">
             Example Order
           </q-card-section>
           <q-card-section class="text-center text-h4 col-6 row justify-center">
-            <div class="col-12">Item Cost (USD)</div>
+            <div class="col-12">Item Cost</div>
             <div class="col-10 col-md-6 text-h2 text-center q-mb-md"><q-input v-model="exampleItemCost"  filled  style="" /></div>
           </q-card-section>
-          <q-card-section class="text-center text-h4 col-6 row justify-center">
-            <div class="col-12">Sales Tax (%)</div>
-            <div class="col-10 col-md-6 text-h2 text-center q-mb-md"><q-input v-model="salesTax"  filled  style="" /></div>
-          </q-card-section>
-          <q-card-section class="text-center text-h4 col-6 row justify-center">
-            <div class="col-12">Extra (USD)</div>
-            <div class="col-10 col-md-6 text-h2 text-center q-mb-md"><q-input v-model="tip"  filled  style="" /></div>
-          </q-card-section>
           <q-card-section class="text-center text-h4 col-6">
-            <div>Order Total</div>
-            <div class="text-subtitle1" v-if="!giftcardOnlyOrder">(Includes {{salesTax}}% Sale Tax)</div>
+            <div>Amazon Total</div>
+            <div class="text-subtitle1" v-if="!giftcardOnlyOrder">(Includes Estimated 8% Sale Tax)</div>
+            <div class="text-subtitle1" v-if="giftcardOnlyOrder">(No Sales Tax on Giftcards)</div>
             <div class="q-mt-sm">${{amazonTotalCost.toFixed(2)}}</div>
           </q-card-section>
-          <!-- <q-card-section class="text-center text-h4 col-12" style="">
+          <q-card-section class="text-center text-h4 col-12" style="">
             <div>Total You Pay For Delivery</div> 
             <div class="q-mt-sm">${{(baseServiceFee+amazonTotalCost+(percentageServiceFee*amazonTotalCost)).toFixed(2)}}</div>
-          </q-card-section> -->
-          <!-- <q-card-section class="text-center text-h5 col-12" style="">
+          </q-card-section>
+          <q-card-section class="text-center text-h5 col-12" style="">
             <q-toggle
               v-model="giftcardOnlyOrder"
               color="green"
               label="Order Only Has Giftcards"
             />
-          </q-card-section> -->
+          </q-card-section>
           <q-card-section class="text-h4 text-weight-regular text-center col-12">
-              <router-link :to="{ name: 'placeConciergeOrder' }" style="text-decoration:none !important;">
+              <router-link :to="{ name: 'placeLockerOrder' }" style="text-decoration:none !important;">
                 <q-btn
                   color="primary"
                   label="Place An Order"
@@ -187,9 +180,9 @@
           </div>
         </div>
       </div>
-        <div class="col col-10 col-md-4 desktop-only row">
+        <div class="col col-10 col-md-7 desktop-only row">
           <q-img class="" loading="lazy"
-          src="https://res.cloudinary.com/dylevfpbl/image/upload/v1674010155/landingpage/dgoon21_person_sitting_at_computer_shopping_online_23e2fe8a-43f1-4ffb-85a7-9ccf47e5f883.png" />
+          src="https://res.cloudinary.com/dbdfbvzyl/image/upload/v1671337165/2022-12-17_22-44-25_online-video-cutter.com_bsmg4d.gif" />
         </div>
     </div>
 
@@ -227,14 +220,14 @@
       </div>
     </div>
   </div>
-  <div class="col col-10 col-md-4 desktop-only row">
+  <div class="col col-10 col-md-5 desktop-only row">
       <q-img class=""
       loading="lazy"
-      src="https://res.cloudinary.com/dylevfpbl/image/upload/v1674010309/landingpage/dgoon21_package_with_monero_logo_on_it_laying_at_front_door_of__221281d4-d484-4567-93e7-34df5a227d4a.png" />
+      src="https://res.cloudinary.com/dbdfbvzyl/image/upload/v1671332163/smallLocker_c03a46.gif" />
   </div>
-<!--   <div class="col-12 text-center text-white text-h3 q-pt-lg my-font">
+  <div class="col-12 text-center text-white text-h3 q-pt-lg my-font">
     <a  style="color:  #FFFFFF" href="https://youtu.be/ivf5EfCAGgo" target="_blank" rel="noopener noreferrer">Youtube Tutorial</a>
-        </div> -->
+        </div>
 </div>
     <div class="row justify-around items-end no-margin col-12 text-left q-pb-xl q-pt-xl bg-primary" style="width: 100%;">
       <div class="col-12 text-center text-white text-h4 q-pb-lg my-font">      
@@ -249,7 +242,7 @@
         :avatar=shopperAvatar1
         :text="[``]"
         ><div class="text-h5 q-pa-md">
-          Not the fastest service, but its reliable. I hope you have success.
+          Wow this is a great project... This process was great.
         </div>
         
       </q-chat-message>
@@ -259,11 +252,11 @@
         text-html
         bg-color="white"
         name-html
-        name="<span class='text-subtitle1 text-white'>Customer</span>"
+        name="<span class='text-subtitle1 text-white'>u/ksilverstein</span>"
         :avatar=shopperAvatar2
         :text="[``]"
         ><div class="text-h5 q-pa-md">
-          This service has potential!
+          Wow, that's very, very good. Wish I could give you more than one upvote. ... Thank you for doing this.
         </div></q-chat-message>
       </div>
       <div class="col-11 col-md-3">      
@@ -275,7 +268,7 @@
         :avatar=shopperAvatar
         :text="[`<span class=''></span>`]"
         ><div class="text-h5 q-pa-md">
-          This is cool.
+          This is really great man! What a great idea!
         </div></q-chat-message>
       </div>
     </div>
@@ -292,54 +285,49 @@ import monero from "@/assets/svgs/rand.svg"
 /* import bitcoin from "@/assets/svgs/bitcoin.svg"
 import ethereum from "@/assets/svgs/ethereum.svg"
 import litecoin from "@/assets/svgs/litecoin.svg" */
-import lockerBig from "@/assets/svgs/home.svg"
+import lockerBig from "@/assets/svgs/amazonLocker.svg"
 import footerGlobal from "@/components/footerGlobal.vue"
 import { onMounted, ref, computed } from "vue"
 require("@lottiefiles/lottie-player")
 const exampleItemCost = ref('80')
-const salesTax = ref(8)
-const tip = ref(0)
-/* const baseServiceFee = Number(0)
-const percentageServiceFee = Number(.00) */
+const estimatedTaxRateOnPhysicalItems = Number(.08)
+const baseServiceFee = Number(5)
+const percentageServiceFee = Number(.03)
 const giftcardOnlyOrder = ref(false)
-const heroText = 'Free Monero Concierge Service'
-const heroSubtext = `Spend Monero At Any Online Retailer!`
-const step1 = `You place an order at our website. You can choose any online retailer. We encrypt all of your sensitive information.`
-const step2 = `We place your order and update you throughout the process. If you have any questions or concerns you can
+const heroText = 'Anonymous Deliveries With Amazon Lockers'
+const heroSubtext = `The Most Private Way To Shop Online`
+const step1 = `You place an order with me anonymously. The only information I need is a link to your item
+ and the zipcode that you want the order delivered to.`
+const step2 = `I place your order and update you throughout the process. If you have any questions or concerns you can
 message me using the platform.`
-const step3 = `Your order ships to you. Once your order arrives and you confirm that your order is correct, we delete your sensative info from our system and close you order out.`
+const step3 = `I message you the code to the locker when your order arrives. You then pick up your order. You have 3 days to 
+to pick up your order.`
 const recentlyBought =[
   { 
     img: `https://res.cloudinary.com/dylevfpbl/image/upload/v1671338257/recentlyBought/81lJyLrRVeL._AC_SL1500__1_-min.jpg`,
     name: 'Crucial MX500 4TB 3D NAND Internal SSD',
-    price: '237.99',
-    from: 'Amazon'
+    price: '237.99'
   },
   {
-    img: `https://res.cloudinary.com/dylevfpbl/image/upload/v1674008562/recentlyBought/PS5-GOWR-console-bundle-front.png`,
-    name: `Sony PlayStation 5, Digital Edition Console`,
-    price: '549.60',
-    from: 'Walmart'
+    img: `https://res.cloudinary.com/dylevfpbl/image/upload/v1669750092/recentlyBought/41vjOH-hRIL._AC_SL1000_.jpg`,
+    name: `Ledger Nano S Plus Crypto Hardware Wallet`,
+    price: '79.00'
   },
   {
-    img: `https://res.cloudinary.com/dylevfpbl/image/upload/v1674008957/recentlyBought/s-l1600.jpg`,
-    name: `Google Pixel 6 - 6 Pro - 128/256 GB Phone Black`,
-    price: '230',
-    from: 'Ebay'
+    img: `https://res.cloudinary.com/dylevfpbl/image/upload/v1671338148/recentlyBought/drilldown-min.jpg`,
+    name: `SAMSUNG 980 SSD 500GB PCle 3.0x4, NVMe M.2`,
+    price: '56.99'
   }
 ]
 const amazonTotalCost = computed(() => {
   const itemCost = exampleItemCost.value.replaceAll(',', '')
-  return ((estimatedTax.value*Number(itemCost))+Number(itemCost)+Number(tip.value))
+  return ((estimatedTax.value*Number(itemCost))+Number(itemCost))
 })
 const estimatedTax = computed(() => {
   if (giftcardOnlyOrder.value) {
     return Number(0)
   }
-  return estimatedTaxRateOnPhysicalItems.value
-})
-const estimatedTaxRateOnPhysicalItems = computed(() => {
-  return Number(salesTax.value*.01)
+  return estimatedTaxRateOnPhysicalItems
 })
 onMounted(() => {
 

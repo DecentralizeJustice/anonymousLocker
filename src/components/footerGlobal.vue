@@ -38,6 +38,12 @@ const info = [
     title: 'General',
     items: [
     {
+        text: 'Concierge Service', link: '/service'
+      },
+    {
+        text: 'Locker Service', link: '/lockerlanding'
+      },
+    {
         text: 'Blog', link: '/blog'
       },
       {
@@ -62,7 +68,7 @@ const info = [
         text: 'F.A.Q.', link: '/faq'
       },
       {
-        text: 'Check Order', link: '/orders'
+        text: 'Check Order', link: '/checkOnOrder'
       }
     ]
   },
