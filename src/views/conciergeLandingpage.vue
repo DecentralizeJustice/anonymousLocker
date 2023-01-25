@@ -113,15 +113,14 @@
       </div> 
       </div>
       <div class="col-11 col-md-4 text-center row justify-center items-center row">      
-        <!-- <q-card class=" text-center bg-white text-black col-12">
+        <q-card class=" text-center bg-white text-black col-12">
           <q-card-section class="text-center text-h4  text-weight-regular text-primary " style="background-color:#D4CCC4;">
             Service Fee:
           </q-card-section>
           <q-card-section class="text-center text-h4  text-weight-regular">
-             ${{baseServiceFee}} USD +
-            ${{baseServiceFee}} USD + {{100*percentageServiceFee}}% of Amazon Total
+             {{100*percentageServiceFee}}% of Order Total
           </q-card-section>
-        </q-card> -->
+        </q-card>
         <q-card class=" text-left bg-white text-black col-12 q-mt-md row justify-around">
           <q-card-section class="text-center text-h4 text-primary col-12" style="background-color:#D4CCC4;">
             Example Order
@@ -139,21 +138,10 @@
             <div class="col-10 col-md-6 text-h2 text-center q-mb-md"><q-input v-model="tip"  filled  style="" /></div>
           </q-card-section>
           <q-card-section class="text-center text-h4 col-6">
-            <div>Order Total</div>
-            <div class="text-subtitle1" v-if="!giftcardOnlyOrder">(Includes {{salesTax}}% Sale Tax)</div>
+            <div>Total You Pay</div>
+            <div class="text-subtitle1" v-if="!giftcardOnlyOrder">(Includes {{salesTax}}% Sale Tax & Service Fee)</div>
             <div class="q-mt-sm">${{amazonTotalCost.toFixed(2)}}</div>
           </q-card-section>
-          <!-- <q-card-section class="text-center text-h4 col-12" style="">
-            <div>Total You Pay For Delivery</div> 
-            <div class="q-mt-sm">${{(baseServiceFee+amazonTotalCost+(percentageServiceFee*amazonTotalCost)).toFixed(2)}}</div>
-          </q-card-section> -->
-          <!-- <q-card-section class="text-center text-h5 col-12" style="">
-            <q-toggle
-              v-model="giftcardOnlyOrder"
-              color="green"
-              label="Order Only Has Giftcards"
-            />
-          </q-card-section> -->
           <q-card-section class="text-h4 text-weight-regular text-center col-12">
               <router-link :to="{ name: 'placeConciergeOrder' }" style="text-decoration:none !important;">
                 <q-btn
@@ -289,9 +277,6 @@ import shopperAvatar1 from "@/assets/svgs/firstPageIcon.svg"
 import shopperAvatar2 from "@/assets/svgs/incognito.svg"
 import computer from "@/assets/svgs/monitor.svg"
 import monero from "@/assets/svgs/rand.svg"
-/* import bitcoin from "@/assets/svgs/bitcoin.svg"
-import ethereum from "@/assets/svgs/ethereum.svg"
-import litecoin from "@/assets/svgs/litecoin.svg" */
 import lockerBig from "@/assets/svgs/home.svg"
 import footerGlobal from "@/components/footerGlobal.vue"
 import { onMounted, ref, computed } from "vue"
@@ -299,10 +284,9 @@ require("@lottiefiles/lottie-player")
 const exampleItemCost = ref('80')
 const salesTax = ref(8)
 const tip = ref(0)
-/* const baseServiceFee = Number(0)
-const percentageServiceFee = Number(.00) */
+const percentageServiceFee = Number(.01)
 const giftcardOnlyOrder = ref(false)
-const heroText = 'Free Monero Concierge Service'
+const heroText = 'Private Monero Concierge Service'
 const heroSubtext = `Spend Monero At Any Online Retailer!`
 const step1 = `You place an order at our website. You can choose any online retailer. We encrypt all of your sensitive information.`
 const step2 = `We place your order and update you throughout the process. If you have any questions or concerns you can
@@ -330,12 +314,10 @@ const recentlyBought =[
 ]
 const amazonTotalCost = computed(() => {
   const itemCost = exampleItemCost.value.replaceAll(',', '')
-  return ((estimatedTax.value*Number(itemCost))+Number(itemCost)+Number(tip.value))
+  const subtotal = (estimatedTax.value*Number(itemCost))+Number(itemCost)
+  return (subtotal+Number(tip.value)+(percentageServiceFee*subtotal))
 })
 const estimatedTax = computed(() => {
-  if (giftcardOnlyOrder.value) {
-    return Number(0)
-  }
   return estimatedTaxRateOnPhysicalItems.value
 })
 const estimatedTaxRateOnPhysicalItems = computed(() => {

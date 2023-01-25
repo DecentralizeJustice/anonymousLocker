@@ -66,7 +66,8 @@ const router = useRouter() */
   router.push({ name: newRoute })
 } */
 const options = [
-  { label: "Home", value: "home" },
+  { label: "Locker Service", value: "lockerlanding" },
+  { label: "General Service", value: "concierge" },
   { label: "Orders", value: "ordersPage" },
   { label: "F.A.Q.", value: "faq" },
   { label: "Ask Question", value: "message" }

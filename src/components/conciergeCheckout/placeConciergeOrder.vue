@@ -129,7 +129,7 @@
                 autogrow
                 label="Order Notes"
               /> 
-              <q-input v-model="salesTax"   class="col-12 col-md-5"  label="Sales Tax (%)" />
+              <q-input v-model="salesTax"   class="col-12 col-md-3"  label="Sales Tax (%)" />
               <q-input v-model="extra"  class="col-12 col-md-5"   label="Extra (USD)"/>
               <q-select  class="col-12 col-md-6 q-mt-md" v-model="selectedCoin" :options="options" label="Payment Crypto" />
               <span class="col-12 q-mt-md">
@@ -146,9 +146,9 @@
                 v-if="itemList.length !== 0"
               >
                 Sub-Total (USD): {{ orderUSDSubTotal }} <br />
-                Estimated Taxes Collected by Amazon (~{{ taxRate*100 }}%): {{ taxAmount }} <br/>
-                Service Fee ({{ percentageFee * 100 }}%): {{ serviceFeeUSD }}
-                <!-- + ${{baseFee}}) -->
+                Estimated Taxes Collected by Retailer (~{{ taxRate*100 }}%): {{ taxAmount }} <br/>
+                Service Fee ({{ percentageFee }}%): {{ serviceFeeUSD }} <br/>
+                Extra (USD): {{ extra }} <br/>
                 <br />
                 Final Total (USD):
                 {{ finalTotalUSD }}
@@ -181,7 +181,7 @@ const salesTax = ref(8)
 const serviceFee = (1)
 const extra = ref(0)
 const selectedCoin = ref('Monero')
-const options = ['Monero', 'Bitcoin', 'Litecoin', 'Ethereum']
+const options = ['Monero']
 const axios = require('axios')
 const link = ref("")
 const itemDescription = ref("")
@@ -197,7 +197,6 @@ const zipcodeError = ref(false)
 const minAmountError = ref(false)
 const numberArray = ref([])
 const disableSubmit = ref(false)
-const percentageFee = ref(1)
 function removeItem(index) {
   itemList.value.splice(index, 1)
 }
@@ -264,16 +263,15 @@ const orderUSDSubTotal = computed(() => {
 })
 const serviceFeeUSD = computed(() => {
   const amazonSubtotalPlusTaxes = Number(orderUSDSubTotal.value) + Number(taxAmount.value)
-  const percentageTotal = amazonSubtotalPlusTaxes*Number(percentageFee)
-  return (Number(percentageTotal)).toFixed(2) // Number(baseFee) + 
+  const percentageTotal = amazonSubtotalPlusTaxes*Number(serviceFee/100)
+  return (Number(percentageTotal)).toFixed(2)
 })
 const taxAmount = computed(() => {
   return Number(Number(orderUSDSubTotal.value) * taxRate.value).toFixed(2)
 })
 const finalTotalUSD = computed(() => {
   const longNumber =
-    Number(orderUSDSubTotal.value) + Number(taxAmount.value)
-    // console.log(Number(orderUSDSubTotal.value) , Number(taxAmount.value))
+    Number(orderUSDSubTotal.value) + Number(taxAmount.value)+ Number(extra.value)
   return Number(longNumber).toFixed(2)
 })
 const paymentTicker = computed(() => {

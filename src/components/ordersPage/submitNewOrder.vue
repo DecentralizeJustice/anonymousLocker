@@ -183,7 +183,7 @@ import cart from "@/assets/svgs/cart.svg"
 import { encrypt, getRandomInt } from "@/assets/misc.js"
 const emit = defineEmits(['paymentSTarted'])
 const selectedCoin = ref('Monero')
-const options = ['Monero', 'Bitcoin', 'Litecoin', 'Ethereum']
+const options = ['Monero']// , 'Bitcoin', 'Litecoin', 'Ethereum'
 const axios = require('axios')
 const giftcardOnlyOrder = ref(false)
 const amazonlink = ref("")

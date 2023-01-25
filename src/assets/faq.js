@@ -1,5 +1,23 @@
 const faq = {
-  "General Questions": [
+  "Concierge/Home Delivery Questions": [
+    [
+      `Can you do International Orders?`,
+      `We currently only deliver in the United States.`,
+    ],
+    [
+      `Where can you order items from?`,
+      `We can order any items that are legal and for sale online.`,
+    ],
+    [
+      `How much is this service?`,
+      `This Service is 1% of the order total.`,
+    ],
+    [
+      `Do you offer refunds?`,
+      `We do not offer refunds for shipped items.`,
+    ],
+  ],
+  "Locker Questions": [
     [
       `Can you do International Orders?`,
       `Yes. We can not deliver outside of your country's Amazon Site though. For example, we can not deliver from US Amazon to Japan Amazon.
@@ -82,8 +100,6 @@ const faq = {
       "Is the Code Open Source?",
       'Yes, here is the <a href="https://github.com/DecentralizeJustice/anonymousLocker">github</a> repo for the code.',
     ],
-  ],
-  "Order Questions": [
     [
       `What happens If I don't pick my order up from the locker?`,
       `If you don't pick up your order and Amazon returns the order we charge a 30% restocking fee on items returned.
@@ -118,8 +134,6 @@ const faq = {
       `I have not implemented cookies yet, since I want to have a clear and simple privacy policy without caveats. I am researching this option
             currently though. `,
     ],
-  ],
-  "Alternative Methods": [
     [
       `Couldn't I just ship my orders to an amazon locker myself?`,
       `People have been ordering to amazon lockers as a way to accomplish some privacy for years. This process can be highly variable due to Amazon's anti-fraud detection methods. 
@@ -137,7 +151,7 @@ const faq = {
       `Ledger has partnered with <a href="https://www.ledger.com/blog/ledger-nano-x-and-nano-s-plus-now-available-in-all-best-buy-stores-nationwide">Best Buy</a> and they offer wallets for sale in-store. If a store near you has a wallet in stock,
             you can pay for it with cash in person and still protect your identity. `,
     ],
-  ],
+  ]
 };
 
 exports.faq = faq;
