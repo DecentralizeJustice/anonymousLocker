@@ -58,7 +58,7 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: lockerlanding
+      component: concierge //lockerlanding
     },
     {
       path: "/twitterGiveAwayTerms",
