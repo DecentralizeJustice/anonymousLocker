@@ -14,8 +14,8 @@ exports.handler = async (event) => {
   }
   const params = event.body
   const parsed = JSON.parse(params)
-  console.log(parsed)
-  console.log(parsed.paymentID)
+/*   console.log(parsed)
+  console.log(parsed.paymentID) */
   if (parsed.paymentID.length > 150) {
     return { statusCode: 400, body: "paymentID too long" }
   }
