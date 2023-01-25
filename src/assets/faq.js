@@ -16,6 +16,10 @@ const faq = {
       `Do you offer refunds?`,
       `We do not offer refunds for shipped items.`,
     ],
+    [
+      `Can I use tor with your site?`,
+      `Yes, you can use tor but the site does require javascript to work.`,
+    ],
   ],
   "Locker Questions": [
     [
