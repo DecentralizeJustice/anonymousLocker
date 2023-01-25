@@ -69,6 +69,10 @@ const text = ref('')
 const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
+{
+    q: `Do you allow multiple items in one order? The FAQ uses singular "item" so it's not clear. The $5 fee is a lot for cheap items and some of mine don't meet the purchase minimum.`,
+    a: `Hi Friend, we allow multiple items to be bought and delivered to the same locker. Most of our orders involve multiple items. I will make the faq more clear about that!`
+  },
   {
     q: `Hi, I'm in Japan but I want to order from Amazon.com USA, is it possible to deliver to Japan amazon locker?`,
     a: `Shoot me another message here with the item you want and I will look into it for you!`
