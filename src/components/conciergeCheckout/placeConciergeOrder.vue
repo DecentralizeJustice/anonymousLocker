@@ -1,9 +1,13 @@
 <template>
+    <q-page
+    style="width: 100%;"
+    class="q-pa-md row items-stretch text-center align-center justify-center bg-primary"
+  >
   <div class="col-12 col-md-6 col justify-center column">
     <div class="column justify-center" style="">
       <q-card class="col-12 col" style="">
         <q-card-section class="bg-grey-9 text-white">
-          <div class="text-h6">Fill In Locker Order Details Below:</div>
+          <div class="text-h6">Fill In Your Concierge Details Below:</div>
         </q-card-section>
         <q-separator />
         <q-card-section>
@@ -13,7 +17,7 @@
                 <div class="col-12 col-md-6 text-center row justify-center">
                   <q-input
                     class="col-11"
-                    v-model="amazonlink"
+                    v-model="link"
                     autogrow
                     label="Item Link"
                     error-message="Link Can't Be Empty"
@@ -21,7 +25,7 @@
                   />
                   <q-input
                     class="col-11"
-                    v-model="amazonItemDescription"
+                    v-model="itemDescription"
                     autogrow
                     label="Specific Item Info"
                   />
@@ -106,11 +110,6 @@
                   </q-card>
                 </div>
               </div>
-              <q-input
-                class="col-12 col-md-5"
-                v-model="lockerName"
-                label="Amazon Locker Name (Optional)"
-              />
               <div class="col-12 col-md-5">
                 <q-chip
                   color="red"
@@ -121,7 +120,7 @@
                 />
                 <q-input
                   v-model="lockerZipcode"
-                  label="Amazon Locker Zipcode"
+                  label="Your Delivery Zipcode"
                 />
               </div>
               <q-input
@@ -130,13 +129,8 @@
                 autogrow
                 label="Order Notes"
               /> 
-              <span class="text-center col-5 q-my-md text-h5" style="">
-            <q-toggle
-              v-model="giftcardOnlyOrder"
-              color="green"
-              label="Giftcard Only Order"
-            />
-              </span>
+              <q-input v-model="salesTax"   class="col-12 col-md-3"  label="Sales Tax (%)" />
+              <q-input v-model="extra"  class="col-12 col-md-5"   label="Extra (USD)"/>
               <q-select  class="col-12 col-md-6 q-mt-md" v-model="selectedCoin" :options="options" label="Payment Crypto" />
               <span class="col-12 q-mt-md">
                 <q-chip
@@ -152,9 +146,9 @@
                 v-if="itemList.length !== 0"
               >
                 Sub-Total (USD): {{ orderUSDSubTotal }} <br />
-                Estimated Taxes Collected by Amazon (~{{ taxRate*100 }}%): {{ taxAmount }} <br/>
-                Service Fee ({{ percentageFee * 100 }}%): {{ serviceFeeUSD }}
-                <!-- + ${{baseFee}}) -->
+                Estimated Taxes Collected by Retailer (~{{ taxRate*100 }}%): {{ taxAmount }} <br/>
+                Service Fee ({{ percentageFee }}%): {{ serviceFeeUSD }} <br/>
+                Extra (USD): {{ extra }} <br/>
                 <br />
                 Final Total (USD):
                 {{ finalTotalUSD }}
@@ -175,6 +169,7 @@
       </q-card>
     </div>
   </div>
+</q-page>
 </template>
 
 <script setup>
@@ -182,21 +177,20 @@ import { ref, watch, computed, defineEmits, toRaw } from "vue"
 import cart from "@/assets/svgs/cart.svg"
 import { encrypt, getRandomInt } from "@/assets/misc.js"
 const emit = defineEmits(['paymentSTarted'])
+const salesTax = ref(8)
+const serviceFee = (1)
+const extra = ref(0)
 const selectedCoin = ref('Monero')
-const options = ['Monero']// , 'Bitcoin', 'Litecoin', 'Ethereum'
+const options = ['Monero']
 const axios = require('axios')
-const giftcardOnlyOrder = ref(false)
-const amazonlink = ref("")
-const amazonItemDescription = ref("")
+const link = ref("")
+const itemDescription = ref("")
 const itemAmount = ref("0.00")
 const itemQuantity = ref(1)
 const itemList = ref([])
 const lockerZipcode = ref(0)
-const lockerName = ref("")
 const extraNotes = ref("")
-const percentageFee = 0.03
 const minOrderamount = 25
-const baseFee = 5
 const linkError = ref(false)
 const itemAmountError = ref(false)
 const zipcodeError = ref(false)
@@ -211,18 +205,18 @@ function addItemToCart() {
     return false
   }
   const item = {}
-  item.link = amazonlink.value
-  item.description = amazonItemDescription.value
+  item.link = link.value
+  item.description = itemDescription.value
   item.cost = itemAmount.value
   item.quantity = itemQuantity.value
   itemList.value.push(item)
-  amazonlink.value = ""
-  amazonItemDescription.value = ""
+  link.value = ""
+  itemDescription.value = ""
   itemAmount.value = "0.00"
   itemQuantity.value = 1
 }
 function checkInputs() {
-  if (amazonlink.value.length === 0) {
+  if (link.value.length === 0) {
     linkError.value = true
     return false
   }
@@ -232,7 +226,7 @@ function checkInputs() {
   }
   return true
 }
-watch(amazonlink, () => {
+watch(link, () => {
   linkError.value = false
 })
 watch(itemAmount, () => {
@@ -256,8 +250,8 @@ function convertToUSD() {
   itemAmount.value = temp.toFixed(2)
 }
 function sliceString(string) {
-  const firstString = string.split("/")
-  return firstString[3].replace(/-/g, " ")
+  const firstString = string.slice(0, 30).trim()
+  return firstString + `...`
 }
 const orderUSDSubTotal = computed(() => {
   let total = 0
@@ -269,15 +263,15 @@ const orderUSDSubTotal = computed(() => {
 })
 const serviceFeeUSD = computed(() => {
   const amazonSubtotalPlusTaxes = Number(orderUSDSubTotal.value) + Number(taxAmount.value)
-  const percentageTotal = amazonSubtotalPlusTaxes*Number(percentageFee)
-  return (Number(baseFee) + Number(percentageTotal)).toFixed(2)
+  const percentageTotal = amazonSubtotalPlusTaxes*Number(serviceFee/100)
+  return (Number(percentageTotal)).toFixed(2)
 })
 const taxAmount = computed(() => {
   return Number(Number(orderUSDSubTotal.value) * taxRate.value).toFixed(2)
 })
 const finalTotalUSD = computed(() => {
   const longNumber =
-    Number(orderUSDSubTotal.value) + Number(serviceFeeUSD.value) + Number(taxAmount.value)
+    Number(orderUSDSubTotal.value) + Number(taxAmount.value)+ Number(extra.value)
   return Number(longNumber).toFixed(2)
 })
 const paymentTicker = computed(() => {
@@ -309,18 +303,20 @@ async function submitOrder() {
   disableSubmit.value = true
   const results = await axios.post('/.netlify/functions/createPayment', { encryptedPassphrase, finalTotalUSD: finalTotalUSD.value, paymentCoin: paymentTicker.value })
   disableSubmit.value = false
-  emit('paymentSTarted', { nowPaymentsInfo: results.data, numberArray: toRaw(numberArray.value), encryptedPassphrase, itemList: toRaw(itemList.value),
-   lockerZipcode: toRaw(lockerZipcode.value), lockerName: toRaw(lockerName.value), extraNotes: toRaw(extraNotes.value), paymentCoin: paymentTicker.value})
+  emit('paymentSTarted', 
+  { 
+    nowPaymentsInfo: results.data, numberArray: toRaw(numberArray.value), encryptedPassphrase, 
+    itemList: toRaw(itemList.value),serviceFee: toRaw(serviceFee),
+    zipcode: toRaw(lockerZipcode.value), extra: toRaw(extra.value), salesTax: toRaw(salesTax.value), 
+   extraNotes: toRaw(extraNotes.value), paymentCoin: paymentTicker.value
+  })
 } catch (err) {
   disableSubmit.value = false
   console.log(err)
 }
 }
 const taxRate = computed(() => {
-  if (giftcardOnlyOrder.value) {
-    return 0
-  }
-  return 0.08
+  return Number(salesTax.value)/100
 })
 </script>
 <style lang="sass" scoped>

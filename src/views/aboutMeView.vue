@@ -23,9 +23,9 @@
         </div>
       </div>
       <div class="col col-10 col-md-3 desktop-only row">
-        <div class="col-12 justify-center items-center align-center row " style="min-height:40vh;">
+        <div class="col-12 justify-center items-center align-center row q-my-xl " style="min-height:40vh;">
           <q-img
-            class="frame"
+            class="q-my-lg"
             src="https://res.cloudinary.com/dylevfpbl/image/upload/v1671338330/recentlyBought/test_2_-min.jpg"
             style="max-width: 100%;"
           />

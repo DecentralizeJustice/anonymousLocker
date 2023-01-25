@@ -68,22 +68,10 @@ const axios = require('axios')
 const text = ref('')
 const successMessage = ref('')
 const buttonDisabled = ref(false)
-const questions = [ 
+const questions = [
 {
     q: `Do you allow multiple items in one order? The FAQ uses singular "item" so it's not clear. The $5 fee is a lot for cheap items and some of mine don't meet the purchase minimum.`,
     a: `Hi Friend, we allow multiple items to be bought and delivered to the same locker. Most of our orders involve multiple items. I will make the faq more clear about that!`
-  },
-{
-    q: `Hi. There was an error in creating your order. Go to the "Orders" page in the upper right. Then click "Check on Order" and enter your 6-word passphrase.`,
-    a: `Hi. There was an error in creating your order. Go to the "Orders" page in the upper right. Then click "Check on Order" and enter your 6-word passphrase.`
-  },
-{
-    q: `Hi. If you placed an order today (January 6th) I received your funds, but not your order. Please send me a message.`,
-    a: `Hi. If you placed an order today(January 6th) I received your funds, but not your order. Please send me a message.`
-  },
-  {
-    q: `Hello, are you sending in Europe? A friend of mine is trying to check if he can send to another Country but locker search only gives location of lockers within a mile of his area.`,
-    a: `Unfortunately I currently only deliver to United States.`
   },
   {
     q: `Hi, I'm in Japan but I want to order from Amazon.com USA, is it possible to deliver to Japan amazon locker?`,

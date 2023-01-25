@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router"
 import HomeView from "../views/HomeView.vue"
+import lockerlanding from "../views/lockerLandingPage.vue"
 import ordersPage from "../views/ordersPageView.vue"
 import faq from "../views/faqView.vue"
 import message from "../views/messageMeView.vue"
@@ -13,8 +14,10 @@ import novReview2022 from "../components/blogPost/monthInReview/nov2022Blog.vue"
 import empty from "../views/emptyRoute.vue"
 import twitterGiveAway from "../views/giveAwayTerms.vue"
 import verifyTwitterGiveaway from "../views/verifyGiveaway.vue"
-import quiz from "../views/quizPage.vue"
 import checkOnOrder from "../views/checkOnOrder.vue"
+import concierge from "../views/conciergeLandingpage.vue"
+import placeConciergeOrder from "../views/conciergeOrdersPageView.vue"
+import placeLockerOrder from "../views/placeLockerOrder.vue"
 /* const User = {
   template: `
     <div class="user">
@@ -28,6 +31,26 @@ const router = createRouter({
   routes: [
     { path: "/:catchAll(.*)", component: HomeView },
     {
+      path: "/service",
+      name: "concierge",
+      component: concierge
+    },
+    {
+      path: "/lockerlanding",
+      name: "lockerlanding",
+      component: lockerlanding
+    },
+    {
+      path: "/placeLockerOrder",
+      name: "placeLockerOrder",
+      component: placeLockerOrder
+    },
+    {
+      path: "/placeConciergeOrder",
+      name: "placeConciergeOrder",
+      component: placeConciergeOrder
+    },
+    {
       path: "/checkOnOrder",
       name: "checkOnOrder",
       component: checkOnOrder
@@ -35,12 +58,7 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: HomeView
-    },
-    {
-      path: "/quiz",
-      name: "quiz",
-      component: quiz
+      component: lockerlanding
     },
     {
       path: "/twitterGiveAwayTerms",
