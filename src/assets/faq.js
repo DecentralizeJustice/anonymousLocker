@@ -116,10 +116,10 @@ const faq = {
             If the order does not fit, we will issue a full refund.
             `,
     ],
-    [
+/*     [
       `Which payment methods do you accept?`,
       "I accept BTC, LTC, XMR, and ETH currently.",
-    ],
+    ], */
     [
       `Do you use prime shipping?`,
       "No, I only use the free shipping option offered by amazon, unless you pay for the faster method.",
