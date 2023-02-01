@@ -36,38 +36,133 @@
           </q-card-section>
         </q-card>
       </div>
-      <div class="col col-10 col-md-3 desktop-only">
-        <lottie-player
-        autoplay
-        loop
-        mode="normal"
-        speed=".75"
-        src="https://res.cloudinary.com/dylevfpbl/raw/upload/v1668561142/lf30_editor_a2wu4b2s.json"
-></lottie-player>
+    </div>
+    <div class="row justify-evenly q-pt-xl col-12 ">
+        <div class="col-12 text-center text-primary text-h3 q-pb-lg my-font">
+          How Shopping Works
+        </div>
+    <div class="row justify-evenly q-py-xl col-12">
+      <div class="row col col-10 col-md-4 items-center align-center row">
+        <div class=" col col-12 items-center align-center row">
+          <div class="text-left text-center text-white q-pa-lg bg-primary" style="border-radius: 10px;">
+            <div class="text-h4 my-font text-center" style="">
+              Step 1
+            </div>
+            <div class="text-h5 text-weight-regular q-mt-md q-pa-sm" style="line-height: 130%"><span >You place your order and pay for your order. You also deposit a ~10 USD bond in XMR.</span>
+    
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="col col-3 col-md-3 desktop-only row">
+          <q-img class="" loading="lazy"
+          src="https://res.cloudinary.com/dylevfpbl/image/upload/v1674010155/landingpage/dgoon21_person_sitting_at_computer_shopping_online_23e2fe8a-43f1-4ffb-85a7-9ccf47e5f883.png" />
+        </div>
+    </div>
+
+</div>
+<div class="row justify-evenly q-py-xl col-12 bg-primary">
+        <div class="col col-3 col-md-3 desktop-only row">
+          <q-img class="" loading="lazy"
+          src="https://res.cloudinary.com/dylevfpbl/image/upload/v1675113218/landingpage/dgoon21_smilling_delivery_person_holding_package_in_front_of_gr_74ca7bee-9f4e-417a-9163-5a170ff2bd8e.png" />
+        </div>
+      <div class="row col col-10 col-md-3 items-center align-center row">
+        <div class=" col col-12 items-center align-center row">
+          <div class="text-left text-center text-primary q-pa-sm" style="border-radius: 10px;background-color:#D4CCC4;">
+            <div class="text-h4 my-font text-center" style="">
+              Step 2
+            </div>
+            <div class="text-h5 text-weight-regular q-mt-md q-pa-sm" style="line-height: 130%"><span
+                >A Monero Earner accepts your order and completes it. </span>
+    
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="row justify-around col-12 items-center  q-py-xl bg-primary" style="width: 100%;">
-      <div class="col-12 col-md-6 text-center row justify-center q-px-md items-center desktop-only">
-        <div class="col-12 text-center text-white text-h5 q-pb-lg my-font">      
-        Recently Purchased Items
-      </div>  
-        <div class="row justify-around q-gutter-lg">   
-        <div class="col-md-3 col-6" v-for="item in recentlyBought" :key="item.id">
-          <q-card class="" style="width: 100%;">
-            <q-card-section>
-              <img class='q-pa-md' :src=item.img style="height: 20vh;">
-            </q-card-section>
-
-            <q-card-section>
-              <div class="text-h6">{{item.name}}</div>
-              <div class="text-subtitle1">${{item.price}}</div>
-            </q-card-section>
-          </q-card>
-
+    <div class="row justify-evenly q-pt-xl col-12 ">
+    <div class="row justify-evenly q-py-xl col-12">
+      <div class="row col col-10 col-md-4 items-center align-center row">
+        <div class=" col col-12 items-center align-center row">
+          <div class="text-left text-center text-white q-pa-lg bg-primary" style="border-radius: 10px;">
+            <div class="text-h4 my-font text-center" style="">
+              Step 3
+            </div>
+            <div class="text-h5 text-weight-regular q-mt-md q-pa-sm" style="line-height: 130%"><span >You confirm that you received your item correctly, and your ~10 USD XMR deposit is refunded to you.</span>
+    
+            </div>
+          </div>
         </div>
-      </div> 
       </div>
+        <div class="col col-3 col-md-3 desktop-only row">
+          <q-img class="" loading="lazy"
+          src="https://res.cloudinary.com/dylevfpbl/image/upload/v1674010309/landingpage/dgoon21_package_with_monero_logo_on_it_laying_at_front_door_of__221281d4-d484-4567-93e7-34df5a227d4a.png" />
+        </div>
+    </div>
+</div>
+<div class="row justify-evenly q-pt-xl col-12 ">
+        <div class="col-12 text-center text-primary text-h3 q-pb-lg my-font">
+          How Earning Works
+        </div>
+    <div class="row justify-evenly q-py-xl col-12">
+      <div class="row col col-10 col-md-4 items-center align-center row">
+        <div class=" col col-12 items-center align-center row">
+          <div class="text-left text-center text-white q-pa-lg bg-primary" style="border-radius: 10px;">
+            <div class="text-h4 my-font text-center" style="">
+              Step 1
+            </div>
+            <div class="text-h5 text-weight-regular q-mt-md q-pa-sm" style="line-height: 130%"><span >You register as a earner and deposit a ~5 USD bond in XMR.</span>
+    
+            </div>
+          </div>
+        </div>
       </div>
+        <div class="col col-3 col-md-3 desktop-only row">
+          <q-img class="" loading="lazy"
+          src="https://res.cloudinary.com/dylevfpbl/image/upload/v1674010155/landingpage/dgoon21_person_sitting_at_computer_shopping_online_23e2fe8a-43f1-4ffb-85a7-9ccf47e5f883.png" />
+        </div>
+    </div>
+
+</div>
+<div class="row justify-evenly q-py-xl col-12 bg-primary">
+        <div class="col col-3 col-md-3 desktop-only row">
+          <q-img class="" loading="lazy"
+          src="https://res.cloudinary.com/dylevfpbl/image/upload/v1675113218/landingpage/dgoon21_smilling_delivery_person_holding_package_in_front_of_gr_74ca7bee-9f4e-417a-9163-5a170ff2bd8e.png" />
+        </div>
+      <div class="row col col-10 col-md-3 items-center align-center row">
+        <div class=" col col-12 items-center align-center row">
+          <div class="text-left text-center text-primary q-pa-sm" style="border-radius: 10px;background-color:#D4CCC4;">
+            <div class="text-h4 my-font text-center" style="">
+              Step 2
+            </div>
+            <div class="text-h5 text-weight-regular q-mt-md q-pa-sm" style="line-height: 130%"><span
+                >You pick an order and complete it.</span>
+    
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-evenly q-pt-xl col-12 ">
+    <div class="row justify-evenly q-py-xl col-12">
+      <div class="row col col-10 col-md-4 items-center align-center row">
+        <div class=" col col-12 items-center align-center row">
+          <div class="text-left text-center text-white q-pa-lg bg-primary" style="border-radius: 10px;">
+            <div class="text-h4 my-font text-center" style="">
+              Step 3
+            </div>
+            <div class="text-h5 text-weight-regular q-mt-md q-pa-sm" style="line-height: 130%"><span >Once the order is confirmed to be complete, the Monero from the order and your deposit is released to you.</span>
+    
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="col col-3 col-md-3 desktop-only row">
+          <q-img class="" loading="lazy"
+          src="https://res.cloudinary.com/dylevfpbl/image/upload/v1674010309/landingpage/dgoon21_package_with_monero_logo_on_it_laying_at_front_door_of__221281d4-d484-4567-93e7-34df5a227d4a.png" />
+        </div>
+    </div>
+</div>
     
     <footerGlobal/>
   </q-page>
@@ -77,25 +172,8 @@
 import footerGlobal from "@/components/footerGlobal.vue"
 import { onMounted } from "vue"
 require("@lottiefiles/lottie-player")
-const heroText = 'The Best Way To Spend Monero'
-const heroSubtext = `The Most Private Way To Shop Online`
-const recentlyBought =[
-  { 
-    img: `https://res.cloudinary.com/dylevfpbl/image/upload/v1671338257/recentlyBought/81lJyLrRVeL._AC_SL1500__1_-min.jpg`,
-    name: 'Crucial MX500 4TB 3D NAND Internal SSD',
-    price: '237.99'
-  },
-  {
-    img: `https://res.cloudinary.com/dylevfpbl/image/upload/v1669750092/recentlyBought/41vjOH-hRIL._AC_SL1000_.jpg`,
-    name: `Ledger Nano S Plus Crypto Hardware Wallet`,
-    price: '79.00'
-  },
-  {
-    img: `https://res.cloudinary.com/dylevfpbl/image/upload/v1671338148/recentlyBought/drilldown-min.jpg`,
-    name: `SAMSUNG 980 SSD 500GB PCle 3.0x4, NVMe M.2`,
-    price: '56.99'
-  }
-]
+const heroText = 'Peer To Peer Monero Shopping & Trading'
+const heroSubtext = ``// `How Crypto Is Mean To Be`
 
 onMounted(() => {
 
