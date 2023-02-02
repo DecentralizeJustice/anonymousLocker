@@ -130,7 +130,7 @@ import footerGlobal from "@/components/footerGlobal.vue"
 import { onMounted } from "vue"
 import faq from "@/assets/faq.js"
 require("@lottiefiles/lottie-player")
-const correctFaq = faq.faq
+const correctFaq = faq.earnerfaq
 const heroText = 'Get Monero with Credit Card and No KYC'
 const heroSubtext = `The Best Way To Get Monero`
 onMounted(() => {

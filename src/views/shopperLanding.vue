@@ -175,12 +175,14 @@ import footerGlobal from "@/components/footerGlobal.vue"
 import { onMounted } from "vue"
 import faq from "@/assets/faq.js"
 require("@lottiefiles/lottie-player")
-const correctFaq = faq.faq
+const correctFaq = faq.shopperfaq
 const heroText = 'Spend Monero Anonymously or Anywhere'
 const heroSubtext = `The Best Way To Use Monero`
-const step1 = `Your order is made to an Amazon Locker near you. This method requires not address, email, or other kyc. 
+const step1 = `Your order is made to an Amazon Locker near you. 
+This method requires does not need an address, email, or other personal information. 
 This method can only be used to purchase items shipped by Amazon and also has size restrictions.`
-const step2 = `Your order is shipped directly to your house. This method requires an delivery address but can be used for any major retailer and is more 
+const step2 = `Your order is shipped directly to your house. 
+This method requires a delivery address but can be used for any major retailer and is more 
 convenient.`
 onMounted(() => {
 

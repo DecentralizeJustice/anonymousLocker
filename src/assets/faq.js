@@ -157,5 +157,58 @@ const faq = {
     ],
   ]
 };
+const shopperfaq = {
+  "General Shopper Questions": [
+    [
+      `What are my responsibilities as a shopper?`,
+      `We currently only deliver in the United States.`,
+    ],
+    [
+      `What happens if there is an order dispute between earner and shopper?`,
+      `We can order any items that are legal and for sale online.`,
+    ],
+    [
+      `What if I have questions or run into problems?`,
+      `This Service is 1% of the order total.`,
+    ],
+    [
+      `Can I cancel an order after I select it?`,
+      `We do not offer refunds for shipped items.`,
+    ],
+    [
+      `How much is the earner deposit?`,
+      `Yes, you can use tor but the site does require javascript to work.`,
+    ],
+  ],
+
+};
+
+const earnerfaq = {
+  "General Earner Questions": [
+    [
+      `What are my responsibilities as a shopper?`,
+      `We currently only deliver in the United States.`,
+    ],
+    [
+      `What happens if there is an order dispute between earner and shopper?`,
+      `We can order any items that are legal and for sale online.`,
+    ],
+    [
+      `What if I have questions or run into problems?`,
+      `This Service is 1% of the order total.`,
+    ],
+    [
+      `Can I cancel an order after I select it?`,
+      `We do not offer refunds for shipped items.`,
+    ],
+    [
+      `How much is the earner deposit?`,
+      `Yes, you can use tor but the site does require javascript to work.`,
+    ],
+  ],
+
+};
 
 exports.faq = faq;
+exports.shopperfaq = shopperfaq
+exports.earnerfaq = earnerfaq

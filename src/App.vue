@@ -61,13 +61,12 @@ const options = [
   { label: "Home", value: "home" },
   { label: "Earners", value: "earnerLanding" },
   { label: "Shoppers", value: "shopperLanding" },
-  { label: "Orders", value: "ordersPage" },
   { label: "F.A.Q.", value: "faq" },
   { label: "Ask Question", value: "message" }
 
 ]
 function getButtonColor(params) {
-  if (params === "ordersPage") {
+  if (params === "message") {
     return "primary"
   }
   return "grey-7"
