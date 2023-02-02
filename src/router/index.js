@@ -8,7 +8,6 @@ import about from "../views/aboutMeView.vue"
 import privacyPolicy from "../views/privacyPolicy.vue"
 import termsOfService from "../views/termsOfService.vue"
 import blog from "../views/blogView.vue"
-import loyalty from "../views/loyaltyView.vue"
 import orderAdmin from "../views/orderAdmin.vue"
 import novReview2022 from "../components/blogPost/monthInReview/nov2022Blog.vue"
 import empty from "../views/emptyRoute.vue"
@@ -18,6 +17,8 @@ import checkOnOrder from "../views/checkOnOrder.vue"
 import concierge from "../views/conciergeLandingpage.vue"
 import placeConciergeOrder from "../views/conciergeOrdersPageView.vue"
 import placeLockerOrder from "../views/placeLockerOrder.vue"
+import shopperLanding from "../views/shopperLanding.vue"
+import earnerLanding from "../views/earnerLanding.vue"
 /* const User = {
   template: `
     <div class="user">
@@ -30,6 +31,16 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes: [
     { path: "/:catchAll(.*)", component: HomeView },
+    {
+      path: "/shop",
+      name: "shopperLanding",
+      component: shopperLanding
+    },
+    {
+      path: "/earn",
+      name: "earnerLanding",
+      component: earnerLanding
+    },
     {
       path: "/service",
       name: "concierge",
@@ -114,11 +125,6 @@ const router = createRouter({
           component: novReview2022
         }
       ],
-    },
-    {
-      path: "/loyalty",
-      name: "loyalty",
-      component: loyalty
     },
     {
       path: "/admin",

@@ -57,16 +57,10 @@
   </q-layout>
 </template>
 <script setup>
-// import { ref } from 'vue'
-/* import { useRouter } from 'vue-router'
-const router = useRouter() */
-// const model = ref(window.location.pathname)
-/* function test (newRoute) {
-  console.log(newRoute)
-  router.push({ name: newRoute })
-} */
 const options = [
   { label: "Home", value: "home" },
+  { label: "Earners", value: "earnerLanding" },
+  { label: "Shoppers", value: "shopperLanding" },
   { label: "Orders", value: "ordersPage" },
   { label: "F.A.Q.", value: "faq" },
   { label: "Ask Question", value: "message" }
