@@ -178,7 +178,7 @@ import cart from "@/assets/svgs/cart.svg"
 import { encrypt, getRandomInt } from "@/assets/misc.js"
 const emit = defineEmits(['paymentSTarted'])
 const salesTax = ref(8)
-const serviceFee = (1)
+const serviceFee = (0)
 const extra = ref(0)
 const selectedCoin = ref('Monero')
 const options = ['Monero']

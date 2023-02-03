@@ -131,11 +131,6 @@
                 label="Order Notes"
               /> 
               <span class="text-center col-5 q-my-md text-h5" style="">
-            <q-toggle
-              v-model="giftcardOnlyOrder"
-              color="green"
-              label="Giftcard Only Order"
-            />
               </span>
               <q-select  class="col-12 col-md-6 q-mt-md" v-model="selectedCoin" :options="options" label="Payment Crypto" />
               <span class="col-12 q-mt-md">
@@ -194,9 +189,9 @@ const itemList = ref([])
 const lockerZipcode = ref(0)
 const lockerName = ref("")
 const extraNotes = ref("")
-const percentageFee = 0.03
+const percentageFee = 0
 const minOrderamount = 25
-const baseFee = 5
+const baseFee = 0
 const linkError = ref(false)
 const itemAmountError = ref(false)
 const zipcodeError = ref(false)
