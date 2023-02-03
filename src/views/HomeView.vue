@@ -37,14 +37,14 @@
         </q-card>
       </div>
     </div>
-    <div class="row justify-evenly q-pt-xl col-12 ">
-        <div class="col-12 text-center text-primary text-h3 q-pb-lg my-font">
+    <div class="row justify-evenly q-pt-xl col-12 bg-primary">
+        <div class="col-12 text-center text-white text-h3 q-pb-lg my-font">
           How Shopping Works
         </div>
     <div class="row justify-evenly q-py-xl col-12">
-      <div class="row col col-10 col-md-4 items-center align-center row">
-        <div class=" col col-12 items-center align-center row">
-          <div class="text-left text-center text-white q-pa-lg bg-primary" style="border-radius: 10px;">
+      <div class="row col col-10 col-md-4 items-center align-center row " >
+        <div class=" col col-12 items-center align-center row" >
+          <div class="text-left text-center text-primary q-pa-lg" style="border-radius: 10px;background-color:#D4CCC4;" >
             <div class="text-h4 my-font text-center" style="">
               Step 1
             </div>
@@ -80,11 +80,11 @@
         </div>
       </div>
     </div>
-    <div class="row justify-evenly q-pt-xl col-12 ">
+    <div class="row justify-evenly q-pt-xl col-12 bg-primary">
     <div class="row justify-evenly q-py-xl col-12">
       <div class="row col col-10 col-md-4 items-center align-center row">
         <div class=" col col-12 items-center align-center row">
-          <div class="text-left text-center text-white q-pa-lg bg-primary" style="border-radius: 10px;">
+          <div class="text-left text-center text-primary q-pa-lg" style="border-radius: 10px;background-color:#D4CCC4;">
             <div class="text-h4 my-font text-center" style="">
               Step 3
             </div>
@@ -100,13 +100,14 @@
         </div>
         
     </div>
-    <div class="text-center">
+    <div class="text-center q-mb-md">
               <router-link to="/shop" style="text-decoration:none !important;">
                 <q-btn
-                  color="primary"
+                style="background-color:#D4CCC4;"
                   label="Learn More About Shopping"
                   size="lg"
                   padding="sm"
+                  class="text-primary"
                 />
               </router-link>
             </div>
@@ -135,14 +136,14 @@
     </div>
 
 </div>
-<div class="row justify-evenly q-py-xl col-12 bg-primary">
+<div class="row justify-evenly q-py-xl col-12">
         <div class="col col-3 col-md-3 desktop-only row">
           <q-img class="" loading="lazy"
           src="https://res.cloudinary.com/dylevfpbl/image/upload/v1675113218/landingpage/dgoon21_smilling_delivery_person_holding_package_in_front_of_gr_74ca7bee-9f4e-417a-9163-5a170ff2bd8e.png" />
         </div>
       <div class="row col col-10 col-md-3 items-center align-center row">
         <div class=" col col-12 items-center align-center row">
-          <div class="text-left text-center text-primary q-pa-sm" style="border-radius: 10px;background-color:#D4CCC4;">
+          <div class="text-left text-center text-white bg-primary q-pa-sm" style="border-radius: 10px;background-color:#D4CCC4;">
             <div class="text-h4 my-font text-center" style="">
               Step 2
             </div>
@@ -180,6 +181,7 @@
                   label="Learn More About Earning"
                   size="lg"
                   padding="sm"
+                  class="q-mb-xl"
                 />
               </router-link>
             </div>
