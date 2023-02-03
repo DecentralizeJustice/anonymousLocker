@@ -38,10 +38,7 @@ const info = [
     title: 'General',
     items: [
     {
-        text: 'Concierge Service', link: '/service'
-      },
-    {
-        text: 'Locker Service', link: '/lockerlanding'
+        text: 'Register As Earner', link: '/registerEarner'
       },
     {
         text: 'Blog', link: '/blog'

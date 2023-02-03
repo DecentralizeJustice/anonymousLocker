@@ -59,6 +59,7 @@
 <script setup>
 const options = [
   { label: "Home", value: "home" },
+  { label: "Orders", value: "ordersPage" },
   { label: "Earners", value: "earnerLanding" },
   { label: "Shoppers", value: "shopperLanding" },
   { label: "F.A.Q.", value: "faq" },

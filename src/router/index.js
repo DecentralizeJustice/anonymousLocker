@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router"
 import HomeView from "../views/HomeView.vue"
-import lockerlanding from "../views/lockerLandingPage.vue"
 import ordersPage from "../views/ordersPageView.vue"
 import faq from "../views/faqView.vue"
 import message from "../views/messageMeView.vue"
@@ -14,11 +13,11 @@ import empty from "../views/emptyRoute.vue"
 import twitterGiveAway from "../views/giveAwayTerms.vue"
 import verifyTwitterGiveaway from "../views/verifyGiveaway.vue"
 import checkOnOrder from "../views/checkOnOrder.vue"
-import concierge from "../views/conciergeLandingpage.vue"
-import placeConciergeOrder from "../views/conciergeOrdersPageView.vue"
+import placeConciergeOrder from "../views/placeConciergeOrder.vue"
 import placeLockerOrder from "../views/placeLockerOrder.vue"
 import shopperLanding from "../views/shopperLanding.vue"
 import earnerLanding from "../views/earnerLanding.vue"
+import registerEarner from "../views/registerAsEarner.vue"
 /* const User = {
   template: `
     <div class="user">
@@ -32,6 +31,11 @@ const router = createRouter({
   routes: [
     { path: "/:catchAll(.*)", component: HomeView },
     {
+      path: "/registerEarner",
+      name: "registerEarner",
+      component: registerEarner
+    },
+    {
       path: "/shop",
       name: "shopperLanding",
       component: shopperLanding
@@ -40,16 +44,6 @@ const router = createRouter({
       path: "/earn",
       name: "earnerLanding",
       component: earnerLanding
-    },
-    {
-      path: "/service",
-      name: "concierge",
-      component: concierge
-    },
-    {
-      path: "/lockerlanding",
-      name: "lockerlanding",
-      component: lockerlanding
     },
     {
       path: "/placeLockerOrder",
