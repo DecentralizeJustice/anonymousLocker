@@ -98,7 +98,18 @@
           <q-img class="" loading="lazy"
           src="https://res.cloudinary.com/dylevfpbl/image/upload/v1674010309/landingpage/dgoon21_package_with_monero_logo_on_it_laying_at_front_door_of__221281d4-d484-4567-93e7-34df5a227d4a.png" />
         </div>
+        
     </div>
+    <div class="text-center">
+              <router-link to="/shop" style="text-decoration:none !important;">
+                <q-btn
+                  color="primary"
+                  label="Learn More About Shopping"
+                  size="lg"
+                  padding="sm"
+                />
+              </router-link>
+            </div>
 </div>
 <div class="row justify-evenly q-pt-xl col-12 ">
         <div class="col-12 text-center text-primary text-h3 q-pb-lg my-font">
@@ -162,6 +173,16 @@
           src="https://res.cloudinary.com/dylevfpbl/image/upload/v1674010309/landingpage/dgoon21_package_with_monero_logo_on_it_laying_at_front_door_of__221281d4-d484-4567-93e7-34df5a227d4a.png" />
         </div>
     </div>
+    <div class="text-center">
+              <router-link to="/earn" style="text-decoration:none !important;">
+                <q-btn
+                  color="primary"
+                  label="Learn More About Earning"
+                  size="lg"
+                  padding="sm"
+                />
+              </router-link>
+            </div>
 </div>
     
     <footerGlobal/>

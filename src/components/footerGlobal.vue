@@ -40,11 +40,14 @@ const info = [
     {
         text: 'Register As Earner', link: '/registerEarner'
       },
+      {
+        text: 'Place Order', link: '/orders'
+      },
     {
         text: 'Blog', link: '/blog'
       },
       {
-        text: 'About Me', link: '/about'
+        text: 'About Us', link: '/about'
       },
       {
         text: 'Github', link: 'https://github.com/DecentralizeJustice/anonymousLocker'
@@ -59,7 +62,7 @@ const info = [
     title: 'Support',
     items: [
       {
-        text: 'Message Me', link: '/message'
+        text: 'Message Us', link: '/message'
       },
       {
         text: 'F.A.Q.', link: '/faq'

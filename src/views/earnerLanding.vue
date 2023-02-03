@@ -69,7 +69,7 @@
               </div>
             </div>
             <div class="text-center">
-              <router-link :to="{ name: 'ordersPage' }" style="text-decoration:none !important;">
+              <router-link :to="{ name: 'registerEarner' }" style="text-decoration:none !important;">
                 <q-btn
                   color="primary"
                   label="Register as Earner"
@@ -91,7 +91,7 @@
       </div>
     </div>
     <div class="row justify-evenly q-py-xl col-12 ">
-      <div class="text-h4 my-font col-12 col-md-7 q-mt-md text-center">Shoppper FAQ:</div>
+      <div class="text-h4 my-font col-12 col-md-7 q-mt-md text-center">Earner FAQ:</div>
       <q-card class="col-12 col-md-7 q-mt-md" v-for="(catagory, key) in correctFaq" :key="key" >
       <q-card-section class=" text-white bg-grey-7 ">
         <div class="text-h6">{{ key }}</div>
