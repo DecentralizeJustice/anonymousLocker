@@ -37,6 +37,13 @@
         </q-card>
       </div>
     </div>
+    <div class="row justify-evenly q-py-xl col-12">
+        <div class="col col-3 col-md-5 desktop-only row">
+          <q-img class="" loading="lazy"
+          src="https://res.cloudinary.com/dylevfpbl/image/upload/v1675528059/landingpage/dgoon21_two_futuristic_people_shaking_hands_813582c7-4fe9-4dce-b23b-63725aad4f77.png" />
+        </div>
+    </div>
+    
     <div class="row justify-evenly q-pt-xl col-12 bg-primary">
         <div class="col-12 text-center text-white text-h3 q-pb-lg my-font">
           How Shopping Works
