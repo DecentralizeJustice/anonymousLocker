@@ -12,28 +12,28 @@
         <q-separator />
         <q-card-section>
           <div class="q-pa-md">
-            <div class="row justify-around" style="">
+            <div class="row justify-around text-h5" style="">
               <div class="col-12 text-center row q-mb-md justify-center q-gutter-y-md">
-                <p class="col-12 col-md-6 text-center row justify-center">
+                <p class="col-12 col-md-10 text-center row justify-center">
                   Thanks for Registering to Be an earner with Anon Shop😎 <br/>  Here is an overview of your responsibilities:
                 </p>
-                <ol class="text-left">
+                <ol class="text-left col-12 col-md-10">
                   <li>In case of dispute, submit your retailer login information so that we can decide who is correct.</li>
                   <li>Submit The Next Step Of The Orders Within 24 hours.</li>
                 </ol>
-                <p class="col-12 col-md-6 text-left row justify-center" style="display:inline">
+                <p class="col-12 col-md-10 text-left row justify-center" style="display:inline">
                   These are only 2 major points, but the finer details can be found in the <a href="/faq">FAQ.</a><br/>
                   If you have any questions about this process, please ask <a href="/message">here.</a>
                 </p>
               </div>
               <div
-                class="row col-12 col-md-8 q-mt-sm justify-center"
+                class="row col-12 col-md-10 q-mt-sm justify-center"
               >
-              <p class="col-12 col-md-6 text-left row justify-center" style="display:inline">
+              <p class="col-12 col-md-12 text-left row justify-center" style="display:inline">
                   If you have any special requests or needs please let us know below.
                 </p>              
               <q-input
-                class="col-12 col-md-8"
+                class="col-12 col-md-12"
                 v-model="extraNotes"
                 autogrow
                 label="Extra Info For US"
