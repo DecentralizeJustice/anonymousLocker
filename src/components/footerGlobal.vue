@@ -38,16 +38,16 @@ const info = [
     title: 'General',
     items: [
     {
-        text: 'Concierge Service', link: '/service'
+        text: 'Register As Earner', link: '/registerEarner'
       },
-    {
-        text: 'Locker Service', link: '/lockerlanding'
+      {
+        text: 'Place Order', link: '/orders'
       },
     {
         text: 'Blog', link: '/blog'
       },
       {
-        text: 'About Me', link: '/about'
+        text: 'About Us', link: '/about'
       },
       {
         text: 'Github', link: 'https://github.com/DecentralizeJustice/anonymousLocker'
@@ -62,7 +62,7 @@ const info = [
     title: 'Support',
     items: [
       {
-        text: 'Message Me', link: '/message'
+        text: 'Message Us', link: '/message'
       },
       {
         text: 'F.A.Q.', link: '/faq'

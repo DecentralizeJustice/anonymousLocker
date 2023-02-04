@@ -57,24 +57,17 @@
   </q-layout>
 </template>
 <script setup>
-// import { ref } from 'vue'
-/* import { useRouter } from 'vue-router'
-const router = useRouter() */
-// const model = ref(window.location.pathname)
-/* function test (newRoute) {
-  console.log(newRoute)
-  router.push({ name: newRoute })
-} */
 const options = [
-  { label: "Locker Service", value: "lockerlanding" },
-  { label: "General Service", value: "concierge" },
-  { label: "Orders", value: "ordersPage" },
+  { label: "Home", value: "home" },
+  { label: "Earners", value: "earnerLanding" },
+  { label: "Shoppers", value: "shopperLanding" },
   { label: "F.A.Q.", value: "faq" },
+  { label: "Orders", value: "ordersPage" },
   { label: "Ask Question", value: "message" }
 
 ]
 function getButtonColor(params) {
-  if (params === "ordersPage") {
+  if (params === "message") {
     return "primary"
   }
   return "grey-7"

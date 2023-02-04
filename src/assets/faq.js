@@ -157,5 +157,62 @@ const faq = {
     ],
   ]
 };
+const shopperfaq = {
+  "General Shopper Questions": [
+    [
+      `What are my responsibilities as a shopper?`,
+      `To answer all questions within a day.`,
+    ],
+    [
+      `How much is this service?`,
+      `This service is currently free.`,
+    ],
+    [
+      `What happens if there is an order dispute between earner and shopper?`,
+      `We will get the retail account login of the earner to determine who is correct. Whoever is correct will receive the other's bond amount.`,
+    ],
+    [
+      `What if I have questions or run into problems?`,
+      `You should ask us questions using the ask question button in the upper right.`,
+    ],
+    [
+      `Can I cancel an order after it is selected by an earner?`,
+      `No.`,
+    ],
+    [
+      `How much is the shopper deposit?`,
+      `It is currently 10 USD of Monero.`,
+    ],
+  ],
+
+};
+
+const earnerfaq = {
+  "General Earner Questions": [
+    [
+      `What are my responsibilities as a shopper?`,
+      `You should take the next step in the order process within one hour.`,
+    ],
+    [
+      `What happens if there is an order dispute between earner and shopper?`,
+      `We will need your retail account login to determine who is correct. Whoever is correct will receive the other's bond amount.`,
+    ],
+    [
+      `What if I have questions or run into problems?`,
+      `You should ask us questions using the ask question button in the upper right.`,
+    ],
+    [
+      `Can I cancel an order after I select it?`,
+      `No. Once you accept and order you must complete it.`,
+    ],
+    [
+      `How much is the earner deposit bond?`,
+      `It is currently 5 USD worth of Monero.`,
+    ],
+  ],
+
+};
 
 exports.faq = faq;
+exports.shopperfaq = shopperfaq
+exports.earnerfaq = earnerfaq

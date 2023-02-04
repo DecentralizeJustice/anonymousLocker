@@ -69,28 +69,28 @@
 import footerGlobal from "@/components/footerGlobal.vue"
 import { onMounted } from "vue"
 require("@lottiefiles/lottie-player")
-const heroText = `Who Created Anonymous Locker?`
+const heroText = `Who Created Anon Shop?`
 const heroSubtext = 
 `I have been making projects in the crypto space since 2017. Since my first crypto business,
 <a href="https://www.reddit.com/r/IncognitoDeals/" style='color: inherit; text-decoration: underline;'>Incognito Deals</a>
 , I have been obsessed with the potential for cryptocurrencies to make a better and more private e-commerce experience. 
 In the past, I have built a 
 <a href="https://guidingwallet.app/" style='color: inherit; text-decoration: underline;'>educational multisig bitcoin wallet</a>, 
-an <a href="https://www.giftmonero.app/" style='color: inherit; text-decoration: underline;'>gifting monero app</a>, 
+an <a href="https://www.giftmonero.app/" style='color: inherit; text-decoration: underline;'>gifting Monero app</a>, 
 a <a href="https://guidingwallet.app/triviashow" style='color: inherit; text-decoration: underline;'>anonymous crypto trivia show</a>, and
 contributed to several 
 <a href="https://github.com/spesmilo/electrum/issues/6157" style='color: inherit; text-decoration: underline;'>open source projects</a> 
 in the cryptocurrency space.
-These past experiences have set me up perfectly to create Anonymous Locker.<br/>
+These past experiences have set me up perfectly to create Anon Shop.<br/>
 - Donely Gunn 😎`
-const heroText1 = `Why Does Anonymous Locker Exist?`
+const heroText1 = `Why Does Anon Shop Exist?`
 const heroSubtext1 = 
 `I believe that the only way to protect information is to never give it in the first place.  Based on this motto I decided to build a service that required the 
 least information needed legally from customers. I did some research and I made an amazon locker specific version of one of my earliest projects, 
 <a href="https://www.reddit.com/r/IncognitoDeals/" style='color: inherit; text-decoration: underline;'>Incognito Deals</a>
 . Once I combined
 the anonymity of Incognito deals with the accessibility of thousands of amazon lockers, so I knew I was on to something. The monero community loved the idea, 
-and a week later Anonymous Locker was born. I hope to add things like anonymous loyalty programs and maybe expand to other retailers in the future.`
+and a week later Anonymous Shop was born. I hope to add things like anonymous loyalty programs and maybe expand to other retailers in the future.`
 onMounted(() => {
 
     })

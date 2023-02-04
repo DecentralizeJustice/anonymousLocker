@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router"
 import HomeView from "../views/HomeView.vue"
-import lockerlanding from "../views/lockerLandingPage.vue"
 import ordersPage from "../views/ordersPageView.vue"
 import faq from "../views/faqView.vue"
 import message from "../views/messageMeView.vue"
@@ -8,16 +7,17 @@ import about from "../views/aboutMeView.vue"
 import privacyPolicy from "../views/privacyPolicy.vue"
 import termsOfService from "../views/termsOfService.vue"
 import blog from "../views/blogView.vue"
-import loyalty from "../views/loyaltyView.vue"
 import orderAdmin from "../views/orderAdmin.vue"
 import novReview2022 from "../components/blogPost/monthInReview/nov2022Blog.vue"
 import empty from "../views/emptyRoute.vue"
 import twitterGiveAway from "../views/giveAwayTerms.vue"
 import verifyTwitterGiveaway from "../views/verifyGiveaway.vue"
 import checkOnOrder from "../views/checkOnOrder.vue"
-import concierge from "../views/conciergeLandingpage.vue"
-import placeConciergeOrder from "../views/conciergeOrdersPageView.vue"
+import placeConciergeOrder from "../views/placeConciergeOrder.vue"
 import placeLockerOrder from "../views/placeLockerOrder.vue"
+import shopperLanding from "../views/shopperLanding.vue"
+import earnerLanding from "../views/earnerLanding.vue"
+import registerEarner from "../views/registerAsEarner.vue"
 /* const User = {
   template: `
     <div class="user">
@@ -31,14 +31,19 @@ const router = createRouter({
   routes: [
     { path: "/:catchAll(.*)", component: HomeView },
     {
-      path: "/service",
-      name: "concierge",
-      component: concierge
+      path: "/registerEarner",
+      name: "registerEarner",
+      component: registerEarner
     },
     {
-      path: "/lockerlanding",
-      name: "lockerlanding",
-      component: lockerlanding
+      path: "/shop",
+      name: "shopperLanding",
+      component: shopperLanding
+    },
+    {
+      path: "/earn",
+      name: "earnerLanding",
+      component: earnerLanding
     },
     {
       path: "/placeLockerOrder",
@@ -58,7 +63,7 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: concierge //lockerlanding
+      component: HomeView //lockerlanding
     },
     {
       path: "/twitterGiveAwayTerms",
@@ -114,11 +119,6 @@ const router = createRouter({
           component: novReview2022
         }
       ],
-    },
-    {
-      path: "/loyalty",
-      name: "loyalty",
-      component: loyalty
     },
     {
       path: "/admin",
