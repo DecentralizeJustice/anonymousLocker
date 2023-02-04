@@ -1,1 +1,1 @@
-This is the repo for Anonymous Locker. 
+This is the repo for Anon Shop. 
