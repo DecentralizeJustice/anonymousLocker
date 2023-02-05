@@ -137,7 +137,7 @@
                   color="red"
                   text-color="white"
                   icon="dangerous"
-                  label="Order Sub-total Minimum is ${{minOrderamount}} (USD)"
+                  label="Order Sub-total Minimum is $25 (USD)"
                   v-if="minAmountError"
                 />
               </span>
@@ -147,8 +147,8 @@
               >
                 Sub-Total (USD): {{ orderUSDSubTotal }} <br />
                 Estimated Taxes Collected by Retailer (~{{ taxRate*100 }}%): {{ taxAmount }} <br/>
-                Service Fee ({{ percentageFee }}%): {{ serviceFeeUSD }} <br/>
-                Extra (USD): {{ extra }} <br/>
+                Order Deposit/Bond: {{ serviceFeeUSD }} <br/>
+                Extra/Tip (USD): {{ extra }} <br/>
                 <br />
                 Final Total (USD):
                 {{ finalTotalUSD }}
@@ -178,7 +178,7 @@ import cart from "@/assets/svgs/cart.svg"
 import { encrypt, getRandomInt } from "@/assets/misc.js"
 const emit = defineEmits(['paymentSTarted'])
 const salesTax = ref(8)
-const serviceFee = (0)
+const serviceFee = (10)
 const extra = ref(0)
 const selectedCoin = ref('Monero')
 const options = ['Monero']
@@ -262,16 +262,16 @@ const orderUSDSubTotal = computed(() => {
   return Number(total).toFixed(2)
 })
 const serviceFeeUSD = computed(() => {
-  const amazonSubtotalPlusTaxes = Number(orderUSDSubTotal.value) + Number(taxAmount.value)
-  const percentageTotal = amazonSubtotalPlusTaxes*Number(serviceFee/100)
-  return (Number(percentageTotal)).toFixed(2)
+  // const amazonSubtotalPlusTaxes = Number(orderUSDSubTotal.value) + Number(taxAmount.value)
+  // const percentageTotal = amazonSubtotalPlusTaxes*Number(serviceFee/100)
+  return (10).toFixed(2)
 })
 const taxAmount = computed(() => {
   return Number(Number(orderUSDSubTotal.value) * taxRate.value).toFixed(2)
 })
 const finalTotalUSD = computed(() => {
   const longNumber =
-    Number(orderUSDSubTotal.value) + Number(taxAmount.value)+ Number(extra.value)
+    Number(orderUSDSubTotal.value) + Number(taxAmount.value)+ Number(extra.value) + Number(serviceFeeUSD.value)
   return Number(longNumber).toFixed(2)
 })
 const paymentTicker = computed(() => {

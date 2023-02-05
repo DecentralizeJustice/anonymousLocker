@@ -123,6 +123,7 @@
                   v-model="lockerZipcode"
                   label="Amazon Locker Zipcode"
                 />
+                <q-input v-model="extra"  class="col-12 col-md-5"   label="Extra/Tip (USD)"/>
               </div>
               <q-input
                 class="col-12 col-md-6"
@@ -148,9 +149,10 @@
               >
                 Sub-Total (USD): {{ orderUSDSubTotal }} <br />
                 Estimated Taxes Collected by Amazon (~{{ taxRate*100 }}%): {{ taxAmount }} <br/>
-                Service Fee ({{ percentageFee * 100 }}%): {{ serviceFeeUSD }}
+                Deposit: 10 USD
                 <!-- + ${{baseFee}}) -->
                 <br />
+                Extra/Tip (USD): {{ extra }} <br/>
                 Final Total (USD):
                 {{ finalTotalUSD }}
               </div>
@@ -189,9 +191,10 @@ const itemList = ref([])
 const lockerZipcode = ref(0)
 const lockerName = ref("")
 const extraNotes = ref("")
-const percentageFee = 0
+// const percentageFee = 0
 const minOrderamount = 25
-const baseFee = 0
+const baseFee = 10
+const extra = ref(0)
 const linkError = ref(false)
 const itemAmountError = ref(false)
 const zipcodeError = ref(false)
@@ -263,16 +266,16 @@ const orderUSDSubTotal = computed(() => {
   return Number(total).toFixed(2)
 })
 const serviceFeeUSD = computed(() => {
-  const amazonSubtotalPlusTaxes = Number(orderUSDSubTotal.value) + Number(taxAmount.value)
-  const percentageTotal = amazonSubtotalPlusTaxes*Number(percentageFee)
-  return (Number(baseFee) + Number(percentageTotal)).toFixed(2)
+  // const amazonSubtotalPlusTaxes = Number(orderUSDSubTotal.value) + Number(taxAmount.value)
+  // const percentageTotal = amazonSubtotalPlusTaxes*Number(percentageFee)
+  return (Number(baseFee)).toFixed(2)
 })
 const taxAmount = computed(() => {
   return Number(Number(orderUSDSubTotal.value) * taxRate.value).toFixed(2)
 })
 const finalTotalUSD = computed(() => {
   const longNumber =
-    Number(orderUSDSubTotal.value) + Number(serviceFeeUSD.value) + Number(taxAmount.value)
+    Number(orderUSDSubTotal.value) + Number(serviceFeeUSD.value) + Number(taxAmount.value) + Number(extra.value)
   return Number(longNumber).toFixed(2)
 })
 const paymentTicker = computed(() => {
