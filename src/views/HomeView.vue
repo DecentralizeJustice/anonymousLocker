@@ -155,7 +155,7 @@
               Step 2
             </div>
             <div class="text-h5 text-weight-regular q-mt-md q-pa-sm" style="line-height: 130%"><span
-                >You pick an order and complete it.</span>
+                >You pick an Amazon order and complete it.</span>
     
             </div>
           </div>
