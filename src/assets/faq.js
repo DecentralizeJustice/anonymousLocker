@@ -190,6 +190,10 @@ const shopperfaq = {
 const earnerfaq = {
   "General Earner Questions": [
     [
+      `Do I need an Amazon account to complete orders?`,
+      `Yes.`,
+    ],
+    [
       `What are my responsibilities as a shopper?`,
       `You should take the next step in the order process within one hour.`,
     ],
