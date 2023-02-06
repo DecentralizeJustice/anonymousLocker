@@ -183,7 +183,7 @@ This method requires does not need an address, email, or other personal informat
 This method can only be used to purchase items shipped by Amazon and also has size restrictions.`
 const step2 = `Your order is shipped directly to your house. 
 This method requires a delivery address but can be used for any major retailer and is more 
-convenient.`
+convenient. Most major retailers offer a wish list function that would hide your address from the earner.`
 onMounted(() => {
 
     })
