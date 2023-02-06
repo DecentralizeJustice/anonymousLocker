@@ -47,8 +47,8 @@
     </div>
     
     <div class="row justify-evenly q-pb-xl col-12 bg-primary" >
-      <div class="row col col-10 col-md-6">
-        <q-card class="q-mt-xl text-center text-black col col-12" style="background-color:white;">
+      <div class="row col col-10 col-md-5">
+        <q-card class="q-mt-xl text-center text-primary col col-12" style="background-color:white;">
           <q-card-section class="desktop-only">
             <div
               class="text-h3  my-font "
@@ -78,7 +78,7 @@
             </div>
           </q-card-section>
         </q-card>
-        <q-card class="text-center col col-12 q-my-xl text-black" style="background-color:white;">
+        <q-card class="text-center col col-12 q-my-xl text-primary" style="background-color:white;">
           <q-card-section>
             <div class="text-h4 my-font">How It Works:</div>
             <div class="q-mt-md">
@@ -124,22 +124,21 @@
           </q-card-section>
         </q-card>
       </div>
-      <div class="col col-10 col-md-3 desktop-only">
-        <lottie-player
-        autoplay
-        loop
-        mode="normal"
-        speed=".75"
-        src="https://res.cloudinary.com/dylevfpbl/raw/upload/v1668561142/lf30_editor_a2wu4b2s.json"
-></lottie-player>
+      <div class="col col-10 col-md-4 desktop-only justify-center items-center align-center row">
+        <div class="col-12 justify-center items-center align-center row q-pa-xl" style="width: 100%;">
+          <q-img
+          class="rounded-borders"
+            :src="shop"
+          />
+              </div>
       </div>
     </div>
     <div class="row justify-evenly q-pb-xl col-12 " >
-      <div class="col col-10 col-md-3 desktop-only justify-center items-center align-center row">
-        <div class="col-10 justify-center items-center align-center row q-my-xl" style="">
+      <div class="col col-10 col-md-4 desktop-only justify-center items-center align-center row">
+        <div class="col-12 justify-center items-center align-center row q-pa-xl" style="width: 100%;">
           <q-img
           class="rounded-borders"
-            src="https://res.cloudinary.com/dylevfpbl/image/upload/v1673999438/landingpage/dgoon21_smiling_delivery_person_holding_package_in_front_of_gre_2a5a55b1-7fd4-4bf0-9cc6-a8df34c6ad4a.png"
+            :src="order"
           />
               </div>
       </div>
@@ -234,6 +233,8 @@ import ecom from "@/assets/svgs/ecommerce.svg"
 import trade from "@/assets/svgs/trade.svg"
 import happyCustomer from "@/assets/svgs/deliveryman.svg"
 import monero from "@/assets/svgs/rand.svg"
+import shop from "@/assets/svgs/undrawShop.svg"
+import order from "@/assets/svgs/undrawOrder.svg"
 require("@lottiefiles/lottie-player")
 const heroText = 'Peer To Peer Anonymous Monero Shopping'
 const heroSubtext = ``// `How Crypto Is Mean To Be`
