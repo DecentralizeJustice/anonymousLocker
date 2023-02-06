@@ -37,162 +37,182 @@
         </q-card>
       </div>
     </div>
-    <div class="row justify-evenly q-py-xl col-12">
-        <div class="col col-3 col-md-5 desktop-only row">
-          <q-img class="" loading="lazy"
-          src="https://res.cloudinary.com/dylevfpbl/image/upload/v1675528059/landingpage/dgoon21_two_futuristic_people_shaking_hands_813582c7-4fe9-4dce-b23b-63725aad4f77.png" />
-        </div>
-    </div>
     
-    <div class="row justify-evenly q-pt-xl col-12 bg-primary">
-        <div class="col-12 text-center text-white text-h3 q-pb-lg my-font">
-          How Shopping Works
-        </div>
-    <div class="row justify-evenly q-py-xl col-12">
-      <div class="row col col-10 col-md-4 items-center align-center row " >
-        <div class=" col col-12 items-center align-center row" >
-          <div class="text-left text-center text-primary q-pa-lg" style="border-radius: 10px;background-color:#D4CCC4;" >
-            <div class="text-h4 my-font text-center" style="">
-              Step 1
+    <div class="row justify-evenly q-pb-xl col-12 bg-primary" >
+      <div class="row col col-10 col-md-6">
+        <q-card class="q-mt-xl text-center text-black col col-12" style="background-color:white;">
+          <q-card-section class="desktop-only">
+            <div
+              class="text-h3  my-font "
+              style=""
+            >
+            Spend Monero Anonymously or Anywhere
             </div>
-            <div class="text-h5 text-weight-regular q-mt-md q-pa-sm" style="line-height: 130%"><span >You place your order and pay for your order. You also deposit a ~10 USD bond in XMR.</span>
-    
+            <div
+              class="text-h6 text-weight-regular q-mt-md"
+              style="line-height: 120%"
+            >
+            The Best Way To Use Monero
             </div>
-          </div>
-        </div>
-      </div>
-        <div class="col col-3 col-md-3 desktop-only row">
-          <q-img class="" loading="lazy"
-          src="https://res.cloudinary.com/dylevfpbl/image/upload/v1674010155/landingpage/dgoon21_person_sitting_at_computer_shopping_online_23e2fe8a-43f1-4ffb-85a7-9ccf47e5f883.png" />
-        </div>
-    </div>
+          </q-card-section>
+          <q-card-section class="mobile-only">
+            <div
+              class="text-h4 text-weight-regular"
+              style="line-height: 120%; font-weight: 400"
+            >
+            Spend Monero Anonymously or Anywhere
+            </div>
+            <div
+              class="text-body1 text-weight-regular q-mt-md"
+              style="line-height: 120%"
+            >
+            The Best Way To Use Monero
+            </div>
+          </q-card-section>
+        </q-card>
+        <q-card class="text-center col col-12 q-my-xl text-black" style="background-color:white;">
+          <q-card-section>
+            <div class="text-h4 my-font">How It Works:</div>
+            <div class="q-mt-md">
+              <div class="">
+                <div class="row justify-around">
+                  <div class="col-12 col-md-3">
+                    <p class="text-h6 text-weight-medium">Step 1.</p>
+                    <img :src="computer" class="q-mb-sm" :class="{'desktopIcons': $q.screen.gt.sm, 'mobileIcons': $q.screen.lt.md}" style="" />
+                    <br />
+                    <p class="text-subtitle1 text-weight-medium">
+                      You place your order and deposit your order amount and 10 USD Bond in XMR.
+                    </p>
+                  </div>
+                  <div class="col-12 col-md-3">
+                    <p class="text-h6 text-weight-medium">Step 2.</p>
+                    <img :src="ecom" class="" :class="{'desktopIconsPayment': $q.screen.gt.sm, 'mobileIconsPayment': $q.screen.lt.md}" />
 
-</div>
-<div class="row justify-evenly q-py-xl col-12 bg-primary">
-        <div class="col col-3 col-md-3 desktop-only row">
-          <q-img class="" loading="lazy"
-          src="https://res.cloudinary.com/dylevfpbl/image/upload/v1675113218/landingpage/dgoon21_smilling_delivery_person_holding_package_in_front_of_gr_74ca7bee-9f4e-417a-9163-5a170ff2bd8e.png" />
-        </div>
-      <div class="row col col-10 col-md-3 items-center align-center row">
-        <div class=" col col-12 items-center align-center row">
-          <div class="text-left text-center text-primary q-pa-sm" style="border-radius: 10px;background-color:#D4CCC4;">
-            <div class="text-h4 my-font text-center" style="">
-              Step 2
+                    <p class="text-subtitle1 text-weight-medium">
+                      An Earner Selects your order and Completes It.
+                    </p>
+                  </div>
+                  <div class="col-12 col-md-3">
+                    <p class="text-h6 text-weight-medium">Step 3.</p>
+                    <img :src="happyCustomer" class="" :class="{'desktopIcons': $q.screen.gt.sm, 'mobileIcons': $q.screen.lt.md}" style="" />
+                    <br />
+                    <p class="text-subtitle1 text-weight-medium">
+                      You Confirm That Your Order was Completed Correctly and your deposit is released to you. 
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="text-h5 text-weight-regular q-mt-md q-pa-sm" style="line-height: 130%"><span
-                >A Monero Earner accepts your order and completes it. </span>
-    
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row justify-evenly q-pt-xl col-12 bg-primary">
-    <div class="row justify-evenly q-py-xl col-12">
-      <div class="row col col-10 col-md-4 items-center align-center row">
-        <div class=" col col-12 items-center align-center row">
-          <div class="text-left text-center text-primary q-pa-lg" style="border-radius: 10px;background-color:#D4CCC4;">
-            <div class="text-h4 my-font text-center" style="">
-              Step 3
-            </div>
-            <div class="text-h5 text-weight-regular q-mt-md q-pa-sm" style="line-height: 130%"><span >You confirm that you received your item correctly, and your ~10 USD XMR deposit is refunded to you.</span>
-    
-            </div>
-          </div>
-        </div>
-      </div>
-        <div class="col col-3 col-md-3 desktop-only row">
-          <q-img class="" loading="lazy"
-          src="https://res.cloudinary.com/dylevfpbl/image/upload/v1674010309/landingpage/dgoon21_package_with_monero_logo_on_it_laying_at_front_door_of__221281d4-d484-4567-93e7-34df5a227d4a.png" />
-        </div>
-        
-    </div>
-    <div class="text-center q-mb-md">
+            <div class="text-center">
               <router-link to="/shop" style="text-decoration:none !important;">
                 <q-btn
-                style="background-color:#D4CCC4;"
-                  label="Learn More About Shopping"
+                  color="primary"
+                  label="Learn More"
                   size="lg"
                   padding="sm"
-                  class="text-primary"
                 />
               </router-link>
             </div>
-</div>
-<div class="row justify-evenly q-pt-xl col-12 ">
-        <div class="col-12 text-center text-primary text-h3 q-pb-lg my-font">
-          How Earning Works
-        </div>
-    <div class="row justify-evenly q-py-xl col-12">
-      <div class="row col col-10 col-md-4 items-center align-center row">
-        <div class=" col col-12 items-center align-center row">
-          <div class="text-left text-center text-white q-pa-lg bg-primary" style="border-radius: 10px;">
-            <div class="text-h4 my-font text-center" style="">
-              Step 1
-            </div>
-            <div class="text-h5 text-weight-regular q-mt-md q-pa-sm" style="line-height: 130%"><span >You register as a earner and deposit a ~5 USD bond in XMR.</span>
-    
-            </div>
-          </div>
-        </div>
+          </q-card-section>
+        </q-card>
       </div>
-        <div class="col col-3 col-md-3 desktop-only row">
-          <q-img class="" loading="lazy"
-          src="https://res.cloudinary.com/dylevfpbl/image/upload/v1674010155/landingpage/dgoon21_person_sitting_at_computer_shopping_online_23e2fe8a-43f1-4ffb-85a7-9ccf47e5f883.png" />
-        </div>
+      <div class="col col-10 col-md-3 desktop-only">
+        <lottie-player
+        autoplay
+        loop
+        mode="normal"
+        speed=".75"
+        src="https://res.cloudinary.com/dylevfpbl/raw/upload/v1668561142/lf30_editor_a2wu4b2s.json"
+></lottie-player>
+      </div>
     </div>
+    <div class="row justify-evenly q-pb-xl col-12 " >
+      <div class="col col-10 col-md-3 desktop-only justify-center items-center align-center row">
+        <div class="col-10 justify-center items-center align-center row q-my-xl" style="">
+          <q-img
+          class="rounded-borders"
+            src="https://res.cloudinary.com/dylevfpbl/image/upload/v1673999438/landingpage/dgoon21_smiling_delivery_person_holding_package_in_front_of_gre_2a5a55b1-7fd4-4bf0-9cc6-a8df34c6ad4a.png"
+          />
+              </div>
+      </div>
+      <div class="row col col-10 col-md-6">
+        <q-card class="q-mt-xl text-center bg-primary text-white col col-12">
+          <q-card-section class="desktop-only">
+            <div
+              class="text-h3  my-font "
+              style=""
+            >
+            Get Monero with Credit Card and No KYC
+            </div>
+            <div
+              class="text-h6 text-weight-regular q-mt-md"
+              style="line-height: 120%"
+            >
+            The Best Way To Get Monero
+            </div>
+          </q-card-section>
+          <q-card-section class="mobile-only">
+            <div
+              class="text-h4 text-weight-regular"
+              style="line-height: 120%; font-weight: 400"
+            >
+            Get Monero with Credit Card and No KYC
+            </div>
+            <div
+              class="text-body1 text-weight-regular q-mt-md"
+              style="line-height: 120%"
+            >
+            The Best Way To Get Monero
+            </div>
+          </q-card-section>
+        </q-card>
+        <q-card class="text-center col col-12 q-my-xl text-black" style="">
+          <q-card-section>
+            <div class="text-h4 my-font">How It Works:</div>
+            <div class="q-mt-md">
+              <div class="">
+                <div class="row justify-around">
+                  <div class="col-12 col-md-3">
+                    <p class="text-h6 text-weight-medium">Step 1.</p>
+                    <img :src="computer" class="q-mb-sm" :class="{'desktopIcons': $q.screen.gt.sm, 'mobileIcons': $q.screen.lt.md}" style="" />
+                    <br />
+                    <p class="text-subtitle1 text-weight-medium">
+                      You register as an earner and deposit 5 USD of XMR as a bond.
+                    </p>
+                  </div>
+                  <div class="col-12 col-md-3">
+                    <p class="text-h6 text-weight-medium">Step 2.</p>
+                    <img :src="happyCustomer" class="" :class="{'desktopIconsPayment': $q.screen.gt.sm, 'mobileIconsPayment': $q.screen.lt.md}" />
 
-</div>
-<div class="row justify-evenly q-py-xl col-12">
-        <div class="col col-3 col-md-3 desktop-only row">
-          <q-img class="" loading="lazy"
-          src="https://res.cloudinary.com/dylevfpbl/image/upload/v1675113218/landingpage/dgoon21_smilling_delivery_person_holding_package_in_front_of_gr_74ca7bee-9f4e-417a-9163-5a170ff2bd8e.png" />
-        </div>
-      <div class="row col col-10 col-md-3 items-center align-center row">
-        <div class=" col col-12 items-center align-center row">
-          <div class="text-left text-center text-white bg-primary q-pa-sm" style="border-radius: 10px;background-color:#D4CCC4;">
-            <div class="text-h4 my-font text-center" style="">
-              Step 2
+                    <p class="text-subtitle1 text-weight-medium">
+                      You select and fullfill a shoppers order.
+                    </p>
+                  </div>
+                  <div class="col-12 col-md-3">
+                    <p class="text-h6 text-weight-medium">Step 3.</p>
+                    <img :src="monero" class="" :class="{'desktopIcons': $q.screen.gt.sm, 'mobileIcons': $q.screen.lt.md}" style="" />
+                    <br />
+                    <p class="text-subtitle1 text-weight-medium">
+                      Once the order is completed you receive the order XMR and your deposit back.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="text-h5 text-weight-regular q-mt-md q-pa-sm" style="line-height: 130%"><span
-                >You pick an Amazon order and complete it.</span>
-    
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row justify-evenly q-pt-xl col-12 ">
-    <div class="row justify-evenly q-py-xl col-12">
-      <div class="row col col-10 col-md-4 items-center align-center row">
-        <div class=" col col-12 items-center align-center row">
-          <div class="text-left text-center text-white q-pa-lg bg-primary" style="border-radius: 10px;">
-            <div class="text-h4 my-font text-center" style="">
-              Step 3
-            </div>
-            <div class="text-h5 text-weight-regular q-mt-md q-pa-sm" style="line-height: 130%"><span >Once the order is confirmed to be complete, the Monero from the order and your deposit is released to you.</span>
-    
-            </div>
-          </div>
-        </div>
-      </div>
-        <div class="col col-3 col-md-3 desktop-only row">
-          <q-img class="" loading="lazy"
-          src="https://res.cloudinary.com/dylevfpbl/image/upload/v1674010309/landingpage/dgoon21_package_with_monero_logo_on_it_laying_at_front_door_of__221281d4-d484-4567-93e7-34df5a227d4a.png" />
-        </div>
-    </div>
-    <div class="text-center">
+            <div class="text-center">
               <router-link to="/earn" style="text-decoration:none !important;">
                 <q-btn
                   color="primary"
-                  label="Learn More About Earning"
+                  label="Learn More"
                   size="lg"
                   padding="sm"
-                  class="q-mb-xl"
                 />
               </router-link>
             </div>
-</div>
+          </q-card-section>
+        </q-card>
+      </div>
+    </div>
     
     <footerGlobal/>
   </q-page>
@@ -201,6 +221,10 @@
 <script setup>
 import footerGlobal from "@/components/footerGlobal.vue"
 import { onMounted } from "vue"
+import computer from "@/assets/svgs/monitor.svg"
+import ecom from "@/assets/svgs/ecommerce.svg"
+import happyCustomer from "@/assets/svgs/deliveryman.svg"
+import monero from "@/assets/svgs/rand.svg"
 require("@lottiefiles/lottie-player")
 const heroText = 'Peer To Peer Monero Shopping & Trading'
 const heroSubtext = ``// `How Crypto Is Mean To Be`
