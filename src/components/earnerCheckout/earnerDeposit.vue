@@ -64,7 +64,7 @@ const emit = defineEmits(['paymentSTarted'])
 const axios = require('axios')
 const extraNotes = ref("")
 const numberArray = ref([])
-const disableSubmit = ref(true)
+const disableSubmit = ref(false)
 async function generateRandomArray() {
   const numberArray = []
   for (var i=0;i<6; i++) {
