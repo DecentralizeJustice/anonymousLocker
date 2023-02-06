@@ -5,7 +5,7 @@
 
     <div class="row justify-evenly q-pb-xl col-12 " >
       <div class="row col col-10 col-md-6">
-        <q-card class="q-mt-xl text-center bg-primary text-white col col-12">
+        <q-card class="q-mt-xl text-center bg-primary text-white col col-12"  >
           <q-card-section class="desktop-only">
             <div
               class="text-h3  my-font "
@@ -47,8 +47,8 @@
     </div>
     
     <div class="row justify-evenly q-pb-xl col-12 bg-primary" >
-      <div class="row col col-10 col-md-5">
-        <q-card class="q-mt-xl text-center text-primary col col-12" style="background-color:white;">
+      <div class="row col col-10 col-md-6">
+        <q-card class="q-mt-xl text-center text-primary col col-12" style="width: 100%; background-color:#D4CCC4;">
           <q-card-section class="desktop-only">
             <div
               class="text-h3  my-font "
