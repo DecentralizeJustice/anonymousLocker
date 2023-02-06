@@ -34,6 +34,14 @@
               {{heroSubtext}}
             </div>
           </q-card-section>
+          <div class="col col-12 justify-center items-center align-center row">
+        <div class="col-6 col-md-4 justify-center items-center align-center row q-mb-md" style="">
+          <q-img
+          class="rounded-borders"
+          :src="trade"
+          />
+              </div>
+      </div>
         </q-card>
       </div>
     </div>
@@ -223,6 +231,7 @@ import footerGlobal from "@/components/footerGlobal.vue"
 import { onMounted } from "vue"
 import computer from "@/assets/svgs/monitor.svg"
 import ecom from "@/assets/svgs/ecommerce.svg"
+import trade from "@/assets/svgs/trade.svg"
 import happyCustomer from "@/assets/svgs/deliveryman.svg"
 import monero from "@/assets/svgs/rand.svg"
 require("@lottiefiles/lottie-player")
