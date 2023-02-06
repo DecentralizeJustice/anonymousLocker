@@ -70,6 +70,10 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+    q: `If you were an earner placing a deposit at 4pm on Sunday and your order is not showing up, please shoot me a message here. `,
+    a: `There was a mistake in your order and I need you to message me here. Thanks again!`
+  },
+{
     q: `Do you allow multiple items in one order? The FAQ uses singular "item" so it's not clear. The $5 fee is a lot for cheap items and some of mine don't meet the purchase minimum.`,
     a: `Hi Friend, we allow multiple items to be bought and delivered to the same locker. Most of our orders involve multiple items. I will make the faq more clear about that!`
   },
