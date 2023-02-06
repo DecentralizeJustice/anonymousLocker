@@ -185,7 +185,7 @@
                     <img :src="happyCustomer" class="" :class="{'desktopIconsPayment': $q.screen.gt.sm, 'mobileIconsPayment': $q.screen.lt.md}" />
 
                     <p class="text-subtitle1 text-weight-medium">
-                      You select and fullfill a shoppers order.
+                      You select and fullfill an Amazon order.
                     </p>
                   </div>
                   <div class="col-12 col-md-3">
@@ -226,7 +226,7 @@ import ecom from "@/assets/svgs/ecommerce.svg"
 import happyCustomer from "@/assets/svgs/deliveryman.svg"
 import monero from "@/assets/svgs/rand.svg"
 require("@lottiefiles/lottie-player")
-const heroText = 'Peer To Peer Monero Shopping & Trading'
+const heroText = 'Peer To Peer Anonymous Monero Shopping'
 const heroSubtext = ``// `How Crypto Is Mean To Be`
 
 onMounted(() => {
