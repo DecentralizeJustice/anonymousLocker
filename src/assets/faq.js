@@ -18,7 +18,7 @@ const faq = {
     ],
     [
       `Do you offer refunds?`,
-      `We do not offer refunds for shipped items.`,
+      `Due to Amazon return scams, you must make an account and use the included gift recipient to make a return.`,
     ]
   ],
   "Locker Questions": [
@@ -126,7 +126,7 @@ const faq = {
     ],
     [
       `Do you offer refunds/returns?`,
-      `Due to Amazon return scam, you must make an account and use the included gift recipient to make a return.`,
+      `Due to Amazon return scams, you must make an account and use the included gift recipient to make a return.`,
     ],
     [
       `Why is my cart not saved if I refresh?`,
