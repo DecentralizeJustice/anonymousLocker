@@ -23,7 +23,8 @@
         </q-card-section>
         <q-separator />
         <q-card-section>
-              <div class="col-12 text-center row justify-center text-h5 q-my-md" v-for="order in orderBook" :key="order.link">
+          <div v-if="orderBook.length !== 0">
+              <div  class="col-12 text-center row justify-center text-h5 q-my-md" v-for="order in orderBook" :key="order.link">
                 <q-card class="q-pt-md" style="width: 100%; background-color:#D4CCC4;">
                   <div class="row">
                     <div class="col desktop-only">{{order.xmrAmount}}</div>
@@ -37,12 +38,22 @@
                   </div>
                 </q-card>
               </div>
+            </div>
+              <div  v-if="orderBook.length === 0" class="col col-12 justify-center items-center align-center row">
+                <div class="col-6 col-md-2 justify-center items-center align-center row q-pa-xl" style="">
+                  <q-img
+                  class="rounded-borders"
+                    :src="order"
+                  />
+                      </div>
+              </div>
         </q-card-section>
       </q-card>
     </div>
   </div>
 </template>
 <script setup>
+import order from "@/assets/svgs/empty-cart.svg"
 function ratio(xmr,usd) {
   return Number(Number(usd)/Number(xmr)).toFixed(2)
 }
