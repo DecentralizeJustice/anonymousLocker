@@ -126,12 +126,7 @@ const faq = {
     ],
     [
       `Do you offer refunds/returns?`,
-      `Due to Amazon return scam, we offer returns for delivered items based on our discretion.
-            If you have any concerns about this policy, please reach out before you receive your item.`,
-    ],
-    [
-      `How do refunds work?`,
-      `If we approve your return,  We will coordinate a return with you. Once amazon processes and approves the return I will refund you.`,
+      `Due to Amazon return scam, you must make an account and use the included gift recipient to make a return.`,
     ],
     [
       `Why is my cart not saved if I refresh?`,
