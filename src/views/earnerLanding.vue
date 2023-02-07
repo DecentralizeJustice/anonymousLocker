@@ -90,6 +90,11 @@
               </div>
       </div>
     </div>
+    <div class="row q-pb-xl col-12 text-center justify-center" >
+      <div class="row col col-12 col-md-8 justify-center">
+        <orderBook/>
+      </div>
+    </div>
     <div class="row justify-evenly q-py-xl col-12 ">
       <div class="text-h4 my-font col-12 col-md-7 q-mt-md text-center">Earner FAQ:</div>
       <q-card class="col-12 col-md-7 q-mt-md" v-for="(catagory, key) in correctFaq" :key="key" >
@@ -122,7 +127,7 @@
 </template>
 
 <script setup>
-
+import orderBook from "@/components/orders/orderBook.vue"
 import computer from "@/assets/svgs/monitor.svg"
 import monero from "@/assets/svgs/rand.svg"
 import happyCustomer from "@/assets/svgs/deliveryman.svg"

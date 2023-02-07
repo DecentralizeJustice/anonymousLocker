@@ -45,7 +45,7 @@
         </q-card>
       </div>
     </div>
-    
+
     <div class="row justify-evenly q-pb-xl col-12 bg-primary" >
       <div class="row col col-10 col-md-6">
         <q-card class="q-mt-xl text-center text-primary col col-12" style="width: 100%; background-color:#D4CCC4;">
