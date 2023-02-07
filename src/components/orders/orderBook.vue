@@ -24,7 +24,7 @@
         <q-separator />
         <q-card-section>
               <div class="col-12 text-center row justify-center text-h5 q-my-md" v-for="order in orderBook" :key="order.link">
-                <q-card class="q-pa-md" style="width: 100%; background-color:#D4CCC4;">
+                <q-card class="q-pt-md" style="width: 100%; background-color:#D4CCC4;">
                   <div class="row">
                     <div class="col desktop-only">{{order.xmrAmount}}</div>
                     <div class="col">{{order.usdAmount}}</div>
