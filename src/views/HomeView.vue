@@ -56,12 +56,6 @@
             >
             Spend Monero Anonymously or Anywhere
             </div>
-            <div
-              class="text-h6 text-weight-regular q-mt-md"
-              style="line-height: 120%"
-            >
-            The Best Way To Use Monero
-            </div>
           </q-card-section>
           <q-card-section class="mobile-only">
             <div
@@ -69,12 +63,6 @@
               style="line-height: 120%; font-weight: 400"
             >
             Spend Monero Anonymously or Anywhere
-            </div>
-            <div
-              class="text-body1 text-weight-regular q-mt-md"
-              style="line-height: 120%"
-            >
-            The Best Way To Use Monero
             </div>
           </q-card-section>
         </q-card>
@@ -151,12 +139,6 @@
             >
             Get Monero with Credit Card and No KYC
             </div>
-            <div
-              class="text-h6 text-weight-regular q-mt-md"
-              style="line-height: 120%"
-            >
-            The Best Way To Get Monero
-            </div>
           </q-card-section>
           <q-card-section class="mobile-only">
             <div
@@ -164,12 +146,6 @@
               style="line-height: 120%; font-weight: 400"
             >
             Get Monero with Credit Card and No KYC
-            </div>
-            <div
-              class="text-body1 text-weight-regular q-mt-md"
-              style="line-height: 120%"
-            >
-            The Best Way To Get Monero
             </div>
           </q-card-section>
         </q-card>
