@@ -48,7 +48,7 @@ const orderBook = [
     name: "pale key",
     zipcode: "00000",
     type: "Wish List",
-    xmrAmount:"6",
+    xmrAmount:"7.181",
     link: "https://www.amazon.com/gp/product/B09MW13RQH/",
     country: "United States",
     usdAmount: "1208.40",
