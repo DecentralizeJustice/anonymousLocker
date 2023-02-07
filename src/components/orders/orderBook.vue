@@ -54,16 +54,16 @@ const orderBook = [
     usdAmount: "1208.40",
     numberOfItems: "1"
   },
-/*   {
+  {
     name: "loyal bow",
     zipcode: "00000",
     type: "Wish List",
-    xmrAmount:"7.181",
-    link: "https://www.amazon.com/gp/product/B09MW13RQH/",
+    xmrAmount:"7.86",
+    link: "https://www.amazon.com/SAMSUNG-Smartphone-Unlocked-Brightest-Processor/dp/B09MW11C2H",
     country: "United States",
-    usdAmount: "1208.40",
+    usdAmount: "1,323.94",
     numberOfItems: "1"
-  } */
+  }
 ]
 </script>
 <style lang="sass" scoped>
