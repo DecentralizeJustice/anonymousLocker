@@ -46,10 +46,10 @@
       <q-separator />
       <q-card-section class="text-left  q-pa-md" v-for="(item, index) in questions" :key="item.q">
         <div class="text-body1 bg-grey-10 q-pa-md text-white">
-          Question {{getCorrectIndex(index)}}:    {{item.q}}   
+          Question {{getCorrectIndex(index)}}:    <br/> {{item.q}}   
           </div>
-          <div class="text-body1 q-pa-md">
-            Answer: {{item.a}}      
+          <div class="text-body1 q-pt-sm">
+            Answer: <p v-html="item.a"></p>  
           </div>
       </q-card-section>
       
@@ -69,6 +69,26 @@ const text = ref('')
 const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
+  { q: 
+    `Hello, just so it’s clear for me, people want to buy stuff off Amazon but are spending with XMR, since XMR is not a payment method on their site the “earner” buys the 
+    item which will include shipping info I suppose, with fiat (credit card) once the purchase is complete the “earner” receives the XMR? The earner has to deposit 5 XMR worth 
+    in USD regardless of the purchase amount? How does one make the deposit/ where do the funds sit? And after order is purchased how long until deposit is received back and XMR credited? 
+    It says if a dispute you will need login info …. As in user ID and password to the earners AMZ acct, is that right? And what about shipping issues or returns, how is that handled?  
+    Sorry for the lengthy questions, just want to make sure ai understood the FAQ’s and any nuances`,
+    a: `Wow this is a great question!
+    <ol>
+      <li>Deposits are made on our site at the earner tab. 
+      Yes the deposit system works as you have said. We hold the funds until both sides are happy and we release the funds. The earner deposits 5 USD.</li>
+      <li>We push the receiver to respond within a day of them receiving the item so that we can release the funds to the earner.</li>
+      <li>Yes we handle disputes that way. The earner does not support refunds. The shopper has to handle that on their end since the order should be marked as a gift.
+        All issues will be handled according to who is in the wrong. If the earner completed their end as they were instructed they will not be punished.
+        If there is a shipping issue out of control of the shopper or earner we will consult and see what both parties would like. That could result in
+        a new order being made, or a refund to both parties.  We have not had any issues yet, but if we do we will write a post- mortem of the situation to 
+        document how edge cases were handled.</li>
+    </ol>
+    Thanks for the great questions, hopefully I did a good job at answering them!
+    `
+  },
 {
     q: `If you were an earner placing a deposit at 4pm on Sunday and your order is not showing up, please shoot me a message here. `,
     a: `There was a mistake in your order and I need you to message me here. Thanks again!`
