@@ -48,24 +48,6 @@ function ratio(xmr,usd) {
 }
 const orderBook = [
 /*   {
-    name: "pale key",
-    type: "Wish List",
-    xmrAmount:"7.181",
-    link: "https://www.amazon.com/gp/product/B09MW13RQH/",
-    country: "United States",
-    usdAmount: "1208.40",
-    numberOfItems: "1"
-  }, */
-/*   {
-    name: "loyal bow",
-    type: "Wish List",
-    xmrAmount:"7.86",
-    link: "https://www.amazon.com/SAMSUNG-Smartphone-Unlocked-Brightest-Processor/dp/B09MW11C2H",
-    country: "United States",
-    usdAmount: "1,323.94",
-    numberOfItems: "1"
-  }, */
-  {
     name: "short hill",
     type: "Locker",
     xmrAmount:".327",
@@ -73,7 +55,7 @@ const orderBook = [
     country: "United States",
     usdAmount: "55.10",
     numberOfItems: "2"
-  }
+  } */
 ]
 </script>
 <style lang="sass" scoped>
