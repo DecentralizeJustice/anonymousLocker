@@ -51,7 +51,7 @@ const orderBook = [
     usdAmount: "1208.40",
     numberOfItems: "1"
   },
-  {
+/*   {
     name: "loyal bow",
     type: "Wish List",
     xmrAmount:"7.86",
@@ -59,7 +59,7 @@ const orderBook = [
     country: "United States",
     usdAmount: "1,323.94",
     numberOfItems: "1"
-  },
+  }, */
   {
     name: "short hill",
     type: "Locker",
