@@ -47,7 +47,7 @@ function ratio(xmr,usd) {
   return Number(Number(usd)/Number(xmr)).toFixed(2)
 }
 const orderBook = [
-  {
+/*   {
     name: "pale key",
     type: "Wish List",
     xmrAmount:"7.181",
@@ -55,7 +55,7 @@ const orderBook = [
     country: "United States",
     usdAmount: "1208.40",
     numberOfItems: "1"
-  },
+  }, */
 /*   {
     name: "loyal bow",
     type: "Wish List",
