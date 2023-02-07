@@ -9,8 +9,9 @@
                     </p>
                 <q-card class="q-pa-md" style="width: 100%;">
                   <div class="row">
-                    <div class="col desktop-only">XMR Amount</div>
-                    <div class="col">USD Amount</div>
+                    <div class="col desktop-only">XMR Earned<br/></div>
+                    <div class="col">USD Cost</div>
+                    <div class="col desktop-only">XMR/USD</div>
                     <div class="col desktop-only">Link</div>
                     <div class="col">Country</div>
                     <div class="col desktop-only">Number of Items</div>
@@ -27,6 +28,7 @@
                   <div class="row">
                     <div class="col desktop-only">{{order.xmrAmount}}</div>
                     <div class="col">{{order.usdAmount}}</div>
+                    <div class="col desktop-only">{{ratio(order.xmrAmount,order.usdAmount)}}</div>
                     <div class="col desktop-only"><a :href="order.link" target="_blank" rel="noopener noreferrer">Link</a></div>
                     <div class="col">{{order.country}}</div>
                     <div class="col desktop-only">{{order.numberOfItems}}</div>
@@ -41,6 +43,9 @@
   </div>
 </template>
 <script setup>
+function ratio(xmr,usd) {
+  return Number(Number(usd)/Number(xmr)).toFixed(2)
+}
 const orderBook = [
   {
     name: "pale key",
