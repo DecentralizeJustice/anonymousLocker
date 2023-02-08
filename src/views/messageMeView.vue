@@ -69,6 +69,10 @@ const text = ref('')
 const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
+  { q: "Mastodon is mentioned as a social media contact point but it is not listed at the bottom of the website...just an observation.",
+  a: "Hi. Thanks for the info. Where do you see a post about Mastadon? We have not gotten around to setting it up and need to remove the reference. Thanks for reaching out!"
+
+  },
   { q: 
     `Hello, just so it’s clear for me, people want to buy stuff off Amazon but are spending with XMR, since XMR is not a payment method on their site the “earner” buys the 
     item which will include shipping info I suppose, with fiat (credit card) once the purchase is complete the “earner” receives the XMR? The earner has to deposit 5 XMR worth 
