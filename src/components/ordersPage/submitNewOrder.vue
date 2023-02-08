@@ -191,6 +191,7 @@ const itemList = ref([])
 const lockerZipcode = ref(0)
 const lockerName = ref("")
 const extraNotes = ref("")
+const discount = ref(0) // integer
 // const percentageFee = 0
 const minOrderamount = 25
 const baseFee = 10
@@ -275,8 +276,13 @@ const taxAmount = computed(() => {
 })
 const finalTotalUSD = computed(() => {
   const longNumber =
-    Number(orderUSDSubTotal.value) + Number(serviceFeeUSD.value) + Number(taxAmount.value) + Number(extra.value)
+    Number(orderUSDSubTotal.value) + Number(taxAmount.value) + Number(serviceFeeUSD.value) + Number(extra.value) - Number(discountAmount.value)
   return Number(longNumber).toFixed(2)
+})
+const discountAmount = computed(() => {
+  const longNumber =
+    Number(Number(orderUSDSubTotal.value) + Number(taxAmount.value)) * Number(discount.value/100)
+  return Number(longNumber)
 })
 const paymentTicker = computed(() => {
   const tickerDict = {'Monero': 'xmr', 'Litecoin':'ltc', 'Bitcoin': 'btc', 'Ethereum': 'eth'}

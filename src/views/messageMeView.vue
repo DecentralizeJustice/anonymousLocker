@@ -69,6 +69,12 @@ const text = ref('')
 const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
+{ q: `Hey sorry to bother you. i had an issue with an order not completed then for a mistakes sent twice payment.
+
+I don't have a. chat in  order payment page`,
+  a: `Hi Friend. We will process your order and refund you the correct amount. 
+  Give us some time and we will make a chat and order number for you.`
+  },
   { q: "Mastodon is mentioned as a social media contact point but it is not listed at the bottom of the website...just an observation.",
   a: "Hi. Thanks for the info. Where do you see a post about Mastadon? We have not gotten around to setting it up and need to remove the reference. Thanks for reaching out!"
 
