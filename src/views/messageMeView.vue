@@ -69,9 +69,15 @@ const text = ref('')
 const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
+  { q: `I tried to do concierge service/ship to an address but it asked for payment before I'd given an address. How do I submit an address to ship to?`,
+    a: `You pay and then we check your order and get it ready for our earners. 
+    After we check over it, we message you again in chat to get your address.
+    Doing things this way ensures that we only collect your sensitive information( such as your address) when we know for 100% certainty we can complete your order.
+    We would have for you to give us sensitive info for an order that we can not process. Thanks for the good question. I will add an entry into our FAQ`
+  },
   { q: `Hello I have an issue with order payment, (I had a double issue with the payment.)`,
-  a: `Hi Friend. we have created a new order for you. Please login using the 6 word passphrase that you had for your first payment. The first word 
-  should start with a h.`
+    a: `Hi Friend. we have created a new order for you. Please login using the 6 word passphrase that you had for your first payment. The first word 
+    should start with a h.`
   },
   { q: `Hey sorry to bother you. i had an issue with an order not completed then for a mistakes sent twice payment.I don't have a. chat in  order payment page`,
   a: `Hi Friend. We will process your order and refund you the correct amount. 
