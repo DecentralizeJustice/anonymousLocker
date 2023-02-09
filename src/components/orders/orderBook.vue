@@ -29,7 +29,7 @@
                   <div class="row">
                     <div class="col desktop-only">{{order.xmrAmount}}</div>
                     <div class="col">~{{order.usdAmount}}</div>
-                    <div class="col desktop-only">~{{ratio(order.xmrAmount,order.usdAmount)}}</div>
+                    <div class="col desktop-only">~{{ratio(order.xmrAmount,order.usdAmount)}} XMR</div>
                     <div class="col desktop-only">{{order.description}}</div>
                     <div class="col">{{order.country}}</div>
                     <div class="col desktop-only">{{order.numberOfItems}}</div>
