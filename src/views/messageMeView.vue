@@ -69,9 +69,11 @@ const text = ref('')
 const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
-{ q: `Hey sorry to bother you. i had an issue with an order not completed then for a mistakes sent twice payment.
-
-I don't have a. chat in  order payment page`,
+  { q: `Hello I have an issue with order payment, (I had a double issue with the payment.)`,
+  a: `Hi Friend. we have created a new order for you. Please login using the 6 word passphrase that you had for your first payment. The first word 
+  should start with a h.`
+  },
+  { q: `Hey sorry to bother you. i had an issue with an order not completed then for a mistakes sent twice payment.I don't have a. chat in  order payment page`,
   a: `Hi Friend. We will process your order and refund you the correct amount. 
   Give us some time and we will make a chat and order number for you.`
   },
