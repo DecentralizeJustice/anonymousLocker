@@ -7,6 +7,10 @@ const myEmail = process.env.myEmail
 const MAILGUN_API_KEY = process.env.MAILGUN_API_KEY
 const DOMAIN = process.env.mailGunDomain
 const mg = mailgun.client({username: 'api', key: MAILGUN_API_KEY});
+const path = require("path")
+const fs = require('fs')
+const pathWordlist = path.resolve(__dirname + "/bip39Wordlist.txt")
+const words = fs.readFileSync(pathWordlist, 'utf8').toString().split("\n")
 exports.handler = async (event) => {
   // Only allow POST
   if (event.httpMethod !== "POST") {
@@ -20,14 +24,15 @@ exports.handler = async (event) => {
   const newMessage = { from: sender, message, sent: Date.now()}
   const result = await updateBucket(bucket, newMessage)
   if (sender !== 'dgoon') {
+    const firstNumber = Number(bucket.split(',')[0])
+    const firstWordd = words[firstNumber]
     await mg.messages.create(DOMAIN, {
       from: "Anon Server <me@samples.mailgun.org>",
       to: [myEmail],
       subject: "New Anon Locker Message From Customer!",
-      text: `You got another message from a customer!`
+      text: `You got another message from  ` + firstWordd + '!'
     })
   }
-  console.log(result)
   return {
     statusCode: 200,
     body: JSON.stringify(result),
