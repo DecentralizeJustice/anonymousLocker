@@ -73,7 +73,7 @@ const questions = [
     a: `You pay and then we check your order and get it ready for our earners. 
     After we check over it, we message you again in chat to get your address.
     Doing things this way ensures that we only collect your sensitive information( such as your address) when we know for 100% certainty we can complete your order.
-    We would have for you to give us sensitive info for an order that we can not process. Thanks for the good question. I will add an entry into our FAQ`
+    We would hate for you to give us sensitive info for an order that we can not process. Thanks for the good question. I will add an entry into our FAQ`
   },
   { q: `Hello I have an issue with order payment, (I had a double issue with the payment.)`,
     a: `Hi Friend. we have created a new order for you. Please login using the 6 word passphrase that you had for your first payment. The first word 
