@@ -12,7 +12,7 @@
                     <div class="col desktop-only">XMR Earned<br/></div>
                     <div class="col">USD Cost</div>
                     <div class="col desktop-only">XMR/USD</div>
-                    <div class="col desktop-only">Link</div>
+                    <div class="col desktop-only">Description</div>
                     <div class="col">Country</div>
                     <div class="col desktop-only">Number of Items</div>
                     <div class="col desktop-only">Delivery Method</div>
@@ -28,9 +28,9 @@
                 <q-card class="q-pt-md" style="width: 100%; background-color:#D4CCC4;">
                   <div class="row">
                     <div class="col desktop-only">{{order.xmrAmount}}</div>
-                    <div class="col">{{order.usdAmount}}</div>
-                    <div class="col desktop-only">{{ratio(order.xmrAmount,order.usdAmount)}}</div>
-                    <div class="col desktop-only"><a :href="order.link" target="_blank" rel="noopener noreferrer">Link</a></div>
+                    <div class="col">~{{order.usdAmount}}</div>
+                    <div class="col desktop-only">~{{ratio(order.xmrAmount,order.usdAmount)}}</div>
+                    <div class="col desktop-only"><a :href="order.description" target="_blank" rel="noopener noreferrer">{{order.description}}</a></div>
                     <div class="col">{{order.country}}</div>
                     <div class="col desktop-only">{{order.numberOfItems}}</div>
                     <div class="col desktop-only">{{order.type}}</div>
@@ -58,15 +58,33 @@ function ratio(xmr,usd) {
   return Number(Number(usd)/Number(xmr)).toFixed(2)
 }
 const orderBook = [
-/*   {
-    name: "short hill",
+  {
+    name: "complex river",
     type: "Locker",
-    xmrAmount:".327",
-    link: "https://www.amazon.com/gp/product/B0BP16CHNL/",
+    xmrAmount:".48",
+    description: "Books",
     country: "United States",
-    usdAmount: "55.10",
-    numberOfItems: "2"
-  } */
+    usdAmount: "74.69",
+    numberOfItems: "3"
+  },
+  {
+    name: "trite cookie",
+    type: "Locker",
+    xmrAmount:".5773",
+    description: "Books",
+    country: "United States",
+    usdAmount: "89.71",
+    numberOfItems: "3"
+  },
+  {
+    name: "itchy village",
+    type: "Locker",
+    xmrAmount:".506",
+    description: "Books",
+    country: "United States",
+    usdAmount: "78.77",
+    numberOfItems: "3"
+  }
 ]
 </script>
 <style lang="sass" scoped>
