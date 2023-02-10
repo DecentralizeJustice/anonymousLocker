@@ -65,7 +65,8 @@ function processFirstMessage(orderDetails, numberArray) {
   firstString = firstString.concat(welcomeMessage)
   firstString = firstString.concat(`${orderDetails.extraNotes}` + `<br/><br/>`)
   firstString = firstString.concat(`XMR Paid:  ` + nowPaymentsInfo.pay_amount + `<br/><br/>`)
-  firstString = firstString.concat(`We will contact you soon and get you some orders!` + `<br/><br/>`)
+  firstString = firstString.concat(`Hi Friend. We have some orders ready to go! You can check out the order list here: https://anonshop.app/earn . The website shows more info on desktop. Just let me know which order you want to take and I will get you started. It's a first come, first serve type of deal 🏃` + `<br/><br/>`)
+  
   const orderLink = `You can use this link to access your earner chat with us: ` + getCheckOrderLink(numberArray)
   firstString = firstString.concat(orderLink)
   return firstString
