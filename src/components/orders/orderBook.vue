@@ -10,13 +10,13 @@
                 <q-card class="q-pa-md" style="width: 100%;">
                   <div class="row">
                     <div class="col">XMR Earned<br/></div>
-                    <div class="col">USD Cost</div>
-                    <div class="col desktop-only">XMR/USD</div>
+                    <div class="col desktop-only">USD Cost</div>
+                    <div class="col">XMR/USD</div>
                     <div class="col desktop-only">Description</div>
                     <div class="col desktop-only">Country</div>
                     <div class="col desktop-only">Number of Items</div>
                     <div class="col desktop-only">Delivery Method</div>
-                    <div class="col">Order Name</div>
+                    <div class="col desktop-only">Order Name</div>
                   </div>
                 </q-card>
               </div>
@@ -28,13 +28,13 @@
                 <q-card class="q-pt-md" style="width: 100%; background-color:#D4CCC4;">
                   <div class="row">
                     <div class="col">{{order.xmrAmount}}</div>
-                    <div class="col">~{{order.usdAmount}}</div>
+                    <div class="col desktop-only">~{{order.usdAmount}}</div>
                     <div class="col">~{{ratio(order.xmrAmount,order.usdAmount)}} XMR</div>
                     <div class="col desktop-only">{{order.description}}</div>
                     <div class="col desktop-only">{{order.country}}</div>
                     <div class="col desktop-only">{{order.numberOfItems}}</div>
                     <div class="col desktop-only">{{order.type}}</div>
-                    <div class="col">{{order.name}}</div>
+                    <div class="col desktop-only">{{order.name}}</div>
                   </div>
                 </q-card>
               </div>
