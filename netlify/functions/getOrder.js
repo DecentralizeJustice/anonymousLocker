@@ -8,8 +8,8 @@ exports.handler = async (event, context) => {
   const params = event.body
   const parsed = JSON.parse(params)
   const bucketID = parsed.bucketID
-  // console.log('Requested Bucket ID:')
-  // console.log(bucketID)
+  console.log('Requested Bucket ID:')
+  console.log(bucketID)
   const redis = new Redis({
     host: 'redis-12641.c278.us-east-1-4.ec2.cloud.redislabs.com',
     port: 12641,

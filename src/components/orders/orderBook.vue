@@ -67,7 +67,7 @@ const orderBook = [
     usdAmount: "74.69",
     numberOfItems: "3"
   },
-  {
+/*   {
     name: "trite cookie",
     type: "Locker",
     xmrAmount:".5773",
@@ -75,7 +75,7 @@ const orderBook = [
     country: "United States",
     usdAmount: "89.71",
     numberOfItems: "3"
-  },
+  }, */
   {
     name: "itchy village",
     type: "Locker",
