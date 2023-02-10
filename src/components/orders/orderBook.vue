@@ -76,7 +76,7 @@ const orderBook = [
     usdAmount: "89.71",
     numberOfItems: "3"
   }, */
-  {
+/*   {
     name: "itchy village",
     type: "Locker",
     xmrAmount:".506",
@@ -84,7 +84,7 @@ const orderBook = [
     country: "United States",
     usdAmount: "78.77",
     numberOfItems: "3"
-  }
+  } */
 ]
 </script>
 <style lang="sass" scoped>
