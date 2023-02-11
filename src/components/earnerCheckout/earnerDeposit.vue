@@ -46,6 +46,7 @@
                   label="Submit Order"
                   @click="submitOrder"
                   text-color="white"
+                  :disable='true'
                 />
               </div>
             </div>

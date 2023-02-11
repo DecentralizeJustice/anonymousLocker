@@ -155,12 +155,13 @@
               </div>
               <div class="row col-12 col-md-8 q-mt-md justify-center">
                 <q-btn
-                  :disable="itemList.length === 0 || disableSubmit"
+
                   class="col-12"
                   color="green"
                   label="Submit Order"
                   @click="submitOrder"
                   text-color="white"
+                  :disable='true'
                 />
               </div>
             </div>
@@ -173,6 +174,7 @@
 </template>
 
 <script setup>
+//                  :disable="itemList.length === 0 || disableSubmit"
 import { ref, watch, computed, defineEmits, toRaw } from "vue"
 import cart from "@/assets/svgs/cart.svg"
 import { encrypt, getRandomInt } from "@/assets/misc.js"
