@@ -58,7 +58,7 @@ function ratio(xmr,usd) {
   return Number(Number(usd)/Number(xmr)).toFixed(2)
 }
 const orderBook = [
-  {
+/*   {
     name: "complex river",
     type: "Locker",
     xmrAmount:".48",
@@ -66,7 +66,7 @@ const orderBook = [
     country: "United States",
     usdAmount: "74.69",
     numberOfItems: "3"
-  },
+  }, */
 /*   {
     name: "trite cookie",
     type: "Locker",
