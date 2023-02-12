@@ -46,7 +46,6 @@
                   label="Submit Order"
                   @click="submitOrder"
                   text-color="white"
-                  :disable='true'
                 />
               </div>
             </div>
@@ -62,7 +61,7 @@
 import { ref, defineEmits, toRaw } from "vue"
 import { encrypt, getRandomInt } from "@/assets/misc.js"
 const emit = defineEmits(['paymentSTarted'])
-const axios = require('axios')
+// const axios = require('axios')
 const extraNotes = ref("")
 const numberArray = ref([])
 const disableSubmit = ref(false)
@@ -80,12 +79,12 @@ async function submitOrder() {
   console.log(encryptedPassphrase)
   try {
   disableSubmit.value = true
-  const results = await axios.post('/.netlify/functions/createPayment', { encryptedPassphrase, finalTotalUSD: 5, paymentCoin: 'xmr' })
+  // const results = await axios.post('/.netlify/functions/createPayment', { encryptedPassphrase, finalTotalUSD: 5, paymentCoin: 'xmr' })
   disableSubmit.value = false
   emit('paymentSTarted', 
   { 
-    nowPaymentsInfo: results.data, numberArray: toRaw(numberArray.value), encryptedPassphrase, 
-   extraNotes: toRaw(extraNotes.value), paymentCoin: 'xmr'
+    numberArray: toRaw(numberArray.value), encryptedPassphrase, 
+    extraNotes: toRaw(extraNotes.value)
   })
 } catch (err) {
   disableSubmit.value = false
