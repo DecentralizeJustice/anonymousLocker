@@ -114,8 +114,7 @@ const faq = {
     ],
     [
       `What happens If I don't pick my order up from the locker?`,
-      `If you don't pick up your order and Amazon returns the order we charge a 30% restocking fee on items returned.
-            You should communicate if you can not pick up your item in time. I can arrange delivery around your schedule, just let me know
+      `If you don't pick up your order you will lose your funds. If you can not pick up your orders, I would recommend you use the home delivery option.
             `,
     ],
     [
