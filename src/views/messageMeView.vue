@@ -69,6 +69,12 @@ const text = ref('')
 const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
+    {
+    q: `Can you check if this page is working properly ?
+  https ://anonshop.app/registerEarner
+  I use an ad blocker and have enabled anonshop and plausable.i cant proceed ?`,
+      a: `We are only accepting shoppers at this time.`
+    },
   { q: `I tried to do concierge service/ship to an address but it asked for payment before I'd given an address. How do I submit an address to ship to?`,
     a: `You pay and then we check your order and get it ready for our earners. 
     After we check over it, we message you again in chat to get your address.
