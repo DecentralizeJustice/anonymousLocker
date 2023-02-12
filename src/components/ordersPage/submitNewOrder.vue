@@ -158,7 +158,7 @@
               </div>
               <div class="row col-12 col-md-8 q-mt-md justify-center">
                 <q-btn
-                :disable='true'
+                  :disable="itemList.length === 0 || disableSubmit"
                   class="col-12"
                   color="green"
                   label="Submit Order"

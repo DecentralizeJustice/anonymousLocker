@@ -161,7 +161,7 @@
                   label="Submit Order"
                   @click="submitOrder"
                   text-color="white"
-                  :disable='true'
+                  :disable="itemList.length === 0 || disableSubmit"
                 />
               </div>
             </div>
