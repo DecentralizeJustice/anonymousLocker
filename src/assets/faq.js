@@ -26,7 +26,7 @@ const faq = {
     ],
     [
       `Do you offer refunds?`,
-      `Due to Amazon return scams, you must make an account and use the included gift recipient to make a return.`,
+      `Due to Amazon return scams, you must make an account and use the included gift recipient to make a return on delivered items.`,
     ]
   ],
   "Locker Questions": [
@@ -46,7 +46,7 @@ const faq = {
     ],
     [
       `How long does it take to process an order?`,
-      `I aim to process all orders within 12 hours.`,
+      `I aim to process all orders within 24 hours.`,
     ],
     [
       `How long does shipping take?`,
@@ -66,13 +66,13 @@ const faq = {
         </ol>
         I also have a full demo of Anonymous Locker <a href="https://res.cloudinary.com/dylevfpbl/video/upload/v1669001384/Untitled.mp4">here</a>.`,
     ],
-    [
+/*     [
       "How Much is This Service?",
       `My service is 3% on top of the amazon order subtotal plus a flat 5 dollar base service fee. My service assumes that the sales tax
         charged by amazon is 8%. This is higher than most purchases will experience, 
         so I will gladly refund you any extra taxes you pay once I place your order
         and get the exact amount.`,
-    ],
+    ], */
     [
       "Why Should I hide my shipping address?",
       `Let's say you wanted to buy a hardware wallet. 
