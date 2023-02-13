@@ -69,6 +69,19 @@ const text = ref('')
 const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
+{
+    q: `How do you handle items that aren't eligible for Amazon lockers? I've used lockers before and sometimes it wouldn't let me order certain items to lockers. Unfortunately there doesn't seem to be a good of way of knowing this without logging into an account to check beforehand.
+`,
+      a: `If an item ships from Amazon it can fit into a locker. There are some size restrictions lockers also. You can look up
+      an item and ensure that it says, "Ships from Amazon.com" without logging in. If your item can not ship to a locker, you must use the home delivery option.`
+    },
+    {
+    q: `Can I order from websites such as, AliExpress, AliBaba or Shein??
+          Or is this exclusive to Amazon?
+      + Can I order to an address in a third world country (middle east) or is it exclusive to the US? and if not when are you planning to expand this service to support more countries?
+      `,
+    a: `If a website ships to you, we can order it for you. Returns might not be possible though.`
+    },  
     {
     q: `Can you check if this page is working properly ?
   https ://anonshop.app/registerEarner
