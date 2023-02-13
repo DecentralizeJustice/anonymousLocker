@@ -181,7 +181,6 @@ import { encrypt, getRandomInt } from "@/assets/misc.js"
 const emit = defineEmits(['paymentSTarted'])
 const selectedCoin = ref('Monero')
 const options = ['Monero']// , 'Bitcoin', 'Litecoin', 'Ethereum'
-const axios = require('axios')
 const giftcardOnlyOrder = ref(false)
 const amazonlink = ref("")
 const amazonItemDescription = ref("")
@@ -193,8 +192,8 @@ const lockerName = ref("")
 const extraNotes = ref("")
 const discount = ref(0) // integer
 // const percentageFee = 0
-const minOrderamount = 25
-const baseFee = 10
+const minOrderamount = .01
+const baseFee = .01
 const extra = ref(0)
 const linkError = ref(false)
 const itemAmountError = ref(false)
@@ -284,11 +283,6 @@ const discountAmount = computed(() => {
     Number(Number(orderUSDSubTotal.value) + Number(taxAmount.value)) * Number(discount.value/100)
   return Number(longNumber)
 })
-const paymentTicker = computed(() => {
-  const tickerDict = {'Monero': 'xmr', 'Litecoin':'ltc', 'Bitcoin': 'btc', 'Ethereum': 'eth'}
-  const selected = selectedCoin.value
-  return tickerDict[selected]
-})
 function submitOrderChecks() {
   if (orderUSDSubTotal.value < minOrderamount) {
     minAmountError.value = true
@@ -306,15 +300,22 @@ async function submitOrder() {
     return
   }
   numberArray.value = await generateRandomArray()
-  console.log(numberArray.value.toString())
   const encryptedPassphrase = await encrypt(numberArray.value.toString())
   console.log(encryptedPassphrase)
   try {
   disableSubmit.value = true
-  const results = await axios.post('/.netlify/functions/createPayment', { encryptedPassphrase, finalTotalUSD: finalTotalUSD.value, paymentCoin: paymentTicker.value })
+  // const results = await axios.post('/.netlify/functions/createPayment', { encryptedPassphrase, finalTotalUSD: finalTotalUSD.value, paymentCoin: paymentTicker.value })
   disableSubmit.value = false
-  emit('paymentSTarted', { nowPaymentsInfo: results.data, numberArray: toRaw(numberArray.value), encryptedPassphrase, itemList: toRaw(itemList.value),
-   lockerZipcode: toRaw(lockerZipcode.value), lockerName: toRaw(lockerName.value), extraNotes: toRaw(extraNotes.value), paymentCoin: paymentTicker.value})
+  const metadata =   
+    { 
+      numberArray: toRaw(numberArray.value), 
+      itemList: toRaw(itemList.value),
+      lockerZipcode: toRaw(lockerZipcode.value), 
+      lockerName: toRaw(lockerName.value), 
+      extraNotes: toRaw(extraNotes.value),
+      type: 'firstShopperOrder'
+    }
+  emit('paymentSTarted', { amount: finalTotalUSD.value, metadata })
 } catch (err) {
   disableSubmit.value = false
   console.log(err)
