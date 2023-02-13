@@ -74,9 +74,7 @@ async function generateRandomArray() {
 }
 async function submitOrder() {
   numberArray.value = await generateRandomArray()
-  console.log(numberArray.value.toString())
   const encryptedPassphrase = await encrypt(numberArray.value.toString())
-  console.log(encryptedPassphrase)
   try {
   disableSubmit.value = true
   // const results = await axios.post('/.netlify/functions/createPayment', { encryptedPassphrase, finalTotalUSD: 5, paymentCoin: 'xmr' })

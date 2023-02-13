@@ -58,10 +58,18 @@ const props = defineProps({
 })
 const paymentInfo = toRef(props, 'paymentInfo')
 const wordList = computed(() => { 
+  console.log(paymentInfo.value)
   return numberArrayToWordArray(paymentInfo.value.numberArray)
 })
 async function confirmPassphrase() {
-  const results = await axios.post('/.netlify/functions/createBTCPayInvoice', {amount: .01, metadata: { type: 'earnerSignup' } })
+  const results = await axios.post('/.netlify/functions/createBTCPayInvoice', 
+  { amount: .01, 
+    metadata: 
+      { type: 'earnerSignup', 
+        encryptedPassphrase: paymentInfo.value.encryptedPassphrase,
+        extraNotes: paymentInfo.value.extraNotes
+      } 
+  })
   const btcPayLink = results.data.checkoutLink
   window.location = btcPayLink
 }
