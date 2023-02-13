@@ -88,7 +88,7 @@ const orderBook = [
   {
     name: "wide chair",
     type: "Locker",
-    xmrAmount:".257",
+    xmrAmount:".207",
     description: "Electronics",
     country: "United States",
     usdAmount: "32.30",
