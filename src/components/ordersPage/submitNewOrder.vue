@@ -313,7 +313,13 @@ async function submitOrder() {
       lockerZipcode: toRaw(lockerZipcode.value), 
       lockerName: toRaw(lockerName.value), 
       extraNotes: toRaw(extraNotes.value),
-      type: 'firstShopperOrder'
+      type: 'firstLockerOrder',
+      amount: finalTotalUSD.value,
+      taxAmount: taxAmount.value,
+      orderSubtotal: orderUSDSubTotal.value,
+      bondUSD: serviceFeeUSD.value,
+      extraAmountUSD: extra.value
+
     }
   emit('paymentSTarted', { amount: finalTotalUSD.value, metadata })
 } catch (err) {
