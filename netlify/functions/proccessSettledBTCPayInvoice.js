@@ -32,11 +32,11 @@ exports.handler = async (event) => {
         type: parsed.metadata.type,
         totalSentUSD: parsed.metadata.totalSentUSD,
         taxAmountUSD: parsed.metadata.taxAmountUSD,
-        itemSubtotal: parsed.metadata.itemSubtotal,
+        itemsSubtotal: parsed.metadata.itemsSubtotal,
         bondUSD: parsed.metadata.bondUSD,
         orderFeeUSD: parsed.metadata.orderFeeUSD,
-        extraAmountUSD: parsed.metadata.extraAmountUSD
-
+        extraAmountUSD: parsed.metadata.extraAmountUSD,
+        status: "not picked up, pending approval"
       }
       const doc = { 
         passphrase: numberArray, 
