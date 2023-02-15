@@ -12,7 +12,7 @@ import novReview2022 from "../components/blogPost/monthInReview/nov2022Blog.vue"
 import empty from "../views/emptyRoute.vue"
 import twitterGiveAway from "../views/giveAwayTerms.vue"
 import verifyTwitterGiveaway from "../views/verifyGiveaway.vue"
-import checkOnOrder from "../views/checkOnOrder.vue"
+import login from "../views/loginPage.vue"
 import placeConciergeOrder from "../views/placeConciergeOrder.vue"
 import placeLockerOrder from "../views/placeLockerOrder.vue"
 import shopperLanding from "../views/shopperLanding.vue"
@@ -56,9 +56,9 @@ const router = createRouter({
       component: placeConciergeOrder
     },
     {
-      path: "/checkOnOrder",
-      name: "checkOnOrder",
-      component: checkOnOrder
+      path: "/login",
+      name: "login",
+      component: login
     },
     {
       path: "/",

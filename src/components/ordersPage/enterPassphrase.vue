@@ -3,7 +3,7 @@
     <div class="column justify-center" style="">
         <q-card class="col-12 col" style="">
           <q-card-section class="bg-grey-9 text-white">
-            <div class="text-h6">Check On Order</div>
+            <div class="text-h6">Login To Account</div>
           </q-card-section>
           <q-separator />
           <q-card-section

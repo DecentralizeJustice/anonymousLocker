@@ -36,7 +36,7 @@ exports.handler = async (event) => {
         bondUSD: parsed.metadata.bondUSD,
         orderFeeUSD: parsed.metadata.orderFeeUSD,
         extraAmountUSD: parsed.metadata.extraAmountUSD,
-        status: "not picked up, pending approval"
+        status: "pending approval"
       }
       const doc = { 
         passphrase: numberArray, 
