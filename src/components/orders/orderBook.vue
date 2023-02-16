@@ -85,15 +85,6 @@ const orderBook = [
     usdAmount: "78.77",
     numberOfItems: "3"
   } */
-  {
-    name: "wide chair",
-    type: "Locker",
-    xmrAmount:".207",
-    description: "Electronics",
-    country: "United States",
-    usdAmount: "32.30",
-    numberOfItems: "2"
-  }
 ]
 </script>
 <style lang="sass" scoped>
