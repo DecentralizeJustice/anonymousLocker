@@ -12,10 +12,10 @@
                     v-if="orderNotFound"
                   >
                     <div class="text-h6 text-white col-8 bg-red-5 q-pa-sm">
-                      Order Does Not Exist!
+                      Account Does Not Exist!
                     </div>
                     <div class="text-h6 text-white col-8 q-mt-sm">
-                      <router-link to="message">Message Me If Your Having Issues</router-link>
+                      <router-link to="message">Message Us If Your Having Issues</router-link>
                     </div>
                   </q-card-section>
           <q-card-section>
@@ -28,7 +28,7 @@
                       style="border-radius: 10px;"
                     >
                       <div class="text-h6">
-                        Enter Your Order Passphrase
+                        Enter Your Account Passphrase
                       </div>
                       <div class="text-left  text-white row col-12 justify-center">
                     <div     class="row col-12 justify-center q-mt-sm" v-for="(item, index) in passphraseLength"
@@ -104,13 +104,12 @@ async function enterPassphrase() {
       buttonDisabled.value = true
       await sleep(3000)
       buttonDisabled.value = false
-      const results = await axios.post('/.netlify/functions/getOrder', { bucketID: potentialPassphrase })
-      // messageArray.value = results.data.messageArray
-      emit('passphraseEnteredSuccess', results.data.messageArray, potentialPassphrase)
+      const results = await axios.post('/.netlify/functions/loginToAccount', { accountPhrase: potentialPassphrase })
+      console.log(results.data)
+      emit('passphraseEnteredSuccess', results.data, potentialPassphrase)
     } catch (error) {
-      console.log(error.response)
-        orderNotFound.value = true
-        console.log('order not found')
+      console.log(error)
+      orderNotFound.value = true
     }
   }
 }
