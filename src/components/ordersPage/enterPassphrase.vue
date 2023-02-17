@@ -152,7 +152,8 @@ onMounted(() => {
   const routeInfo = router.currentRoute.value
   const routeName = routeInfo.name
   const routeHash = routeInfo.hash
-  if (routeName === 'checkOnOrder') {
+  console.log(routeName)
+  if (routeName === 'login') {
     const rawFrag = routeHash.substring(1)
     const fragWordArray = rawFrag.split(',')
     passphraseWords.value = fragWordArray

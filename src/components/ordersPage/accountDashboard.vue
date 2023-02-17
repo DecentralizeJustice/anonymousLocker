@@ -11,20 +11,21 @@
           <q-card class="bg-primary text-white col-3 col">
             <q-card-section>
               <div class="text-h5 q-mb-lg" >Account Summary</div>
-              <div class="text-subtitle2">Bond Amount: {{ accountInfo.metaData.bondAmount }}</div>
-              <div class="text-subtitle2">XMR Refund Address: {{ accountInfo.metaData.refundAddress }}</div>
+              <div class="text-subtitle1">Bond Amount: {{ accountInfo.metaData.bondAmount }}</div>
+              <div class="text-subtitle1">XMR Refund Address: {{ accountInfo.metaData.refundAddress }}</div>
             </q-card-section>
           </q-card>
 
           <q-card class="bg-primary text-white col-5 col">
             <q-card-section>
               <div class="text-h5 q-mb-lg">Current Orders</div>
-              <div class="column" style="height: 150px">
+              <div class="column" style="">
                 <div class="col col-6" v-for="item in accountInfo.orders" :key="item.nickname">
                   <div class="text-subtitle1 bg-black q-pa-md rounded-borders">
-                    <div>{{item.nickName}} for {{ item.totalSentUSD }} USD</div>
+                    <div>{{capitalizeWords(item.nickName)}} for {{ item.totalSentUSD }} USD</div>
                     <div>Status: {{ item.statusHistory.slice(-1)[0].status  }}</div>
-                    <div><q-btn color="secondary" label="More Info" class="q-my-sm" /></div></div>
+                    <div><q-btn color="secondary" label="More Info" class="q-my-sm" @click="openDialog()"/></div>
+                  </div>
                 </div>
               </div>
               
@@ -34,18 +35,23 @@
         </div>
         </q-card>
       </div>
-      <q-dialog :v-model="false">
+      <q-dialog v-model="dialogOpen">
       <q-card>
-        <q-card-section>
-          <div class="text-h6">Alert</div>
+        <q-card-section class=" bg-grey-9">
+          <div class="text-h6 text-center text-white">Order: {{ capitalizeWords(accountInfo.orders[0].nickName) }}</div>
         </q-card-section>
+        <q-separator />
 
         <q-card-section class="q-pt-none">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum repellendus sit voluptate voluptas eveniet porro. Rerum blanditiis perferendis totam, ea at omnis vel numquam exercitationem aut, natus minima, porro labore.
+          {{ accountInfo.orders }}
+          <div class="text-subtitle1 q-pa-md rounded-borders">
+                    <div>Total USD Sent: {{ accountInfo.orders[0].totalSentUSD }} USD</div>
+                    <div>Status: {{ accountInfo.orders[0].statusHistory.slice(-1)[0].status  }}</div>
+                  </div>
         </q-card-section>
 
         <q-card-actions align="right">
-          <q-btn flat label="OK" color="primary" v-close-popup />
+          <q-btn flat label="Close" color="primary" v-close-popup />
         </q-card-actions>
       </q-card>
     </q-dialog>
@@ -53,16 +59,37 @@
   </template>
     
 <script setup>
-import { defineProps, toRef  } from "vue"
+import { defineProps, toRef, ref  } from "vue"
 const props = defineProps({
   passphrase: { type: String, required: true },
   accountInfo: { type: Object, required: true }
 })
 /* const text = ref('')
-const dialogOpen = ref(false)
 const disableButtons = ref(false) */
+const dialogOpen = ref(false)
 const accountInfo = toRef(props, 'accountInfo')
 const passphrase = toRef(props, 'passphrase')
+function openDialog() {
+  dialogOpen.value = true
+  console.log('ran')
+}
+function capitalizeWords(str) {
+  return str
+    .toLowerCase()
+    .split(' ')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+}
 console.log(passphrase.value, accountInfo.value)
 
 </script>
+
+{
+  ;
+}
+<style lang="sass" scoped>
+.q-dialog
+  backdrop
+    backdrop-filter: blur(70px) !important
+
+</style>
