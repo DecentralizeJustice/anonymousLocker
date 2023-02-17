@@ -1,39 +1,40 @@
 <template>
-  <div class="col-11 col-md-6 col justify-center column">
-    <!-- <div class="column justify-center" style="">
-        <q-card class="col-12 col" style="">
-          <q-card-section class="bg-grey-9 text-white">
-            <div class="text-h6">Chat About Your Order</div>
+  <div class="col-11 col-md-11 col justify-center column">
+    <div class="column justify-center" style="">
+        <q-card class="col-12 col" style="min-height: 70vh;">
+          <q-card-section class="bg-grey-9 text-white col-3">
+            <div class="text-h6">Your Account Overview</div>
           </q-card-section>
           <q-separator />
-          <q-separator />
+          <div class="col-11 col-md-11 col justify-around row q-py-lg" style="">
 
-        <q-card-actions vertical>
-          <span class="text-subtitle1 text-weight-medium">Type Your Message:</span>
-          <div class="q-pa-md overflow-auto" style="">
-            <q-input
-              v-model="text"
-              filled
-              autogrow
-              class="overflow-auto scroll"
-              style="width: 100%;"
-            />
-          </div>
-          <div class="row justify-around q-gutter-y-md">
-      <div class="col-12 col-md-6 ">
-        <q-btn @click="sendMessage" :disable="disableButtons" color="positive" icon="send">Send Message</q-btn>
-      </div>
-      <div class="col-12 col-md-6">
-        <q-btn @click="checkForMessages" :disable="disableButtons" color="positive" icon="sync">Check For New Messages</q-btn>
-      </div> -->
-<!--       <div class="col-12 col-md-6">
-        <q-btn @click="dialogOpen = true" :disable="disableButtons" color="primary" icon="lock">Encrypt Address</q-btn>
-      </div> -->
-    <!-- </div>
-        </q-card-actions>
+          <q-card class="bg-primary text-white col-3 col">
+            <q-card-section>
+              <div class="text-h5 q-mb-lg" >Account Summary</div>
+              <div class="text-subtitle2">Bond Amount: {{ accountInfo.metaData.bondAmount }}</div>
+              <div class="text-subtitle2">XMR Refund Address: {{ accountInfo.metaData.refundAddress }}</div>
+            </q-card-section>
+          </q-card>
+
+          <q-card class="bg-primary text-white col-5 col">
+            <q-card-section>
+              <div class="text-h5 q-mb-lg">Current Orders</div>
+              <div class="column" style="height: 150px">
+                <div class="col col-6" v-for="item in accountInfo.orders" :key="item.nickname">
+                  <div class="text-subtitle1 bg-black q-pa-md rounded-borders">
+                    <div>{{item.nickName}} for {{ item.totalSentUSD }} USD</div>
+                    <div>Status: {{ item.statusHistory.slice(-1)[0].status  }}</div>
+                    <div><q-btn color="secondary" label="More Info" class="q-my-sm" /></div></div>
+                </div>
+              </div>
+              
+            </q-card-section>
+          </q-card>
+
+        </div>
         </q-card>
       </div>
-      <q-dialog v-model="dialogOpen">
+      <q-dialog :v-model="false">
       <q-card>
         <q-card-section>
           <div class="text-h6">Alert</div>
@@ -47,7 +48,7 @@
           <q-btn flat label="OK" color="primary" v-close-popup />
         </q-card-actions>
       </q-card>
-    </q-dialog>-->
+    </q-dialog>
     </div> 
   </template>
     
@@ -60,8 +61,8 @@ const props = defineProps({
 /* const text = ref('')
 const dialogOpen = ref(false)
 const disableButtons = ref(false) */
-// const accountInfo = ref(accountInfo)
+const accountInfo = toRef(props, 'accountInfo')
 const passphrase = toRef(props, 'passphrase')
-console.log(passphrase.value)
+console.log(passphrase.value, accountInfo.value)
 
 </script>
