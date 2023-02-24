@@ -70,6 +70,10 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+    q: `Can you ship to German Amazon Lockers?`,
+      a: `Yes! We have done several orders to Germany.`
+    },
+{
     q: `How do you handle items that aren't eligible for Amazon lockers? I've used lockers before and sometimes it wouldn't let me order certain items to lockers. Unfortunately there doesn't seem to be a good of way of knowing this without logging into an account to check beforehand.
 `,
       a: `If an item ships from Amazon it can fit into a locker. There are some size restrictions lockers also. You can look up
