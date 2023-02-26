@@ -60,7 +60,7 @@
 const options = [
   { label: "Sign In", value: "login" },
   { label: "Shoppers", value: "shopperLanding" },
-  { label: "Earners", value: "earnerLanding" },
+  // { label: "Earners", value: "earnerLanding" },
   { label: "F.A.Q.", value: "faq" },
   { label: "Ask Question", value: "message" }
 

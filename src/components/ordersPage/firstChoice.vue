@@ -2,11 +2,11 @@
       <div class="row items-center justify-around align-center">
         <q-card class="col-9 col-md-5">
           <q-card-section>
-            <p class="text-h5 text-weight-medium">Place Shopper Order</p>
+            <p class="text-h5 text-weight-medium">Place Order</p>
             <img :src="computer" class="" style="width: 60%" /><br />
             <q-btn
               color="primary"
-              label="Place Shopper Order"
+              label="Place Order"
               size="lg"
               style="color: white" 
               padding="sm"
@@ -17,7 +17,7 @@
         </q-card>
         <q-card class="col-9 col-md-5">
           <q-card-section>
-            <p class="text-h5 text-weight-medium">Check <br/>Earner or Shopper Order</p>
+            <p class="text-h5 text-weight-medium">Check On Order</p>
             <img :src="delivery" class="" style="width: 60%" /><br />
             <q-btn
               color="primary"
@@ -26,7 +26,7 @@
               style="color: white"
               padding="sm"
               no-caps
-              @click="router.push('/checkOnOrder')"
+              @click="router.push('/login')"
             />
           </q-card-section>
         </q-card>

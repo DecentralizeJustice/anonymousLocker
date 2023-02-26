@@ -52,6 +52,7 @@ exports.handler = async (event) => {
         ],
         btcPayInvoice: 'fasdfadfa', // need to add
         nickName: 'tall chair',
+        chatID: 'djlfkgj;lsdgfjjg;',
         itemList: parsed.metadata.itemList,
         lockerZipcode: parsed.metadata.lockerZipcode,
         lockerName: parsed.metadata.lockerName,

@@ -1,9 +1,9 @@
 <template>
-  <div class="col-11 col-md-6 col justify-center column">
-    <div class="column justify-center" style="">
-        <q-card class="col-12 col" style="">
+<!--   <div class="col-11 col-md-6 col justify-center column">
+    <div class="column justify-center" style=""> -->
+        <q-card class="col-6 col q-my-lg text-center" style="">
           <q-card-section class="bg-grey-9 text-white">
-            <div class="text-h6">Chat About Your Order</div>
+            <div class="text-h6">Your Order Chat</div>
           </q-card-section>
           <q-separator />
                   <q-card-section
@@ -11,7 +11,7 @@
                       style="border-radius: 10px;"
                     >
                     <div class="row justify-center text-left overflow-auto" style="">
-                      <div style="width: 100%; height: 50vh;" class="overflow-auto scroll">
+                      <div style="width: 100%; height: 40vh;" class="overflow-auto scroll">
                         <q-chat-message
                           v-for="(message, index) in messageArray"
                           :key="index"
@@ -53,23 +53,8 @@
     </div>
         </q-card-actions>
         </q-card>
-      </div>
-      <q-dialog v-model="dialogOpen">
-      <q-card>
-        <q-card-section>
-          <div class="text-h6">Alert</div>
-        </q-card-section>
-
-        <q-card-section class="q-pt-none">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum repellendus sit voluptate voluptas eveniet porro. Rerum blanditiis perferendis totam, ea at omnis vel numquam exercitationem aut, natus minima, porro labore.
-        </q-card-section>
-
-        <q-card-actions align="right">
-          <q-btn flat label="OK" color="primary" v-close-popup />
-        </q-card-actions>
-      </q-card>
-    </q-dialog>
-    </div>
+<!--       </div>
+    </div> -->
   </template>
     
 <script setup>
@@ -85,7 +70,7 @@ const props = defineProps({
   messageArray: { type: Object, required: true }
 })
 const text = ref('')
-const dialogOpen = ref(false)
+// const dialogOpen = ref(false)
 const disableButtons = ref(false)
 const messageArrayHolder = toRef(props, 'messageArray')
 const messageArray = ref(toRaw(messageArrayHolder.value))

@@ -6,9 +6,9 @@
             <div class="text-h6">Your Account Overview</div>
           </q-card-section>
           <q-separator />
-          <div class="col-11 col-md-11 col justify-around row q-py-lg" style="">
+          <div class="col-11 col-md-11 justify-around row" style="">
 
-          <q-card class="bg-primary text-white col-3 col">
+          <q-card class="bg-primary text-white col-3 col q-py-xl q-my-xl">
             <q-card-section>
               <div class="text-h5 q-mb-lg" >Account Summary</div>
               <div class="text-subtitle1">
@@ -18,11 +18,9 @@
                 XMR Refund Address: {{ accountInfo.metaData.refundAddress }}
               </div>
             </q-card-section>
-          </q-card>
-
-          <q-card class="bg-primary text-white col-5 col">
+            <q-card class="bg-primary text-white col-5 col">
             <q-card-section>
-              <div class="text-h5 q-mb-lg">Current Orders</div>
+              <div class="text-h5 q-mb-lg">Order Info</div>
               <div class="column" style="">
                 <div class="col col-6" v-for="item in accountInfo.orders" :key="item.nickname">
                   <div class="text-subtitle1 bg-black q-pa-md rounded-borders">
@@ -35,10 +33,18 @@
                 </div>
               </div>  
             </q-card-section>
+            
           </q-card>
+          
+          </q-card>
+          <main-chat class=""></main-chat>
+
+
+
         </div>
         </q-card>
       </div>
+
       <q-dialog v-model="dialogOpen">
       <q-card>
         <q-card-section class=" bg-grey-9">
@@ -48,11 +54,8 @@
         <q-separator />
 
         <q-card-section class="q-pt-none">
-<!--           {{ accountInfo.orders[0].paymentInfo }} -->
+<!--           {{ accountInfo.orders[0].chatID }} -->
           <div class="text-subtitle1 q-pa-md rounded-borders">
-            <div class="text-center">
-              <q-btn color="primary" label="View Chat" class="q-my-sm" />
-            </div>
             <div>Total USD Sent: {{ accountInfo.orders[0].totalSentUSD }} USD</div>
             <div>Status: {{ accountInfo.orders[0].statusHistory.slice(-1)[0].status  }}</div>
             <div>Items:</div>
@@ -85,13 +88,15 @@
         <q-card-actions align="right">
           <q-btn flat label="Close" color="primary" v-close-popup />
         </q-card-actions>
-      </q-card>
+      </q-card>        
+
     </q-dialog>
     </div> 
   </template>
     
 <script setup>
 import { defineProps, toRef, ref  } from "vue"
+import mainChat from '@/components/ordersPage/mainChat.vue'
 const props = defineProps({
   passphrase: { type: String, required: true },
   accountInfo: { type: Object, required: true }
@@ -115,10 +120,6 @@ function capitalizeWords(str) {
 console.log(passphrase.value, accountInfo.value)
 
 </script>
-
-{
-  ;
-}
 <style lang="sass" scoped>
 .q-dialog
   backdrop
