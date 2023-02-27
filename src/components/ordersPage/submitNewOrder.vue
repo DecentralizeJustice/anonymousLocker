@@ -9,7 +9,7 @@
         <q-card-section>
           <div class="q-pa-md">
             <div class="row justify-around" style="">
-              <div class="col-12 text-center row q-mb-md justify-center q-gutter-y-md">
+              <div class="col-12 text-center row q-mb-xl justify-center q-gutter-y-md">
                 <div class="col-12 col-md-6 text-center row justify-center">
                   <q-input
                     class="col-11"
@@ -106,34 +106,54 @@
                   </q-card>
                 </div>
               </div>
+              <div
+                class="row col-12 justify-around"
+              >
               <q-input
-                class="col-12 col-md-5"
+                class="col-12 col-md-5 q-my-sm"
                 v-model="lockerName"
                 label="Amazon Locker Name (Optional)"
               />
-              <div class="col-12 col-md-5">
                 <q-chip
                   color="red"
                   text-color="white"
                   icon="dangerous"
                   label="Zipcode Is Too Short"
+                  class="col-12 col-md-5 q-my-sm"
                   v-if="zipcodeError"
                 />
                 <q-input
+                class="col-12 col-md-5 q-my-sm"
                   v-model="lockerZipcode"
-                  label="Amazon Locker Zipcode"
+                  label="Your Zipcode"
                 />
-                <q-input v-model="extra"  class="col-12 col-md-5"   label="Extra/Tip (USD)"/>
-              </div>
+                <q-input v-model="extra"  class="col-12 col-md-5 q-my-sm"   
+                  label="Extra/Tip (USD)" :disable="discountPossible"/>
               <q-input
-                class="col-12 col-md-6"
+                class="col-12 col-md-5 q-my-sm"
                 v-model="extraNotes"
                 autogrow
                 label="Order Notes"
               /> 
-              <span class="text-center col-5 q-my-md text-h5" style="">
-              </span>
-              <q-select  class="col-12 col-md-6 q-mt-md" v-model="selectedCoin" :options="options" label="Payment Crypto" />
+              <q-input
+                class="col-12 col-md-5 q-my-sm"
+                v-model="xmrRefundAddress"
+                autogrow
+                label="Monero Refund Address"
+              /> 
+              <div class="col-12 col-md-5 q-my-sm">
+                <q-toggle
+                  v-model="discountPossible"
+                  color="red"
+                  icon="percent"
+                  label="Enable Discounts"
+                />
+                <br/>
+                <span v-if="discountPossible">
+                  Discount Percentage: {{ discountPercent }}%
+                  <q-slider v-model="discountPercent" :min="1" :max="15" color="red"/>
+                </span>
+              </div>
               <span class="col-12 q-mt-md">
                 <q-chip
                   color="red"
@@ -143,19 +163,30 @@
                   v-if="minAmountError"
                 />
               </span>
+              </div>
               <div
-                class="row col-12 col-md-8 q-mt-sm justify-center"
-                v-if="itemList.length !== 0"
+                class="row col-12 col-md-6 q-mt-sm justify-center"
               >
                 Sub-Total (USD): {{ orderUSDSubTotal }} <br />
                 Estimated Taxes Collected by Amazon (~{{ taxRate*100 }}%): {{ taxAmount }} <br/>
-                Deposit: 10 USD
-                <!-- + ${{baseFee}}) -->
-                <br />
+                Items After Tax: {{ itemsAfterTax }} <br />
+                <span v-if="discountPossible">Items After ({{ discountPercent }}%) Discount: {{ Number(itemsAfterTax - discountAmount).toFixed(2) }}</span>
+                
+              </div>
+              <div
+                class="row col-12 col-md-6 q-mt-sm justify-center"
+              >
                 Extra/Tip (USD): {{ extra }} <br/>
-                Final Total (USD):
+                Refundable Bound Amount: {{ bondAmount }} USD <br/>
+                Non-Refundable Fee: {{serviceFeeUSD}} USD <br/>
+              </div>
+              <div
+                class="row col-12 col-md-12 text-h5 q-mt-sm justify-center"
+              >
+              Final Total (USD):
                 {{ finalTotalUSD }}
               </div>
+
               <div class="row col-12 col-md-8 q-mt-md justify-center">
                 <q-btn
                   :disable="itemList.length === 0 || disableSubmit"
@@ -179,10 +210,9 @@ import { ref, watch, computed, defineEmits, toRaw } from "vue"
 import cart from "@/assets/svgs/cart.svg"
 import { encrypt, getRandomInt } from "@/assets/misc.js"
 const emit = defineEmits(['paymentSTarted'])
-const selectedCoin = ref('Monero')
-const options = ['Monero']// , 'Bitcoin', 'Litecoin', 'Ethereum'
 const giftcardOnlyOrder = ref(false)
 const amazonlink = ref("")
+const discountPercent = ref(3)
 const amazonItemDescription = ref("")
 const itemAmount = ref("0.00")
 const itemQuantity = ref(1)
@@ -190,11 +220,13 @@ const itemList = ref([])
 const lockerZipcode = ref(0)
 const lockerName = ref("")
 const extraNotes = ref("")
-const discount = ref(0) // integer
+const xmrRefundAddress = ref("")
 // const percentageFee = 0
 const minOrderamount = .01
-const baseFee = .01
-const extra = ref(0)
+const serviceFeeUSD = 1
+const bondAmount = 5
+const extra = ref(2)
+const discountPossible = ref(false)
 const linkError = ref(false)
 const itemAmountError = ref(false)
 const zipcodeError = ref(false)
@@ -244,7 +276,7 @@ watch(itemAmount, () => {
 })
 async function generateRandomArray() {
   const numberArray = []
-  for (var i=0;i<6; i++) {
+  for (var i=0;i<8; i++) {
     numberArray.push(await getRandomInt(2048))
   }
   return numberArray
@@ -265,23 +297,30 @@ const orderUSDSubTotal = computed(() => {
   }
   return Number(total).toFixed(2)
 })
-const serviceFeeUSD = computed(() => {
-  // const amazonSubtotalPlusTaxes = Number(orderUSDSubTotal.value) + Number(taxAmount.value)
-  // const percentageTotal = amazonSubtotalPlusTaxes*Number(percentageFee)
-  return (Number(baseFee)).toFixed(2)
+const constantFeeUSD = computed(() => {
+  return (Number(serviceFeeUSD + bondAmount)).toFixed(2)
 })
 const taxAmount = computed(() => {
   return Number(Number(orderUSDSubTotal.value) * taxRate.value).toFixed(2)
 })
+const itemsAfterTax = computed(() => {
+  const longNumber =
+    Number(orderUSDSubTotal.value) + Number(taxAmount.value)
+  return Number(longNumber).toFixed(2)
+})
 const finalTotalUSD = computed(() => {
   const longNumber =
-    Number(orderUSDSubTotal.value) + Number(taxAmount.value) + Number(serviceFeeUSD.value) + Number(extra.value) - Number(discountAmount.value)
+    Number(orderUSDSubTotal.value) + Number(taxAmount.value) + Number(constantFeeUSD.value) + Number(extra.value) - Number(discountAmount.value)
   return Number(longNumber).toFixed(2)
 })
 const discountAmount = computed(() => {
-  const longNumber =
-    Number(Number(orderUSDSubTotal.value) + Number(taxAmount.value)) * Number(discount.value/100)
+  if(discountPossible.value) {
+    const longNumber =
+    Number(Number(orderUSDSubTotal.value) + Number(taxAmount.value)) * Number(discountPercent.value/100)
   return Number(longNumber)
+  } else {
+  return Number(0)
+  }
 })
 function submitOrderChecks() {
   if (orderUSDSubTotal.value < minOrderamount) {
@@ -317,7 +356,8 @@ async function submitOrder() {
       amount: finalTotalUSD.value,
       taxAmount: taxAmount.value,
       orderSubtotal: orderUSDSubTotal.value,
-      bondUSD: serviceFeeUSD.value,
+      bondUSD: bondAmount,
+      serviceFeeUSD: serviceFeeUSD,
       extraAmountUSD: extra.value
 
     }
@@ -332,6 +372,12 @@ const taxRate = computed(() => {
     return 0
   }
   return 0.08
+})
+watch(discountPossible, async (newQuestion) => {
+  if (newQuestion === false) { extra.value = 2
+  } else {
+    extra.value = 0
+  }
 })
 </script>
 <style lang="sass" scoped>
