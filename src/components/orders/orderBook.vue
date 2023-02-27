@@ -11,7 +11,7 @@
                   <div class="row">
                     <div class="col">XMR Earned<br/></div>
                     <div class="col desktop-only">USD Cost</div>
-                    <div class="col">XMR/USD</div>
+                    <div class="col">USD/XMR</div>
                     <div class="col desktop-only">Description</div>
                     <div class="col desktop-only">Country</div>
                     <div class="col desktop-only">Number of Items</div>
@@ -85,15 +85,6 @@ const orderBook = [
     usdAmount: "78.77",
     numberOfItems: "3"
   } */
-  {
-    name: "wide chair",
-    type: "Locker",
-    xmrAmount:".207",
-    description: "Electronics",
-    country: "United States",
-    usdAmount: "32.30",
-    numberOfItems: "2"
-  }
 ]
 </script>
 <style lang="sass" scoped>

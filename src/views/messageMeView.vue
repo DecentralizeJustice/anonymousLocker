@@ -71,11 +71,18 @@ const buttonDisabled = ref(false)
 const questions = [
     
 {
+<<<<<<< HEAD
     q: `I need to buy something very expensive. What assurance do I have that the "Earner" won't take my funds and not place the order?`,
       a: `We hold the funds until both parties are satisfied. That means that the earner can't take your funds. You must tell us that the order
       went fine, before we release the funds to the earner.`
     },
   {
+=======
+    q: `Can you ship to German Amazon Lockers?`,
+      a: `Yes! We have done several orders to Germany.`
+    },
+{
+>>>>>>> 564bea63ab02723959765e09eb7790b234e6c9b2
     q: `How do you handle items that aren't eligible for Amazon lockers? I've used lockers before and sometimes it wouldn't let me order certain items to lockers. Unfortunately there doesn't seem to be a good of way of knowing this without logging into an account to check beforehand.
     `,
       a: `If an item ships from Amazon it can fit into a locker. There are some size restrictions lockers also. You can look up
