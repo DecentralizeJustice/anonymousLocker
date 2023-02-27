@@ -110,37 +110,56 @@
                 </div>
               </div>
               <div
-                class="row col-12 justify-around"
+                class="row col-12 justify-around col"
               >
+              <div class="row col-4 justify-around">
+                Address Info
               <q-input
-                class="col-12 col-md-5 q-my-sm"
-                v-model="lockerName"
-                label="Amazon Locker Name (Optional)"
+                class="col-12 col-md-12 q-my-sm"
+                v-model="fullname"
+                label="Full Name"
+              />
+              <q-input
+                class="col-12 col-md-12 q-my-sm"
+                v-model="streetAddress"
+                label="Street Address"
+              />
+              <q-input
+                class="col-12 col-md-12 q-my-sm"
+                v-model="city"
+                label="City"
               />
                 <q-input
                 error-message="Zipcode Is Too Short"
                 :error="zipcodeError"
-                class="col-12 col-md-5 q-my-sm"
-                  v-model="lockerZipcode"
-                  label="Your Zipcode"
+                class="col-12 col-md-12 q-my-sm"
+                  v-model="zipcode"
+                  label="Zipcode"
                 />
-                <q-input v-model="extra"  class="col-12 col-md-5 q-my-sm"   
+                <q-input
+                class="col-12 col-md-12 q-my-sm"
+                v-model="country"
+                label="Country"
+              />
+              </div>
+              <div class="row col-5 justify-around">
+                <q-input v-model="extra"  class="col-12 col-md-12 q-my-sm"   
                   label="Extra/Tip (USD)" :disable="discountPossible"/>
               <q-input
-                class="col-12 col-md-5 q-my-sm"
+                class="col-12 col-md-12 q-my-sm"
                 v-model="extraNotes"
                 autogrow
                 label="Order Notes"
               /> 
               <q-input
-                class="col-12 col-md-5 q-my-sm"
+                class="col-12 col-md-12 q-my-sm"
                 v-model="xmrRefundAddress"
                 autogrow
                 error-message="Not Monero Address"
                 :error="xmrRefundAddressError"
                 label="Monero Refund Address"
               /> 
-              <div class="col-12 col-md-5 q-my-sm">
+              <div class="col-12 col-md-12 q-my-sm">
                 <q-toggle
                   v-model="discountPossible"
                   color="red"
@@ -153,6 +172,8 @@
                   <q-slider v-model="discountPercent" :min="1" :max="15" color="red"/>
                 </span>
               </div>
+              </div>
+
               <span class="col-12 q-mt-md">
                 <q-chip
                   color="red"
@@ -240,7 +261,11 @@ const amazonItemDescription = ref("")
 const itemAmount = ref("0.00")
 const itemQuantity = ref(1)
 const itemList = ref([])
-const lockerZipcode = ref(0)
+const zipcode = ref("")
+const city = ref("")
+const streetAddress = ref("")
+const fullname = ref("")
+const country = ref("")
 const lockerName = ref("")
 const extraNotes = ref("")
 const xmrRefundAddress = ref("")
@@ -299,7 +324,7 @@ watch(itemAmount, () => {
 watch(itemQuantity, () => {
   itemQuantityError.value = false
 })
-watch(lockerZipcode, () => {
+watch(zipcode, () => {
   zipcodeError.value = false
 })
 watch(itemAmount, () => {
@@ -361,7 +386,7 @@ function submitOrderChecks() {
     minAmountError.value = true
     return false
   }
-  if (lockerZipcode.value.toString(2).length < 5) {
+  if (zipcode.value.toString(2).length < 5) {
     zipcodeError.value = true
     return false
   }
@@ -387,7 +412,7 @@ async function submitOrder() {
     { 
       numberArray: toRaw(numberArray.value), 
       itemList: toRaw(itemList.value),
-      lockerZipcode: toRaw(lockerZipcode.value), 
+      zipcode: toRaw(zipcode.value), 
       lockerName: toRaw(lockerName.value), 
       extraNotes: toRaw(extraNotes.value),
       type: 'firstLockerOrder',
