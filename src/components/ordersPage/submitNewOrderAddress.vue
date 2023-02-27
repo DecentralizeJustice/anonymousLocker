@@ -122,12 +122,16 @@
               <q-input
                 class="col-12 col-md-12 q-my-sm"
                 v-model="streetAddress"
+                :error="streetAddresError"
+                autogrow
                 label="Street Address"
               />
               <q-input
                 class="col-12 col-md-12 q-my-sm"
                 v-model="city"
                 label="City"
+                error-message="City Is Too Short"
+                :error="cityError"
               />
                 <q-input
                 error-message="Zipcode Is Too Short"
@@ -140,10 +144,12 @@
                 class="col-12 col-md-12 q-my-sm"
                 v-model="country"
                 label="Country"
+                error-message="Country Is Too Short"
+                :error="countryError"
               />
               </div>
               <div class="row col-5 justify-around">
-                <q-input v-model="extra"  class="col-12 col-md-12 q-my-sm"   
+                <q-input v-model="extra"  class="col-12 col-md-12 q-my-sm"   type="number"
                   label="Extra/Tip (USD)" :disable="discountPossible"/>
               <q-input
                 class="col-12 col-md-12 q-my-sm"
@@ -277,7 +283,10 @@ const discountPossible = ref(false)
 const linkError = ref(false)
 const itemQuantityError = ref(false)
 const itemAmountError = ref(false)
+const streetAddresError = ref(false)
 const zipcodeError = ref(false)
+const cityError = ref(false)
+const countryError = ref(false)
 const xmrRefundAddressError = ref(false)
 const minAmountError = ref(false)
 const numberArray = ref([])
@@ -333,6 +342,15 @@ watch(itemAmount, () => {
 watch(xmrRefundAddress, () => {
   xmrRefundAddressError.value = false
 })
+watch(streetAddress, () => {
+  streetAddresError.value = false
+})
+watch(city, () => {
+  cityError.value = false
+})
+watch(country, () => {
+  countryError.value = false
+})
 async function generateRandomArray() {
   const numberArray = []
   for (var i=0;i<8; i++) {
@@ -386,8 +404,20 @@ function submitOrderChecks() {
     minAmountError.value = true
     return false
   }
+  if (streetAddress.value.length <= 0) {
+    streetAddresError.value = true
+    return false
+  }
+  if (city.value.length <= 0) {
+    cityError.value = true
+    return false
+  }
   if (zipcode.value.toString(2).length < 5) {
     zipcodeError.value = true
+    return false
+  }
+  if (country.value.length <= 0) {
+    countryError.value = true
     return false
   }
   if (xmrRefundAddress.value.length < 3) {
@@ -415,7 +445,7 @@ async function submitOrder() {
       zipcode: toRaw(zipcode.value), 
       lockerName: toRaw(lockerName.value), 
       extraNotes: toRaw(extraNotes.value),
-      type: 'firstLockerOrder',
+      type: 'firstAddressOrder',
       amount: finalTotalUSD.value,
       taxAmount: taxAmount.value,
       orderSubtotal: orderUSDSubTotal.value,
