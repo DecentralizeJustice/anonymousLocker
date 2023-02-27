@@ -1,23 +1,19 @@
 <template>
-    <q-page
-    style="width: 100%;"
-    class="q-pa-md row items-stretch text-center align-center justify-center bg-primary"
-  >
   <div class="col-12 col-md-6 col justify-center column">
     <div class="column justify-center" style="">
       <q-card class="col-12 col" style="">
         <q-card-section class="bg-grey-9 text-white">
-          <div class="text-h6">Fill In Your Concierge Details Below:</div>
+          <div class="text-h6">Fill In Your Address Order Details:</div>
         </q-card-section>
         <q-separator />
         <q-card-section>
           <div class="q-pa-md">
             <div class="row justify-around" style="">
-              <div class="col-12 text-center row q-mb-md justify-center q-gutter-y-md">
+              <div class="col-12 text-center row q-mb-xl justify-center q-gutter-y-md">
                 <div class="col-12 col-md-6 text-center row justify-center">
                   <q-input
                     class="col-11"
-                    v-model="link"
+                    v-model="amazonlink"
                     autogrow
                     label="Item Link"
                     error-message="Link Can't Be Empty"
@@ -25,7 +21,7 @@
                   />
                   <q-input
                     class="col-11"
-                    v-model="itemDescription"
+                    v-model="amazonItemDescription"
                     autogrow
                     label="Specific Item Info"
                   />
@@ -41,6 +37,9 @@
                     class="col-11"
                     v-model="itemQuantity"
                     label="Item Quantity"
+                    error-message="Not Valid Amount"
+                    :error="itemQuantityError"
+
                   />
                   <div class="row col-8 q-mt-sm justify-center">
                     <q-btn
@@ -110,58 +109,94 @@
                   </q-card>
                 </div>
               </div>
-              <div class="col-12 col-md-5">
-                <q-chip
-                  color="red"
-                  text-color="white"
-                  icon="dangerous"
-                  label="Zipcode Is Too Short"
-                  v-if="zipcodeError"
-                />
-                <q-input
-                  v-model="lockerZipcode"
-                  label="Your Delivery Zipcode"
-                />
-              </div>
+              <div
+                class="row col-12 justify-around"
+              >
               <q-input
-                class="col-12 col-md-6"
+                class="col-12 col-md-5 q-my-sm"
+                v-model="lockerName"
+                label="Amazon Locker Name (Optional)"
+              />
+                <q-input
+                error-message="Zipcode Is Too Short"
+                :error="zipcodeError"
+                class="col-12 col-md-5 q-my-sm"
+                  v-model="lockerZipcode"
+                  label="Your Zipcode"
+                />
+                <q-input v-model="extra"  class="col-12 col-md-5 q-my-sm"   
+                  label="Extra/Tip (USD)" :disable="discountPossible"/>
+              <q-input
+                class="col-12 col-md-5 q-my-sm"
                 v-model="extraNotes"
                 autogrow
                 label="Order Notes"
               /> 
-              <q-input v-model="salesTax"   class="col-12 col-md-3"  label="Sales Tax (%)" />
-              <q-input v-model="extra"  class="col-12 col-md-5"   label="Extra (USD)"/>
-              <q-select  class="col-12 col-md-6 q-mt-md" v-model="selectedCoin" :options="options" label="Payment Crypto" />
+              <q-input
+                class="col-12 col-md-5 q-my-sm"
+                v-model="xmrRefundAddress"
+                autogrow
+                error-message="Not Monero Address"
+                :error="xmrRefundAddressError"
+                label="Monero Refund Address"
+              /> 
+              <div class="col-12 col-md-5 q-my-sm">
+                <q-toggle
+                  v-model="discountPossible"
+                  color="red"
+                  icon="percent"
+                  label="Enable Discounts"
+                />
+                <br/>
+                <span v-if="discountPossible">
+                  Discount Percentage: {{ discountPercent }}%
+                  <q-slider v-model="discountPercent" :min="1" :max="15" color="red"/>
+                </span>
+              </div>
               <span class="col-12 q-mt-md">
                 <q-chip
                   color="red"
                   text-color="white"
                   icon="dangerous"
-                  label="Order Sub-total Minimum is $25 (USD)"
+                  label="Order Sub-total Minimum is ${{minOrderamount}} (USD)"
                   v-if="minAmountError"
                 />
               </span>
-              <div
-                class="row col-12 col-md-8 q-mt-sm justify-center"
-                v-if="itemList.length !== 0"
-              >
-                Sub-Total (USD): {{ orderUSDSubTotal }} <br />
-                Estimated Taxes Collected by Retailer (~{{ taxRate*100 }}%): {{ taxAmount }} <br/>
-                Order Deposit/Bond: {{ serviceFeeUSD }} <br/>
-                Extra/Tip (USD): {{ extra }} <br/>
-                <br />
-                Final Total (USD):
-                {{ finalTotalUSD }}
               </div>
+              <div
+                class="row col-12 col-md-6 q-mt-sm justify-center text-body1"
+              >
+                Sub-Total: {{ orderUSDSubTotal }} USD<br />
+                Estimated Taxes (~{{ taxRate*100 }}%): {{ taxAmount }} USD<br/>
+                Items After Tax: {{ itemsAfterTax }} USD<br />
+                <span v-if="discountPossible">Items After ({{ discountPercent }}%)
+                   Discount: {{ Number(itemsAfterTax - discountAmount).toFixed(2) }} USD</span>
+                
+              </div>
+              <div
+                class="row col-12 col-md-6 q-mt-sm justify-center text-body1"
+              >
+                Extra/Tip: {{ extra }} USD <br/>
+                Refundable Bound Amount: {{ bondAmount }} USD <br/>
+                Non-Refundable Fee: {{serviceFeeUSD}} USD <br/>
+              </div>
+              <div
+                class="row col-12 col-md-12 text-h5 q-mt-lg justify-center"
+              >
+              
+              Amount Due Today: ~{{ finalTotalUSD }} USD <br/>
+              Amount You Will Be Refunded: ~ {{ bondAmount }} USD <br/>
+              Real Items Cost: ~ {{ Number(finalTotalUSD -  bondAmount).toFixed(2)}} USD
+              </div>
+
               <div class="row col-12 col-md-8 q-mt-md justify-center">
                 <q-btn
-
+                  :disable="itemList.length === 0 || disableSubmit"
                   class="col-12"
                   color="green"
                   label="Submit Order"
                   @click="submitOrder"
                   text-color="white"
-                  :disable="itemList.length === 0 || disableSubmit"
                 />
               </div>
             </div>
@@ -169,33 +204,56 @@
         </q-card-section>
       </q-card>
     </div>
+    <q-dialog v-model="alert" persistent>
+      <q-card>
+        <q-card-section>
+          <div class="text-h6 text-center">Discount Info</div>
+        </q-card-section>
+
+        <q-card-section class="text-body1">
+           Our discount ability does not garantee that your order will be filled.
+           Your order will sit in our orderbook until or if an earner decides to pick it up. 
+           Your order will sit in our orderbook for a 30 days; after that time
+           you will be refuned for your order , 
+           minus the Non-Refundable Fee of {{ serviceFeeUSD }} USD. If your discount is too
+          much for our earners, your order will not be picked up by them before it is removed from our orderbooks.
+          </q-card-section>
+
+        <q-card-actions align="right">
+          <q-btn flat label="I Understand" color="primary" v-close-popup />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
   </div>
-</q-page>
 </template>
 
 <script setup>
-//                  :disable="itemList.length === 0 || disableSubmit"
 import { ref, watch, computed, defineEmits, toRaw } from "vue"
 import cart from "@/assets/svgs/cart.svg"
 import { encrypt, getRandomInt } from "@/assets/misc.js"
 const emit = defineEmits(['paymentSTarted'])
-const salesTax = ref(8)
-const serviceFee = (10)
-const extra = ref(0)
-const selectedCoin = ref('Monero')
-const options = ['Monero']
-const axios = require('axios')
-const link = ref("")
-const itemDescription = ref("")
+const alert = ref(false)
+const giftcardOnlyOrder = ref(false)
+const amazonlink = ref("")
+const discountPercent = ref(3)
+const amazonItemDescription = ref("")
 const itemAmount = ref("0.00")
 const itemQuantity = ref(1)
 const itemList = ref([])
 const lockerZipcode = ref(0)
+const lockerName = ref("")
 const extraNotes = ref("")
-const minOrderamount = 25
+const xmrRefundAddress = ref("")
+const minOrderamount = .01
+const serviceFeeUSD = 1
+const bondAmount = 5
+const extra = ref(2)
+const discountPossible = ref(false)
 const linkError = ref(false)
+const itemQuantityError = ref(false)
 const itemAmountError = ref(false)
 const zipcodeError = ref(false)
+const xmrRefundAddressError = ref(false)
 const minAmountError = ref(false)
 const numberArray = ref([])
 const disableSubmit = ref(false)
@@ -207,19 +265,23 @@ function addItemToCart() {
     return false
   }
   const item = {}
-  item.link = link.value
-  item.description = itemDescription.value
+  item.link = amazonlink.value
+  item.description = amazonItemDescription.value
   item.cost = itemAmount.value
   item.quantity = itemQuantity.value
   itemList.value.push(item)
-  link.value = ""
-  itemDescription.value = ""
+  amazonlink.value = ""
+  amazonItemDescription.value = ""
   itemAmount.value = "0.00"
   itemQuantity.value = 1
 }
 function checkInputs() {
-  if (link.value.length === 0) {
+  if (amazonlink.value.length === 0) {
     linkError.value = true
+    return false
+  }
+  if (itemQuantity.value <= 0) {
+    itemQuantityError.value = true
     return false
   }
   if (itemAmount.value <= 0) {
@@ -228,11 +290,14 @@ function checkInputs() {
   }
   return true
 }
-watch(link, () => {
+watch(amazonlink, () => {
   linkError.value = false
 })
 watch(itemAmount, () => {
   itemAmountError.value = false
+})
+watch(itemQuantity, () => {
+  itemQuantityError.value = false
 })
 watch(lockerZipcode, () => {
   zipcodeError.value = false
@@ -240,9 +305,12 @@ watch(lockerZipcode, () => {
 watch(itemAmount, () => {
   minAmountError.value = false
 })
+watch(xmrRefundAddress, () => {
+  xmrRefundAddressError.value = false
+})
 async function generateRandomArray() {
   const numberArray = []
-  for (var i=0;i<6; i++) {
+  for (var i=0;i<8; i++) {
     numberArray.push(await getRandomInt(2048))
   }
   return numberArray
@@ -252,8 +320,8 @@ function convertToUSD() {
   itemAmount.value = temp.toFixed(2)
 }
 function sliceString(string) {
-  const firstString = string.slice(0, 30).trim()
-  return firstString + `...`
+  const firstString = string.split("/")
+  return firstString[3].replace(/-/g, " ")
 }
 const orderUSDSubTotal = computed(() => {
   let total = 0
@@ -263,23 +331,30 @@ const orderUSDSubTotal = computed(() => {
   }
   return Number(total).toFixed(2)
 })
-const serviceFeeUSD = computed(() => {
-  // const amazonSubtotalPlusTaxes = Number(orderUSDSubTotal.value) + Number(taxAmount.value)
-  // const percentageTotal = amazonSubtotalPlusTaxes*Number(serviceFee/100)
-  return (10).toFixed(2)
+const constantFeeUSD = computed(() => {
+  return (Number(serviceFeeUSD + bondAmount)).toFixed(2)
 })
 const taxAmount = computed(() => {
   return Number(Number(orderUSDSubTotal.value) * taxRate.value).toFixed(2)
 })
-const finalTotalUSD = computed(() => {
+const itemsAfterTax = computed(() => {
   const longNumber =
-    Number(orderUSDSubTotal.value) + Number(taxAmount.value)+ Number(extra.value) + Number(serviceFeeUSD.value)
+    Number(orderUSDSubTotal.value) + Number(taxAmount.value)
   return Number(longNumber).toFixed(2)
 })
-const paymentTicker = computed(() => {
-  const tickerDict = {'Monero': 'xmr', 'Litecoin':'ltc', 'Bitcoin': 'btc', 'Ethereum': 'eth'}
-  const selected = selectedCoin.value
-  return tickerDict[selected]
+const finalTotalUSD = computed(() => {
+  const longNumber =
+    Number(orderUSDSubTotal.value) + Number(taxAmount.value) + Number(constantFeeUSD.value) + Number(extra.value) - Number(discountAmount.value)
+  return Number(longNumber).toFixed(2)
+})
+const discountAmount = computed(() => {
+  if(discountPossible.value) {
+    const longNumber =
+    Number(Number(orderUSDSubTotal.value) + Number(taxAmount.value)) * Number(discountPercent.value/100)
+  return Number(longNumber)
+  } else {
+  return Number(0)
+  }
 })
 function submitOrderChecks() {
   if (orderUSDSubTotal.value < minOrderamount) {
@@ -290,6 +365,10 @@ function submitOrderChecks() {
     zipcodeError.value = true
     return false
   }
+  if (xmrRefundAddress.value.length < 3) {
+    xmrRefundAddressError.value = true
+    return false
+  }
   return true
 }
 async function submitOrder() {
@@ -298,27 +377,45 @@ async function submitOrder() {
     return
   }
   numberArray.value = await generateRandomArray()
-  console.log(numberArray.value.toString())
   const encryptedPassphrase = await encrypt(numberArray.value.toString())
   console.log(encryptedPassphrase)
   try {
   disableSubmit.value = true
-  const results = await axios.post('/.netlify/functions/createPayment', { encryptedPassphrase, finalTotalUSD: finalTotalUSD.value, paymentCoin: paymentTicker.value })
+  // const results = await axios.post('/.netlify/functions/createPayment', { encryptedPassphrase, finalTotalUSD: finalTotalUSD.value, paymentCoin: paymentTicker.value })
   disableSubmit.value = false
-  emit('paymentSTarted', 
-  { 
-    nowPaymentsInfo: results.data, numberArray: toRaw(numberArray.value), encryptedPassphrase, 
-    itemList: toRaw(itemList.value),serviceFee: toRaw(serviceFee),
-    zipcode: toRaw(lockerZipcode.value), extra: toRaw(extra.value), salesTax: toRaw(salesTax.value), 
-   extraNotes: toRaw(extraNotes.value), paymentCoin: paymentTicker.value
-  })
+  const metadata =   
+    { 
+      numberArray: toRaw(numberArray.value), 
+      itemList: toRaw(itemList.value),
+      lockerZipcode: toRaw(lockerZipcode.value), 
+      lockerName: toRaw(lockerName.value), 
+      extraNotes: toRaw(extraNotes.value),
+      type: 'firstLockerOrder',
+      amount: finalTotalUSD.value,
+      taxAmount: taxAmount.value,
+      orderSubtotal: orderUSDSubTotal.value,
+      bondUSD: bondAmount,
+      serviceFeeUSD: serviceFeeUSD,
+      extraAmountUSD: extra.value
+    }
+  emit('paymentSTarted', { amount: finalTotalUSD.value, metadata })
 } catch (err) {
   disableSubmit.value = false
   console.log(err)
 }
 }
 const taxRate = computed(() => {
-  return Number(salesTax.value)/100
+  if (giftcardOnlyOrder.value) {
+    return 0
+  }
+  return 0.08
+})
+watch(discountPossible, async (newQuestion) => {
+  if (newQuestion === false) { extra.value = 2
+  } else {
+    alert.value = true
+    extra.value = 0
+  }
 })
 </script>
 <style lang="sass" scoped>

@@ -3,7 +3,7 @@
     <div class="column justify-center" style="">
       <q-card class="col-12 col" style="">
         <q-card-section class="bg-grey-9 text-white">
-          <div class="text-h6">Fill In Locker Order Details Below:</div>
+          <div class="text-h6">Fill In Locker Order Details:</div>
         </q-card-section>
         <q-separator />
         <q-card-section>
@@ -37,6 +37,9 @@
                     class="col-11"
                     v-model="itemQuantity"
                     label="Item Quantity"
+                    error-message="Not Valid Amount"
+                    :error="itemQuantityError"
+
                   />
                   <div class="row col-8 q-mt-sm justify-center">
                     <q-btn
@@ -114,15 +117,9 @@
                 v-model="lockerName"
                 label="Amazon Locker Name (Optional)"
               />
-                <q-chip
-                  color="red"
-                  text-color="white"
-                  icon="dangerous"
-                  label="Zipcode Is Too Short"
-                  class="col-12 col-md-5 q-my-sm"
-                  v-if="zipcodeError"
-                />
                 <q-input
+                error-message="Zipcode Is Too Short"
+                :error="zipcodeError"
                 class="col-12 col-md-5 q-my-sm"
                   v-model="lockerZipcode"
                   label="Your Zipcode"
@@ -139,6 +136,8 @@
                 class="col-12 col-md-5 q-my-sm"
                 v-model="xmrRefundAddress"
                 autogrow
+                error-message="Not Monero Address"
+                :error="xmrRefundAddressError"
                 label="Monero Refund Address"
               /> 
               <div class="col-12 col-md-5 q-my-sm">
@@ -165,26 +164,29 @@
               </span>
               </div>
               <div
-                class="row col-12 col-md-6 q-mt-sm justify-center"
+                class="row col-12 col-md-6 q-mt-sm justify-center text-body1"
               >
-                Sub-Total (USD): {{ orderUSDSubTotal }} <br />
-                Estimated Taxes Collected by Amazon (~{{ taxRate*100 }}%): {{ taxAmount }} <br/>
-                Items After Tax: {{ itemsAfterTax }} <br />
-                <span v-if="discountPossible">Items After ({{ discountPercent }}%) Discount: {{ Number(itemsAfterTax - discountAmount).toFixed(2) }}</span>
+                Sub-Total: {{ orderUSDSubTotal }} USD<br />
+                Estimated Taxes (~{{ taxRate*100 }}%): {{ taxAmount }} USD<br/>
+                Items After Tax: {{ itemsAfterTax }} USD<br />
+                <span v-if="discountPossible">Items After ({{ discountPercent }}%)
+                   Discount: {{ Number(itemsAfterTax - discountAmount).toFixed(2) }} USD</span>
                 
               </div>
               <div
-                class="row col-12 col-md-6 q-mt-sm justify-center"
+                class="row col-12 col-md-6 q-mt-sm justify-center text-body1"
               >
-                Extra/Tip (USD): {{ extra }} <br/>
+                Extra/Tip: {{ extra }} USD <br/>
                 Refundable Bound Amount: {{ bondAmount }} USD <br/>
                 Non-Refundable Fee: {{serviceFeeUSD}} USD <br/>
               </div>
               <div
-                class="row col-12 col-md-12 text-h5 q-mt-sm justify-center"
+                class="row col-12 col-md-12 text-h5 q-mt-lg justify-center"
               >
-              Final Total (USD):
-                {{ finalTotalUSD }}
+              
+              Amount Due Today: ~{{ finalTotalUSD }} USD <br/>
+              Amount You Will Be Refunded: ~ {{ bondAmount }} USD <br/>
+              Real Items Cost: ~ {{ Number(finalTotalUSD -  bondAmount).toFixed(2)}} USD
               </div>
 
               <div class="row col-12 col-md-8 q-mt-md justify-center">
@@ -202,6 +204,26 @@
         </q-card-section>
       </q-card>
     </div>
+    <q-dialog v-model="alert" persistent>
+      <q-card>
+        <q-card-section>
+          <div class="text-h6 text-center">Discount Info</div>
+        </q-card-section>
+
+        <q-card-section class="text-body1">
+           Our discount ability does not garantee that your order will be filled.
+           Your order will sit in our orderbook until or if an earner decides to pick it up. 
+           Your order will sit in our orderbook for a 30 days; after that time
+           you will be refuned for your order , 
+           minus the Non-Refundable Fee of {{ serviceFeeUSD }} USD. If your discount is too
+          much for our earners, your order will not be picked up by them before it is removed from our orderbooks.
+          </q-card-section>
+
+        <q-card-actions align="right">
+          <q-btn flat label="I Understand" color="primary" v-close-popup />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
   </div>
 </template>
 
@@ -210,6 +232,7 @@ import { ref, watch, computed, defineEmits, toRaw } from "vue"
 import cart from "@/assets/svgs/cart.svg"
 import { encrypt, getRandomInt } from "@/assets/misc.js"
 const emit = defineEmits(['paymentSTarted'])
+const alert = ref(false)
 const giftcardOnlyOrder = ref(false)
 const amazonlink = ref("")
 const discountPercent = ref(3)
@@ -221,15 +244,16 @@ const lockerZipcode = ref(0)
 const lockerName = ref("")
 const extraNotes = ref("")
 const xmrRefundAddress = ref("")
-// const percentageFee = 0
 const minOrderamount = .01
 const serviceFeeUSD = 1
 const bondAmount = 5
 const extra = ref(2)
 const discountPossible = ref(false)
 const linkError = ref(false)
+const itemQuantityError = ref(false)
 const itemAmountError = ref(false)
 const zipcodeError = ref(false)
+const xmrRefundAddressError = ref(false)
 const minAmountError = ref(false)
 const numberArray = ref([])
 const disableSubmit = ref(false)
@@ -256,6 +280,10 @@ function checkInputs() {
     linkError.value = true
     return false
   }
+  if (itemQuantity.value <= 0) {
+    itemQuantityError.value = true
+    return false
+  }
   if (itemAmount.value <= 0) {
     itemAmountError.value = true
     return false
@@ -268,11 +296,17 @@ watch(amazonlink, () => {
 watch(itemAmount, () => {
   itemAmountError.value = false
 })
+watch(itemQuantity, () => {
+  itemQuantityError.value = false
+})
 watch(lockerZipcode, () => {
   zipcodeError.value = false
 })
 watch(itemAmount, () => {
   minAmountError.value = false
+})
+watch(xmrRefundAddress, () => {
+  xmrRefundAddressError.value = false
 })
 async function generateRandomArray() {
   const numberArray = []
@@ -331,6 +365,10 @@ function submitOrderChecks() {
     zipcodeError.value = true
     return false
   }
+  if (xmrRefundAddress.value.length < 3) {
+    xmrRefundAddressError.value = true
+    return false
+  }
   return true
 }
 async function submitOrder() {
@@ -359,7 +397,6 @@ async function submitOrder() {
       bondUSD: bondAmount,
       serviceFeeUSD: serviceFeeUSD,
       extraAmountUSD: extra.value
-
     }
   emit('paymentSTarted', { amount: finalTotalUSD.value, metadata })
 } catch (err) {
@@ -376,6 +413,7 @@ const taxRate = computed(() => {
 watch(discountPossible, async (newQuestion) => {
   if (newQuestion === false) { extra.value = 2
   } else {
+    alert.value = true
     extra.value = 0
   }
 })

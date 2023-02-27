@@ -4,21 +4,21 @@
     class="q-pa-md row items-stretch text-center align-center justify-center bg-primary"
   >
     <div class="row justify-center col col-11 align-center items-stretch" >
-      <submitNewOrder v-if="!paymentStarted" @paymentSTarted="processPaymentInfo"/>
-      <paymentComponent v-if="paymentStarted" :paymentInfo="paymentInfo"/>
+      <submitNewOrder v-if="firstChoice === 'newOrder' && !paymentStarted" @paymentSTarted="processPaymentInfo"/>
+      <paymentComponent v-if="firstChoice === 'newOrder' && paymentStarted" :paymentInfo="paymentInfo"/>
     </div>
   </q-page>
 </template>
 
 <script setup>
 import { ref } from "vue";
-import submitNewOrder from "@/components/conciergeCheckout/placeConciergeOrder.vue"
-import paymentComponent from "@/components/conciergeCheckout/paymentComponent.vue"
+import submitNewOrder from "@/components/ordersPage/submitNewOrderAddress.vue"
+import paymentComponent from "@/components/earnerCheckout/paymentComponent.vue"
+const firstChoice = ref('newOrder')
 const paymentStarted = ref(false)
 const paymentInfo = ref({})
 function processPaymentInfo( paymentInfoFromComp) {
   paymentInfo.value =  paymentInfoFromComp
   paymentStarted.value = true
-  console.log(paymentInfoFromComp)
 }
 </script>
