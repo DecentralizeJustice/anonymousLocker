@@ -69,7 +69,16 @@ const text = ref('')
 const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
-    
+{
+    q: `How can I find the Amazon Locker nearest to me?
+
+The official website (amazon.com/findalocker) appears to be authwalled, requiring login to access Therefore, if I search for a locker with my account, and then place the order through you, I've deanonymized myself.
+
+How can I search for Amazon Lockers in my area anonymously, without authenticating with an Amazon account?
+`,
+      a: `At checkout you can enter your zipcode. I will find some lockers near you and give you options
+      when we chat about your order. If none of these locker options work for you, we generally issue you a full refund.`
+    },
 {
     q: `I need to buy something very expensive. What assurance do I have that the "Earner" won't take my funds and not place the order?`,
       a: `We hold the funds until both parties are satisfied. That means that the earner can't take your funds. You must tell us that the order
