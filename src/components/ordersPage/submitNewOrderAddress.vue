@@ -238,10 +238,10 @@
         </q-card-section>
 
         <q-card-section class="text-body1">
-           Our discount ability does not garantee that your order will be filled.
+           Our discount ability does not guarantee that your order will be filled.
            Your order will sit in our orderbook until or if an earner decides to pick it up. 
            Your order will sit in our orderbook for a 30 days; after that time
-           you will be refuned for your order , 
+           you will be refunded for your order , 
            minus the Non-Refundable Fee of {{ serviceFeeUSD }} USD. If your discount is too
           much for our earners, your order will not be picked up by them before it is removed from our orderbooks.
           </q-card-section>

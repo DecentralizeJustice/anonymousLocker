@@ -140,7 +140,7 @@
                 :error="xmrRefundAddressError"
                 label="Monero Refund Address"
               /> 
-              <div class="col-12 col-md-5 q-my-sm">
+<!--               <div class="col-12 col-md-5 q-my-sm">
                 <q-toggle
                   v-model="discountPossible"
                   color="red"
@@ -152,7 +152,7 @@
                   Discount Percentage: {{ discountPercent }}%
                   <q-slider v-model="discountPercent" :min="1" :max="15" color="red"/>
                 </span>
-              </div>
+              </div> -->
               <span class="col-12 q-mt-md">
                 <q-chip
                   color="red"
@@ -178,7 +178,7 @@
               >
                 Extra/Tip: {{ extra }} USD <br/>
                 Refundable Bound Amount: {{ bondAmount }} USD <br/>
-                Non-Refundable Fee: {{serviceFeeUSD}} USD <br/>
+                Non-Refundable Service Fee: {{serviceFeeUSD}} USD <br/>
               </div>
               <div
                 class="row col-12 col-md-12 text-h5 q-mt-lg justify-center"
@@ -244,10 +244,10 @@ const lockerName = ref("")
 const extraNotes = ref("")
 const xmrRefundAddress = ref("")
 const minOrderamount = .01
-const serviceFeeUSD = 1
+const serviceFeeUSD = 3
 const bondAmount = 5
 const discountPercent = ref(3)
-const extra = ref(2)
+const extra = ref(0)
 const discountPossible = ref(false)
 const linkError = ref(false)
 const itemQuantityError = ref(false)
