@@ -235,7 +235,6 @@ const emit = defineEmits(['paymentSTarted'])
 const alert = ref(false)
 const giftcardOnlyOrder = ref(false)
 const amazonlink = ref("")
-const discountPercent = ref(3)
 const amazonItemDescription = ref("")
 const itemAmount = ref("0.00")
 const itemQuantity = ref(1)
@@ -247,6 +246,7 @@ const xmrRefundAddress = ref("")
 const minOrderamount = .01
 const serviceFeeUSD = 1
 const bondAmount = 5
+const discountPercent = ref(3)
 const extra = ref(2)
 const discountPossible = ref(false)
 const linkError = ref(false)
@@ -396,7 +396,10 @@ async function submitOrder() {
       orderSubtotal: orderUSDSubTotal.value,
       bondUSD: bondAmount,
       serviceFeeUSD: serviceFeeUSD,
-      extraAmountUSD: extra.value
+      extraAmountUSD: extra.value,
+      refundAddress: xmrRefundAddress.value,
+      discountPercent: discountPercent.value,
+      discountPossible: discountPossible.value
     }
   emit('paymentSTarted', { amount: finalTotalUSD.value, metadata })
 } catch (err) {

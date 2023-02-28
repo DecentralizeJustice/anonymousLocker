@@ -272,7 +272,6 @@ const city = ref("")
 const streetAddress = ref("")
 const fullname = ref("")
 const country = ref("")
-const lockerName = ref("")
 const extraNotes = ref("")
 const xmrRefundAddress = ref("")
 const minOrderamount = .01
@@ -442,8 +441,6 @@ async function submitOrder() {
     { 
       numberArray: toRaw(numberArray.value), 
       itemList: toRaw(itemList.value),
-      zipcode: toRaw(zipcode.value), 
-      lockerName: toRaw(lockerName.value), 
       extraNotes: toRaw(extraNotes.value),
       type: 'firstAddressOrder',
       amount: finalTotalUSD.value,
@@ -451,7 +448,17 @@ async function submitOrder() {
       orderSubtotal: orderUSDSubTotal.value,
       bondUSD: bondAmount,
       serviceFeeUSD: serviceFeeUSD,
-      extraAmountUSD: extra.value
+      extraAmountUSD: extra.value,
+      refundAddress: xmrRefundAddress.value,
+      discountPercent: discountPercent.value,
+      discountPossible: discountPossible.value,
+      addressInfo: {
+        zipcode: toRaw(zipcode.value), 
+        city: city.value,
+        streetAddress: streetAddress.value,
+        fullname: fullname.value,
+        country: country.value
+      }
     }
   emit('paymentSTarted', { amount: finalTotalUSD.value, metadata })
 } catch (err) {
