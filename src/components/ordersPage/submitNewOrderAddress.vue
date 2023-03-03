@@ -175,7 +175,7 @@
                 <br/>
                 <span v-if="discountPossible">
                   Discount Percentage: {{ discountPercent }}%
-                  <q-slider v-model="discountPercent" :min="1" :max="15" color="red"/>
+                  <q-slider v-model="discountPercent" :min="1" :max="8" color="red"/>
                 </span>
               </div>
               </div>
