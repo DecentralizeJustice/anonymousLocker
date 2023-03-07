@@ -124,6 +124,8 @@
                   v-model="lockerZipcode"
                   label="Your Zipcode"
                 />
+                <q-select v-model="country" :options="countries" label="Country" 
+                class="col-12 col-md-5 q-my-sm"/>
                 <q-input v-model="extra"  class="col-12 col-md-5 q-my-sm"   
                   label="Extra/Tip (USD)" :disable="discountPossible"/>
               <q-input
@@ -241,6 +243,8 @@ const itemQuantity = ref(1)
 const itemList = ref([])
 const lockerZipcode = ref(0)
 const lockerName = ref("")
+const country = ref('USA')
+const countries = [ 'USA', 'Canada', 'Germany', ' France', 'United Kingdom / Ireland', 'Poland', 'Spain', 'Mexico', 'Japan']
 const extraNotes = ref("")
 const xmrRefundAddress = ref("")
 const minOrderamount = .01
@@ -399,7 +403,8 @@ async function submitOrder() {
       extraAmountUSD: extra.value,
       refundAddress: xmrRefundAddress.value,
       discountPercent: discountPercent.value,
-      discountPossible: discountPossible.value
+      discountPossible: discountPossible.value,
+      country: country.value
     }
   emit('paymentSTarted', { amount: finalTotalUSD.value, metadata })
 } catch (err) {
