@@ -70,6 +70,10 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+    q: `hey it's been over a full day, please respond to my order`,
+      a: `You might need to refresh your page since I have responded to all orders at this time. If my message is not there, please send me the first word of your passphrase, since there might be an issue with your chat functionality.`
+    },
+{
     q: `How can I find the Amazon Locker nearest to me?
 
 The official website (amazon.com/findalocker) appears to be authwalled, requiring login to access Therefore, if I search for a locker with my account, and then place the order through you, I've deanonymized myself.
