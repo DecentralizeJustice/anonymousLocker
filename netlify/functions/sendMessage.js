@@ -20,7 +20,7 @@ exports.handler = async (event) => {
   const parsed = JSON.parse(params)
   const message = parsed.message
   const sender = parsed.sender
-  const bucket = parsed.bucket
+  const bucket = parsed.bucket.replace(/:/g,'')
   const newMessage = { from: sender, message, sent: Date.now()}
   const result = await updateBucket(bucket, newMessage)
   if (sender !== 'dgoon') {

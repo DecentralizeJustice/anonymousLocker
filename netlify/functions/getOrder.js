@@ -7,7 +7,7 @@ exports.handler = async (event, context) => {
   }
   const params = event.body
   const parsed = JSON.parse(params)
-  const bucketID = parsed.bucketID
+  const bucketID = parsed.bucketID.replace(/:/g,'')
   console.log('Requested Bucket ID:')
   console.log(bucketID)
   const redis = new Redis({
