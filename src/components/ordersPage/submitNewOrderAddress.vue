@@ -140,13 +140,8 @@
                   v-model="zipcode"
                   label="Zipcode"
                 />
-                <q-input
-                class="col-12 col-md-12 q-my-sm"
-                v-model="country"
-                label="Country"
-                error-message="Country Is Too Short"
-                :error="countryError"
-              />
+                <q-select v-model="country" :options="countries" label="Country" 
+                class="col-12 col-md-12 q-my-sm"/>
               </div>
               <div class="row col-5 justify-around">
                 <q-input v-model="extra"  class="col-12 col-md-12 q-my-sm"   type="number"
@@ -271,7 +266,8 @@ const zipcode = ref("")
 const city = ref("")
 const streetAddress = ref("")
 const fullname = ref("")
-const country = ref("")
+const country = ref('USA')
+const countries = [ 'USA', 'Canada', 'Germany', ' France', 'United Kingdom / Ireland', 'Poland', 'Spain', 'Mexico', 'Japan']
 const extraNotes = ref("")
 const xmrRefundAddress = ref("")
 const minOrderamount = .01
@@ -285,7 +281,6 @@ const itemAmountError = ref(false)
 const streetAddresError = ref(false)
 const zipcodeError = ref(false)
 const cityError = ref(false)
-const countryError = ref(false)
 const xmrRefundAddressError = ref(false)
 const minAmountError = ref(false)
 const numberArray = ref([])
@@ -346,9 +341,6 @@ watch(streetAddress, () => {
 })
 watch(city, () => {
   cityError.value = false
-})
-watch(country, () => {
-  countryError.value = false
 })
 async function generateRandomArray() {
   const numberArray = []
@@ -413,10 +405,6 @@ function submitOrderChecks() {
   }
   if (zipcode.value.toString(2).length < 5) {
     zipcodeError.value = true
-    return false
-  }
-  if (country.value.length <= 0) {
-    countryError.value = true
     return false
   }
   if (xmrRefundAddress.value.length < 3) {
