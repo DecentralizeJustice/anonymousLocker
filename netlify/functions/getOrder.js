@@ -8,6 +8,13 @@ exports.handler = async (event, context) => {
   const params = event.body
   const parsed = JSON.parse(params)
   const bucketID = parsed.bucketID.replace(/:/g,'')
+  let text = bucketID; let pattern = /^[0-9\,]+$/
+  let result = pattern.test(text)
+  if(result === false){  return {
+    statusCode: 500,
+    body: 'Bad Input',
+  }}
+  console.log(result)
   console.log('Requested Bucket ID:')
   console.log(bucketID)
   const redis = new Redis({
@@ -17,7 +24,6 @@ exports.handler = async (event, context) => {
   })
   const json = await redis.call("JSON.GET", bucketID)
   redis.disconnect()
-  // console.log('databse requested')
   const parsedResponse = JSON.parse(json)
   return {
     statusCode: 200,

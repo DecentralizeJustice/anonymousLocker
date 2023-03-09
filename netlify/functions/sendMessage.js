@@ -21,6 +21,15 @@ exports.handler = async (event) => {
   const message = parsed.message
   const sender = parsed.sender
   const bucket = parsed.bucket.replace(/:/g,'')
+  let text = bucket; let pattern = /^[0-9\,]+$/
+  let results = pattern.test(text)
+  if(results === false){  return {
+    statusCode: 500,
+    body: 'Bad Input',
+  }}
+  console.log(result)
+  console.log('Requested Bucket ID:')
+  console.log(bucket)
   const newMessage = { from: sender, message, sent: Date.now()}
   const result = await updateBucket(bucket, newMessage)
   if (sender !== 'dgoon') {
