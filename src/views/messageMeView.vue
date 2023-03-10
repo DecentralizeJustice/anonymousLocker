@@ -70,6 +70,11 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+    q: `Hi. If your order passphrase started with master or Ivory, please check on your order again. Your chat should work now. If you are neither of these people, and you do not have a 
+    chat to message me in; You should message me(using the ask me a question) here with: 1. the first word in your passphrase 2. The exact amount of XMR paid(not including transaction fees) and the address you sent payment to.`,
+      a: `See above.`
+    },
+{
     q: `hey it's been over a full day, please respond to my order`,
       a: `You might need to refresh your page since I have responded to all orders at this time. If my message is not there, please send me the first word of your passphrase, since there might be an issue with your chat functionality.`
     },
