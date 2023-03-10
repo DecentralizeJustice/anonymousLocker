@@ -61,7 +61,7 @@ function processFirstMessage(orderDetails, numberArray) {
   firstString = firstString.concat(welcomeMessage)
   const itemList = orderDetails.itemList
   for (let index = 0; index < itemList.length; index++) {
-    const linkTitle = 'Item Name: '+ itemList[index].link.split("/")[3].replace(/-/g, " ") + '<br/>'
+    const linkTitle = 'Item Name: '+ itemList[index].link + '<br/>'
     const quantityString = 'Quantity: ' +`${itemList[index].quantity}` + '<br/>'
     const itemCostString = 'Single Item Cost: ' +`${itemList[index].cost}` + '<br/>'
     const notesString = 'Item Notes: ' +`${itemList[index].description}` + '<br/>'
