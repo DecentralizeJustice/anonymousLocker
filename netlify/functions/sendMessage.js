@@ -27,7 +27,7 @@ exports.handler = async (event) => {
     statusCode: 500,
     body: 'Bad Input',
   }}
-  console.log(result)
+  console.log(results)
   console.log('Requested Bucket ID:')
   console.log(bucket)
   const newMessage = { from: sender, message, sent: Date.now()}

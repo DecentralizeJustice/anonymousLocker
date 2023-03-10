@@ -22,10 +22,10 @@ exports.handler = async (event) => {
     console.log('ran')
     await setupBucket(parsed.orderInfo)
   }
-  // await setupBucket(parsed.orderInfo)
-/*   const publicKeyBase64 = process.env.initialPublicKeyBase64 
+/*   await setupBucket(parsed.orderInfo)
+  const publicKeyBase64 = process.env.initialPublicKeyBase64 
   const privateKeyBase64 = process.env.initialPrivateKeyBase64
-  const fixMistake = await decrypt(publicKeyBase64, privateKeyBase64, 'qjvG6jaKFRMFWhwI5s_3HwJjf4RdGU-Cbfw5mQBhYBJ9EBWdsDYHQHQXsuPgmjs4fgZ4R534JhhfOytU-NEct0Di4HZ9c3esyGsd')
+  const fixMistake = await decrypt(publicKeyBase64, privateKeyBase64, 'Pdqp1XWL12_S-wEF9jiF9BO7Wwrg4WoocW9dxxI_VmnAQT10AYpQ23ZeOK7RqelDOjqxyw4JnHOspfmfvImLxhSdNZhspOtm')
   console.log(fixMistake) */
   return {
     statusCode: 200,
