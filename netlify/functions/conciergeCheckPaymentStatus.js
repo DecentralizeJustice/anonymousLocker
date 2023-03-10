@@ -76,7 +76,7 @@ function processFirstMessage(orderDetails, numberArray) {
   firstString = firstString.concat(`Order ${orderDetails.paymentCoin.toUpperCase()} Total: `, nowPaymentsInfo.pay_amount, '<br/><br/>')
   firstString = firstString.concat('Your Zipcode: ', orderDetails.zipcode, '<br/>')
   firstString = firstString.concat('Your Estimated Sales Tax: ', orderDetails.salesTax, '%<br/>')
-  firstString = firstString.concat('Your Deposit: ', orderDetails.serviceFee, '%<br/>')
+  firstString = firstString.concat('Your Deposit: ', orderDetails.serviceFee, '<br/>')
   firstString = firstString.concat('Extra Order Notes: ', orderDetails.extraNotes, '<br/><br/>')
   const outro = `I will get back to you within 12 hours. I will message you to get your address once I check your order info. If you need anything or have any questions, just shoot me a message here.<br/><br/>`
   firstString = firstString.concat(outro)
