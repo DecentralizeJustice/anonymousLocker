@@ -11,7 +11,7 @@ exports.handler = async (event, context) => {
   let text = bucketID; let pattern = /^[0-9\,]+$/
   let result = pattern.test(text)
   if(result === false){  return {
-    statusCode: 500,
+    statusCode: 532,
     body: 'Bad Input',
   }}
   console.log(result)
