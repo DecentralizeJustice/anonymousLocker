@@ -22,10 +22,10 @@ exports.handler = async (event) => {
     console.log('ran')
     await setupBucket(parsed.orderInfo)
   }
-/*   await setupBucket(parsed.orderInfo)
-  const publicKeyBase64 = process.env.initialPublicKeyBase64 
+  // await setupBucket(parsed.orderInfo)
+/*   const publicKeyBase64 = process.env.initialPublicKeyBase64 
   const privateKeyBase64 = process.env.initialPrivateKeyBase64
-  const fixMistake = await decrypt(publicKeyBase64, privateKeyBase64, 'Pdqp1XWL12_S-wEF9jiF9BO7Wwrg4WoocW9dxxI_VmnAQT10AYpQ23ZeOK7RqelDOjqxyw4JnHOspfmfvImLxhSdNZhspOtm')
+  const fixMistake = await decrypt(publicKeyBase64, privateKeyBase64, 'cDgH50B7QYx8tKc1OzO21v9czRa_bMHmfZigcXCzZD593YguhtU8sVnxNtobnttsklRtbNz2DnULOw3HiOfDOfDhoD3nETk')
   console.log(fixMistake) */
   return {
     statusCode: 200,
@@ -74,7 +74,7 @@ function processFirstMessage(orderDetails, numberArray) {
   firstString = firstString.concat('Amazon Locker Name: ', orderDetails.lockerName, '<br/>')
   firstString = firstString.concat('Amazon Locker Zipcode: ', orderDetails.lockerZipcode, '<br/>')
   firstString = firstString.concat('Extra Order Notes: ', orderDetails.extraNotes, '<br/><br/>')
-  const outro = `I will place your order within 12 hours. You must check on your order every other day. 
+  const outro = `I will place your order within 24 hours. You must check on your order every other day. 
   We do not offer refunds if you fail to pick up your order in time.
   If you need anything or have any questions, just shoot me a message here.<br/><br/>`
   firstString = firstString.concat(outro)
