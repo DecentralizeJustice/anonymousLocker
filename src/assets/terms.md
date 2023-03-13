@@ -11,6 +11,8 @@
     <li> You should check your order every other day so that you do not miss important information about your order.</li>
     <li> You must be 21 years and older to use this service. By using this service, you are ensuring that you are at least 21 years of age.
     </li>
+    <li> You also agree to abide by the terms and conditions of the websites that you have orders made from.
+    </li>
 </ol>
 
 We reserve the right to refuse and refund any order for any reason.
