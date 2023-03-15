@@ -11,27 +11,23 @@ exports.handler = async (event) => {
   try {
     const params = event.body
     const parsed = JSON.parse(params)
-    const accountPhrase = parsed.accountPhrase
-
-    const numberArray = accountPhrase
-    const numberArraySchema = Joi.array().length(8).items(Joi.number().max(2050).min(0))
-    await numberArraySchema.validateAsync(numberArray)
-    
-    const query = { passphrase: numberArray.toString() }
+    const chatID = parsed.chatID
+    const chatIDSchema = Joi.string().required().hex().max(70)
+    await chatIDSchema.validateAsync(chatID)
+    const query = { chatID: chatID }
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 })
-    const collection = client.db("accounts").collection("accountInfo")
-    const accountInfo = await collection.findOne(query)
+    const chatCollection = client.db("chats").collection("mainChat")
+    const messageArray = await chatCollection.findOne(query)
     client.close()
-    if(accountInfo === null){ 
+    if( messageArray === null){ 
       return {
         statusCode: 409,
         body: JSON.stringify({ error: 'account does not exist' })
       }
     }
-    console.log(accountInfo)
   return {
     statusCode: 200,
-    body: JSON.stringify(accountInfo)
+    body: JSON.stringify(messageArray)
   }
   } catch (error) {
     console.log(error)

@@ -1,50 +1,47 @@
-const Redis = require('ioredis')
-const redisPassword = process.env.redisPassword
-const formData = require('form-data')
-const Mailgun = require('mailgun.js')
-const mailgun = new Mailgun(formData);
-const myEmail = process.env.myEmail
-const MAILGUN_API_KEY = process.env.MAILGUN_API_KEY
-const DOMAIN = process.env.mailGunDomain
-const mg = mailgun.client({username: 'api', key: MAILGUN_API_KEY});
-const path = require("path")
-const fs = require('fs')
-const pathWordlist = path.resolve(__dirname + "/bip39Wordlist.txt")
-const words = fs.readFileSync(pathWordlist, 'utf8').toString().split("\n")
+const mongoDBPassword = process.env.mongoDBPassword
+const mongoServerLocation = process.env.mongoServerLocation
+const { MongoClient, ServerApiVersion } = require('mongodb')
+const uri = "mongodb+srv://main:" + mongoDBPassword + "@"+ mongoServerLocation + "/?retryWrites=true&w=majority"
+const Joi = require("joi")
 exports.handler = async (event) => {
   // Only allow POST
   if (event.httpMethod !== "POST") {
     return { statusCode: 405, body: "Method Not Allowed" }
   }
-  const params = event.body
-  const parsed = JSON.parse(params)
-  const message = parsed.message
-  const sender = parsed.sender
-  const bucket = parsed.bucket
-  const newMessage = { from: sender, message, sent: Date.now()}
-  const result = await updateBucket(bucket, newMessage)
-  if (sender !== 'dgoon') {
-    const firstNumber = Number(bucket.split(',')[0])
-    const firstWordd = words[firstNumber]
-    await mg.messages.create(DOMAIN, {
-      from: "Anon Server <me@samples.mailgun.org>",
-      to: [myEmail],
-      subject: "New Anon Locker Message From Customer!",
-      text: `You got another message from  ` + firstWordd + '!'
-    })
-  }
+  try {
+    const params = event.body
+    const parsed = JSON.parse(params)
+
+    const chatID = parsed.chatID
+    const chatIDSchema = Joi.string().required().hex().max(70)
+    await chatIDSchema.validateAsync(chatID)
+
+    const message = parsed.message
+    const messageSchema = Joi.string().required().max(9999)
+    await messageSchema.validateAsync(message)
+
+    const sender = parsed.sender
+    const senderSchema = Joi.string().required().max(7)
+    await senderSchema.validateAsync(sender)
+
+    const query = { chatID: chatID }
+    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 })
+    const chatCollection = client.db("chats").collection("mainChat")
+    const results = await chatCollection.findOne(query)
+    await chatCollection.updateOne(
+      { _id: results._id },
+      { $push: { "messageArray": { from: sender, message: message, sent: Date.now()} } }
+    )
+    client.close()
   return {
     statusCode: 200,
-    body: JSON.stringify(result),
+    body: JSON.stringify('done')
   }
-}
-async function updateBucket(bucket, newMessage){
-  const redis = new Redis({
-    host: 'redis-12641.c278.us-east-1-4.ec2.cloud.redislabs.com',
-    port: 12641,
-    password: redisPassword
-  })
-  const json = await redis.call("JSON.ARRAPPEND", bucket, 'messageArray', JSON.stringify(newMessage))
-  redis.disconnect()
-  return json
+  } catch (error) {
+    console.log(error)
+    return {
+      statusCode: 500,
+      body: ''
+    }
+  }
 }

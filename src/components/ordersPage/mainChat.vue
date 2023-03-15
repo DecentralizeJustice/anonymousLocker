@@ -58,23 +58,22 @@
   </template>
     
 <script setup>
+import { onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import anaonAvatar from "@/assets/chatAvatar.svg"
 import shopperAvatar from "@/assets/detective.svg"
 import sanitizeHtml from 'sanitize-html'
-import { defineProps, toRef, ref, toRaw, computed } from "vue"
+import { defineProps, toRef, ref, computed } from "vue"
 const router = useRouter()
 const axios = require('axios')
 const props = defineProps({
-  passphrase: { type: String, required: true },
-  messageArray: { type: Object, required: true }
+  chatID: { type: String, required: true }
 })
 const text = ref('')
 // const dialogOpen = ref(false)
 const disableButtons = ref(false)
-const messageArrayHolder = toRef(props, 'messageArray')
-const messageArray = ref(toRaw(messageArrayHolder.value))
-const passphrase = toRef(props, 'passphrase')
+const chatID = toRef(props, 'chatID')
+const messageArray = ref([])
 function epochToLocalTime(epochTime){
   const timeString = formatAMPM(new Date(epochTime)) + ' '
   return timeString + new Date(epochTime).toLocaleString('en-us', { weekday:"long", month:"short", day:"numeric"})
@@ -122,7 +121,7 @@ async function sendMessage() {
   disableButtons.value = true
   await sleep(1000)
   disableButtons.value = false
-  const data = { bucket: passphrase.value, message: text.value, sender: sender.value }
+  const data = { chatID: chatID.value, message: text.value, sender: sender.value }
   await axios.post('/.netlify/functions/sendMessage', data)
   text.value = ''
   await checkForMessages()
@@ -131,9 +130,8 @@ async function checkForMessages() {
   disableButtons.value = true
   await sleep(1000)
   disableButtons.value = false
-  const data = { bucketID: passphrase.value }
-  const results = await axios.post('/.netlify/functions/getOrder', data)
-  messageArray.value = results.data.messageArray
+  const results = await axios.post('/.netlify/functions/getMessageArray', { chatID: chatID.value })
+  messageArray.value =  results.data.messageArray
 }
 function formatAMPM(date) {
   var hours = date.getHours();
@@ -152,5 +150,9 @@ const sender = computed(() => {
   } else {
     return 'shopper'
   }
+})
+onMounted(async () => {
+  const results = await axios.post('/.netlify/functions/getMessageArray', { chatID: chatID.value })
+  messageArray.value =  results.data.messageArray
 })
 </script>

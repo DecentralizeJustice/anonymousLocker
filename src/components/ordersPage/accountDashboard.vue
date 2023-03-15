@@ -33,11 +33,9 @@
                 </div>
               </div>  
             </q-card-section>
-            
           </q-card>
-          
           </q-card>
-          <main-chat class=""></main-chat>
+          <main-chat class="" :chatID='accountInfo.orders[0].chatID' ></main-chat>
 
 
 

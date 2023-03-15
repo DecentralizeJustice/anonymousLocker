@@ -99,7 +99,7 @@ async function enterPassphrase() {
     }
   }
   if (numberArray.length === passphraseLength) {
-    const potentialPassphrase = numberArray.toString()
+    const potentialPassphrase = numberArray
     try {
       buttonDisabled.value = true
       await sleep(3000)
