@@ -11,9 +11,8 @@ exports.handler = async (event) => {
   try {
     const params = event.body
     const parsed = JSON.parse(params)
-    const accountPhrase = parsed.accountPhrase
 
-    const numberArray = accountPhrase
+    const numberArray = parsed.accountPhrase
     const numberArraySchema = Joi.array().length(8).items(Joi.number().max(2050).min(0))
     await numberArraySchema.validateAsync(numberArray)
     
