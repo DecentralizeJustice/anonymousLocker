@@ -11,9 +11,11 @@ exports.handler = async (event) => {
   try {
     const params = event.body
     const parsed = JSON.parse(params)
+
     const chatID = parsed.chatID
     const chatIDSchema = Joi.string().required().hex().max(70)
     await chatIDSchema.validateAsync(chatID)
+    
     const query = { chatID: chatID }
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 })
     const chatCollection = client.db("chats").collection("mainChat")
