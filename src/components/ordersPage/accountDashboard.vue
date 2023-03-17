@@ -58,15 +58,14 @@
            <div>Status: {{ accountInfo.orders[0].statusHistory.slice(-1)[0].status  }}</div>
             <div>Items:</div>
             <div v-for="value in accountInfo.orders[0]['itemList']" :key="value.link">
-              <li >Description: {{value.description}}</li>
               <li>Cost: {{value.cost}}</li>
               <li>Quantity: {{ value.quantity }}</li>
               <li>Notes: {{ value.description }}</li>
               <li>Link: <a :href="value.link">Link</a></li>
             </div>
-          <div>Locker Zipcode:{{accountInfo.orders[0].lockerZipcode }}</div>
-          <div>Locker Country:{{accountInfo.orders[0].country }}</div>
-            <div>Locker Name:{{accountInfo.orders[0].lockerName }}</div>
+          <div v-if="accountInfo.orders[0].lockerZipcode !== undefined">Locker Zipcode:{{accountInfo.orders[0].lockerZipcode }}</div>
+          <div v-if="accountInfo.orders[0].country !== undefined">Locker Country:{{accountInfo.orders[0].country }}</div>
+            <div v-if="accountInfo.orders[0].lockerNam !== undefined">Locker Name:{{accountInfo.orders[0].lockerName }}</div>
             <div>Order Notes:{{accountInfo.orders[0].extraNotes }}</div>
             <div>Total USD Sent:{{accountInfo.orders[0].totalUSD}}</div>
             <div>Taxes Paid:{{accountInfo.orders[0].taxAmountUSD}}</div>
