@@ -12,9 +12,9 @@
             <q-card-section>
               <div class="text-h5 q-mb-lg" >Account Summary</div>
               <div class="text-subtitle1">
-                Bond Amount: {{ accountInfo.metaData.bondAmount }}
+                Bond Amount: {{ accountInfo.metaData.bondAmount }} XMR
               </div>
-              <div class="text-subtitle1">
+              <div class="text-subtitle1" style="overflow-wrap: break-word;">
                 XMR Refund Address: {{ accountInfo.metaData.refundAddress }}
               </div>
             </q-card-section>
@@ -75,11 +75,14 @@
             <div>Order Fee:{{accountInfo.orders[0].orderFeeUSD}}</div>
             <div>Extra Amount:{{accountInfo.orders[0].extraAmountUSD}}</div>
             <div>Status:{{accountInfo.orders[0].statusHistory.slice(-1)[0].status}}</div>
-            <div>Payment Info(need to loop over):</div>
+            <div>Payment Rate:  {{accountInfo.orders[0].paymentInfo[0].rate}} XMR/USD</div>
+            <div>XMR Sent: {{accountInfo.orders[0].paymentInfo[0].paymentMethodPaid}} XMR</div>
+            <div>Payment Info:</div>
                <div> 
-              <div>XMR Sent: {{accountInfo.orders[0].paymentInfo[0].totalPaid}}</div>
-              <!-- <div style="overflow-wrap: break-word;">Payment ID: <br/>
-                {{accountInfo.orders[0].paymentInfo[0].payments[0].id.substring(0, 64) }}</div> -->
+                <div v-for="value in accountInfo.orders[0].paymentInfo[0].payments" :key="value.id">
+              <li style="overflow-wrap: break-word;">Transaction ID: {{value.id}}</li>
+              <li >XMR Amount Recieved: {{value.value}}</li>
+            </div>
             </div>
           </div>
         </q-card-section>
