@@ -73,6 +73,7 @@
               <li>City: {{ accountInfo.orders[0].addressInfo.city }}</li>
               <li>Zipcode: {{ accountInfo.orders[0].addressInfo.zipcode }}</li>
               <li>Country: {{ accountInfo.orders[0].addressInfo.country }}</li>
+              <li>Apt or Suite #: {{ accountInfo.orders[0].addressInfo.aptNumber }}</li>
             </div>
             <div>Order Notes:{{accountInfo.orders[0].extraNotes }}</div>
             <div>Total USD Sent:{{accountInfo.orders[0].totalUSD}}</div>

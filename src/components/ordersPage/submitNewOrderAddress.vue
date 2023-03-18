@@ -140,6 +140,11 @@
                   v-model="zipcode"
                   label="Zipcode"
                 />
+                <q-input
+                class="col-12 col-md-12 q-my-sm"
+                  v-model="aptNumber"
+                  label="Apt, suite, unit, building, floor, etc."
+                />
                 <q-select v-model="country" :options="countries" label="Country" 
                 class="col-12 col-md-12 q-my-sm"/>
               </div>
@@ -265,6 +270,7 @@ const itemList = ref([])
 const zipcode = ref("")
 const city = ref("")
 const streetAddress = ref("")
+const aptNumber = ref("")
 const fullname = ref("")
 const country = ref('USA')
 const countries = [ 'USA', 'Canada', 'Germany', ' France', 'United Kingdom / Ireland', 'Poland', 'Spain', 'Mexico', 'Japan']
@@ -445,7 +451,8 @@ async function submitOrder() {
         city: city.value,
         streetAddress: streetAddress.value,
         fullname: fullname.value,
-        country: country.value
+        country: country.value,
+        aptNumber: aptNumber.value
       }
     }
   emit('paymentSTarted', { amount: finalTotalUSD.value, metadata })
