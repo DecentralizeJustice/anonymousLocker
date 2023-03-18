@@ -66,6 +66,14 @@
           <div v-if="accountInfo.orders[0].lockerZipcode !== undefined">Locker Zipcode:{{accountInfo.orders[0].lockerZipcode }}</div>
           <div v-if="accountInfo.orders[0].country !== undefined">Locker Country:{{accountInfo.orders[0].country }}</div>
             <div v-if="accountInfo.orders[0].lockerNam !== undefined">Locker Name:{{accountInfo.orders[0].lockerName }}</div>
+            <div v-if="accountInfo.orders[0].addressInfo !== undefined">
+              Address Info: <br/>
+              <li>Name: {{ accountInfo.orders[0].addressInfo.fullname }}</li>
+              <li>Street: {{ accountInfo.orders[0].addressInfo.streetAddress }}</li>
+              <li>City: {{ accountInfo.orders[0].addressInfo.city }}</li>
+              <li>Zipcode: {{ accountInfo.orders[0].addressInfo.zipcode }}</li>
+              <li>Country: {{ accountInfo.orders[0].addressInfo.country }}</li>
+            </div>
             <div>Order Notes:{{accountInfo.orders[0].extraNotes }}</div>
             <div>Total USD Sent:{{accountInfo.orders[0].totalUSD}}</div>
             <div>Taxes Paid:{{accountInfo.orders[0].taxAmountUSD}}</div>
