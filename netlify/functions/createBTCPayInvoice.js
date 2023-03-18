@@ -24,7 +24,7 @@ exports.handler = async (event, context) => {
                 'redirectURL': 'https://anonshop.app/checkOnOrder',
                 'redirectAutomatically': true
             },
-            'metadata': metadata
+            'metadata': Buffer.from(JSON.stringify(metadata)).toString('base64')
         },
         {
             headers: {
