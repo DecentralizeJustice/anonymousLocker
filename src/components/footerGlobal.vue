@@ -37,9 +37,6 @@ const info = [
   {
     title: 'General',
     items: [
-    {
-        text: 'Register As Earner', link: '/registerEarner'
-      },
       {
         text: 'Place Order', link: '/orders'
       },
