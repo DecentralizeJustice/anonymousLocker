@@ -1,6 +1,6 @@
 <template>
   <div class="col-12 col-md-11 col justify-center row">
-        <q-card class="col-12 col-md-10  justify-around" style="min-height: 70vh;">
+        <q-card class="col-12 col-md-10  justify-around" style="">
           <q-card-section class="bg-grey-9 text-white col-12 ">
             <div class="text-h6">Your Account Overview</div>
           </q-card-section>
@@ -15,7 +15,7 @@
               </div>
                <div class="text-subtitle1" style="overflow-wrap: break-word;">
                 XMR Refund Address: <br/>
-                {{ accountInfo.metaData.refundAddress.slice(0, 8) }}...
+                {{ accountInfo.metaData.refundAddress }}
               </div>
             </q-card-section>
             <q-card-section>
