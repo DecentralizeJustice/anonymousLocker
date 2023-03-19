@@ -70,6 +70,10 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+    q: `hey bud,[redacted] here, tried to login to the chat again to get [redacted] but "account not found" (used "ability" for the last 2).`,
+      a: `I just finished the migration, try to login again. Sorry for the delay!`
+    },
+{
     q: `it seems as though orders from Amazon would be shipped directly to my address from Amazon as a gift? if I can't do Amazon locker and I don't want my address linked with Amazon can I have the item shipped to earner first or somewhere else and then re-shipped to me from them?`,
       a: `Yes. This will cost extra though. Just place and order and I will chat with you using the order chat.`
     },
