@@ -10,21 +10,21 @@ exports.handler = async (event, context) => {
   const amountSchema = Joi.number().required().min(0).max(99999)
   await amountSchema.validateAsync(amount)
 
-  const metadata = parsed.metadata
+  const metadata = Buffer.from(JSON.stringify(parsed.metadata)).toString('base64')
   const storeAddress = 'https://btcpay.anonshop.app/api/v1/stores/' + BTCpayStore + '/invoices'
   const response = await axios.post(
         storeAddress,
         {
             'amount': amount,
-            'speedPolicy': 'HighSpeed', // "LowSpeed"
+            'speedPolicy': 'LowSpeed',
             'checkout': {
                 'paymentMethods': [
                     'XMR'
                 ],
-                'redirectURL': 'https://anonshop.app/checkOnOrder',
+                'redirectURL': 'https://anonshop.app/login',
                 'redirectAutomatically': true
             },
-            'metadata': Buffer.from(JSON.stringify(metadata)).toString('base64')
+            'metadata': { info: metadata}
         },
         {
             headers: {
