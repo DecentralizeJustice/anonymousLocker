@@ -6,6 +6,9 @@
             <div class="text-h6">Login To Account</div>
           </q-card-section>
           <q-separator />
+          <div class="text-h5 q-my-md">Use the word, ability ,  for your last two words if you only have 6 words.
+            If that does not work, message me using the "Ask Question" tab so I can convert your account.
+          </div>
           <q-card-section
                     class=" col-12 row text-center justify-center"
                     style="border-radius: 10px;"
