@@ -1,9 +1,9 @@
 <template>
-  <div class="col-11 col-md-6 col justify-center column">
-    <div class="column justify-center" style="">
-        <q-card class="col-12 col" style="">
+<!--   <div class="col-11 col-md-6 col justify-center column">
+    <div class="column justify-center" style=""> -->
+        <q-card class="col-6 col q-my-lg text-center" style="">
           <q-card-section class="bg-grey-9 text-white">
-            <div class="text-h6">Chat About Your Order</div>
+            <div class="text-h6">Your Order Chat</div>
           </q-card-section>
           <q-separator />
                   <q-card-section
@@ -11,7 +11,7 @@
                       style="border-radius: 10px;"
                     >
                     <div class="row justify-center text-left overflow-auto" style="">
-                      <div style="width: 100%; height: 50vh;" class="overflow-auto scroll">
+                      <div style="width: 100%; height: 40vh;" class="overflow-auto scroll">
                         <q-chat-message
                           v-for="(message, index) in messageArray"
                           :key="index"
@@ -53,43 +53,27 @@
     </div>
         </q-card-actions>
         </q-card>
-      </div>
-      <q-dialog v-model="dialogOpen">
-      <q-card>
-        <q-card-section>
-          <div class="text-h6">Alert</div>
-        </q-card-section>
-
-        <q-card-section class="q-pt-none">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum repellendus sit voluptate voluptas eveniet porro. Rerum blanditiis perferendis totam, ea at omnis vel numquam exercitationem aut, natus minima, porro labore.
-        </q-card-section>
-
-        <q-card-actions align="right">
-          <q-btn flat label="OK" color="primary" v-close-popup />
-        </q-card-actions>
-      </q-card>
-    </q-dialog>
-    </div>
+<!--       </div>
+    </div> -->
   </template>
     
 <script setup>
+import { onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import anaonAvatar from "@/assets/chatAvatar.svg"
 import shopperAvatar from "@/assets/detective.svg"
 import sanitizeHtml from 'sanitize-html'
-import { defineProps, toRef, ref, toRaw, computed } from "vue"
+import { defineProps, toRef, ref, computed } from "vue"
 const router = useRouter()
 const axios = require('axios')
 const props = defineProps({
-  passphrase: { type: String, required: true },
-  messageArray: { type: Object, required: true }
+  chatID: { type: String, required: true }
 })
 const text = ref('')
-const dialogOpen = ref(false)
+// const dialogOpen = ref(false)
 const disableButtons = ref(false)
-const messageArrayHolder = toRef(props, 'messageArray')
-const messageArray = ref(toRaw(messageArrayHolder.value))
-const passphrase = toRef(props, 'passphrase')
+const chatID = toRef(props, 'chatID')
+const messageArray = ref([])
 function epochToLocalTime(epochTime){
   const timeString = formatAMPM(new Date(epochTime)) + ' '
   return timeString + new Date(epochTime).toLocaleString('en-us', { weekday:"long", month:"short", day:"numeric"})
@@ -137,7 +121,7 @@ async function sendMessage() {
   disableButtons.value = true
   await sleep(1000)
   disableButtons.value = false
-  const data = { bucket: passphrase.value, message: text.value, sender: sender.value }
+  const data = { chatID: chatID.value, message: text.value, sender: sender.value }
   await axios.post('/.netlify/functions/sendMessage', data)
   text.value = ''
   await checkForMessages()
@@ -146,9 +130,8 @@ async function checkForMessages() {
   disableButtons.value = true
   await sleep(1000)
   disableButtons.value = false
-  const data = { bucketID: passphrase.value }
-  const results = await axios.post('/.netlify/functions/getOrder', data)
-  messageArray.value = results.data.messageArray
+  const results = await axios.post('/.netlify/functions/getMessageArray', { chatID: chatID.value })
+  messageArray.value =  results.data.messageArray
 }
 function formatAMPM(date) {
   var hours = date.getHours();
@@ -167,5 +150,9 @@ const sender = computed(() => {
   } else {
     return 'shopper'
   }
+})
+onMounted(async () => {
+  const results = await axios.post('/.netlify/functions/getMessageArray', { chatID: chatID.value })
+  messageArray.value =  results.data.messageArray
 })
 </script>

@@ -3,7 +3,7 @@
     <div class="column justify-center" style="">
       <q-card class="col-12 col" style="">
         <q-card-section class="bg-grey-9 text-white">
-          <div class="text-h6">Fill In Locker Order Details:</div>
+          <div class="text-h6">Fill In Your Address Order Details:</div>
         </q-card-section>
         <q-separator />
         <q-card-section>
@@ -110,39 +110,62 @@
                 </div>
               </div>
               <div
-                class="row col-12 justify-around"
+                class="row col-12 justify-around col"
               >
+              <div class="row col-4 justify-around">
+                Address Info
               <q-input
-                class="col-12 col-md-5 q-my-sm"
-                v-model="lockerName"
-                label="Amazon Locker Name (Optional)"
+                class="col-12 col-md-12 q-my-sm"
+                v-model="fullname"
+                label="Full Name"
+              />
+              <q-input
+                class="col-12 col-md-12 q-my-sm"
+                v-model="streetAddress"
+                :error="streetAddresError"
+                autogrow
+                label="Street Address"
+              />
+              <q-input
+                class="col-12 col-md-12 q-my-sm"
+                v-model="city"
+                label="City"
+                error-message="City Is Too Short"
+                :error="cityError"
               />
                 <q-input
                 error-message="Zipcode Is Too Short"
                 :error="zipcodeError"
-                class="col-12 col-md-5 q-my-sm"
-                  v-model="lockerZipcode"
-                  label="Your Zipcode"
+                class="col-12 col-md-12 q-my-sm"
+                  v-model="zipcode"
+                  label="Zipcode"
+                />
+                <q-input
+                class="col-12 col-md-12 q-my-sm"
+                  v-model="aptNumber"
+                  label="Apt, suite, unit, building, floor, etc."
                 />
                 <q-select v-model="country" :options="countries" label="Country" 
-                class="col-12 col-md-5 q-my-sm"/>
-                <q-input v-model="extra"  class="col-12 col-md-5 q-my-sm"   
+                class="col-12 col-md-12 q-my-sm"/>
+              </div>
+              <div class="row col-5 justify-around">
+                <q-input v-model="extra"  class="col-12 col-md-12 q-my-sm"   type="number"
                   label="Extra/Tip (USD)" :disable="discountPossible"/>
               <q-input
-                class="col-12 col-md-5 q-my-sm"
+                class="col-12 col-md-12 q-my-sm"
                 v-model="extraNotes"
                 autogrow
                 label="Order Notes"
               /> 
               <q-input
-                class="col-12 col-md-5 q-my-sm"
+                class="col-12 col-md-12 q-my-sm"
                 v-model="xmrRefundAddress"
                 autogrow
                 error-message="Not Monero Address"
                 :error="xmrRefundAddressError"
                 label="Monero Refund Address"
               /> 
-<!--               <div class="col-12 col-md-5 q-my-sm">
+              <div class="col-12 col-md-12 q-my-sm">
                 <q-toggle
                   v-model="discountPossible"
                   color="red"
@@ -152,9 +175,11 @@
                 <br/>
                 <span v-if="discountPossible">
                   Discount Percentage: {{ discountPercent }}%
-                  <q-slider v-model="discountPercent" :min="1" :max="15" color="red"/>
+                  <q-slider v-model="discountPercent" :min="1" :max="8" color="red"/>
                 </span>
-              </div> -->
+              </div>
+              </div>
+
               <span class="col-12 q-mt-md">
                 <q-chip
                   color="red"
@@ -180,7 +205,7 @@
               >
                 Extra/Tip: {{ extra }} USD <br/>
                 Refundable Bound Amount: {{ bondAmount }} USD <br/>
-                Non-Refundable Service Fee: {{serviceFeeUSD}} USD <br/>
+                Non-Refundable Fee: {{serviceFeeUSD}} USD <br/>
               </div>
               <div
                 class="row col-12 col-md-12 text-h5 q-mt-lg justify-center"
@@ -213,10 +238,10 @@
         </q-card-section>
 
         <q-card-section class="text-body1">
-           Our discount ability does not garantee that your order will be filled.
+           Our discount ability does not guarantee that your order will be filled.
            Your order will sit in our orderbook until or if an earner decides to pick it up. 
            Your order will sit in our orderbook for a 30 days; after that time
-           you will be refuned for your order , 
+           you will be refunded for your order , 
            minus the Non-Refundable Fee of {{ serviceFeeUSD }} USD. If your discount is too
           much for our earners, your order will not be picked up by them before it is removed from our orderbooks.
           </q-card-section>
@@ -237,26 +262,31 @@ const emit = defineEmits(['paymentSTarted'])
 const alert = ref(false)
 const giftcardOnlyOrder = ref(false)
 const amazonlink = ref("")
+const discountPercent = ref(3)
 const amazonItemDescription = ref("")
 const itemAmount = ref("0.00")
 const itemQuantity = ref(1)
 const itemList = ref([])
-const lockerZipcode = ref(0)
-const lockerName = ref("")
+const zipcode = ref("")
+const city = ref("")
+const streetAddress = ref("")
+const aptNumber = ref("")
+const fullname = ref("")
 const country = ref('USA')
 const countries = [ 'USA', 'Canada', 'Germany', ' France', 'United Kingdom / Ireland', 'Poland', 'Spain', 'Mexico', 'Japan']
 const extraNotes = ref("")
 const xmrRefundAddress = ref("")
 const minOrderamount = .01
-const serviceFeeUSD = 3
+const serviceFeeUSD = 1
 const bondAmount = 5
-const discountPercent = ref(3)
-const extra = ref(0)
+const extra = ref(2)
 const discountPossible = ref(false)
 const linkError = ref(false)
 const itemQuantityError = ref(false)
 const itemAmountError = ref(false)
+const streetAddresError = ref(false)
 const zipcodeError = ref(false)
+const cityError = ref(false)
 const xmrRefundAddressError = ref(false)
 const minAmountError = ref(false)
 const numberArray = ref([])
@@ -303,7 +333,7 @@ watch(itemAmount, () => {
 watch(itemQuantity, () => {
   itemQuantityError.value = false
 })
-watch(lockerZipcode, () => {
+watch(zipcode, () => {
   zipcodeError.value = false
 })
 watch(itemAmount, () => {
@@ -311,6 +341,12 @@ watch(itemAmount, () => {
 })
 watch(xmrRefundAddress, () => {
   xmrRefundAddressError.value = false
+})
+watch(streetAddress, () => {
+  streetAddresError.value = false
+})
+watch(city, () => {
+  cityError.value = false
 })
 async function generateRandomArray() {
   const numberArray = []
@@ -365,7 +401,15 @@ function submitOrderChecks() {
     minAmountError.value = true
     return false
   }
-  if (lockerZipcode.value.toString(2).length < 5) {
+  if (streetAddress.value.length <= 0) {
+    streetAddresError.value = true
+    return false
+  }
+  if (city.value.length <= 0) {
+    cityError.value = true
+    return false
+  }
+  if (zipcode.value.toString(2).length < 5) {
     zipcodeError.value = true
     return false
   }
@@ -391,10 +435,8 @@ async function submitOrder() {
     { 
       numberArray: toRaw(numberArray.value), 
       itemList: toRaw(itemList.value),
-      lockerZipcode: toRaw(lockerZipcode.value), 
-      lockerName: toRaw(lockerName.value), 
       extraNotes: toRaw(extraNotes.value),
-      type: 'firstLockerOrder',
+      type: 'firstAddressOrder',
       amount: finalTotalUSD.value,
       taxAmount: taxAmount.value,
       orderSubtotal: orderUSDSubTotal.value,
@@ -404,7 +446,14 @@ async function submitOrder() {
       refundAddress: xmrRefundAddress.value,
       discountPercent: discountPercent.value,
       discountPossible: discountPossible.value,
-      country: country.value
+      addressInfo: {
+        zipcode: toRaw(zipcode.value), 
+        city: city.value,
+        streetAddress: streetAddress.value,
+        fullname: fullname.value,
+        country: country.value,
+        aptNumber: aptNumber.value
+      }
     }
   emit('paymentSTarted', { amount: finalTotalUSD.value, metadata })
 } catch (err) {

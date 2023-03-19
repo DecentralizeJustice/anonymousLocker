@@ -13,7 +13,7 @@
 <script setup>
 import { ref } from "vue";
 import submitNewOrder from "@/components/ordersPage/submitNewOrder.vue"
-import paymentComponent from "@/components/ordersPage/paymentComponent.vue"
+import paymentComponent from "@/components/earnerCheckout/paymentComponent.vue"
 const firstChoice = ref('newOrder')
 const paymentStarted = ref(false)
 const paymentInfo = ref({})

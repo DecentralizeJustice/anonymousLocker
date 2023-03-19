@@ -15,27 +15,21 @@ exports.handler = async (event) => {
     const chatID = parsed.chatID
     const chatIDSchema = Joi.string().required().hex().max(70)
     await chatIDSchema.validateAsync(chatID)
-
-    const message = parsed.message
-    const messageSchema = Joi.string().required().max(9999)
-    await messageSchema.validateAsync(message)
-
-    const sender = parsed.sender
-    const senderSchema = Joi.string().required().max(7)
-    await senderSchema.validateAsync(sender)
-
+    
     const query = { chatID: chatID }
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 })
     const chatCollection = client.db("chats").collection("mainChat")
-    const results = await chatCollection.findOne(query)
-    await chatCollection.updateOne(
-      { _id: results._id },
-      { $push: { "messageArray": { from: sender, message: message, sent: Date.now()} } }
-    )
+    const messageArray = await chatCollection.findOne(query)
     client.close()
+    if( messageArray === null){ 
+      return {
+        statusCode: 409,
+        body: JSON.stringify({ error: 'account does not exist' })
+      }
+    }
   return {
     statusCode: 200,
-    body: JSON.stringify('done')
+    body: JSON.stringify(messageArray)
   }
   } catch (error) {
     console.log(error)

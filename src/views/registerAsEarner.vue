@@ -19,6 +19,5 @@ const paymentInfo = ref({})
 function processPaymentInfo( paymentInfoFromComp) {
   paymentInfo.value =  paymentInfoFromComp
   paymentStarted.value = true
-  console.log(paymentInfoFromComp)
 }
 </script>

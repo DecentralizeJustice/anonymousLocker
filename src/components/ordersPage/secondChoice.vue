@@ -2,11 +2,11 @@
       <div class="row items-center justify-around align-center">
         <q-card class="col-9 col-md-5">
           <q-card-section>
-            <p class="text-h5 text-weight-medium">Place Concierge Order</p>
+            <p class="text-h5 text-weight-medium">Deliver To Address</p>
             <img :src="home" class="" style="width: 50%" /><br />
             <q-btn
               color="primary"
-              label="Place Concierge Order"
+              label="Place Address Order"
               size="lg"
               style="color: white" 
               padding="sm"
@@ -17,7 +17,7 @@
         </q-card>
         <q-card class="col-9 col-md-5">
           <q-card-section>
-            <p class="text-h5 text-weight-medium">Place Locker Order</p>
+            <p class="text-h5 text-weight-medium">Deliver to Locker</p>
             <img :src="locker" class="" style="width: 50%" /><br />
             <q-btn
               color="primary"

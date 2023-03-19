@@ -3,7 +3,7 @@
     <div class="column justify-center" style="">
         <q-card class="col-12 col" style="">
           <q-card-section class="bg-grey-9 text-white">
-            <div class="text-h6">Check On Order</div>
+            <div class="text-h6">Login To Account</div>
           </q-card-section>
           <q-separator />
           <q-card-section
@@ -12,10 +12,10 @@
                     v-if="orderNotFound"
                   >
                     <div class="text-h6 text-white col-8 bg-red-5 q-pa-sm">
-                      Order Does Not Exist!
+                      Account Does Not Exist!
                     </div>
                     <div class="text-h6 text-white col-8 q-mt-sm">
-                      <router-link to="message">Message Me If Your Having Issues</router-link>
+                      <router-link to="message">Message Us If Your Having Issues</router-link>
                     </div>
                   </q-card-section>
           <q-card-section>
@@ -28,7 +28,7 @@
                       style="border-radius: 10px;"
                     >
                       <div class="text-h6">
-                        Enter Your Order Passphrase
+                        Enter Your Account Passphrase
                       </div>
                       <div class="text-left  text-white row col-12 justify-center">
                     <div     class="row col-12 justify-center q-mt-sm" v-for="(item, index) in passphraseLength"
@@ -80,9 +80,9 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 const emit = defineEmits(['passphraseEnteredSuccess'])
 const axios = require('axios')
-const passphraseWords = ref(["","","","","",""])
-const passphraseLength = 6
-const validWordWarningArray = ref([false, false, false, false, false, false])
+const passphraseWords = ref(["","","","","","","",""])
+const passphraseLength = 8
+const validWordWarningArray = ref([false, false, false, false, false, false, false, false])
 const orderNotFound = ref(false)
 // const messageArray = ref([])
 const buttonDisabled = ref(false)
@@ -99,18 +99,17 @@ async function enterPassphrase() {
     }
   }
   if (numberArray.length === passphraseLength) {
-    const potentialPassphrase = numberArray.toString()
+    const potentialPassphrase = numberArray
     try {
       buttonDisabled.value = true
       await sleep(3000)
       buttonDisabled.value = false
-      const results = await axios.post('/.netlify/functions/getOrder', { bucketID: potentialPassphrase })
-      // messageArray.value = results.data.messageArray
-      emit('passphraseEnteredSuccess', results.data.messageArray, potentialPassphrase)
+      const results = await axios.post('/.netlify/functions/loginToAccount', { accountPhrase: potentialPassphrase })
+      console.log(results.data)
+      emit('passphraseEnteredSuccess', results.data, potentialPassphrase)
     } catch (error) {
-      console.log(error.response)
-        orderNotFound.value = true
-        console.log('order not found')
+      console.log(error)
+      orderNotFound.value = true
     }
   }
 }
@@ -153,7 +152,8 @@ onMounted(() => {
   const routeInfo = router.currentRoute.value
   const routeName = routeInfo.name
   const routeHash = routeInfo.hash
-  if (routeName === 'checkOnOrder') {
+  console.log(routeName)
+  if (routeName === 'login') {
     const rawFrag = routeHash.substring(1)
     const fragWordArray = rawFrag.split(',')
     passphraseWords.value = fragWordArray
