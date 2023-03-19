@@ -167,7 +167,7 @@ const shopperfaq = {
     ],
     [
       `How much is this service?`,
-      `This service is currently free.`,
+      `The cost depends on your delivery method.`,
     ],
     [
       `What happens if there is an order dispute between earner and shopper?`,
@@ -183,7 +183,7 @@ const shopperfaq = {
     ],
     [
       `How much is the shopper deposit?`,
-      `It is currently 10 USD of Monero.`,
+      `It is currently 5 USD of Monero.`,
     ],
   ],
 
