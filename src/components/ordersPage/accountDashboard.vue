@@ -1,24 +1,23 @@
 <template>
-  <div class="col-11 col-md-11 col justify-center column">
-    <div class="column justify-center" style="">
-        <q-card class="col-12 col" style="min-height: 70vh;">
-          <q-card-section class="bg-grey-9 text-white col-3">
+  <div class="col-12 col-md-11 col justify-center row">
+        <q-card class="col-12 col-md-10  justify-around" style="min-height: 70vh;">
+          <q-card-section class="bg-grey-9 text-white col-12 ">
             <div class="text-h6">Your Account Overview</div>
           </q-card-section>
-          <q-separator />
-          <div class="col-11 col-md-11 justify-around row" style="">
 
-          <q-card class="bg-primary text-white col-3 col q-py-xl q-my-xl">
+          <div class="col-12 col-md-10 justify-around row" style="">
+            <main-chat class="col-11 col-md-6" :chatID='accountInfo.orders[0].chatID' ></main-chat>
+           <q-card class="bg-primary text-white col-11 col-md-5 col q-py-xl q-my-xl">
             <q-card-section>
               <div class="text-h5 q-mb-lg" >Account Summary</div>
               <div class="text-subtitle1">
                 Bond Amount: {{ accountInfo.metaData.bondAmount }} XMR
               </div>
-              <div class="text-subtitle1" style="overflow-wrap: break-word;">
-                XMR Refund Address: {{ accountInfo.metaData.refundAddress }}
+               <div class="text-subtitle1" style="overflow-wrap: break-word;">
+                XMR Refund Address: <br/>
+                {{ accountInfo.metaData.refundAddress.slice(0, 8) }}...
               </div>
             </q-card-section>
-            <q-card class="bg-primary text-white col-5 col">
             <q-card-section>
               <div class="text-h5 q-mb-lg">Order Info</div>
               <div class="column" style="">
@@ -33,15 +32,11 @@
                 </div>
               </div>  
             </q-card-section>
-          </q-card>
-          </q-card>
-          <main-chat class="" :chatID='accountInfo.orders[0].chatID' ></main-chat>
-
-
-
+          </q-card> 
+          
         </div>
         </q-card>
-      </div>
+
 
       <q-dialog v-model="dialogOpen">
       <q-card>

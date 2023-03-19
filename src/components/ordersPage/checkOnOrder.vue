@@ -1,6 +1,7 @@
 <template>
   <enterPassphrase @passphraseEnteredSuccess='passphraseEnteredSuccess' v-if='passphrase.length === 0'/>
-  <accountDashboard v-if='passphrase.length > 0' :accountInfo='accountInfo' :passphrase='passphrase'/>
+  <accountDashboard
+  v-if='passphrase.length > 0' :accountInfo='accountInfo' :passphrase='passphrase'/>
 </template>
     
 <script setup>
