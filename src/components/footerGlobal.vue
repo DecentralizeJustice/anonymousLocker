@@ -65,7 +65,7 @@ const info = [
         text: 'F.A.Q.', link: '/faq'
       },
       {
-        text: 'Check Order', link: '/checkOnOrder'
+        text: 'Check Order', link: '/login'
       }
     ]
   },
