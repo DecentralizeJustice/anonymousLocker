@@ -11,7 +11,7 @@
                   <div class="row">
                     <div class="col">XMR Earned<br/></div>
                     <div class="col desktop-only">USD Cost</div>
-                    <div class="col">XMR/USD</div>
+                    <div class="col">USD/XMR</div>
                     <div class="col desktop-only">Description</div>
                     <div class="col desktop-only">Country</div>
                     <div class="col desktop-only">Number of Items</div>

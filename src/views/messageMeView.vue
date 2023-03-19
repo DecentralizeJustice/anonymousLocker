@@ -69,6 +69,43 @@ const text = ref('')
 const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
+{
+    q: `Hi. If your order passphrase started with master or Ivory, please check on your order again. Your chat should work now. If you are neither of these people, and you do not have a 
+    chat to message me in; You should message me(using the ask me a question) here with: 1. the first word in your passphrase 2. The exact amount of XMR paid(not including transaction fees) and the address you sent payment to.`,
+      a: `See above.`
+    },
+{
+    q: `hey it's been over a full day, please respond to my order`,
+      a: `You might need to refresh your page since I have responded to all orders at this time. If my message is not there, please send me the first word of your passphrase, since there might be an issue with your chat functionality.`
+    },
+{
+    q: `How can I find the Amazon Locker nearest to me?
+
+The official website (amazon.com/findalocker) appears to be authwalled, requiring login to access Therefore, if I search for a locker with my account, and then place the order through you, I've deanonymized myself.
+
+How can I search for Amazon Lockers in my area anonymously, without authenticating with an Amazon account?
+`,
+      a: `At checkout you can enter your zipcode. I will find some lockers near you and give you options
+      when we chat about your order. If none of these locker options work for you, we generally issue you a full refund.`
+    },
+{
+    q: `I need to buy something very expensive. What assurance do I have that the "Earner" won't take my funds and not place the order?`,
+      a: `We hold the funds until both parties are satisfied. That means that the earner can't take your funds. You must tell us that the order
+      went fine, before we release the funds to the earner.`
+    },
+  {
+    q: `How do you handle items that aren't eligible for Amazon lockers? I've used lockers before and sometimes it wouldn't let me order certain items to lockers. Unfortunately there doesn't seem to be a good of way of knowing this without logging into an account to check beforehand.
+    `,
+      a: `If an item ships from Amazon it can fit into a locker. There are some size restrictions lockers also. You can look up
+      an item and ensure that it says, "Ships from Amazon.com" without logging in. If your item can not ship to a locker, you must use the home delivery option.`
+    },
+    {
+    q: `Can I order from websites such as, AliExpress, AliBaba or Shein??
+          Or is this exclusive to Amazon?
+      + Can I order to an address in a third world country (middle east) or is it exclusive to the US? and if not when are you planning to expand this service to support more countries?
+      `,
+    a: `If a website ships to you, we can order it for you. Returns might not be possible though.`
+    },  
     {
     q: `Can you check if this page is working properly ?
   https ://anonshop.app/registerEarner
