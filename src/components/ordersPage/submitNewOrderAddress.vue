@@ -417,7 +417,7 @@ function submitOrderChecks() {
     xmrRefundAddressError.value = true
     return false
   }
-  return true
+  return false //
 }
 async function submitOrder() {
   const checksPassed = submitOrderChecks()
