@@ -70,6 +70,10 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+    q: `Re: Question 23`,
+      a: `Sent!`
+    },
+{
     q: `Hi. I recently picked up an order, but I never saw the XMR refund from the deposit come through. I would have just asked in the chat, but my seed words no longer work (using "ability" for the 7th and 8th word)`,
       a: `Just message me your 6 words here and I will get you your refund. Thanks for reaching out.`
     },

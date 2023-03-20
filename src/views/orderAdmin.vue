@@ -10,7 +10,6 @@
 import { onMounted } from "vue"
 const axios = require('axios')
 onMounted(async () => {
-  console.log('ran')
   const results = await axios.post('/.netlify/functions/getAll', {  })
   console.log(results.data)
 })
