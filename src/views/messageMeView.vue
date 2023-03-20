@@ -15,7 +15,7 @@
         <div class="text-body1 text-left">      
           If you have not placed an order and have a question for me, shoot me a message here. 
       If you have placed an order and the chat is working, you should communicate with me using that chat instead. 
-      I will answer your question publicly below, so don't mention any private information. I always respond within 1 day, so check back soon!</div>
+      I will answer your question publicly below. I always respond within 1 day, so check back soon!</div>
       </q-card-section>
       <q-card-section class="">
         <div class="row justify-around q-gutter-y-md">
