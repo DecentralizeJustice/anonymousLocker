@@ -70,6 +70,14 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+    q: `I had an earner account before, and paid the bond. Can I get that refunded?
+
+My 6 words aren't working to get into the account to message you directly, since the upgrade.
+
+Don't want to post the words here unless instructed to, since these are public questions, but can if you just automatically redact them.`,
+      a: `Of course! Just send me your 6 words here and your xmr refund address.`
+    },
+{
     q: `Re: Question 23`,
       a: `Sent!`
     },
