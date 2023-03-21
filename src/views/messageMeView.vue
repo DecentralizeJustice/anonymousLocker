@@ -70,6 +70,10 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+    q: `Earner account bond refund.  Look forward to using this as a buyer too.`,
+      a: `Sent! Thanks for trying out our earning feature. Hopefully we will build up more demand and bring the program back.`
+    },
+{
     q: `I had an earner account before, and paid the bond. Can I get that refunded?
 
 My 6 words aren't working to get into the account to message you directly, since the upgrade.
