@@ -24,7 +24,7 @@
                 <div class="col col-6" v-for="item in accountInfo.orders" :key="item.nickname">
                   <div class="text-subtitle1 bg-black q-pa-md rounded-borders">
                     <div>{{capitalizeWords(item.nickName)}} for {{ item.totalUSD }} USD</div>
-                    <div>Status: {{ item.statusHistory.slice(-1)[0].status  }}</div>
+<!--                     <div>Status: {{ item.statusHistory.slice(-1)[0].status  }}</div> -->
                     <div>
                       <q-btn color="secondary" label="More Info" class="q-my-sm" 
                       @click="openDialog()"/></div>
@@ -50,7 +50,7 @@
 <!--           {{ accountInfo.orders[0].chatID }} -->
           <div class="text-subtitle1 q-pa-md rounded-borders">
           <div>Total USD Sent: {{ accountInfo.orders[0].totalUSD }} USD</div>
-           <div>Status: {{ accountInfo.orders[0].statusHistory.slice(-1)[0].status  }}</div>
+<!--            <div>Status: {{ accountInfo.orders[0].statusHistory.slice(-1)[0].status  }}</div> -->
             <div>Items:</div>
             <div v-for="value in accountInfo.orders[0]['itemList']" :key="value.link">
               <li>Cost: {{value.cost}}</li>
@@ -80,7 +80,7 @@
             <div>Bond Paid:{{accountInfo.orders[0].bondUSD}}</div>
             <div>Order Fee:{{accountInfo.orders[0].orderFeeUSD}}</div>
             <div>Extra Amount:{{accountInfo.orders[0].extraAmountUSD}}</div>
-            <div>Status:{{accountInfo.orders[0].statusHistory.slice(-1)[0].status}}</div>
+<!--             <div>Status:{{accountInfo.orders[0].statusHistory.slice(-1)[0].status}}</div> -->
             <div>Payment Rate:  {{accountInfo.orders[0].paymentInfo[0].rate}} XMR/USD</div>
             <div>XMR Sent: {{accountInfo.orders[0].paymentInfo[0].paymentMethodPaid}} XMR</div>
             <div>Payment Info:</div>

@@ -6,9 +6,9 @@
             <div class="text-h6">Login To Account</div>
           </q-card-section>
           <q-separator />
-          <div class="text-h5 q-my-md">Use the word, ability ,  for your last two words if you only have 6 words.
+<!--           <div class="text-h5 q-my-md">Use the word, ability ,  for your last two words if you only have 6 words.
             If that does not work, message me using the "Ask Question" tab so I can convert your account.
-          </div>
+          </div> -->
           <q-card-section
                     class=" col-12 row text-center justify-center"
                     style="border-radius: 10px;"
@@ -18,7 +18,8 @@
                       Account Does Not Exist!
                     </div>
                     <div class="text-h6 text-white col-8 q-mt-sm">
-                      <router-link to="message">Message Us If Your Having Issues</router-link>
+                      <router-link to="message">You have to wait ~7 confirmations for your order to show.
+                        Message Us If Your Having Issues</router-link>
                     </div>
                   </q-card-section>
           <q-card-section>
