@@ -112,11 +112,24 @@
               <div
                 class="row col-12 justify-around"
               >
+              <div class="col-12 col-md-5 q-my-sm">
+<!--               <q-chip
+                  color="primary"
+                  text-color="white"
+                  icon="place"
+                  label='Find Amazon Lockers'
+                  @click="openLockerMap"
+                /> -->
+                <a href="https://www.amazon.com/ulp/view" target="_blank" rel="noopener noreferrer"
+                class="text-h6"
+                >
+                  Find Amazon Lockers Here
+                </a>
               <q-input
-                class="col-12 col-md-5 q-my-sm"
                 v-model="lockerName"
                 label="Amazon Locker Name (Optional)"
               />
+            </div>
                 <q-input
                 error-message="Zipcode Is Too Short"
                 :error="zipcodeError"
