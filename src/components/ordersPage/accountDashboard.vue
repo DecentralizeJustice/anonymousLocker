@@ -32,6 +32,10 @@
                 </div>
               </div>  
             </q-card-section>
+            <div v-if="admin">
+              <q-btn color="red" label="Delete Account" class="q-my-sm" 
+                      @click="deleteAccount"/>
+            </div>
           </q-card> 
           
         </div>
@@ -103,21 +107,23 @@
   </template>
     
 <script setup>
-import { defineProps, toRef, ref  } from "vue"
+import { defineProps, toRef, ref, computed  } from "vue"
 import mainChat from '@/components/ordersPage/mainChat.vue'
+import { useRouter } from 'vue-router'
+const axios = require('axios')
 const props = defineProps({
   passphrase: { type: String, required: true },
   accountInfo: { type: Object, required: true }
 })
+const deleteCounter = ref(0)
 /* const text = ref('')
 const disableButtons = ref(false) */
+const router = useRouter()
 const dialogOpen = ref(false)
 const accountInfo = toRef(props, 'accountInfo')
 // const passphrase = toRef(props, 'passphrase')
 function openDialog() {
   dialogOpen.value = true
-  console.log(accountInfo.value.orders)
-  console.log('ran')
 }
 function capitalizeWords(str) {
   return str
@@ -126,7 +132,24 @@ function capitalizeWords(str) {
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
 }
-console.log(accountInfo.value)
+async function deleteAccount() {
+  deleteCounter.value = deleteCounter.value + 1
+  if(deleteCounter.value < 6){ console.log('more delete presses needed'); return }
+  deleteCounter.value = 0
+  const results = await axios.post('/.netlify/functions/deleteAccount', 
+  { accountPhrase: accountInfo.value.passphrase, 
+    chatID: accountInfo.value.orders[0].chatID
+  })
+  console.log(results.data)
+}
+const admin = computed(() => {
+  const routeInfo = router.currentRoute.value
+  if (routeInfo.name === 'admin') {
+    return true
+  } else {
+    return false
+  }
+})
 
 </script>
 <style lang="sass" scoped>
