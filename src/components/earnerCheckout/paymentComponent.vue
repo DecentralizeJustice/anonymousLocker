@@ -38,6 +38,7 @@
                   icon="check"
                   label="Confirm Passphrase Saved"
                   @click="confirmPassphrase"
+                  :disable="disaableButton"
                 />
               </div>
               </div>
@@ -50,7 +51,7 @@
 </template>
 
 <script setup>
-import { defineProps, toRef, computed } from "vue"
+import { defineProps, toRef, computed, ref } from "vue"
 import { numberArrayToWordArray } from'@/assets/misc.js'
 const axios = require('axios')
 const props = defineProps({
@@ -61,7 +62,9 @@ const wordList = computed(() => {
   console.log(paymentInfo.value)
   return numberArrayToWordArray(paymentInfo.value.metadata.numberArray)
 })
+const disaableButton = ref('false')
 async function confirmPassphrase() {
+  disaableButton.value = true
   const results = await axios.post('/.netlify/functions/createBTCPayInvoice', 
   { amount: paymentInfo.value.amount, 
     metadata: paymentInfo.value.metadata

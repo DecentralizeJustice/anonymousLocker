@@ -6,10 +6,7 @@ import message from "../views/messageMeView.vue"
 import about from "../views/aboutMeView.vue"
 import privacyPolicy from "../views/privacyPolicy.vue"
 import termsOfService from "../views/termsOfService.vue"
-import blog from "../views/blogView.vue"
 import orderAdmin from "../views/orderAdmin.vue"
-import novReview2022 from "../components/blogPost/monthInReview/nov2022Blog.vue"
-import empty from "../views/emptyRoute.vue"
 import twitterGiveAway from "../views/giveAwayTerms.vue"
 import verifyTwitterGiveaway from "../views/verifyGiveaway.vue"
 import login from "../views/loginPage.vue"
@@ -104,21 +101,6 @@ const router = createRouter({
       path: "/termsofservice",
       name: "termsofservice",
       component: termsOfService
-    },
-    {
-      path: "/blog",
-      component: empty,
-      children: [
-        { 
-          path: '', 
-          name: 'blog',
-          component: blog
-        },
-        {
-          path:'nov22',
-          component: novReview2022
-        }
-      ],
     },
     {
       path: "/admin",
