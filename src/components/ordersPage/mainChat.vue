@@ -43,10 +43,10 @@
           </div>
           <div class="row justify-around q-gutter-y-md">
       <div class="col-12 col-md-6 ">
-        <q-btn @click="sendMessage" :disable="disableButtons" color="positive" icon="send">Send Message</q-btn>
+        <q-btn @click="sendMessage" :disable="disableButtons" color="deep-purple-5" icon="send">Send Message</q-btn>
       </div>
       <div class="col-12 col-md-6">
-        <q-btn @click="checkForMessages" :disable="disableButtons" color="positive" icon="sync">Check For New Messages</q-btn>
+        <q-btn @click="checkForMessages" :disable="disableButtons" color="indigo-5" icon="sync">Check For New Messages</q-btn>
       </div>
 <!--       <div class="col-12 col-md-6">
         <q-btn @click="dialogOpen = true" :disable="disableButtons" color="primary" icon="lock">Encrypt Address</q-btn>
