@@ -11,7 +11,8 @@
                       style="border-radius: 10px;"
                     >
                     <div class="row justify-center text-left overflow-auto" style="">
-                      <div style="width: 100%; height: 40vh;" class="overflow-auto scroll">
+                      <div style="width: 100%; height: 40vh;" class="overflow-auto scroll"
+                      ref="customChatDiv">
                         <q-chat-message
                           v-for="(message, index) in messageArray"
                           :key="index"
@@ -63,9 +64,10 @@ import { useRouter } from 'vue-router'
 import anaonAvatar from "@/assets/chatAvatar.svg"
 import shopperAvatar from "@/assets/detective.svg"
 import sanitizeHtml from 'sanitize-html'
-import { defineProps, toRef, ref, computed } from "vue"
+import { defineProps, toRef, ref, computed, nextTick } from "vue"
 const router = useRouter()
 const axios = require('axios')
+const customChatDiv = ref(null);
 const props = defineProps({
   chatID: { type: String, required: true }
 })
@@ -132,6 +134,10 @@ async function checkForMessages() {
   disableButtons.value = false
   const results = await axios.post('/.netlify/functions/getMessageArray', { chatID: chatID.value })
   messageArray.value =  results.data.messageArray
+  await nextTick()
+  const div = customChatDiv.value
+  console.log(div)
+  div.scrollTo({top: div.offsetHeight, behavior: "smooth"})
 }
 function formatAMPM(date) {
   var hours = date.getHours();
@@ -154,5 +160,8 @@ const sender = computed(() => {
 onMounted(async () => {
   const results = await axios.post('/.netlify/functions/getMessageArray', { chatID: chatID.value })
   messageArray.value =  results.data.messageArray
+  await nextTick()
+  const div = customChatDiv.value
+  div.scrollTo({top: div.offsetHeight, behavior: "smooth"})
 })
 </script>
