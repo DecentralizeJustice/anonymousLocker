@@ -112,7 +112,7 @@ import mainChat from '@/components/ordersPage/mainChat.vue'
 import { useRouter } from 'vue-router'
 const axios = require('axios')
 const props = defineProps({
-  passphrase: { type: String, required: true },
+  passphrase: { type: Array, required: true },
   accountInfo: { type: Object, required: true }
 })
 const deleteCounter = ref(0)
