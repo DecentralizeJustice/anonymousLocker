@@ -153,7 +153,7 @@
       </div>
       <div class="col col-10 col-md-5 desktop-only row">
           <q-img class="" loading="lazy"
-          src="https://res.cloudinary.com/dylevfpbl/image/upload/v1675368716/landingpage/dgoon21_package_with_monero_logo_on_it_laying_at_front_door_of__d5aadebf-4d2e-4dd4-8c8f-516faee60d71.png" />
+          src="https://res.cloudinary.com/dylevfpbl/image/upload/v1679590553/landingpage/dgoon21_delivery_person_holding_box_with_monero_logo_on_it_60fde84c-3400-4b07-8852-0b512a5f064d.png" />
         </div>
     </div>
     <div class="row justify-evenly q-py-xl col-12 ">
