@@ -77,13 +77,13 @@
               Discount Possible: {{ accountInfo.orders[0].discountPossible }}<br/>
               <div  v-if="accountInfo.orders[0].discountPossible">Discount Percent: {{accountInfo.orders[0].discountPercent }} %</div>
             </div>
-            <div>Order Notes:{{accountInfo.orders[0].extraNotes }}</div>
-            <div>Total USD Sent:{{accountInfo.orders[0].totalUSD}}</div>
-            <div>Taxes Paid:{{accountInfo.orders[0].taxAmountUSD}}</div>
-            <div>Items Subtotal:{{accountInfo.orders[0].itemsSubtotal}}</div>
-            <div>Bond Paid:{{accountInfo.orders[0].bondUSD}}</div>
-            <div>Order Fee:{{accountInfo.orders[0].orderFeeUSD}}</div>
-            <div>Extra Amount:{{accountInfo.orders[0].extraAmountUSD}}</div>
+            <div>Order Notes: {{accountInfo.orders[0].extraNotes }}</div>
+            <div>Total USD Sent: {{accountInfo.orders[0].totalUSD}}</div>
+            <div>Taxes Paid: {{accountInfo.orders[0].taxAmountUSD}}</div>
+            <div>Items Subtotal: {{accountInfo.orders[0].itemsSubtotal}}</div>
+            <div>Bond Paid: {{accountInfo.orders[0].bondUSD}}</div>
+            <div>Order Fee: {{accountInfo.orders[0].orderFeeUSD}}</div>
+            <div>Extra Amount: {{accountInfo.orders[0].extraAmountUSD}}</div>
 <!--             <div>Status:{{accountInfo.orders[0].statusHistory.slice(-1)[0].status}}</div> -->
             <div>Payment Rate:  {{accountInfo.orders[0].paymentInfo[0].rate}} XMR/USD</div>
             <div>XMR Sent: {{accountInfo.orders[0].paymentInfo[0].paymentMethodPaid}} XMR</div>

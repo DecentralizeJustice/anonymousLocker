@@ -93,7 +93,7 @@
     </div>
 <div class="row justify-evenly q-pt-xl col-12 ">
         <div class="col-12 text-center text-primary text-h3 q-pb-lg my-font">
-          Your Two Delivery Options
+          Your Three Delivery Options
         </div>
     <div class="row justify-evenly q-py-xl col-12">
       <div class="row col col-10 col-md-4 items-center align-center row">
@@ -134,6 +134,27 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="row justify-evenly q-py-xl col-12">
+      <div class="row col col-10 col-md-4 items-center align-center row">
+        <div class=" col col-12 items-center align-center row">
+          <div class="text-left text-center text-primary q-pa-sm bg-primary" 
+          style="border-radius: 10px;background-color:#D4CCC4;">
+            <div class="text-h4 my-font text-center text-white" style="">
+              3. Package Forwarding
+            </div>
+            <div class="text-h5 text-weight-regular text-white q-mt-md q-pa-sm" 
+            style="line-height: 130%"><span
+                v-html="step3"></span>
+    
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col col-10 col-md-5 desktop-only row">
+          <q-img class="" loading="lazy"
+          src="https://res.cloudinary.com/dylevfpbl/image/upload/v1675368716/landingpage/dgoon21_package_with_monero_logo_on_it_laying_at_front_door_of__d5aadebf-4d2e-4dd4-8c8f-516faee60d71.png" />
+        </div>
     </div>
     <div class="row justify-evenly q-py-xl col-12 ">
       <div class="text-h4 my-font col-12 col-md-7 q-mt-md text-center">Shoppper FAQ:</div>
@@ -181,9 +202,13 @@ const heroSubtext = `The Best Way To Use Monero`
 const step1 = `Your order is made to an Amazon Locker near you. 
 This method requires does not need an address, email, or other personal information. 
 This method can only be used to purchase items shipped by Amazon and also has size restrictions.`
-const step2 = `Your order is shipped directly to your house. 
+const step2 = `Your order is shipped directly to your house. You can also get up to a 8% discount on your order 
+using this option.
 This method requires a delivery address but can be used for any major retailer and is more 
 convenient. Most major retailers offer a wish list function that would hide your address from the earner.`
+const step3 = `If you want to hide your name and address from an online retailer you can use
+this option. We order the item to us, and then we ship the item to you. This way no one knows
+what you bought but us. We charge 5% of the item price, plus shipping to you for this option.`
 onMounted(() => {
 
     })
