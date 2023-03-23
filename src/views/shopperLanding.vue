@@ -46,7 +46,7 @@
                     <img :src="computer" class="q-mb-sm" :class="{'desktopIcons': $q.screen.gt.sm, 'mobileIcons': $q.screen.lt.md}" style="" />
                     <br />
                     <p class="text-subtitle1 text-weight-medium">
-                      You place your order and deposit your order amount and 10 USD Bond in XMR.
+                      You place your order and deposit your order amount and 5 USD Bond in XMR.
                     </p>
                   </div>
                   <div class="col-12 col-md-3">
