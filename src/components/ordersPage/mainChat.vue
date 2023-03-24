@@ -137,7 +137,7 @@ async function checkForMessages() {
   await nextTick()
   const div = customChatDiv.value
   console.log(div)
-  div.scrollTo({top: div.offsetHeight, behavior: "smooth"})
+  div.scrollTo({top: 9999999999999999999999999999999999999, behavior: "smooth"})
 }
 function formatAMPM(date) {
   var hours = date.getHours();
@@ -162,6 +162,6 @@ onMounted(async () => {
   messageArray.value =  results.data.messageArray
   await nextTick()
   const div = customChatDiv.value
-  div.scrollTo({top: div.offsetHeight, behavior: "smooth"})
+  div.scrollTo({top: 99999999999999999999999999999999, behavior: "smooth"})
 })
 </script>
