@@ -46,7 +46,7 @@
                     <img :src="computer" class="q-mb-sm" :class="{'desktopIcons': $q.screen.gt.sm, 'mobileIcons': $q.screen.lt.md}" style="" />
                     <br />
                     <p class="text-subtitle1 text-weight-medium">
-                      You place your order and deposit your order amount and 5 USD Bond in XMR.
+                      You decide what you want to purchase and You place your order.
                     </p>
                   </div>
                   <div class="col-12 col-md-3">
@@ -54,7 +54,7 @@
                     <img :src="ecom" class="" :class="{'desktopIconsPayment': $q.screen.gt.sm, 'mobileIconsPayment': $q.screen.lt.md}" />
 
                     <p class="text-subtitle1 text-weight-medium">
-                      An Earner Selects your order and Completes It.
+                      We process and complete your order. Our communication happens anonymously in app.
                     </p>
                   </div>
                   <div class="col-12 col-md-3">
@@ -62,7 +62,7 @@
                     <img :src="happyCustomer" class="" :class="{'desktopIcons': $q.screen.gt.sm, 'mobileIcons': $q.screen.lt.md}" style="" />
                     <br />
                     <p class="text-subtitle1 text-weight-medium">
-                      You Confirm That Your Order was Completed Correctly and your deposit is released to you. 
+                      You get your order delivered using your chosen method. 
                     </p>
                   </div>
                 </div>
@@ -156,7 +156,7 @@
           src="https://res.cloudinary.com/dylevfpbl/image/upload/v1679590553/landingpage/dgoon21_delivery_person_holding_box_with_monero_logo_on_it_60fde84c-3400-4b07-8852-0b512a5f064d.png" />
         </div>
     </div>
-    <div class="row justify-evenly q-py-xl col-12 ">
+<!--     <div class="row justify-evenly q-py-xl col-12 ">
       <div class="text-h4 my-font col-12 col-md-7 q-mt-md text-center">Shoppper FAQ:</div>
       <q-card class="col-12 col-md-7 q-mt-md" v-for="(catagory, key) in correctFaq" :key="key" >
       <q-card-section class=" text-white bg-grey-7 ">
@@ -182,7 +182,7 @@
     </q-list>
 
     </q-card>
-</div>
+</div> -->
     <footerGlobal/>
   </q-page>
 </template>
@@ -194,9 +194,9 @@ import ecom from "@/assets/svgs/ecommerce.svg"
 import happyCustomer from "@/assets/svgs/deliveryman.svg"
 import footerGlobal from "@/components/footerGlobal.vue"
 import { onMounted } from "vue"
-import faq from "@/assets/faq.js"
+// import faq from "@/assets/faq.js"
 require("@lottiefiles/lottie-player")
-const correctFaq = faq.shopperfaq
+// const correctFaq = faq.shopperfaq
 const heroText = 'Spend Monero Anonymously or Anywhere'
 const heroSubtext = `The Best Way To Use Monero`
 const step1 = `Your order is made to an Amazon Locker near you. 
