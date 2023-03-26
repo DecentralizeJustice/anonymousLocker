@@ -155,19 +155,17 @@
                 :error="xmrRefundAddressError"
                 label="Monero Refund Address"
               /> 
-<!--               <div class="col-12 col-md-5 q-my-sm">
+              <div class="col-12 col-md-5 q-my-sm">
                 <q-toggle
-                  v-model="discountPossible"
+                  v-model="hwOrder"
                   color="red"
-                  icon="percent"
-                  label="Enable Discounts"
-                />
-                <br/>
-                <span v-if="discountPossible">
-                  Discount Percentage: {{ discountPercent }}%
-                  <q-slider v-model="discountPercent" :min="1" :max="15" color="red"/>
-                </span>
-              </div> -->
+                  icon="primary"
+                  label="HW Wallet Only Order"
+                />      <q-icon
+        size="md"
+        name="phonelink_lock"
+      />
+              </div>
               <span class="col-12 q-mt-md">
                 <q-chip
                   color="red"
@@ -193,7 +191,7 @@
               >
                 Extra/Tip: {{ extra }} USD <br/>
 <!--                 Refundable Bound Amount: {{ bondAmount }} USD <br/> -->
-                Non-Refundable Service Fee: {{serviceFeeUSD}} USD <br/>
+                Non-Refundable Service Fee: {{serviceFeeUSD - specialOrderDiscountFlat}} USD <br/>
               </div>
               <div
                 class="row col-12 col-md-12 text-h5 q-mt-lg justify-center"
@@ -265,6 +263,7 @@ const serviceFeeUSD = 3
 const bondAmount = 0
 const discountPercent = ref(3)
 const extra = ref(0)
+const hwOrder = ref(false)
 const discountPossible = ref(false)
 const linkError = ref(false)
 const itemQuantityError = ref(false)
@@ -349,7 +348,7 @@ const orderUSDSubTotal = computed(() => {
   return Number(total).toFixed(2)
 })
 const constantFeeUSD = computed(() => {
-  return (Number(serviceFeeUSD + bondAmount)).toFixed(2)
+  return (Number(serviceFeeUSD + bondAmount - specialOrderDiscountFlat.value)).toFixed(2)
 })
 const taxAmount = computed(() => {
   return Number(Number(orderUSDSubTotal.value) * taxRate.value).toFixed(2)
@@ -372,6 +371,10 @@ const discountAmount = computed(() => {
   } else {
   return Number(0)
   }
+})
+const specialOrderDiscountFlat = computed(() => {
+  if(hwOrder.value){ return Number(serviceFeeUSD).toFixed(2)}
+  return Number(0).toFixed(2)
 })
 function submitOrderChecks() {
   if (orderUSDSubTotal.value < minOrderamount) {
@@ -432,7 +435,7 @@ const taxRate = computed(() => {
   return 0.08
 })
 watch(discountPossible, async (newQuestion) => {
-  if (newQuestion === false) { extra.value = 2
+  if (newQuestion === false) { extra.value = 0
   } else {
     alert.value = true
     extra.value = 0
