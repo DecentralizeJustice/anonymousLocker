@@ -204,7 +204,7 @@
                 class="row col-12 col-md-6 q-mt-sm justify-center text-body1"
               >
                 Extra/Tip: {{ extra }} USD <br/>
-                Refundable Bound Amount: {{ bondAmount }} USD <br/>
+                <!-- Refundable Bound Amount: {{ bondAmount }} USD <br/> -->
                 Non-Refundable Fee: {{serviceFeeUSD}} USD <br/>
               </div>
               <div
@@ -212,8 +212,8 @@
               >
               
               Amount Due Today: ~{{ finalTotalUSD }} USD <br/>
-              Amount You Will Be Refunded: ~ {{ bondAmount }} USD <br/>
-              Real Items Cost: ~ {{ Number(finalTotalUSD -  bondAmount).toFixed(2)}} USD
+<!--               Amount You Will Be Refunded: ~ {{ bondAmount }} USD <br/>
+              Real Items Cost: ~ {{ Number(finalTotalUSD -  bondAmount).toFixed(2)}} USD -->
               </div>
 
               <div class="row col-12 col-md-8 q-mt-md justify-center">
@@ -276,10 +276,10 @@ const country = ref('USA')
 const countries = [ 'USA', 'Canada', 'Germany', ' France', 'United Kingdom / Ireland', 'Poland', 'Spain', 'Mexico', 'Japan']
 const extraNotes = ref("")
 const xmrRefundAddress = ref("")
-const minOrderamount = .01
+const minOrderamount = 25
 const serviceFeeUSD = 1
-const bondAmount = 5
-const extra = ref(2)
+const bondAmount = 0
+const extra = ref(0)
 const discountPossible = ref(false)
 const linkError = ref(false)
 const itemQuantityError = ref(false)
@@ -468,7 +468,7 @@ const taxRate = computed(() => {
   return 0.08
 })
 watch(discountPossible, async (newQuestion) => {
-  if (newQuestion === false) { extra.value = 2
+  if (newQuestion === false) { extra.value = 0
   } else {
     alert.value = true
     extra.value = 0

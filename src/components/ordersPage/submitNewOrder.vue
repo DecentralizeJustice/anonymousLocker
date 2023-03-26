@@ -192,7 +192,7 @@
                 class="row col-12 col-md-6 q-mt-sm justify-center text-body1"
               >
                 Extra/Tip: {{ extra }} USD <br/>
-                Refundable Bound Amount: {{ bondAmount }} USD <br/>
+<!--                 Refundable Bound Amount: {{ bondAmount }} USD <br/> -->
                 Non-Refundable Service Fee: {{serviceFeeUSD}} USD <br/>
               </div>
               <div
@@ -200,8 +200,8 @@
               >
               
               Amount Due Today: ~{{ finalTotalUSD }} USD <br/>
-              Amount You Will Be Refunded: ~ {{ bondAmount }} USD <br/>
-              Real Items Cost: ~ {{ Number(finalTotalUSD -  bondAmount).toFixed(2)}} USD
+<!--               Amount You Will Be Refunded: ~ {{ bondAmount }} USD <br/>
+              Real Items Cost: ~ {{ Number(finalTotalUSD -  bondAmount).toFixed(2)}} USD -->
               </div>
 
               <div class="row col-12 col-md-8 q-mt-md justify-center">
@@ -226,10 +226,10 @@
         </q-card-section>
 
         <q-card-section class="text-body1">
-           Our discount ability does not garantee that your order will be filled.
-           Your order will sit in our orderbook until or if an earner decides to pick it up. 
-           Your order will sit in our orderbook for a 30 days; after that time
-           you will be refuned for your order , 
+           Our discount ability does not guarantee that your order will be filled.
+           Your order will sit in our order book until or if it is completed. 
+           Your order will sit in our order book for 30 days; after that time
+           you will be refunded for your order , 
            minus the Non-Refundable Fee of {{ serviceFeeUSD }} USD. If your discount is too
           much for our earners, your order will not be picked up by them before it is removed from our orderbooks.
           </q-card-section>
@@ -260,9 +260,9 @@ const country = ref('USA')
 const countries = [ 'USA', 'Canada', 'Germany', ' France', 'United Kingdom / Ireland', 'Poland', 'Spain', 'Mexico', 'Japan']
 const extraNotes = ref("")
 const xmrRefundAddress = ref("")
-const minOrderamount = .01
+const minOrderamount = 25
 const serviceFeeUSD = 3
-const bondAmount = 5
+const bondAmount = 0
 const discountPercent = ref(3)
 const extra = ref(0)
 const discountPossible = ref(false)
