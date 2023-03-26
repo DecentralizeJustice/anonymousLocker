@@ -119,7 +119,7 @@
     <div class="row justify-evenly q-py-xl col-12 bg-primary">
         <div class="col col-10 col-md-5 desktop-only row">
           <q-img class="" loading="lazy"
-          src="https://res.cloudinary.com/dylevfpbl/image/upload/v1675368716/landingpage/dgoon21_package_with_monero_logo_on_it_laying_at_front_door_of__d5aadebf-4d2e-4dd4-8c8f-516faee60d71.png" />
+          src="https://res.cloudinary.com/dylevfpbl/image/upload/v1679807378/landingpage/dgoon21_a_delivery_box_with_a_monero_logo_on_it_sitting_outside_accb0279-3344-445b-a921-b6de01d75558.png" />
         </div>
       <div class="row col col-10 col-md-4 items-center align-center row">
         <div class=" col col-12 items-center align-center row">
