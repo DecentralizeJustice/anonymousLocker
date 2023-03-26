@@ -70,9 +70,14 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
-    q: `I tried viewing my order after I submitted and it said the account doesn't exist.`,
-      a: `Hi. I can see your order info, so your order was placed successfully. You can try logging in again and if that does not work, you can message me your 8 words here.`
-    },
+q: `is it possible to buy steam deck from you and give you the address to my shipment forwarder?`,
+  a: `Yes. We do things like this often. We charge 5% of the item price, and shipping to the forwarder. 
+  You can place an address order, and we will chat more in the web app.`
+},
+{
+q: `I tried viewing my order after I submitted and it said the account doesn't exist.`,
+  a: `Hi. I can see your order info, so your order was placed successfully. You can try logging in again and if that does not work, you can message me your 8 words here.`
+},
 {
     q: `Earner account bond refund.  Look forward to using this as a buyer too.`,
       a: `Sent! Thanks for trying out our earning feature. Hopefully we will build up more demand and bring the program back.`
