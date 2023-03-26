@@ -199,7 +199,7 @@
                 class="row col-12 col-md-12 text-h5 q-mt-lg justify-center"
               >
               
-              Amount Due Today: ~{{ finalTotalUSD }} USD <br/>
+              Amount Due: ~{{ finalTotalUSD }} USD <br/>
 <!--               Amount You Will Be Refunded: ~ {{ bondAmount }} USD <br/>
               Real Items Cost: ~ {{ Number(finalTotalUSD -  bondAmount).toFixed(2)}} USD -->
               </div>
