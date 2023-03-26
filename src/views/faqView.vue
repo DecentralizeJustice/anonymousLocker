@@ -31,7 +31,7 @@
     </q-card>
     </div>
   </div>
-  <div class="row justify-center col col-11 col-md-11 align-center items-center q-my-xl" >
+<!--   <div class="row justify-center col col-11 col-md-11 align-center items-center q-my-xl" >
     <div class="row items-center justify-center col-12 q-gutter-y-xl" >
       <q-card class="col-12 col-md-7" v-for="(catagory, key) in earnerFaq" :key="key" >
       <q-card-section class=" text-white bg-grey-7 ">
@@ -86,7 +86,7 @@
 
     </q-card>
     </div>
-  </div>
+  </div> -->
   <footerGlobal/>
   </q-page>
 </template>
@@ -96,6 +96,6 @@ import faq from "@/assets/faq.js"
 import footerGlobal from "@/components/footerGlobal.vue"
 // const faqKeyList = Object.keys(faq.faq)
 const correctFaq = faq.faq
-const earnerFaq = faq.earnerfaq
-const shopperFaq = faq.shopperfaq
+/* const earnerFaq = faq.earnerfaq
+const shopperFaq = faq.shopperfaq */
 </script>
