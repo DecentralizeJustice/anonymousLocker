@@ -70,6 +70,10 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+  q: `Hey there! Is this service also available for Belgium?`,
+  a: `Yes. If there is an amazon locker near you we can deliver to it. Our other delivery options also work!`
+},
+{
 q: `is it possible to buy steam deck from you and give you the address to my shipment forwarder?`,
   a: `Yes. We do things like this often. We charge 5% of the item price, and shipping to the forwarder. 
   You can place an address order, and we will chat more in the web app.`

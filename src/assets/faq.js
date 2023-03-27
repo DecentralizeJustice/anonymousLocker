@@ -14,15 +14,11 @@ const faq = {
     ],
     [
       `Can you do International Orders?`,
-      `We currently only deliver in the United States.`,
+      `yes.`,
     ],
     [
       `Where can you order items from?`,
       `We can order any items that are legal and for sale online.`,
-    ],
-    [
-      `How much is this service?`,
-      `This Service is free for now.`,
     ],
     [
       `Do you offer refunds?`,
@@ -153,7 +149,7 @@ const faq = {
             does not allow for the delivery to amazon lockers.`,
     ],
     [
-      `Your service is too expensive. How Can I still get a hardware wallet anonymously?`,
+      `How Can else can I get a hardware wallet anonymously?`,
       `Ledger has partnered with <a href="https://www.ledger.com/blog/ledger-nano-x-and-nano-s-plus-now-available-in-all-best-buy-stores-nationwide">Best Buy</a> and they offer wallets for sale in-store. If a store near you has a wallet in stock,
             you can pay for it with cash in person and still protect your identity. `,
     ],
