@@ -5,14 +5,6 @@ const faq = {
       `Yes, you can use tor but the site does require javascript to work.`,
     ],
     [
-      `When do I enter my address?`,
-      `You pay and then we check your order and get it ready for our earners. 
-      After we check over it, we message you again in chat to get your address. 
-      Doing things this way ensures that we only collect your sensitive information( such as your address) 
-      when we know for 100% certainty we can complete your order. 
-      We would hate for you to give us sensitive info for an order that we can not process.`,
-    ],
-    [
       `Can you do International Orders?`,
       `yes.`,
     ],

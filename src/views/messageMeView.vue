@@ -100,8 +100,8 @@ Don't want to post the words here unless instructed to, since these are public q
     },
 {
     q: `Hi. I recently picked up an order, but I never saw the XMR refund from the deposit come through. I would have just asked in the chat, but my seed words no longer work (using "ability" for the 7th and 8th word)`,
-      a: `Just message me your 6 words here and I will get you your refund. Thanks for reaching out.`
-    },
+    a: `Just message me your 6 words here and I will get you your refund. Thanks for reaching out.`
+},
 {
     q: `hey bud,[redacted] here, tried to login to the chat again to get [redacted] but "account not found" (used "ability" for the last 2).`,
       a: `I just finished the migration, try to login again. Sorry for the delay!`
