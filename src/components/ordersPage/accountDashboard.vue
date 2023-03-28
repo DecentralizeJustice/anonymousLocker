@@ -26,7 +26,7 @@
                     <div>{{capitalizeWords(item.nickName)}} for {{ item.totalUSD }} USD</div>
 <!--                     <div>Status: {{ item.statusHistory.slice(-1)[0].status  }}</div> -->
                     <div>
-                      <q-btn color="secondary" label="More Info" class="q-my-sm" 
+                      <q-btn color="secondary" label="View Order Details" class="q-my-sm" 
                       @click="openDialog()"/></div>
                   </div>
                 </div>
@@ -53,28 +53,33 @@
         <q-card-section class="q-pt-none">
 <!--           {{ accountInfo.orders[0].chatID }} -->
           <div class="text-subtitle1 q-pa-md rounded-borders">
-          <div>Total USD Sent: {{ accountInfo.orders[0].totalUSD }} USD</div>
 <!--            <div>Status: {{ accountInfo.orders[0].statusHistory.slice(-1)[0].status  }}</div> -->
-            <div>Items:</div>
-            <div v-for="value in accountInfo.orders[0]['itemList']" :key="value.link">
-              <li>Cost: {{value.cost}}</li>
-              <li>Quantity: {{ value.quantity }}</li>
-              <li>Notes: {{ value.description }}</li>
-              <li>Link: <a :href="value.link">Link</a></li>
-            </div>
-            <div v-if="accountInfo.orders[0].lockerZipcode !== undefined">
+            
+          <q-card class="bg-black text-white q-pa-md">
+            <div>Total USD Sent: {{ accountInfo.orders[0].totalUSD }} USD</div>
+              <div class="text-h6">Items:</div>
+              <div v-for="value in accountInfo.orders[0]['itemList']" :key="value.link">
+                <li>Cost: {{value.cost}}</li>
+                <li>Quantity: {{ value.quantity }}</li>
+                <li>Notes: {{ value.description }}</li>
+                <li>Link: <a :href="value.link">Link</a></li>
+              </div>
+            </q-card>
+            <q-card class="bg-grey text-white q-pa-md q-my-md" 
+            v-if="accountInfo.orders[0].lockerZipcode !== undefined">
               <div>
                 Locker Zipcode: {{accountInfo.orders[0].lockerZipcode }}
               </div>
               <div>
                 Locker Country: {{accountInfo.orders[0].country }}
               </div>
-              <div v-if="accountInfo.orders[0].lockerName !== undefined">
-                Locker Name:{{accountInfo.orders[0].lockerName }}
+              <div>
+                Locker Name: {{accountInfo.orders[0].lockerName }}
               </div>
-            </div>
+            </q-card>
 
-            <div v-if="accountInfo.orders[0].addressInfo !== undefined">
+            <q-card class="bg-grey text-white q-pa-md q-my-md" 
+            v-if="accountInfo.orders[0].addressInfo !== undefined">
               Address Info: <br/>
               <li>Name: {{ accountInfo.orders[0].addressInfo.fullname }}</li>
               <li>Street: {{ accountInfo.orders[0].addressInfo.streetAddress }}</li>
@@ -82,9 +87,10 @@
               <li>City: {{ accountInfo.orders[0].addressInfo.city }}</li>
               <li>Zipcode: {{ accountInfo.orders[0].addressInfo.zipcode }}</li>
               <li>Country: {{ accountInfo.orders[0].addressInfo.country }}</li>
-              Discount Possible: {{ accountInfo.orders[0].discountPossible }}<br/>
+              Discount Chosen: {{ accountInfo.orders[0].discountPossible }}<br/>
               <div  v-if="accountInfo.orders[0].discountPossible">Discount Percent: {{accountInfo.orders[0].discountPercent }} %</div>
-            </div>
+            </q-card>
+            <q-card class="bg-black text-white q-pa-md q-my-md" >
             <div>Order Notes: {{accountInfo.orders[0].extraNotes }}</div>
             <div>Total USD Sent: {{accountInfo.orders[0].totalUSD}}</div>
             <div>Taxes Paid: {{accountInfo.orders[0].taxAmountUSD}}</div>
@@ -93,6 +99,9 @@
             <div>Order Fee: {{accountInfo.orders[0].orderFeeUSD}}</div>
             <div>Extra Amount: {{accountInfo.orders[0].extraAmountUSD}}</div>
 <!--             <div>Status:{{accountInfo.orders[0].statusHistory.slice(-1)[0].status}}</div> -->
+          </q-card>
+
+          <q-card class="bg-grey text-white q-pa-md q-my-md" >
             <div>Payment Rate:  {{accountInfo.orders[0].paymentInfo[0].rate}} XMR/USD</div>
             <div>XMR Sent: {{accountInfo.orders[0].paymentInfo[0].paymentMethodPaid}} XMR</div>
             <div>Payment Info:</div>
@@ -102,11 +111,12 @@
               <li >XMR Amount Recieved: {{value.value}}</li>
             </div>
             </div>
+          </q-card>
           </div>
         </q-card-section>
 
         <q-card-actions align="right">
-          <q-btn flat label="Close" color="primary" v-close-popup />
+          <q-btn label="Close" color="red" v-close-popup />
         </q-card-actions>
       </q-card>        
 
