@@ -56,14 +56,15 @@
           <div class="text-subtitle1 q-pa-md rounded-borders">
 <!--            <div>Status: {{ accountInfo.orders[0].statusHistory.slice(-1)[0].status  }}</div> -->
             
-          <q-card class="bg-black text-white q-pa-md">
+          <q-card class="bg-grey-14 text-white q-pa-md">
             <div>Total USD Sent: {{ accountInfo.orders[0].totalUSD }} USD</div>
               <div class="text-h6">Items:</div>
-              <div v-for="value in accountInfo.orders[0]['itemList']" :key="value.link">
+              <div v-for="value in accountInfo.orders[0]['itemList']" :key="value.link"
+              class="q-my-lg">
+                <li>Link: <a :href="value.link">Link</a></li>
                 <li>Cost: {{value.cost}}</li>
                 <li>Quantity: {{ value.quantity }}</li>
                 <li>Notes: {{ value.description }}</li>
-                <li>Link: <a :href="value.link">Link</a></li>
               </div>
             </q-card>
             <q-card class="bg-grey text-white q-pa-md q-my-md" 
@@ -91,7 +92,7 @@
               Discount Chosen: {{ accountInfo.orders[0].discountPossible }}<br/>
               <div  v-if="accountInfo.orders[0].discountPossible">Discount Percent: {{accountInfo.orders[0].discountPercent }} %</div>
             </q-card>
-            <q-card class="bg-black text-white q-pa-md q-my-md" >
+            <q-card class="bg-grey-14 text-white q-pa-md q-my-md" >
             <div>Order Notes: {{accountInfo.orders[0].extraNotes }}</div>
             <div>Total USD Sent: {{accountInfo.orders[0].totalUSD}}</div>
             <div>Taxes Paid: {{accountInfo.orders[0].taxAmountUSD}}</div>
