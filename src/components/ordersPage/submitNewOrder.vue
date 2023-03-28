@@ -123,7 +123,7 @@
                 <a href="https://www.amazon.com/ulp/view" target="_blank" rel="noopener noreferrer"
                 class="text-h6"
                 >
-                  Find Amazon Lockers Here
+                  Find US Amazon Lockers Here
                 </a>
               <q-input
                 v-model="lockerName"

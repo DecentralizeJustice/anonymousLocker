@@ -15,6 +15,7 @@ import placeLockerOrder from "../views/placeLockerOrder.vue"
 import shopperLanding from "../views/shopperLanding.vue"
 import earnerLanding from "../views/earnerLanding.vue"
 import registerEarner from "../views/registerAsEarner.vue"
+import lockerShopperLanding from "../views/lockerShopperLanding.vue"
 /* const User = {
   template: `
     <div class="user">
@@ -36,6 +37,11 @@ const router = createRouter({
       path: "/shop",
       name: "shopperLanding",
       component: shopperLanding
+    },
+    {
+      path: "/lockerShopper",
+      name: "lockerShopperLanding",
+      component: lockerShopperLanding
     },
     {
       path: "/earn",
