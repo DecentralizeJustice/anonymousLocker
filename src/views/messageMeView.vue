@@ -70,6 +70,10 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+  q: `Does your Concierge service only allow Amazon? Or are other websites allowed??`,
+  a: `Yes. We support most online retailers.`
+},
+{
   q: `I got this error when I tried to submit an order "Order Sub-total Minimum is minOrderamount (USD)"
 `,
   a: `The min order amount is 25 dollars since thats amazon's min order amount for free shipping.
