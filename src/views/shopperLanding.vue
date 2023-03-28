@@ -119,8 +119,8 @@
           </div>
         </div>
       </div>
-      <div class="col col-10 col-md-5 desktop-only row">
-      <q-img class=""
+      <div class="col col-10 col-md-5 row">
+      <q-img class="q-my-md"
       loading="lazy"
       src="https://res.cloudinary.com/dbdfbvzyl/image/upload/v1671332163/smallLocker_c03a46.gif" />
   </div>
@@ -156,6 +156,10 @@
           </div>
         </div>
       </div>
+      <div class="col col-10 col-md-5 row mobile-only q-mt-md">
+          <q-img class="" loading="lazy"
+          src="https://res.cloudinary.com/dylevfpbl/image/upload/v1679807378/landingpage/dgoon21_a_delivery_box_with_a_monero_logo_on_it_sitting_outside_accb0279-3344-445b-a921-b6de01d75558.png" />
+        </div>
     </div>
     <div class="row justify-evenly q-py-xl col-12">
       <div class="row col col-10 col-md-4 items-center align-center row">
@@ -184,7 +188,7 @@
           </div>
         </div>
       </div>
-      <div class="col col-10 col-md-5 desktop-only row">
+      <div class="col col-10 col-md-5 row q-my-md">
           <q-img class="" loading="lazy"
           src="https://res.cloudinary.com/dylevfpbl/image/upload/v1679590553/landingpage/dgoon21_delivery_person_holding_box_with_monero_logo_on_it_60fde84c-3400-4b07-8852-0b512a5f064d.png" />
         </div>
