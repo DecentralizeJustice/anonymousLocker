@@ -16,6 +16,7 @@ import shopperLanding from "../views/shopperLanding.vue"
 import earnerLanding from "../views/earnerLanding.vue"
 import registerEarner from "../views/registerAsEarner.vue"
 import lockerShopperLanding from "../views/lockerShopperLanding.vue"
+import addressShopperLanding from "../views/addressShopperLanding.vue"
 /* const User = {
   template: `
     <div class="user">
@@ -42,6 +43,11 @@ const router = createRouter({
       path: "/lockerShopper",
       name: "lockerShopperLanding",
       component: lockerShopperLanding
+    },
+    {
+      path: "/addressShopper",
+      name: "addressShopperLanding",
+      component: addressShopperLanding
     },
     {
       path: "/earn",

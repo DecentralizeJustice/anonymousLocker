@@ -142,6 +142,17 @@
                 v-html="step2"></span>
     
             </div>
+            <div class="text-center">
+              <router-link :to="{  path: '/addressShopper' }" style="text-decoration:none !important;">
+                <q-btn
+                color="primary"
+                  class="text-white q-ma-md"
+                  label="Learn More"
+                  size="lg"
+                  padding="sm"
+                />
+              </router-link>
+            </div>
           </div>
         </div>
       </div>
@@ -158,6 +169,17 @@
             style="line-height: 130%"><span
                 v-html="step3"></span>
     
+            </div>
+            <div class="text-center">
+              <router-link :to="{  path: '/addressShopper' }" style="text-decoration:none !important;">
+                <q-btn
+                  style="background-color:#D4CCC4;"
+                  class="text-primary q-ma-md"
+                  label="Learn More"
+                  size="lg"
+                  padding="sm"
+                />
+              </router-link>
             </div>
           </div>
         </div>
@@ -219,7 +241,8 @@ This method requires a delivery address but can be used for any major retailer a
 convenient. Most major retailers offer a wish list function that would hide your address from the earner.`
 const step3 = `If you want to hide your name and address from an online retailer you can use
 this option. We order the item to us, and then we ship the item to you. This way no one knows
-what you bought but us. We charge 5% of the item price, plus shipping to you for this option.`
+what you bought but us. We charge 5% of the item price, plus shipping to you for this option.
+Just place and address order and add a note that you want Package Forwarding with your order.`
 onMounted(() => {
 
     })

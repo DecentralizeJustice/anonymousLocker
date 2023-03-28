@@ -58,11 +58,12 @@
 </template>
 <script setup>
 const options = [
-  { label: "Sign In", value: "login" },
   { label: "Home", value: "shopperLanding" },
-  { label: "Locker", value: "lockerShopperLanding" },
+  { label: "Locker Delivery", value: "lockerShopperLanding" },
+  { label: "Address Delivery", value: "addressShopperLanding" },
   // { label: "Earners", value: "earnerLanding" },
-  { label: "F.A.Q.", value: "faq" },
+  { label: "Check Order", value: "login" },
+  // { label: "F.A.Q.", value: "faq" },
   { label: "Ask Question", value: "message" }
 
 ]

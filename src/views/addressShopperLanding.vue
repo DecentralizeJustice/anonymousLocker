@@ -54,7 +54,7 @@
                     <img :src="ecom" class="" :class="{'desktopIconsPayment': $q.screen.gt.sm, 'mobileIconsPayment': $q.screen.lt.md}" />
 
                     <p class="text-subtitle1 text-weight-medium">
-                      We process and place your order. Our communication happens anonymously in app.
+                      We process and place your order. Your order processing depends on your order.
                     </p>
                   </div>
                   <div class="col-12 col-md-3">
@@ -62,14 +62,15 @@
                     <img :src="happyCustomer" class="" :class="{'desktopIcons': $q.screen.gt.sm, 'mobileIcons': $q.screen.lt.md}" style="" />
                     <br />
                     <p class="text-subtitle1 text-weight-medium">
-                      We send you the locker code and you pick your order up from the Amazon Locker.
+                      Your order is sent to your home address.
                     </p>
                   </div>
                 </div>
               </div>
             </div>
             <div class="text-center">
-              <router-link :to="{ name: 'placeLockerOrder' }" style="text-decoration:none !important;">
+              <router-link :to="{ name: 'placeConciergeOrder' }" 
+              style="text-decoration:none !important;">
                 <q-btn
                   color="primary"
                   label="Place An Order!"
@@ -93,7 +94,9 @@
     </div>
 
     <div class="row justify-evenly q-py-xl col-12 bg-primary">
-      <div class="text-h4 my-font col-12 col-md-7 q-mt-md text-center text-white">Locker FAQ:</div>
+      <div class="text-h4 my-font col-12 col-md-7 q-mt-md text-center text-white">
+        Address Order FAQ:
+      </div>
       <q-card class="col-11 col-md-7 q-mt-md" v-for="(catagory, key) in correctFaq" :key="key" >
       <q-card-section class=" text-white bg-grey-7 ">
         <div class="text-h6">{{ key }}</div>
@@ -135,9 +138,9 @@ import footerGlobal from "@/components/footerGlobal.vue"
 import { onMounted } from "vue"
 import faq from "@/assets/faq.js"
 require("@lottiefiles/lottie-player")
-const correctFaq = faq.lockerFAQ
-const heroText = 'Spend Monero Anonymously on Amazon'
-const heroSubtext = `The Worlds Most Private Shopping`
+const correctFaq = faq.homeFAQ
+const heroText = 'Spend Monero Anywhere Today'
+const heroSubtext = `Spreading Monero Adoption`
 onMounted(() => {
 
     })

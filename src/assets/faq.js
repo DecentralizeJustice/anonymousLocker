@@ -206,6 +206,26 @@ const earnerfaq = {
   ],
 
 };
+const homeFAQ = {
+  "Concierge/Home Delivery Questions": [
+    [
+      `Can I use tor with your site?`,
+      `Yes, you can use tor but the site does require javascript to work.`,
+    ],
+    [
+      `Can you do International Orders?`,
+      `yes.`,
+    ],
+    [
+      `Where can you order items from?`,
+      `We can order any items that are legal and for sale online.`,
+    ],
+    [
+      `Do you offer refunds?`,
+      `Due to Amazon return scams, you must make an account and use the included gift recipient to make a return on delivered items.`,
+    ]
+  ],
+}
 const lockerFAQ = {
   "General Locker Delivery Questions":  [
     [
@@ -343,3 +363,4 @@ exports.faq = faq;
 exports.shopperfaq = shopperfaq
 exports.earnerfaq = earnerfaq
 exports.lockerFAQ = lockerFAQ
+exports.homeFAQ = homeFAQ
