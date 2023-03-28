@@ -185,7 +185,7 @@
                   color="red"
                   text-color="white"
                   icon="dangerous"
-                  label="Order Sub-total Minimum is ${{minOrderamount}} (USD)"
+                  label="Order Sub-total Minimum is $25 (USD)"
                   v-if="minAmountError"
                 />
               </span>

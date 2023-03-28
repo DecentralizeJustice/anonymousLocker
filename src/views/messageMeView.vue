@@ -70,6 +70,12 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+  q: `I got this error when I tried to submit an order "Order Sub-total Minimum is minOrderamount (USD)"
+`,
+  a: `The min order amount is 25 dollars since thats amazon's min order amount for free shipping.
+  The error should be more descriptive now. Thanks for pointing that out!`
+},
+{
   q: `Hey there! Is this service also available for Belgium?`,
   a: `Yes. If there is an amazon locker near you we can deliver to it. Our other delivery options also work!`
 },
