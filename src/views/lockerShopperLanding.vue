@@ -46,7 +46,7 @@
                     <img :src="computer" class="q-mb-sm" :class="{'desktopIcons': $q.screen.gt.sm, 'mobileIcons': $q.screen.lt.md}" style="" />
                     <br />
                     <p class="text-subtitle1 text-weight-medium">
-                      You decide what you want to purchase and You place your order.
+                      You decide what you want to purchase and You place your order with us.
                     </p>
                   </div>
                   <div class="col-12 col-md-3">
@@ -54,7 +54,7 @@
                     <img :src="ecom" class="" :class="{'desktopIconsPayment': $q.screen.gt.sm, 'mobileIconsPayment': $q.screen.lt.md}" />
 
                     <p class="text-subtitle1 text-weight-medium">
-                      We process and complete your order. Our communication happens anonymously in app.
+                      We process and place your order. Our communication happens anonymously in app.
                     </p>
                   </div>
                   <div class="col-12 col-md-3">
@@ -62,14 +62,14 @@
                     <img :src="happyCustomer" class="" :class="{'desktopIcons': $q.screen.gt.sm, 'mobileIcons': $q.screen.lt.md}" style="" />
                     <br />
                     <p class="text-subtitle1 text-weight-medium">
-                      You get your order delivered using your chosen method. 
+                      You pick your order up from the Amazon Locker that you chose.
                     </p>
                   </div>
                 </div>
               </div>
             </div>
             <div class="text-center">
-              <router-link :to="{ name: 'ordersPage' }" style="text-decoration:none !important;">
+              <router-link :to="{ name: 'placeLockerOrder' }" style="text-decoration:none !important;">
                 <q-btn
                   color="primary"
                   label="Place An Order!"
@@ -91,74 +91,10 @@
 ></lottie-player>
       </div>
     </div>
-<div class="row justify-evenly q-pt-xl col-12 ">
-        <div class="col-12 text-center text-primary text-h3 q-pb-lg my-font">
-          Your Three Delivery Options
-        </div>
-    <div class="row justify-evenly q-py-xl col-12">
-      <div class="row col col-10 col-md-4 items-center align-center row">
-        <div class=" col col-12 items-center align-center row">
-          <div class="text-left text-center text-white q-pa-lg bg-primary" style="border-radius: 10px;">
-            <div class="text-h4 my-font text-center" style="">
-              1. Amazon Locker Delivery
-            </div>
-            <div class="text-h5 text-weight-regular q-mt-md q-pa-sm" style="line-height: 130%"><span v-html="step1"></span>
-    
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col col-10 col-md-5 desktop-only row">
-      <q-img class=""
-      loading="lazy"
-      src="https://res.cloudinary.com/dbdfbvzyl/image/upload/v1671332163/smallLocker_c03a46.gif" />
-  </div>
-    </div>
 
-</div>
     <div class="row justify-evenly q-py-xl col-12 bg-primary">
-        <div class="col col-10 col-md-5 desktop-only row">
-          <q-img class="" loading="lazy"
-          src="https://res.cloudinary.com/dylevfpbl/image/upload/v1679807378/landingpage/dgoon21_a_delivery_box_with_a_monero_logo_on_it_sitting_outside_accb0279-3344-445b-a921-b6de01d75558.png" />
-        </div>
-      <div class="row col col-10 col-md-4 items-center align-center row">
-        <div class=" col col-12 items-center align-center row">
-          <div class="text-left text-center text-primary q-pa-sm" style="border-radius: 10px;background-color:#D4CCC4;">
-            <div class="text-h4 my-font text-center" style="">
-              2. Home Address Delivery
-            </div>
-            <div class="text-h5 text-weight-regular q-mt-md q-pa-sm" style="line-height: 130%"><span
-                v-html="step2"></span>
-    
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row justify-evenly q-py-xl col-12">
-      <div class="row col col-10 col-md-4 items-center align-center row">
-        <div class=" col col-12 items-center align-center row">
-          <div class="text-left text-center text-primary q-pa-sm bg-primary" 
-          style="border-radius: 10px;background-color:#D4CCC4;">
-            <div class="text-h4 my-font text-center text-white" style="">
-              3. Package Forwarding
-            </div>
-            <div class="text-h5 text-weight-regular text-white q-mt-md q-pa-sm" 
-            style="line-height: 130%"><span
-                v-html="step3"></span>
-    
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col col-10 col-md-5 desktop-only row">
-          <q-img class="" loading="lazy"
-          src="https://res.cloudinary.com/dylevfpbl/image/upload/v1679590553/landingpage/dgoon21_delivery_person_holding_box_with_monero_logo_on_it_60fde84c-3400-4b07-8852-0b512a5f064d.png" />
-        </div>
-    </div>
-<!--     <div class="row justify-evenly q-py-xl col-12 ">
-      <div class="text-h4 my-font col-12 col-md-7 q-mt-md text-center">Shoppper FAQ:</div>
-      <q-card class="col-12 col-md-7 q-mt-md" v-for="(catagory, key) in correctFaq" :key="key" >
+      <div class="text-h4 my-font col-12 col-md-7 q-mt-md text-center text-white">Locker FAQ:</div>
+      <q-card class="col-11 col-md-7 q-mt-md" v-for="(catagory, key) in correctFaq" :key="key" >
       <q-card-section class=" text-white bg-grey-7 ">
         <div class="text-h6">{{ key }}</div>
       </q-card-section>
@@ -182,7 +118,10 @@
     </q-list>
 
     </q-card>
-</div> -->
+    </div>
+    <div class="row justify-evenly q-py-xl col-12 ">
+
+</div>
     <footerGlobal/>
   </q-page>
 </template>
@@ -194,21 +133,11 @@ import ecom from "@/assets/svgs/ecommerce.svg"
 import happyCustomer from "@/assets/svgs/deliveryman.svg"
 import footerGlobal from "@/components/footerGlobal.vue"
 import { onMounted } from "vue"
-// import faq from "@/assets/faq.js"
+import faq from "@/assets/faq.js"
 require("@lottiefiles/lottie-player")
-// const correctFaq = faq.shopperfaq
+const correctFaq = faq.lockerFAQ
 const heroText = 'Spend Monero Anonymously on Amazon'
 const heroSubtext = `The Worlds Most Private Shopping`
-const step1 = `Your order is made to an Amazon Locker near you. 
-This method requires does not need an address, email, or other personal information. 
-This method can only be used to purchase items shipped by Amazon and also has size restrictions.`
-const step2 = `Your order is shipped directly to your house. You can also get up to a 8% discount on your order 
-using this option.
-This method requires a delivery address but can be used for any major retailer and is more 
-convenient. Most major retailers offer a wish list function that would hide your address from the earner.`
-const step3 = `If you want to hide your name and address from an online retailer you can use
-this option. We order the item to us, and then we ship the item to you. This way no one knows
-what you bought but us. We charge 5% of the item price, plus shipping to you for this option.`
 onMounted(() => {
 
     })

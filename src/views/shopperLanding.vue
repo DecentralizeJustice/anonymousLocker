@@ -105,6 +105,17 @@
             <div class="text-h5 text-weight-regular q-mt-md q-pa-sm" style="line-height: 130%"><span v-html="step1"></span>
     
             </div>
+            <div class="text-center">
+              <router-link :to="{  path: '/lockerShopper' }" style="text-decoration:none !important;">
+                <q-btn
+                  style="background-color:#D4CCC4;"
+                  class="text-primary q-ma-md"
+                  label="Learn More"
+                  size="lg"
+                  padding="sm"
+                />
+              </router-link>
+            </div>
           </div>
         </div>
       </div>

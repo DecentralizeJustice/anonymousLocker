@@ -59,7 +59,8 @@
 <script setup>
 const options = [
   { label: "Sign In", value: "login" },
-  { label: "Shoppers", value: "shopperLanding" },
+  { label: "Home", value: "shopperLanding" },
+  { label: "Locker", value: "lockerShopperLanding" },
   // { label: "Earners", value: "earnerLanding" },
   { label: "F.A.Q.", value: "faq" },
   { label: "Ask Question", value: "message" }
