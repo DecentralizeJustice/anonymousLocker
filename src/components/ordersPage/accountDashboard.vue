@@ -19,10 +19,11 @@
               </div>
             </q-card-section>
             <q-card-section>
-              <div class="text-h5 q-mb-lg">Order Info</div>
+              
               <div class="column" style="">
                 <div class="col col-6" v-for="item in accountInfo.orders" :key="item.nickname">
                   <div class="text-subtitle1 bg-black q-pa-md rounded-borders">
+                    <div class="text-h5 q-mb-lg">Order Info</div>
                     <div>{{capitalizeWords(item.nickName)}} for {{ item.totalUSD }} USD</div>
 <!--                     <div>Status: {{ item.statusHistory.slice(-1)[0].status  }}</div> -->
                     <div>

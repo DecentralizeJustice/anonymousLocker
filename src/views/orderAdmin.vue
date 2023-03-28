@@ -8,7 +8,7 @@
         <q-card class="col-12 col" style="">
 
           <q-list v-for="order in orders" :key="order.passphrase">
-            <q-expansion-item popup default-closed :label="order.orders[0].nickName" >
+            <q-expansion-item popup default-closed group="ordersGroup" :label="order.orders[0].nickName" >
               <q-separator />
               <q-card>
                 <q-card-section>
