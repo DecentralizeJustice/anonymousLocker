@@ -112,7 +112,7 @@
               <div
                 class="row col-12 justify-around col"
               >
-              <div class="row col-4 justify-around">
+              <div class="row col-md-4 col-12 justify-around">
                 Address Info
               <q-input
                 class="col-12 col-md-12 q-my-sm"
@@ -148,7 +148,7 @@
                 <q-select v-model="country" :options="countries" label="Country" 
                 class="col-12 col-md-12 q-my-sm"/>
               </div>
-              <div class="row col-5 justify-around">
+              <div class="row col-md-5 col-12 justify-around">
                 <q-input v-model="extra"  class="col-12 col-md-12 q-my-sm"   type="number"
                   label="Extra/Tip (USD)" :disable="discountPossible"/>
               <q-input
