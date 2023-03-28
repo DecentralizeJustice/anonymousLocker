@@ -70,6 +70,10 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+  q: `Would the locker service be available for Canadian users?`,
+  a: `Yes. We have a drop-down at checkout that lets you select Canada.`
+},
+{
   q: `Does your Concierge service only allow Amazon? Or are other websites allowed??`,
   a: `Yes. We support most online retailers.`
 },
