@@ -70,6 +70,14 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+  q: `if we have a specific question about something that is more private, and dont have an order yet, how do we contact you? For example I want to ask about a specific item to see if it is okay to be purchased.`,
+  a: `You can send me a message here,I will keep all sensitive info private.`
+},
+{
+  q: `Does your Concierge service only allow Amazon? Or are other websites allowed??`,
+  a: `Yes. We support most online retailers.`
+},
+{
   q: `Would the locker service be available for Canadian users?`,
   a: `Yes. We have a drop-down at checkout that lets you select Canada.`
 },
