@@ -58,11 +58,11 @@ const info = [
   {
     title: 'Support',
     items: [
-      {
-        text: 'Message Us', link: '/message'
+    {
+        text: 'F.A.Q.', link: '/faq'
       },
       {
-        text: 'F.A.Q.', link: '/faq'
+        text: 'Message Us', link: '/message'
       },
       {
         text: 'Check Order', link: '/login'

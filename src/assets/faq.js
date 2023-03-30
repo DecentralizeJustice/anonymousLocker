@@ -226,6 +226,14 @@ const homeFAQ = {
     ]
   ],
 }
+const generalFAQ = {
+  "General Questions": [
+    [
+      `Your website list tax as 8%, but the tax is not that high.`,
+      `Yes, we assume a higher than average tax on items that we buy to save the time of asking for more funds. If you want an exact tax simply ask us after your order is placed.`,
+    ]
+  ],
+}
 const lockerFAQ = {
   "General Locker Delivery Questions":  [
     [
@@ -364,3 +372,4 @@ exports.shopperfaq = shopperfaq
 exports.earnerfaq = earnerfaq
 exports.lockerFAQ = lockerFAQ
 exports.homeFAQ = homeFAQ
+exports.generalFAQ = generalFAQ
