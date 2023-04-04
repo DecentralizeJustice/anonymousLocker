@@ -227,10 +227,21 @@ const homeFAQ = {
   ],
 }
 const generalFAQ = {
+  
   "General Questions": [
     [
       `Your website list tax as 8%, but the tax is not that high.`,
       `Yes, we assume a higher than average tax on items that we buy to save the time of asking for more funds. If you want an exact tax simply ask us after your order is placed.`,
+    ],
+    [
+      `What can I buy with your service?`,
+      `You can buy anything that is not a subscription, with my service. Giftcards, computers are good to go
+      but I can not pay for your Twitter blue service for example. If you want to buy a subscription, we can sale you a gift card for most services.`,
+    ],
+    [
+      `How fast is your service?`,
+      `We try our best to process all orders within 24 hours, but our service has a focus on privacy not speed.
+      If you value the speed of your order more than the privacy of our shop, you should use another service. `,
     ]
   ],
 }

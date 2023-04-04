@@ -21,6 +21,7 @@
     "mailgun.js": "^8.0.2",
     "marked": "^4.2.3",
     "mongodb": "^5.0.1",
+    "netlify-cli": "^13.2.2",
     "node-polyfill-webpack-plugin": "^2.0.1",
     "path-browserify": "^1.0.1",
     "qrcode": "^1.5.1",
