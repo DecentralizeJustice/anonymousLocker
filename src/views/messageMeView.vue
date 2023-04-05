@@ -72,7 +72,7 @@ const questions = [
 {
   q: `regarding question 36;
 I can not find the Netherlands in country options..`,
-  a: `Sorry. I just added it. It should be there now. We dont support email at this time, unfortunately. `
+  a: `Sorry. I just added it. It should be there now. We dont support email at this time, unfortunately. You can also fill in dummy data for now, and I can collect more data in the order chat. `
 },
 {
   q: `Hello-this is question regarding buying.
