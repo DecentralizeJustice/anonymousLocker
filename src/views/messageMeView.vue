@@ -13,8 +13,8 @@
       <q-separator />
       <q-card-section class="">
         <div class="text-body1 text-left">      
-          If you have not placed an order and have a question for me, shoot me a message here. 
-      If you have placed an order and the chat is working, you should communicate with me using that chat instead. 
+          You can check out our <a href="/faq">faq here</a> or our past questions below for a quicker response. 
+          If you have not placed an order and have a question for me, shoot me a message here.
       I will answer your question publicly below. I always respond within 1 day, so check back soon!</div>
       </q-card-section>
       <q-card-section class="">
@@ -69,6 +69,16 @@ const text = ref('')
 const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
+{
+  q: `Hello-this is question regarding buying.
+Can you buy stuff from ebay USA and that be
+delivered to the Netherlands(EUROPE)`,
+  a: `Yes. You should place an address order. If your order is not possible, we will simply refund you 100%.`
+},
+{
+  q: `can i buy only from amazon?`,
+  a: `No, you can buy anything online that isnt a subscription. For those we can only do giftcards.`
+},
 {
   q: `if we have a specific question about something that is more private, and dont have an order yet, how do we contact you? For example I want to ask about a specific item to see if it is okay to be purchased.`,
   a: `You can send me a message here,I will keep all sensitive info private.`
