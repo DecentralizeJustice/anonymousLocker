@@ -166,12 +166,12 @@
                 label="Monero Refund Address"
               /> 
               <div class="col-12 col-md-12 q-my-sm">
-                <q-toggle
+<!--                 <q-toggle
                   v-model="discountPossible"
                   color="red"
                   icon="percent"
                   label="Enable Discounts"
-                />
+                /> -->
                 <br/>
                 <span v-if="discountPossible">
                   Discount Percentage: {{ discountPercent }}%
@@ -205,7 +205,7 @@
               >
                 Extra/Tip: {{ extra }} USD <br/>
                 <!-- Refundable Bound Amount: {{ bondAmount }} USD <br/> -->
-                Non-Refundable Fee: {{serviceFeeUSD}} USD <br/>
+                Non-Refundable Fee: {{correctFee}} USD <br/>
               </div>
               <div
                 class="row col-12 col-md-12 text-h5 q-mt-lg justify-center"
@@ -278,6 +278,7 @@ const extraNotes = ref("")
 const xmrRefundAddress = ref("")
 const minOrderamount = 25
 const serviceFeeUSD = 3
+const servicePercentage = 3
 const bondAmount = 0
 const extra = ref(0)
 const discountPossible = ref(false)
@@ -371,9 +372,9 @@ const orderUSDSubTotal = computed(() => {
   }
   return Number(total).toFixed(2)
 })
-const constantFeeUSD = computed(() => {
+/* const constantFeeUSD = computed(() => {
   return (Number(serviceFeeUSD + bondAmount)).toFixed(2)
-})
+}) */
 const taxAmount = computed(() => {
   return Number(Number(orderUSDSubTotal.value) * taxRate.value).toFixed(2)
 })
@@ -382,9 +383,20 @@ const itemsAfterTax = computed(() => {
     Number(orderUSDSubTotal.value) + Number(taxAmount.value)
   return Number(longNumber).toFixed(2)
 })
+const percentageFee = computed(() => {
+  const longNumber =
+    Number(orderUSDSubTotal.value*(servicePercentage/100))
+  return Number(longNumber).toFixed(2)
+})
+const correctFee = computed(() => {
+  if(Number(percentageFee.value) > Number(serviceFeeUSD)) {
+    return Number(percentageFee.value).toFixed(2)
+  }
+  return Number(serviceFeeUSD).toFixed(2)
+})
 const finalTotalUSD = computed(() => {
   const longNumber =
-    Number(orderUSDSubTotal.value) + Number(taxAmount.value) + Number(constantFeeUSD.value) + Number(extra.value) - Number(discountAmount.value)
+    Number(orderUSDSubTotal.value) + Number(taxAmount.value) + Number(correctFee.value) + Number(extra.value) - Number(discountAmount.value)
   return Number(longNumber).toFixed(2)
 })
 const discountAmount = computed(() => {
@@ -441,7 +453,7 @@ async function submitOrder() {
       taxAmount: taxAmount.value,
       orderSubtotal: orderUSDSubTotal.value,
       bondUSD: bondAmount,
-      serviceFeeUSD: serviceFeeUSD,
+      serviceFeeUSD: correctFee.value,
       extraAmountUSD: extra.value,
       refundAddress: xmrRefundAddress.value,
       discountPercent: discountPercent.value,
