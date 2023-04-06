@@ -70,6 +70,11 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+  q: `One question though, does Netherlands have a
+Amazon collection points or is delivery at an appointed address possible?`,
+  a: `In your case, it would be delivery to an address.  `
+},
+{
   q: `regarding question 36;
 I can not find the Netherlands in country options..`,
   a: `Sorry. I just added it. It should be there now. We dont support email at this time, unfortunately. You can also fill in dummy data for now, and I can collect more data in the order chat. `
