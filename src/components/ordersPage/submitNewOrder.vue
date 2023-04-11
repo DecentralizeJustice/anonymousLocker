@@ -156,7 +156,7 @@
                 label="Monero Refund Address"
               /> 
               <div class="col-12 col-md-5 q-my-sm">
-                <q-toggle
+<!--                 <q-toggle
                   v-model="hwOrder"
                   color="red"
                   icon="primary"
@@ -164,7 +164,7 @@
                 />      <q-icon
         size="md"
         name="phonelink_lock"
-      />
+      /> -->
               </div>
               <span class="col-12 q-mt-md">
                 <q-chip
@@ -189,9 +189,9 @@
               <div
                 class="row col-12 col-md-6 q-mt-sm justify-center text-body1"
               >
-                Extra/Tip: {{ extra.toFixed(2) }} USD <br/>
+                Extra/Tip: {{ extra }} USD <br/>
 <!--                 Refundable Bound Amount: {{ bondAmount }} USD <br/> -->
-                Non-Refundable Service Fee: {{Number(correctFee - specialOrderDiscountFlat).toFixed(2)}} USD <br/>
+                Non-Refundable Service Fee: {{Number(correctFee - specialOrderDiscountFlat)}} USD <br/>
               </div>
               <div
                 class="row col-12 col-md-12 text-h5 q-mt-lg justify-center"
@@ -369,7 +369,7 @@ const correctFee = computed(() => {
 })
 const finalTotalUSD = computed(() => {
   const longNumber =
-    Number(orderUSDSubTotal.value) + Number(taxAmount.value) + Number(correctFee.value) + Number(extra.value) - Number(discountAmount.value)
+    Number(orderUSDSubTotal.value) + Number(taxAmount.value) + Number(correctFee.value) + Number(extra.value)
   return Number(longNumber).toFixed(2)
 })
 const discountAmount = computed(() => {
@@ -442,13 +442,6 @@ const taxRate = computed(() => {
     return 0
   }
   return 0.08
-})
-watch(discountPossible, async (newQuestion) => {
-  if (newQuestion === false) { extra.value = 0
-  } else {
-    alert.value = true
-    extra.value = 0
-  }
 })
 </script>
 <style lang="sass" scoped>
