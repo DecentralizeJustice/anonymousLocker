@@ -32,6 +32,7 @@
                     @blur="convertToUSD"
                     error-message="Not Valid Price"
                     :error="itemAmountError"
+                    type="number"  
                   />
                   <q-input
                     class="col-11"
@@ -39,6 +40,7 @@
                     label="Item Quantity"
                     error-message="Not Valid Amount"
                     :error="itemQuantityError"
+                    type="number"  
 
                   />
                   <div class="row col-8 q-mt-sm justify-center">
@@ -139,7 +141,7 @@
                 />
                 <q-select v-model="country" :options="countries" label="Country" 
                 class="col-12 col-md-5 q-my-sm"/>
-                <q-input v-model="extra"  class="col-12 col-md-5 q-my-sm"   
+                <q-input v-model="extra"  class="col-12 col-md-5 q-my-sm" type="number"  
                   label="Extra/Tip (USD)" :disable="discountPossible"/>
               <q-input
                 class="col-12 col-md-5 q-my-sm"
