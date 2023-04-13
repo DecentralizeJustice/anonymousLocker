@@ -70,6 +70,10 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+  q: `Why I can't access my order?`,
+  a: `Hi. Your order should be working now. Sorry for the issue!`
+},
+{
   q: `One question though, does Netherlands have a
 Amazon collection points or is delivery at an appointed address possible?`,
   a: `In your case, it would be delivery to an address.  `
