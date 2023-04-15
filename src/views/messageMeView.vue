@@ -70,6 +70,10 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+  q: `Hello, would it be possible to forward a package to InPost paczkomaty (polish parcel lockers company)? For example order something on aliexpress and forward it to InPost parcel locker.`,
+  a: `Hi. We do not support this type of service currently.`
+},
+{
   q: `Why I can't access my order?`,
   a: `Hi. Your order should be working now. Sorry for the issue!`
 },
