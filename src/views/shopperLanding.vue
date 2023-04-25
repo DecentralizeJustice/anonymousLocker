@@ -245,7 +245,7 @@ This method requires a delivery address but can be used for any major retailer a
 convenient. Most major retailers offer a wish list function that would hide your address from the earner.`
 const step3 = `If you want to hide your name and address from an online retailer you can use
 this option. We order the item to us, and then we ship the item to you. This way no one knows
-what you bought but us. We charge 5% of the item price, plus shipping to you for this option.
+what you bought but us. We charge 8% of the item price, plus shipping to you for this option.
 Just place and address order and add a note that you want Package Forwarding with your order.`
 onMounted(() => {
 

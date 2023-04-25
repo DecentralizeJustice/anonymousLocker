@@ -70,6 +70,10 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+  q: `When ordering customizable items such as stamps, do I just put the customizable test in the notes followed by the box where it needs to be put?`,
+  a: `Yes. That should work. If I have any questions, I can also message you in chat after you place an order.`
+},
+{
   q: `Hello, would it be possible to forward a package to InPost paczkomaty (polish parcel lockers company)? For example order something on aliexpress and forward it to InPost parcel locker.`,
   a: `Hi. We do not support this type of service currently.`
 },
