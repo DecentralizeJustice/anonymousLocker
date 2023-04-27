@@ -70,6 +70,10 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+  q: `I'm looking to order a fairly expensive item as a Canadian. Do you place orders within Canada for Canadian orders? (do I need to worry about import charges?).?`,
+  a: `There would be aroudn a 5% import tax on our mail forwarding service only. If you want to order something for delivery via an amazon locker or something from Canada there is no import fee..`
+},
+{
   q: `When ordering customizable items such as stamps, do I just put the customizable test in the notes followed by the box where it needs to be put?`,
   a: `Yes. That should work. If I have any questions, I can also message you in chat after you place an order.`
 },
