@@ -69,6 +69,10 @@ const text = ref('')
 const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
+  {
+    q: `I wanted to do a concierge order. On Question 13, it says I don't provide my address until after I checkout. You said, "Doing things this way ensures that we only collect your sensitive information( such as your address) when we know for 100% certainty we can complete your order...`,
+    a: `Thanks for the great question! You can place dummy informtion in the address info if you would like. I will then simply ask for your real information when I confirm that we can process your order. Sorry for any confusion.`
+  },
 {
   q: `I'm looking to order a fairly expensive item as a Canadian. Do you place orders within Canada for Canadian orders? (do I need to worry about import charges?).?`,
   a: `There would be aroudn a 5% import tax on our mail forwarding service only. If you want to order something for delivery via an amazon locker or something from Canada there is no import fee..`
