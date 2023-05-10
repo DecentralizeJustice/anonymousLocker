@@ -4,6 +4,11 @@
   status = 301
   force = true # COMMENT: ensure that we always redirect
 [[redirects]]
+  from = "https://anonshop.app/*"
+  to = "https://anonshop.anonindustries.com/:splat"
+  status = 301
+  force = true # COMMENT: ensure that we always redirect
+[[redirects]]
   from = "/*"
   to = "/"
   status = 200
