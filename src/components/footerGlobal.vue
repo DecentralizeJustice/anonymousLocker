@@ -41,7 +41,7 @@ const info = [
         text: 'Place Order', link: '/orders'
       },
     {
-        text: 'Blog', link: 'https://blog.anonshop.app/'
+        text: 'Blog', link: 'https://blog.anonindustries.com/'
       },
       {
         text: 'About Us', link: '/about'
