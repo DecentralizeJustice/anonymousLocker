@@ -214,7 +214,8 @@ const homeFAQ = {
     ],
     [
       `Can you do International Orders?`,
-      `yes.`,
+      `We can deliver to you your country if the online retailer that you choose,
+      delivers to your country. We only offer mail forwarding for US addresses at this time.`,
     ],
     [
       `Where can you order items from?`,
