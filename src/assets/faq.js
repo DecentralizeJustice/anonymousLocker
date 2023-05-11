@@ -249,6 +249,13 @@ const generalFAQ = {
 const lockerFAQ = {
   "General Locker Delivery Questions":  [
     [
+      `Is this service Anonymous?`,
+      `No, no service can be truly anonymous. There will always be metadata leaks. 
+            Amazon lockers and the business they are in have cameras. This service is as slightly more anonymous than going to a store and spending cash. 
+            If you want the best anonymity when picking up your order you should wear a face mask, hat and glasses 😎. 
+            Or any other clothing to protect your identity.`,
+    ],
+    [
       `Can you do International Orders?`,
       `Yes. We can not deliver outside of your country's Amazon Site though. For example, we can not deliver from US Amazon to Japan Amazon.
                 We can deliver to lockers within the same country.`,
