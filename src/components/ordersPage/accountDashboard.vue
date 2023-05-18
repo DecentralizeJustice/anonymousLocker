@@ -13,9 +13,13 @@
               <div class="text-subtitle1">
                 Bond Amount: {{ accountInfo.metaData.bondAmount }} XMR
               </div>
-               <div class="text-subtitle1" style="overflow-wrap: break-word;">
-                XMR Refund Address: <br/>
+               <div class="text-subtitle1 q-mt-xl" style="overflow-wrap: break-word;">
+                Your XMR Refund Address: <br/>
                 {{ accountInfo.metaData.refundAddress }}
+              </div>
+              <div class="text-subtitle1 q-mt-xl" style="overflow-wrap: break-word;">
+                Anon Shop XMR Address: <br/>
+                45Ag8YnqVAq2wwAYksNfzfUrWVixAcUiGG5iwLwrSgwzbv6JWLhqUbKZHfXJM2g6GLWKaSs1roApEdiLjkSUMbvQBoZANx6
               </div>
             </q-card-section>
             <q-card-section>
