@@ -69,6 +69,11 @@ const text = ref('')
 const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
+{
+    q: `I accidentally placed two orders for what is effective the same item (different product ID). I did this because I mistakenly lost the last word of my phrase the first attempt. Will I be refunded to the specified refund address?
+`,
+    a: `Hi. I will refund you. Check your order chat (either one, I sent a message in both chats).`
+  },
   {
     q: `I wanted to do a concierge order. On Question 13, it says I don't provide my address until after I checkout. You said, "Doing things this way ensures that we only collect your sensitive information( such as your address) when we know for 100% certainty we can complete your order...`,
     a: `Thanks for the great question! You can place dummy informtion in the address info if you would like. I will then simply ask for your real information when I confirm that we can process your order. Sorry for any confusion.`
