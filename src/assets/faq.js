@@ -358,7 +358,7 @@ const lockerFAQ = {
     ],
     [
       `Do you offer refunds/returns?`,
-      `Due to Amazon return scams, you must make an account and use the included gift recipient to make a return.`,
+      `Due to Amazon return scams, you must make an account and use the included gift recipient to make a return. If you would like to have a gift receipt added, please shoot us a message after you place your order.`,
     ],
     [
       `Why is my cart not saved if I refresh?`,
