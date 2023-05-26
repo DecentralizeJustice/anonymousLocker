@@ -1,11 +1,11 @@
 [[redirects]]
   from = "https://anonymouslocker.app/*"
-  to = "https://anonshop.anonindustries.com/:splat"
+  to = "https://anonshop.app/:splat"
   status = 301
   force = true # COMMENT: ensure that we always redirect
 [[redirects]]
-  from = "https://anonshop.app/*"
-  to = "https://anonshop.anonindustries.com/:splat"
+  from = "https://anonshop.anonindustries.com/*"
+  to = "https://anonshop.app/:splat"
   status = 301
   force = true # COMMENT: ensure that we always redirect
 [[redirects]]
