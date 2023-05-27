@@ -27,7 +27,7 @@ const info = [
         text: 'Reddit', link: 'https://www.reddit.com/r/Monero/comments/zprhwr/anonymous_shopping_using_amazon_lockers_and_monero/'
       },
       {
-        text: 'Twitter', link: 'https://twitter.com/AnonShopApp'
+        text: 'Twitter', link: 'https://twitter.com/AnonIndustries_'
       },
       {
         text: 'Bitcoin Talk', link: 'https://bitcointalk.org/index.php?topic=5422392.msg61324168#msg61324168'
