@@ -17,7 +17,7 @@ By the function of our service when you use our service, we will have access to 
     </ol>
 The payment processor that we use can also have access to the payment address that you used to pay with, depending on the cryptocurrency that you used to pay with. 
 #### How Long We Keep This Data
-We will keep the data that is collected on you indefinitely. We need to be able to prove to the authorities that our business was legitimate and above board. An audit by an authority can happen at any time, so we keep this aforementioned data for these reasons. We delete the chat logs around a day after your order has been resolved. 
+We will keep the data that is collected on you indefinitely. We need to be able to prove to the authorities that our business was legitimate and above board. An audit by an authority can happen at any time, so we keep this aforementioned data for these reasons. We delete the chat logs around 30 days after your order has been resolved. 
 #### Who We Share Your Data With
 We do not share this data with anyone unless required to by law. This might happen in a civil or criminal situation.
 #### Policy Updates
