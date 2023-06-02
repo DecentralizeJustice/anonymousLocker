@@ -70,6 +70,24 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+    q: `Hi, I love your venture! Despite not a customer, I routinely check your update and I hope you have great success.
+
+There's one term I hope you can clarify though: when you mention you have 5,500 USD revenue, are you actually talking about Gross Merchandise Volume (GMV_?
+
+Revenue and Gross Merchandise Volume, (GMV) are two distinct financial metrics that businesses use to measure different aspects of their performance.
+
+1. **Revenue**: This refers to the income that a business earns from its normal business operations, typically from the sale of goods and services to customers. Revenue is the top line or gross income figure from which costs are subtracted to determine net income. In the case of a company that sells goods or services directly to customers, the revenue is simply the total amount of money received from those sales.
+
+2. **Gross Merchandise Volume (GMV)**: This refers to the total value of all transactions of goods or services sold through a particular marketplace over a specific time period. This metric is often used by online marketplaces, such as e-commerce platforms, where the platform itself does not sell its own goods or services but facilitates transactions between sellers and buyers.
+
+The key difference between the two lies in what they measure and include. Total Transaction Volume includes the total value of all transactions, regardless of who ultimately receives the money. Revenue, on the other hand, only includes the money that the company itself earns, which could be a fraction of the total transaction volume if the company operates a marketplace model and earns revenue through fees or commissions.
+
+Further reading: https://medium.com/@algovc/10-marketplace-kpis-that-matter-22e0fd2d2779
+`,
+    a: `Hi.From your question, the correct term I should use is GMV of ~5,500 USD. I will look read over the material you sent me and try to be more clear in my future post.
+    Thanks for reaching out and correcting me, I studied computer science not accounting so my vocab def needs refinement! `
+  },
+{
     q: `I accidentally placed two orders for what is effective the same item (different product ID). I did this because I mistakenly lost the last word of my phrase the first attempt. Will I be refunded to the specified refund address?
 `,
     a: `Hi. I will refund you. Check your order chat (either one, I sent a message in both chats).`
