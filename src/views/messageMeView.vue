@@ -84,8 +84,8 @@ The key difference between the two lies in what they measure and include. Total 
 
 Further reading: https://medium.com/@algovc/10-marketplace-kpis-that-matter-22e0fd2d2779
 `,
-    a: `Hi.From your question, the correct term I should use is GMV of ~5,500 USD. I will look read over the material you sent me and try to be more clear in my future post.
-    Thanks for reaching out and correcting me, I studied computer science not accounting so my vocab def needs refinement! `
+    a: `Hi.From your question, the correct term I should use is GMV of ~5,500 USD. I will read over the material you sent me and try to be more clear in my future post.
+    Thanks for reaching out and correcting me, I studied computer science not accounting so my vocab def needs refinement! Thanks again.`
   },
 {
     q: `I accidentally placed two orders for what is effective the same item (different product ID). I did this because I mistakenly lost the last word of my phrase the first attempt. Will I be refunded to the specified refund address?
