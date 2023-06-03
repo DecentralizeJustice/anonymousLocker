@@ -231,6 +231,31 @@ const generalFAQ = {
   
   "General Questions": [
     [
+      `Do you support pgp keys?`,
+      `Yes, our pgp key is below. We only support pgp for package forwarding service. So you should place an order
+      ship to address order and use the pgp key to encrypt your real order info after you place an order. If you have any questions
+      just place an order and ask in the chat. <br/><br/>
+      -----BEGIN PGP PUBLIC KEY BLOCK-----
+
+mQENBGR7a3IBCAC2PXhLM0QtXYXaEFBluUdEr2x+X23c2G2FCM6isVMW3hsWcdhw
+zWYnwCkqsG5/LjJ+N/jVQPTbzuw0KaZunIOofhSEncFzchlaJYRYaZUu0dEiB30y
+jhL9qUavZM0ItM10GAuQPanfCGu+fIGi6u/ReGhJLnayhXOm8uJZ/zZCvCtnRLZ+
+wqgWg8dxQJ835lp1tuv43lvGoN7/iiy/q2pOQM+jpDbY7GMQtCBXEdBXj6xo6f8L
+/+m1JpNEIgHt0EH5wuGJa5/3bVxoF9lD1yPoaNx1/AVc3oJaBHEHDaUiICbfUy/L
+sakmKaB7w2HWFjQ8chz+OYo9li3K+oEs8XsRABEBAAG0GWFub25zaG9wKCk8bm9u
+QGdtYWlsLmNvbT6JAVcEEwEIAEEWIQRnaTbI9fiMt3VgIUFd1S8ldI/oXwUCZHtr
+cgIbLwUJA8O4VgULCQgHAgIiAgYVCgkICwIEFgIDAQIeBwIXgAAKCRBd1S8ldI/o
+X2VCB/9H5UQXnxIAfFwGDAVQAXUt0qsRLDZkTzP6t/pe1IfGiL9yhf3CP0K17Xpk
+t9UeKUOT9Eh4Sx6m7bwbbPJYAAwjeJsHMogAp4Z4w1jZT9yTvvPhH71b0HAJa5wz
+EwpwhgjlfzLomBWJ7P7UYoOAjTlYo1DcmJV+vsrVZctS/CXLZGWdGGOIq5IU1bQ/
+974vTh8M2X9QqJPCwkq+ZIEJ9YqnrDmInNQsp5cj63nfwxjSjX/fvLrJdR3qS6Ym
+GvuZDlXea0jQmguqeDCWk+FOiJwdJO7E13+JijyGBn/IHUsG1btq0BGEWOQWjGij
+rIuyWTobPbr6x1qUJjlYdZxLaUEE
+=b95u
+-----END PGP PUBLIC KEY BLOCK-----
+ `,
+    ],
+    [
       `Your website list tax as 8%, but the tax is not that high.`,
       `Yes, we assume a higher than average tax on items that we buy to save the time of asking for more funds. If you want an exact tax simply ask us after your order is placed.`,
     ],

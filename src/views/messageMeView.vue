@@ -70,6 +70,11 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+    q: `Hello bro, I keep asking on Twitter, my handle is ****, but can you please upload a public PGP key so we can encrypt messages like our addresses? I do not feel rlly safe sending my address to yhour javascript web form
+`,
+    a: `Just added it. Its the first question in the FAQ. Thanks for reaching out!`
+  },
+{
     q: `Hi, I love your venture! Despite not a customer, I routinely check your update and I hope you have great success.
 
 There's one term I hope you can clarify though: when you mention you have 5,500 USD revenue, are you actually talking about Gross Merchandise Volume (GMV_?
