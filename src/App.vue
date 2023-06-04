@@ -63,7 +63,7 @@ const options = [
   { label: "Address Delivery", value: "addressShopperLanding" },
   // { label: "Earners", value: "earnerLanding" },
   { label: "Check Order", value: "login" },
-  // { label: "F.A.Q.", value: "faq" },
+  { label: "F.A.Q.", value: "faq" },
   { label: "Ask Question", value: "message" }
 
 ]

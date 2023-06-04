@@ -70,6 +70,14 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+    q: `Hi,
+Regarding Address Delivery,
+1. when inputting Item Amount (USD), is that the amount including shipping cost? or how do you calculate shipping cost?
+2. what if there are no taxes for this order? we still need to pay Estimated Taxes 8%?
+`,
+    a: `Hi. I calculate shipping cost after you place your order. So you can just leave it out for now. If the tax rate is not correct, I will refund you.`
+  },
+{
     q: `Hello bro, I keep asking on Twitter, my handle is ****, but can you please upload a public PGP key so we can encrypt messages like our addresses? I do not feel rlly safe sending my address to yhour javascript web form
 `,
     a: `Just added it. Its the first question in the FAQ. Thanks for reaching out!`
