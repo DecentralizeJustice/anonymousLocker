@@ -70,6 +70,17 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+    q: `greetings
+
+a few days ago I had a order with you sent to an amazon counter location at whole foods. but they wanted something more than a QR code so it got returned to amazon.
+
+I was talking with a friend who got their amazon order delivered to an amazon counter at some small shop that did not have a locker and they said only a QR code was  needed to pick up their order.
+
+So maybe if you only choose independent stores instead of large chains like Whole Foods the amazon counter locations could be an option. That would be nice if we could try some smaller alternative amazon counter locations. Perhaps calling the location to confirm where they individually require for delivery of amazon packages would be an option. If you get even 1 counter location in say each of the top 25 large cities, or maybe just in cities that you most commonly have customers picking up items in, and those locations accept just a QR code, then you could at least offer Amazon counter locations at just those select locations or something. i'm just spitballing here, but I really love your service. It's excellent but being able to get large items would really kick up the amount of money you could make, I would think.
+`,
+    a: `I will do more research in how to make large items delivery work. You made some great points and thanks for all the help and support!`
+  },
+{
     q: `Hi,
 Regarding Address Delivery,
 1. when inputting Item Amount (USD), is that the amount including shipping cost? or how do you calculate shipping cost?
