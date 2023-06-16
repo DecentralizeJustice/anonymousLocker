@@ -237,12 +237,11 @@ require("@lottiefiles/lottie-player")
 const heroText = 'Spend Monero Anonymously or Anywhere'
 const heroSubtext = `The Best Way To Use Monero`
 const step1 = `Your order is made to an Amazon Locker near you. 
-This method requires does not need an address, email, or other personal information. 
+This method does not need an address, email, or other personal information. 
 This method can only be used to purchase items shipped by Amazon and also has size restrictions.`
-const step2 = `Your order is shipped directly to your house. You can also get up to a 8% discount on your order 
-using this option.
+const step2 = `Your order is shipped directly to your house.
 This method requires a delivery address but can be used for any major retailer and is more 
-convenient. Most major retailers offer a wish list function that would hide your address from the earner.`
+convenient.`
 const step3 = `If you want to hide your name and address from an online retailer you can use
 this option. We order the item to us, and then we ship the item to you. This way no one knows
 what you bought but us. We charge 8% of the item price, plus shipping to you for this option.
