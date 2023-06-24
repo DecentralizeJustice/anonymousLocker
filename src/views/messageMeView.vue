@@ -69,6 +69,10 @@ const text = ref('')
 const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
+  {
+    q: `Do you have a way to be contacted before placing an ordre (i dont have social media) like a mail / matrix / signal number ?`,
+    a: `Currenlty we dont. You can send me a questions here. I will remove private info and answer it below.`
+  },
 {
     q: `greetings
 
