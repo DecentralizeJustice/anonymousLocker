@@ -244,7 +244,7 @@ This method requires a delivery address but can be used for any major retailer a
 convenient.`
 const step3 = `If you want to hide your name and address from an online retailer you can use
 this option. We order the item to us, and then we ship the item to you. This way no one knows
-what you bought but us. We charge 15% of the item price, plus shipping to you for this option.
+what you bought but us. We charge 20% of the item price, plus shipping to you for this option.
 If you want to place a package forwarding order, you should place an address order and add a note that you want Package Forwarding for your order.`
 onMounted(() => {
 
