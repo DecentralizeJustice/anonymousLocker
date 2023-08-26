@@ -69,6 +69,10 @@ const text = ref('')
 const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
+{
+    q: `Hi. I made a really stupid mistake. I ordered a product from the website: .....`,
+    a: `Hi. Your order is good to go and I have sent you a message in the chat. We can deliver and item to an address within the same country. `
+  },
   {
     q: `Do you have a way to be contacted before placing an ordre (i dont have social media) like a mail / matrix / signal number ?`,
     a: `Currenlty we dont. You can send me a questions here. I will remove private info and answer it below.`
