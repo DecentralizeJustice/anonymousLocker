@@ -71,7 +71,7 @@ const buttonDisabled = ref(false)
 const questions = [
 {
     q: `Hello. If I buy a giftcard through you, do I get the code in the chat or what? Just wondering since that doesn't really require physical delivery to my address / an Amazon locker. Thanks.`,
-    a: `Yes`
+    a: `Yes, you would get the code in the chat.`
   },
 {
     q: `Hello I send money to your btcpay but lose access to website so payment goes through but order not, i can provide monero payment proof and exact transaction amount, can i get refund..`,
