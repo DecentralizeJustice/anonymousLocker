@@ -70,6 +70,10 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+    q: `Hello. If I buy a giftcard through you, do I get the code in the chat or what? Just wondering since that doesn't really require physical delivery to my address / an Amazon locker. Thanks.`,
+    a: `Yes`
+  },
+{
     q: `Hello I send money to your btcpay but lose access to website so payment goes through but order not, i can provide monero payment proof and exact transaction amount, can i get refund..`,
     a: `Hi. I have only one order placed in the past 12 hours. This order has a refund address attached to it.  Answering these questions would be helepful for me to help you:
     1. Do you have your 12 word password? 2. What item did you order?`
