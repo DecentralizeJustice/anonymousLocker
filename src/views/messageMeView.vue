@@ -70,6 +70,14 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+    q: `Hi again. I would really like to try your service to purchase to Amazon lockers through Amazon.es but I don't know how to add the product values, in Euros or convert to dollars. If I put in Euros it will underestimate the amounts in $ and thus the amount of Monero I send won't be enough to cover the order. I didn't see anything related to this in the FAQ or previous questions. Can you please advise, thank you.`,
+    a: `You can place your orders in Euros. A rough conversion is perfectly fine.`
+  },
+{
+    q: `Is there any way to contact you other than asking a question here????? My messages in my orders never seem to load`,
+    a: `To cut down on meta dat we only off the built in chat. If you are using tor you might have to enable javascript. You could also try a different browser. If this does not work, you can tell me what you ordered here.`
+  },
+{
     q: `Hello. If I buy a giftcard through you, do I get the code in the chat or what? Just wondering since that doesn't really require physical delivery to my address / an Amazon locker. Thanks.`,
     a: `Yes, you would get the code in the chat.`
   },
