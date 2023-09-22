@@ -70,6 +70,10 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+    q: `Is it also possible to buy from other sites than amazon if I dont use amazon lockers?`,
+    a: `Yes, you can order from any website. People often by things from ebay and amazon.`
+  },
+{
     q: `Hi again. I would really like to try your service to purchase to Amazon lockers through Amazon.es but I don't know how to add the product values, in Euros or convert to dollars. If I put in Euros it will underestimate the amounts in $ and thus the amount of Monero I send won't be enough to cover the order. I didn't see anything related to this in the FAQ or previous questions. Can you please advise, thank you.`,
     a: `You can place your orders in Euros. A rough conversion is perfectly fine.`
   },
