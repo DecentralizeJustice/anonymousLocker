@@ -70,6 +70,10 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+    q: `Hello it seems some items from this order might’ve got returned to sender because I’m having issues with usps shipping.`,
+    a: `Hi. I messaged you about this order in the order chat. Is the order chat not working for you?`
+  },
+{
     q: `Is it also possible to buy from other sites than amazon if I dont use amazon lockers?`,
     a: `Yes, you can order from any website. People often by things from ebay and amazon.`
   },
