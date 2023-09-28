@@ -70,6 +70,10 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+    q: `Hi, I chose to not use bank accounts in life, I just use cash and crypto. This service is exactly what i was looking for! I'll use this service the rest of my life if it's online. Thank you so much for providing this service! :-)`,
+    a: `I am so glad that you like the service and that it supports your lifestyle!`
+  },
+{
     q: `Hello it seems some items from this order might’ve got returned to sender because I’m having issues with usps shipping.`,
     a: `Hi. I messaged you about this order in the order chat. Is the order chat not working for you?`
   },
