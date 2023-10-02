@@ -2,11 +2,13 @@
   <q-layout view="hhh lpr fff">
     <q-header class="bg-grey-9 text-white">
       <q-toolbar>
-        <img
-          src="./assets/svgs/package.svg"
-          style="max-width: 30px"
-          class="q-my-sm"
-        />
+        <router-link to="/">
+          <img
+            src="./assets/svgs/package.svg"
+            style="max-width: 30px; height: 30px;"
+            class="q-my-sm"
+          />
+        </router-link>
         <q-toolbar-title> Anon Shop </q-toolbar-title>
         <q-space class="desktop-only" />
         <q-btn color="primary" icon="menu" class="mobile-only">
