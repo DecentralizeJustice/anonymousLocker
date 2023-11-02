@@ -70,6 +70,10 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+    q: `Guess passphrase is wrong even though was copy/paste been over 7 confirms....`,
+    a: `You should be able to log in now.`
+  },
+{
     q: `Hi, I chose to not use bank accounts in life, I just use cash and crypto. This service is exactly what i was looking for! I'll use this service the rest of my life if it's online. Thank you so much for providing this service! :-)`,
     a: `I am so glad that you like the service and that it supports your lifestyle!`
   },
