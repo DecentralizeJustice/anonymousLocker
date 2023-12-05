@@ -70,6 +70,10 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+    q: `If I want an Amazon item shipped ONLY to an Amazon Locker, then I pay you for it, and then in the chat you notify me that it cannot be shipped to an Amazon Locker, can I then at that point receive a 100% refund?`,
+    a: `Yes.`
+  },
+{
     q: `over 7 confirms no account found copy/paste Passphrase order has email in it.`,
     a: `This service does not support email. You should be able to sign in to check on your order. I have already issued you a full refund. More details are in your order. If your 8 words are not working you can send them to me in a message so I can further help you.`
   },
