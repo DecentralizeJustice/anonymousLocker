@@ -70,6 +70,10 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+    q: `Hey just wanted to let you know order submission isnt working. I went to place an order, of course above $25, and it popped up a message saying the order minimum was $25 and wouldnt let me submit.`,
+    a: `Hi Friend. I have fixed the error code. The min order is now 35 usd, since that is what it takes for amazon to give free shipping.`
+  },
+{
     q: `If I want an Amazon item shipped ONLY to an Amazon Locker, then I pay you for it, and then in the chat you notify me that it cannot be shipped to an Amazon Locker, can I then at that point receive a 100% refund?`,
     a: `Yes.`
   },
