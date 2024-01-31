@@ -70,6 +70,10 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+    q: `We are currently experiencing payment gateway issues and are working on fixing them.`,
+    a: `We are currently experiencing payment gateway issues and are working on fixing them.`
+  },
+{
     q: `I am having issues placing a locker order, I tried different web browsers. I click confirm passphrase saved and then nothing happens.`,
     a: `My btcpay server was having an issue. I changed some settings, so you can tray again. If the problem exist, just shoot me another message with your order details and I will try and recreate your issue. Thanks for reaching out!`
   },
