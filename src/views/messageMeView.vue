@@ -71,7 +71,7 @@ const buttonDisabled = ref(false)
 const questions = [
 {
     q: `I am having issues placing a locker order, I tried different web browsers. I click confirm passphrase saved and then nothing happens.`,
-    a: `My btcpay server was having an issue. I changed some settings, so you can tray again. If the problem exist, just shoot me another message with your order details and I will try and recreate your issue. Thanks for reaching out!`
+    a: `My btcpay server was  having an issue. I changed some settings, so you can tray again. If the problem exist, just shoot me another message with your order details and I will try and recreate your issue. Thanks for reaching out!`
   },
 {
     q: `Hey just wanted to let you know order submission isnt working. I went to place an order, of course above $25, and it popped up a message saying the order minimum was $25 and wouldnt let me submit.`,
