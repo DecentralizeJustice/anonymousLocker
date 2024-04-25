@@ -70,6 +70,10 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+    q: `Can you place the order on the website? You need to subscribe using PayPal, and I gave you crypto.`,
+    a: `I can not find your order. Can you send me you monero tx and other order info?`
+  },
+{
     q: `I am having issues placing a locker order, I tried different web browsers. I click confirm passphrase saved and then nothing happens.`,
     a: `My btcpay server was  having an issue. I changed some settings, so you can tray again. If the problem exist, just shoot me another message with your order details and I will try and recreate your issue. Thanks for reaching out!`
   },
