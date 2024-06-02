@@ -70,6 +70,10 @@ const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
 {
+    q: `hey, I placed an order and it looks like the 8 words don't work`,
+    a: `You did not place a refund address with your order. Send me your refund address with your monero txid again and I will refund you can place the order again if you wish.`
+  },
+{
     q: `Can you place the order on the website? You need to subscribe using PayPal, and I gave you crypto.`,
     a: `I can not find your order. Can you send me you monero tx and other order info?`
   },
