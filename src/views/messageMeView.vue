@@ -69,6 +69,10 @@ const text = ref('')
 const successMessage = ref('')
 const buttonDisabled = ref(false)
 const questions = [
+  {
+    q: `Why hasn't my order been placed?`,
+    a: `I am so sorry for the delay. I have been sick recenlty. If you would like a refund I can issue that in the chat. Thank you for your patince.`
+  },
 {
     q: `hey, I placed an order and it looks like the 8 words don't work`,
     a: `You did not place a refund address with your order. Send me your refund address with your monero txid again and I will refund you can place the order again if you wish.`
